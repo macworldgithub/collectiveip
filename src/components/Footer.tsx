@@ -1,15 +1,21 @@
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const practiceLinks = [
-  'Connectivity',
-  'Security',
-  'Cloud',
-  'Datacentre & Compute',
-  'Endpoint',
-  'Intelligent Automation',
+  { label: 'Connectivity', path: '/practices' },
+  { label: 'Security', path: '/practices' },
+  { label: 'Cloud', path: '/practices' },
+  { label: 'Datacentre & Compute', path: '/practices' },
+  { label: 'Endpoint', path: '/practices' },
+  { label: 'Intelligent Automation', path: '/intelligent-automation' },
 ];
 
-const companyLinks = ['About Us', 'Case Studies', 'Interactive Demo', 'Partner Services'];
+const companyLinks = [
+  { label: 'About Us', path: '/about' },
+  { label: 'Case Studies', path: '/case-studies' },
+  { label: 'Interactive Demo', path: '/demo' },
+  { label: 'Partner Services', path: '/about' },
+];
 
 export default function Footer() {
   return (
@@ -18,12 +24,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand & Contact */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4 w-fit">
               <div className="w-8 h-8 bg-sky-600 rounded flex items-center justify-center">
                 <span className="text-white font-bold text-sm">CI</span>
               </div>
               <span className="font-bold text-lg text-white">Collective IP</span>
-            </div>
+            </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               A specialist IT infrastructure services business built for the channel, enhanced by
               intelligent automation.
@@ -53,10 +59,13 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Practices</h4>
             <ul className="flex flex-col gap-2.5">
               {practiceLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">
-                    {item}
-                  </a>
+                <li key={item.label}>
+                  <Link
+                    to={item.path}
+                    className="text-slate-400 text-sm hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,10 +76,13 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="flex flex-col gap-2.5">
               {companyLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">
-                    {item}
-                  </a>
+                <li key={item.label}>
+                  <Link
+                    to={item.path}
+                    className="text-slate-400 text-sm hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
