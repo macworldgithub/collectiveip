@@ -13,7 +13,7 @@ const companyLinks = [
   { label: 'About Us', path: '/about' },
   { label: 'Case Studies', path: '/case-studies' },
   { label: 'Interactive Demo', path: '/demo' },
-  { label: 'Partner Services', path: '/about' },
+  { label: 'Partner Services', path: '/practices' },
 ];
 
 export default function Footer() {
@@ -24,8 +24,8 @@ export default function Footer() {
           {/* Brand & Description */}
           <div>
             <Link to="/" className="flex items-center mb-6">
-              <span className="font-heading text-2xl tracking-tight text-white">
-                collective<span className="text-brand-400">ip</span>
+              <span className="font-heading text-2xl tracking-tight text-white font-bold">
+                collective<span className="text-[#8B5CF6]">ip</span>
               </span>
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed pr-4">
@@ -35,13 +35,13 @@ export default function Footer() {
 
           {/* Practices */}
           <div>
-            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Practices</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">PRACTICES</h4>
             <ul className="flex flex-col gap-4">
               {practiceLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-300 text-sm hover:text-white transition-colors"
+                    className="text-slate-300 text-sm hover:text-[#8B5CF6] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -52,13 +52,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Company</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">COMPANY</h4>
             <ul className="flex flex-col gap-4">
               {companyLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-300 text-sm hover:text-white transition-colors"
+                    className="text-slate-300 text-sm hover:text-[#8B5CF6] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -69,33 +69,33 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Contact</h4>
-            <div className="flex flex-col gap-4 text-slate-300 text-sm">
+            <h4 className="text-slate-400 text-sm font-bold uppercase mb-6">CONTACT</h4>
+            <div className="flex flex-col gap-4 text-slate-300 text-sm leading-relaxed">
               <p>Collective IP Limited</p>
               <p>
                 Suite 214, 1 Water Vole Way<br />
                 Doncaster, South Yorkshire<br />
                 DN4 5JP
               </p>
-              <a href="tel:+442045858990" className="hover:text-white transition-colors">
+              <a href="tel:+442045858990" className="hover:text-[#8B5CF6] transition-colors">
                 +44 (0) 204 585 8990
               </a>
-              <a href="mailto:info@collectiveip.co.uk" className="hover:text-white transition-colors">
+              <a href="mailto:info@collectiveip.co.uk" className="hover:text-[#8B5CF6] transition-colors">
                 info@collectiveip.co.uk
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-xs">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <p className="text-slate-400 text-sm">
             © 2026 Collective IP Limited. All rights reserved. Company No. 14460737
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 text-xs hover:text-white transition-colors">
+            <a href="#" className="text-slate-400 text-sm hover:text-[#8B5CF6] transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-slate-400 text-xs hover:text-white transition-colors">
+            <a href="#" className="text-slate-400 text-[10px] hover:text-[#8B5CF6] transition-colors">
               Data Policy
             </a>
           </div>
@@ -104,4 +104,3 @@ export default function Footer() {
     </footer>
   );
 }
-
