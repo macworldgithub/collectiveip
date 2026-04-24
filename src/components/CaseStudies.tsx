@@ -29,7 +29,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 bg-[#F3F4F6]">
+    <section id="case-studies" className="py-14 bg-[#F3F4F6]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
@@ -59,8 +59,8 @@ export default function CaseStudies() {
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative h-48 overflow-hidden bg-slate-200">
-                <img 
-                  src={cs.image} 
+                <img
+                  src={cs.image}
                   alt={cs.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -81,8 +81,8 @@ export default function CaseStudies() {
                 <p className="text-slate-500 text-xs leading-relaxed mb-6 flex-grow">
                   {cs.outcome}
                 </p>
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   className="inline-flex items-center gap-1 text-[#8B5CF6] text-xs font-bold hover:gap-2 transition-all duration-200"
                 >
                   Read full case study <ChevronRight size={14} />

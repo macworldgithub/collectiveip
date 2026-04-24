@@ -114,12 +114,12 @@ export default function PracticesPage() {
       {/* Hero */}
       <section className="relative pt-36 pb-24 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{
-            backgroundImage: 'url(/images/Hero.png)',
+            backgroundImage: 'url(/images/education.png)',
           }}
         />
-        <div className="absolute inset-0 bg-[#3B4041]/85 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
           <p className="text-[#8B5CF6] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">
             Our Practices

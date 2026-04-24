@@ -26,7 +26,7 @@ export default function Tools() {
   const [activeTool, setActiveTool] = useState('knowledge');
 
   return (
-    <section id="tools" className="py-24 bg-white">
+    <section id="tools" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="text-[#8B5CF6] text-xs font-bold uppercase tracking-widest mb-4">

@@ -104,9 +104,9 @@ export default function IntelligentAutomationPage() {
       {/* Hero */}
       <section className="relative pt-40 pb-32 overflow-hidden bg-[#3B4041]">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{
-            backgroundImage: 'url(/images/Hero.png)', // Using the same hero base or similar
+            backgroundImage: 'url(/images/intelligent.png)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />

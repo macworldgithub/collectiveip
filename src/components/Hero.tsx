@@ -37,14 +37,14 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-4 justify-start">
             <a
-              href="#practices"
+              href="/practices"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-bold rounded hover:bg-[#7C3AED] transition-all duration-300 shadow-sm text-sm"
             >
               Explore Our Practices
               <ArrowRight size={16} />
             </a>
             <a
-              href="#tools"
+              href="/demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white/30 text-white font-bold rounded hover:bg-white/10 transition-all duration-300 text-sm"
             >
               Experience Our Tools

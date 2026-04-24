@@ -139,9 +139,9 @@ export default function CaseStudiesPage() {
       {/* Hero Section */}
       <section className="relative pt-40 pb-32 overflow-hidden bg-[#3B4041]">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-center opacity-60"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000)',
+            backgroundImage: 'url(/images/healthcare.png)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
