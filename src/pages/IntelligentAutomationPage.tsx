@@ -1,190 +1,323 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Zap, MessageSquare, Network, BarChart2, RefreshCw, ArrowRight, CheckCircle } from 'lucide-react';
+import {
+  Zap,
+  MessageSquare,
+  Network,
+  BarChart2,
+  ArrowRight,
+  CheckCircle,
+  Settings,
+  Cpu,
+} from 'lucide-react';
 
-const pillars = [
+const stats = [
+  { value: '60%', label: 'Reduction in manual operational tasks' },
+  { value: '3X', label: 'Faster Incident response times' },
+  { value: '40%', label: 'Cost reduction through automation' },
+  { value: '24/7', label: 'Intelligent monitoring and response' },
+];
+
+const services = [
   {
-    icon: <MessageSquare size={28} />,
-    title: 'AI-Enhanced Customer Engagement',
-    desc: 'Intelligent tools that answer real questions, surface relevant case studies, and guide prospects toward scoped engagements — 24/7, without manual effort.',
+    icon: <Network size={24} />,
+    title: 'AUTOMATED NETWORK OPERATIONS',
+    desc: 'Automated monitoring, predictive fault detection, and intelligent capacity planning that transforms reactive operations into proactive management.',
   },
   {
-    icon: <Network size={28} />,
-    title: 'Infrastructure Provisioning Automation',
-    desc: 'Reduce provisioning time from days to minutes. Automated workflows for network, cloud, and endpoint deployments that are repeatable, auditable, and scalable.',
+    icon: <Settings size={24} />,
+    title: 'INTELLIGENT PROCESS AUTOMATION',
+    desc: 'End-to-end workflow automation that eliminates manual overhead, reduces errors, and accelerates service delivery across your operations.',
+    isActive: true
   },
   {
-    icon: <RefreshCw size={28} />,
-    title: 'Workflow Orchestration',
-    desc: 'Connect your systems, eliminate manual handoffs, and build intelligent workflows that keep delivery on track — from first contact to final sign-off.',
+    icon: <BarChart2 size={24} />,
+    title: 'PREDICTIVE ANALYTICS & INSIGHTS',
+    desc: 'Data-driven decision support that identifies trends, forecasts demand, and provides actionable intelligence for infrastructure planning.',
   },
   {
-    icon: <BarChart2 size={28} />,
-    title: 'Monitoring & Alerting Automation',
-    desc: 'Proactive monitoring that detects issues before customers notice. Automated triage, escalation, and remediation reduce MTTR and support overhead.',
+    icon: <Zap size={24} />,
+    title: 'AUTOMATED DEPLOYMENT PIPELINES',
+    desc: 'Infrastructure-as-code and CI/CD pipelines that enable rapid, consistent, and repeatable deployments across multi-site environments.',
+  },
+  {
+    icon: <MessageSquare size={24} />,
+    title: 'DIGITAL FRONT DOOR SOLUTIONS',
+    desc: 'Knowledge systems that provide instant, structured answers about capabilities, approach, and delivery experience to prospects and partners.',
+  },
+  {
+    icon: <Cpu size={24} />,
+    title: 'CUSTOM KNOWLEDGE SYSTEMS',
+    desc: "Bespoke solutions trained on your organisation's knowledge base, propositions, and delivery experience for intelligent customer engagement.",
   },
 ];
 
-const outcomes = [
-  'Reduce delivery overhead by 30–50%',
-  'Scale service delivery without proportional headcount growth',
-  'Improve customer experience with always-on engagement tools',
-  'Shorten sales cycles with intelligent qualification and scoping',
-  'Increase first-time-right delivery rates',
-  'Build repeatable, auditable delivery processes',
+const approachSteps = [
+  {
+    number: '1',
+    title: 'Discovery & Assessment',
+    desc: 'We start by understanding your current operations, pain points, and objectives to identify where automation will deliver the greatest impact.',
+  },
+  {
+    number: '2',
+    title: 'Solution Design',
+    desc: 'We design practical solutions that integrate with your existing infrastructure, using proven technologies and approaches.',
+  },
+  {
+    number: '3',
+    title: 'Delivery & Integration',
+    desc: 'We implement in phases, proving value at each stage and ensuring seamless integration with your operational workflows.',
+  },
+  {
+    number: '4',
+    title: 'Optimisation & Scale',
+    desc: 'We continuously monitor, optimise, and expand your automation capabilities based on real performance data and evolving needs.',
+  },
 ];
 
-const tools = [
+const proofPoints = [
   {
-    name: 'Knowledge Assistant',
-    label: 'Capability & Case Study Finder',
-    desc: 'An AI-powered assistant trained on our delivery experience. Answers partner and prospect questions, surfaces relevant case studies, and helps qualify opportunities — available 24/7.',
+    title: 'NETWORK AUTOMATION FOR MULTI-SITE RETAIL',
+    challenge: 'A national retailer needed to standardise network configurations across 200+ stores while reducing deployment time from weeks to hours.',
+    approach: 'We implemented automated configuration management with validation, enabling zero-touch provisioning for new sites and automated compliance checks across the estate.',
+    outcome: '90% reduction in deployment time, zero configuration drift, and automated rollback capabilities for rapid recovery.',
   },
   {
-    name: 'Network Assessment Tool',
-    label: 'Infrastructure Discovery',
-    desc: 'Guided discovery and assessment of network environments. Identifies gaps, benchmarks against best practice, and produces tailored recommendations your team can act on.',
+    title: 'KNOWLEDGE SYSTEM FOR CHANNEL PARTNER',
+    challenge: "A channel partner's pre-sales team was spending 60% of their time answering repetitive capability questions from prospects.",
+    approach: "We built a custom knowledge system trained on the partner's propositions, case studies, and technical capabilities, providing instant structured responses.",
+    outcome: 'Pre-sales team reclaimed 15+ hours per week, prospect response time dropped from days to seconds, and conversion rates improved by 25%.',
   },
   {
-    name: 'Security Posture Review',
-    label: 'Threat & Risk Analysis',
-    desc: 'A structured review of security posture against industry frameworks. Identifies priority risks and maps them to practical remediation actions.',
+    title: 'PREDICTIVE INFRASTRUCTURE MANAGEMENT FOR HEALTHCARE',
+    challenge: 'An NHS trust needed to move from reactive to proactive infrastructure management to ensure critical system availability.',
+    approach: 'We deployed monitoring with predictive analytics that identifies potential failures before they impact services, combined with automated remediation workflows.',
+    outcome: '99.99% uptime achieved, 70% reduction in P1 incidents, and automated capacity planning for seasonal demand.',
   },
 ];
 
 export default function IntelligentAutomationPage() {
   return (
-    <div className="font-body text-dark antialiased">
+    <div className="font-body text-dark antialiased bg-white">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-40 pb-32 overflow-hidden bg-[#3B4041]">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
-            backgroundImage:
-              'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/london-hero-HWmTzZdNn2zdtwx65U2Lxz.webp)',
+            backgroundImage: 'url(/images/Hero.png)', // Using the same hero base or similar
           }}
         />
-        <div className="absolute inset-0 bg-dark/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
+
+        {/* Abstract lines pattern overlay (simplified) */}
+        <div className="absolute inset-0 opacity-20"
+          style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #8B5CF6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-600/20 border border-brand-400/30 rounded-full text-brand-300 text-xs font-semibold tracking-wide uppercase mb-6">
-              <Zap size={14} />
-              Intelligent Automation
-            </div>
-            <h1 className="font-heading text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 uppercase">
-              Automate to <span className="text-brand-400">Scale</span>
+            <h4 className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+              INTELLIGENT AUTOMATION
+            </h4>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
+              AUTOMATION THAT DELIVERS REAL OUTCOMES
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
-              Our Intelligent Automation practice helps partners reduce manual overhead, improve
-              delivery speed, and engage customers more effectively — using AI-enhanced tools and
-              smart workflows.
+            <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-10 max-w-xl">
+              Not automation for the sake of it. We deliver practical, outcome-driven solutions that reduce cost,
+              accelerate delivery, and transform how you operate — built on real delivery experience.
             </p>
-            <a
-              href="/demo"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-md hover:bg-brand-500 transition-all duration-200 hover:gap-3"
-            >
-              See Our Tools in Action <ArrowRight size={18} />
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="/demo"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300"
+              >
+                See It In Action <ArrowRight size={14} />
+              </a>
+              <a
+                href="/case-studies"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white/30 text-white text-xs font-bold rounded hover:bg-white/10 transition-all duration-300"
+              >
+                View Case Studies
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Four Pillars */}
-      <section className="py-24 bg-white">
+      {/* Stats Bar */}
+      <section className="bg-[#3B4041] border-t border-white/5 py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
-              What We Deliver
-            </div>
-            <h2 className="font-heading text-4xl font-bold text-dark mb-4">Four Pillars of Automation</h2>
-            <p className="text-lg text-dark-light max-w-2xl mx-auto">
-              Each pillar is designed to remove friction from a different part of your business —
-              from customer engagement through to infrastructure delivery.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pillars.map((p) => (
-              <div
-                key={p.title}
-                className="group p-8 border border-gray-100 rounded-xl hover:border-brand-200 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                  {p.icon}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center lg:text-left">
+                <div className="text-3xl md:text-4xl font-extrabold text-[#8B5CF6] mb-1">{s.value}</div>
+                <div className="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-tight">
+                  {s.label}
                 </div>
-                <h3 className="font-heading text-lg font-bold text-dark mb-3">{p.title}</h3>
-                <p className="text-dark-light text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Outcomes */}
-      <section className="py-24 bg-brand-600">
+      {/* Services Grid */}
+      <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-6">
-                Measurable Impact
+          <div className="mb-16">
+            <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              WHAT WE DELIVER
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              INTELLIGENT AUTOMATION SERVICES
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl leading-relaxed">
+              Practical, proven solutions that integrate seamlessly with your existing infrastructure
+              and deliver measurable outcomes from day one.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, idx) => (
+              <div
+                key={idx}
+                className="p-8 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-[#8B5CF6] transition-all duration-300"
+              >
+                <div className="text-[#5C2882] mb-6">{s.icon}</div>
+                <h3 className="font-heading text-xs font-bold text-[#3B4041] uppercase tracking-widest mb-4">
+                  {s.title}
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
-              <h2 className="font-heading text-4xl font-bold text-white mb-4">What Partners Achieve</h2>
-              <p className="text-brand-100 leading-relaxed text-lg">
-                Partners who embed Intelligent Automation into their delivery model see meaningful
-                improvements across efficiency, margin, and customer satisfaction.
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-7">
+              <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+                OUR APPROACH
+              </h4>
+              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6">
+                PRAGMATIC, NOT HYPE
+              </h2>
+              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                Every solution we deliver starts with a clear business problem and ends with measurable outcomes.
+                Our approach is grounded in real delivery experience across complex enterprise environments.
               </p>
+
+              <div className="space-y-8">
+                {approachSteps.map((step) => (
+                  <div key={step.number} className="flex gap-6">
+                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#5C2882] flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                      {step.number}
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-[#3B4041] mb-2">{step.title}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {outcomes.map((o) => (
-                <div
-                  key={o}
-                  className="flex items-start gap-3 p-4 bg-white/10 border border-white/20 rounded-xl"
-                >
-                  <CheckCircle size={18} className="text-brand-200 mt-0.5 flex-shrink-0" />
-                  <span className="text-white text-sm font-medium">{o}</span>
-                </div>
-              ))}
+
+            <div className="lg:col-span-5">
+              <div className="bg-[#3B4041] rounded-2xl p-10 text-white shadow-xl">
+                <h3 className="font-heading text-xs font-bold uppercase tracking-widest mb-8">
+                  WHY PARTNERS CHOOSE US
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Real delivery experience, not just theory',
+                    'Solutions built on your existing infrastructure',
+                    'Measurable outcomes from day one',
+                    'Channel-focused — we enhance your brand, not replace it',
+                    'Phased delivery that proves value at each stage',
+                    'Ongoing optimisation and support',
+                    'Practical automation that solves real business problems',
+                    'Transparent, collaborative approach'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle size={14} className="text-[#8B5CF6] mt-0.5 flex-shrink-0" />
+                      <span className="text-xs text-slate-300 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tools */}
-      <section className="py-24 bg-gray-50">
+      {/* Proof Points Section */}
+      <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
-              Live & Available Now
-            </div>
-            <h2 className="font-heading text-4xl font-bold text-dark mb-4">Our Digital Front Door Tools</h2>
-            <p className="text-lg text-dark-light max-w-2xl mx-auto">
-              Practical, intelligent tools your partners and prospects can use today to start
-              meaningful conversations and accelerate opportunity development.
+          <div className="mb-16">
+            <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              PROOF POINTS
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              REAL OUTCOMES, REAL IMPACT
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl leading-relaxed">
+              See how our intelligent automation solutions deliver measurable results across different sectors and use cases.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {tools.map((t) => (
-              <div
-                key={t.name}
-                className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="text-brand-600 text-xs font-semibold uppercase tracking-wider mb-2">
-                  {t.label}
+
+          <div className="space-y-6">
+            {proofPoints.map((point, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-10 border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-3 text-[#5C2882] mb-8">
+                  <Network size={16} />
+                  <h3 className="font-heading text-[11px] font-bold uppercase tracking-[0.15em]">
+                    {point.title}
+                  </h3>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-dark mb-3">{t.name}</h3>
-                <p className="text-dark-light text-sm leading-relaxed">{t.desc}</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+                  <div className="md:col-span-3">
+                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">CHALLENGE</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">{point.challenge}</p>
+                  </div>
+                  <div className="md:col-span-5">
+                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">APPROACH</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">{point.approach}</p>
+                  </div>
+                  <div className="md:col-span-4">
+                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">OUTCOME</h4>
+                    <p className="text-xs font-bold text-[#3B4041] leading-relaxed italic border-l-2 border-[#8B5CF6] pl-4">
+                      {point.outcome}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-          <div className="text-center">
-            <a
-              href="/demo"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-md hover:bg-brand-700 transition-colors duration-200"
-            >
-              Try All Tools Live <ArrowRight size={18} />
-            </a>
-          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-24 bg-[#3B4041] text-center text-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="font-heading text-3xl md:text-4xl font-extrabold uppercase mb-6 tracking-tight">
+            READY TO EXPLORE INTELLIGENT AUTOMATION?
+          </h2>
+          <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-10 max-w-xl mx-auto">
+            Try our interactive tools to explore how our automation capabilities could apply
+            to your specific requirements.
+          </p>
+          <a
+            href="/demo"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300"
+          >
+            Try the Interactive Demo <ArrowRight size={14} />
+          </a>
         </div>
       </section>
 
