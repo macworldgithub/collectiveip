@@ -215,7 +215,7 @@ export default function PracticesPage() {
             approach for your requirements.
           </p>
           <a
-            href="/tools"
+            href="/demo"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#7C3AED] transition-all duration-300 shadow-sm"
           >
             Try Our Tools <ArrowRight size={16} />
