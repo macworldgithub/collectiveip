@@ -250,7 +250,6 @@ export default function CaseStudiesPage() {
 
                   <div>
                     <a
-                      href={`/case-studies/${idx}`}
                       className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-extrabold hover:gap-3 transition-all duration-200"
                     >
                       Read full case study <ChevronRight size={16} />

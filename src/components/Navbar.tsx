@@ -28,16 +28,26 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const isHome = location.pathname === "/";
+  const isDarkHeroPage = [
+    "/practices",
+    "/intelligent-automation",
+    "/case-studies",
+    "/demo",
+    "/about"
+  ].includes(location.pathname);
+
+  const shouldBeWhite = scrolled || (!isHome && !isDarkHeroPage);
+  const isDarkBg = !scrolled && isDarkHeroPage;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : isDarkBg ? "bg-[#3B4041]" : isHome ? "bg-transparent" : "bg-white shadow-md"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
           <span
-            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${scrolled || !isHome ? "text-dark" : "text-white"
+            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${shouldBeWhite ? "text-dark" : "text-white"
               }`}
           >
             collective<span className="text-brand-600">ip</span>
@@ -51,7 +61,7 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${scrolled || !isHome
+                className={`text-sm font-medium transition-colors hover:text-brand-600 ${shouldBeWhite
                     ? isActive
                       ? "text-brand-600"
                       : "text-gray-700"
@@ -73,7 +83,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className={`lg:hidden transition-colors ${scrolled || !isHome ? "text-gray-700" : "text-white"}`}
+          className={`lg:hidden transition-colors ${shouldBeWhite ? "text-gray-700" : "text-white"}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
