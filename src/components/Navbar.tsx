@@ -31,16 +31,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
           <span
-            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${
-              scrolled || !isHome ? "text-dark" : "text-white"
-            }`}
+            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${scrolled || !isHome ? "text-dark" : "text-white"
+              }`}
           >
             collective<span className="text-brand-600">ip</span>
           </span>
@@ -53,15 +51,14 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
-                  scrolled || !isHome
+                className={`text-sm font-medium transition-colors hover:text-brand-600 ${scrolled || !isHome
                     ? isActive
                       ? "text-brand-600"
                       : "text-gray-700"
                     : isActive
                       ? "text-brand-300"
                       : "text-white/90"
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>
@@ -90,11 +87,10 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium hover:text-brand-600 transition-colors ${
-                  location.pathname === item.path
+                className={`text-sm font-medium hover:text-brand-600 transition-colors ${location.pathname === item.path
                     ? "text-brand-600"
                     : "text-gray-700"
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>

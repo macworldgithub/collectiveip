@@ -4,189 +4,222 @@ import { Wifi, Shield, Cloud, Server, Monitor, Zap, CheckCircle, ArrowRight } fr
 
 const practiceDetails = [
   {
-    icon: <Wifi size={32} />,
-    title: 'Connectivity',
-    tagline: 'Complex Networks, Expertly Designed',
+    icon: <Wifi size={20} />,
+    title: 'CONNECTIVITY',
+    tagline: 'Network Design & Deployment',
     description:
-      'From personal area networks to global wide area networks, we design and deliver connectivity solutions that meet the most demanding requirements. Our speciality lies in complex wireless environments — dense, high-throughput, mission-critical.',
+      'Building environments from personal area to global wide area networks. Our optimisation pedigree enables us to deliver architectures that enforce company policy and support operational efficiency across diverse environments. We are design-led, security-driven and have a speciality in complex wireless.',
     capabilities: [
-      'Campus & enterprise wireless (802.11ax/Wi-Fi 6E)',
-      'SD-WAN design and deployment',
-      'Site survey, RF planning and optimisation',
-      'Secure remote access and VPN architecture',
-      'Network monitoring and management',
-      'Multi-site and global WAN delivery',
+      'WAN connectivity and routing architecture',
+      'Complex wireless network design',
+      'Multi-site network rollouts',
+      'Network strategy and transformation',
+      'Post-deployment optimisation',
+      'High-level and low-level design',
     ],
-    vendors: ['Cisco', 'Juniper', 'Aruba', 'Fortinet', 'Meraki'],
+    sectors: ['Healthcare', 'Retail', 'Hospitality', 'Local Government', 'Automotive'],
   },
   {
-    icon: <Shield size={32} />,
-    title: 'Security',
-    tagline: 'End-to-End Protection for Complex Environments',
+    icon: <Shield size={20} />,
+    title: 'SECURITY',
+    tagline: 'End-to-End Protection',
     description:
-      'Cyber threats are evolving faster than ever. We help partners protect their customers across every layer of the stack — from network perimeter to endpoint, from identity to data — using frameworks and tooling that scale with the business.',
+      'Our Security practice delivers end-to-end solutions across network, endpoint, cloud, IoT and data centre. We advise, design and implement solutions to protect critical assets, reduce attack surfaces, enforce compliance and ensure infrastructure resilience against evolving threats.',
     capabilities: [
-      'Network security architecture and firewall deployment',
-      'Endpoint detection and response (EDR/XDR)',
-      'Vulnerability assessment and penetration testing',
-      'Zero Trust Network Access (ZTNA)',
-      'Security Operations Centre (SOC) integration',
-      'Compliance-aligned security programmes',
+      'Global threat analysis',
+      'Vulnerability assessments',
+      'Endpoint security deployment',
+      'Network security architecture',
+      'Cloud security posture management',
+      'Compliance and policy enforcement',
     ],
-    vendors: ['CrowdStrike', 'Palo Alto', 'Fortinet', 'SentinelOne', 'Tenable'],
+    sectors: ['Retail', 'Aerospace', 'Central Government', 'Financial Services'],
   },
   {
-    icon: <Cloud size={32} />,
-    title: 'Cloud',
-    tagline: 'Secure, Scalable, Multi-Cloud Delivery',
+    icon: <Cloud size={20} />,
+    title: 'CLOUD',
+    tagline: 'Scalable Cloud Solutions',
     description:
-      'We design, migrate and manage cloud environments across public, private and hybrid models. Our approach is architecture-led — focused on security, cost optimisation, and operational resilience.',
+      'Our Cloud Services practice designs and deploys secure, scalable solutions across public, private, and hybrid environments. We support workload migration, infrastructure-as-code, automation, and cost optimisation to enable digital transformation and operational efficiency.',
     capabilities: [
-      'Cloud architecture and migration planning',
-      'Infrastructure as Code (Terraform, Ansible)',
-      'Azure, AWS and GCP delivery',
-      'Private cloud and hyperconverged infrastructure',
-      'Cloud cost management and FinOps',
-      'Hybrid connectivity and integration',
+      'Public, private & hybrid cloud',
+      'Workload migration',
+      'Infrastructure-as-code',
+      'Cloud automation',
+      'Cost optimisation',
+      'Digital transformation enablement',
     ],
-    vendors: ['Azure', 'AWS', 'GCP', 'VMware', 'Nutanix'],
+    sectors: ['Enterprise', 'SMB', 'Public Sector', 'Healthcare'],
   },
   {
-    icon: <Server size={32} />,
-    title: 'Datacentre & Compute',
-    tagline: 'High-Performance Infrastructure at Scale',
+    icon: <Server size={20} />,
+    title: 'DATACENTRE & COMPUTE',
+    tagline: 'High-Performance Infrastructure',
     description:
-      'We design and deliver datacentre environments that support modern compute requirements — from traditional virtualisation platforms to high-performance computing and GPU-accelerated workloads.',
+      'Our Datacentre and Compute practice designs and implements traditional and hybrid solutions, integrating on-premises and cloud platforms. We specialise in HPC, storage and virtualisation to deliver energy-efficient environments that meet performance and capacity demands.',
     capabilities: [
-      'Server and storage architecture',
-      'HPC cluster design and deployment',
-      'Virtualisation and containerisation',
-      'Hyperconverged infrastructure (HCI)',
-      'Datacentre consolidation and migration',
-      'Power, cooling and physical infrastructure',
+      'HPC data stack design and build',
+      'Storage architecture',
+      'Virtualisation solutions',
+      'Hybrid infrastructure integration',
+      'Energy-efficient design',
+      'Capacity planning and testing',
     ],
-    vendors: ['Dell', 'HPE', 'Lenovo', 'Pure Storage', 'NetApp'],
+    sectors: ['Universities', 'Data Centre Providers', 'Pharmaceutical', 'Research'],
   },
   {
-    icon: <Monitor size={32} />,
-    title: 'Endpoint',
-    tagline: 'Secure, Managed Devices at Every Layer',
+    icon: <Monitor size={20} />,
+    title: 'ENDPOINT',
+    tagline: 'Device Management & Protection',
     description:
-      'Modern workplaces demand consistent, secure, and manageable endpoint environments. We help partners deploy and manage device fleets with policy-driven controls, unified management, and strong security posture.',
+      'Our Endpoint practice delivers secure, policy-driven solutions for device management, access control, and endpoint protection. We drive reliable connectivity, enforce compliance, and extend security controls across all user devices and IoT endpoints.',
     capabilities: [
-      'Unified Endpoint Management (UEM)',
-      'Mobile Device Management (MDM)',
-      'Device lifecycle management',
-      'Policy and compliance enforcement',
-      'Patch management and vulnerability remediation',
-      'Endpoint security and anti-malware',
+      'Device management and MDM',
+      'Access control policies',
+      'Endpoint protection deployment',
+      'IoT endpoint security',
+      'Compliance enforcement',
+      'User device lifecycle management',
     ],
-    vendors: ['Microsoft Intune', 'Jamf', 'CrowdStrike', 'Ivanti', 'Workspace ONE'],
+    sectors: ['Enterprise', 'Healthcare', 'Education', 'Manufacturing'],
   },
   {
-    icon: <Zap size={32} />,
-    title: 'Intelligent Automation',
-    tagline: 'Automation That Scales Your Delivery',
+    icon: <Zap size={20} />,
+    title: 'INTELLIGENT AUTOMATION',
+    tagline: 'Automation-Enhanced Delivery',
     description:
-      'Our Intelligent Automation practice helps partners reduce manual overhead and scale delivery without proportional headcount growth. We bring AI-enhanced tooling, smart workflows, and digital front-door solutions that change how partners engage customers.',
+      'Our Intelligent Automation practice embeds automation and AI into service delivery to reduce friction, improve efficiency, and help partners scale. From automated network operations to knowledge systems that support pre-sales, we deliver practical tools that create real commercial value.',
     capabilities: [
-      'AI-enhanced knowledge and sales tools',
-      'Workflow automation and orchestration',
-      'Digital Front Door for partner-facing tools',
-      'Customer engagement and qualification bots',
-      'Infrastructure provisioning automation',
-      'Monitoring and alerting automation',
+      'Automated network operations',
+      'Intelligent process automation',
+      'Predictive analytics and insights',
+      'Automated deployment pipelines',
+      'Digital front door solutions',
+      'Custom knowledge systems',
     ],
-    vendors: ['n8n', 'Ansible', 'Terraform', 'Custom AI tooling'],
+    sectors: ['Channel Partners', 'Enterprise', 'Public Sector', 'Healthcare'],
+    isDarkIcon: true,
+    button: {
+      text: 'Explore Intelligent Automation',
+      link: '/intelligent-automation'
+    }
   },
 ];
 
 export default function PracticesPage() {
   return (
-    <div className="font-body text-dark antialiased">
+    <div className="font-body text-[#3B4041] antialiased">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-36 pb-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/london-hero-HWmTzZdNn2zdtwx65U2Lxz.webp)',
+            backgroundImage: 'url(/images/Hero.png)',
           }}
         />
-        <div className="absolute inset-0 bg-dark/85" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-block px-3 py-1 bg-brand-600/20 border border-brand-400/30 rounded-full text-brand-300 text-xs font-semibold tracking-wide uppercase mb-6">
-            Specialist Capability
-          </div>
-          <h1 className="font-heading text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">Our Practices</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Six core areas of deep technical expertise, designed to help partners build and deliver
-            comprehensive, modern IT infrastructure solutions.
+        <div className="absolute inset-0 bg-[#3B4041]/85 backdrop-blur-sm" />
+        <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
+          <p className="text-[#8B5CF6] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">
+            Our Practices
+          </p>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
+            Six Practices, Expert Delivery
+          </h1>
+          <p className="text-base text-slate-300 max-w-2xl leading-relaxed">
+            Led by experts who've been customers, suppliers, and partners themselves.<br />
+            We deliver end-to-end IT infrastructure services across six core disciplines.
           </p>
         </div>
       </section>
 
       {/* Practice Cards */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-20">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col gap-24">
           {practiceDetails.map((p, i) => (
             <div
               key={p.title}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
-                i % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start`}
             >
-              <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5">
-                  {p.icon}
+              <div className={`${i % 2 === 1 ? 'lg:order-2' : ''} flex flex-col pt-4`}>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`w-12 h-12 rounded-[10px] flex items-center justify-center flex-shrink-0 ${p.isDarkIcon
+                    ? 'bg-[#5C2882] text-white'
+                    : 'border border-[#E9D5FF] bg-[#F9F5FF] text-[#5C2882]'
+                    }`}>
+                    {p.icon}
+                  </div>
+                  <div>
+                    <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase tracking-wide leading-none mb-1">
+                      {p.title}
+                    </h2>
+                    <div className="text-slate-500 text-xs font-medium">
+                      {p.tagline}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-brand-600 text-xs font-semibold uppercase tracking-widest mb-2">
-                  {p.tagline}
-                </div>
-                <h2 className="font-heading text-3xl font-bold text-dark mb-4">{p.title}</h2>
-                <p className="text-dark-light leading-relaxed mb-6">{p.description}</p>
-                <a
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
-                >
-                  Get in touch about {p.title} <ArrowRight size={16} />
-                </a>
+                <p className="text-slate-500 text-sm leading-relaxed mt-2">{p.description}</p>
+                {p.button && (
+                  <div className="mt-6">
+                    <a
+                      href={p.button.link}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#4A1E6B] transition-all duration-300 shadow-sm"
+                    >
+                      {p.button.text} <ArrowRight size={16} />
+                    </a>
+                  </div>
+                )}
               </div>
 
-              <div className={`${i % 2 === 1 ? 'lg:order-1' : ''} flex flex-col gap-4`}>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h4 className="text-sm font-bold text-dark uppercase tracking-wider mb-4">
-                    Capabilities
-                  </h4>
-                  <ul className="flex flex-col gap-2.5">
-                    {p.capabilities.map((c) => (
-                      <li key={c} className="flex items-start gap-2.5">
-                        <CheckCircle size={16} className="text-brand-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-dark-light text-sm">{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="bg-brand-600 rounded-xl p-5">
-                  <h4 className="text-xs font-bold text-brand-200 uppercase tracking-wider mb-3">
-                    Key Vendors & Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {p.vendors.map((v) => (
-                      <span
-                        key={v}
-                        className="px-3 py-1 bg-white/15 text-white text-xs font-medium rounded-full"
-                      >
-                        {v}
-                      </span>
-                    ))}
-                  </div>
+              <div className={`${i % 2 === 1 ? 'lg:order-1' : ''} bg-[#F3F4F6] rounded-xl p-8 shadow-sm`}>
+                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                  Key Capabilities
+                </h4>
+                <ul className="flex flex-col gap-3 mb-4">
+                  {p.capabilities.map((c) => (
+                    <li key={c} className="flex items-start gap-3">
+                      <CheckCircle size={16} className="text-[#8B5CF6] flex-shrink-0" />
+                      <span className="text-slate-600 text-xs">{c}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                  Sectors
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {p.sectors.map((s) => (
+                    <span
+                      key={s}
+                      className="px-3 py-1.5 bg-white border border-slate-200 text-slate-500 text-[10px] font-medium rounded-full shadow-sm"
+                    >
+                      {s}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-24 bg-[#F3F4F6] text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
+            Need help identifying the right solution?
+          </h2>
+          <p className="text-slate-500 text-sm leading-relaxed mb-4 max-w-xl mx-auto">
+            Our interactive tools can help you explore our capabilities and find the right
+            approach for your requirements.
+          </p>
+          <a
+            href="/tools"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#7C3AED] transition-all duration-300 shadow-sm"
+          >
+            Try Our Tools <ArrowRight size={16} />
+          </a>
         </div>
       </section>
 
