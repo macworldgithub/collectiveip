@@ -1,51 +1,75 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BarChart3, CheckCircle, MessageSquare } from 'lucide-react';
 
 const features = [
-  { title: 'Answers Real Questions', desc: 'Based on actual delivery experience' },
-  { title: 'Highlights Case Studies', desc: 'Surfaces relevant proof points' },
-  { title: 'Qualifies Opportunities', desc: 'Routes enquiries to the right team' },
+  {
+    title: 'Answers Real Questions',
+    desc: 'Based on actual delivery experience',
+    icon: <BarChart3 size={20} />
+  },
+  {
+    title: 'Highlights Case Studies',
+    desc: 'Surfaces relevant proof points',
+    icon: <CheckCircle size={20} />
+  },
+  {
+    title: 'Qualifies Opportunities',
+    desc: 'Routes enquiries to the right team',
+    icon: <MessageSquare size={20} />
+  },
 ];
 
 export default function DigitalFrontDoor() {
   return (
-    <section className="py-24 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-block px-3 py-1 bg-sky-600/20 text-sky-400 text-xs font-semibold uppercase tracking-wider rounded-full mb-6">
-              Your Always-On Sales Engineer
-            </div>
-            <h2 className="text-4xl font-bold text-white mb-6">Digital Front Door</h2>
-            <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              Put practical tools in front of your prospects and partners. Our Digital Front Door
-              answers real questions, surfaces relevant case studies, and guides conversations
-              toward scoped engagements — 24/7.
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-md hover:bg-sky-500 transition-colors duration-200"
-            >
-              Experience the Tools
-              <ArrowRight size={18} />
-            </a>
-          </div>
+    <section className="relative py-32 bg-dark flex flex-col items-center justify-center min-h-[80vh]">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/aerospace.png)',
+        }}
+      />
+      {/* Blur and Dark Overlay */}
+      <div className="absolute inset-0 bg-[#3B4041]/70 backdrop-blur-sm" />
 
-          <div className="grid grid-cols-1 gap-4">
-            {features.map((item) => (
-              <div
-                key={item.title}
-                className="flex items-start gap-4 p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/8 transition-colors duration-300"
-              >
-                <div className="w-2 h-2 mt-2 bg-sky-500 rounded-full flex-shrink-0" />
-                <div>
-                  <div className="text-white font-semibold mb-1">{item.title}</div>
-                  <div className="text-slate-400 text-sm">{item.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="relative max-w-5xl mx-auto px-6 text-center w-full z-10">
+        <div className="mb-12">
+          <p className="text-brand-400 text-xs font-bold uppercase tracking-widest mb-4">
+            Digital Front Door
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 uppercase tracking-tight">
+            Your Always-On Sales Engineer
+          </h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Put practical tools in front of your prospects and partners. Our Digital Front Door
+            answers real questions, surfaces relevant case studies, and guides conversations
+            toward scoped engagements — 24/7.
+          </p>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {features.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col items-center text-center gap-3 p-8 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md hover:bg-white/10 transition-colors duration-300"
+            >
+              <div className="text-brand-400 mb-2">
+                {item.icon}
+              </div>
+              <div className="text-white font-bold text-sm uppercase tracking-wide">{item.title}</div>
+              <div className="text-slate-400 text-xs">{item.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href="/demo"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-500 transition-colors duration-200 shadow-lg"
+        >
+          Experience the Tools
+          <ArrowRight size={18} />
+        </a>
       </div>
     </section>
   );
 }
+

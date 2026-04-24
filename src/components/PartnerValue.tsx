@@ -1,48 +1,59 @@
+import { TrendingUp, Zap, Shield, Users } from 'lucide-react';
+
 const values = [
   {
-    title: 'Expand Your Services Portfolio',
+    title: 'EXPAND YOUR SERVICES PORTFOLIO',
     desc: 'Create new white space across your customer base and enable new conversations that reinforce your brand and drive growth.',
+    icon: <TrendingUp size={24} />,
   },
   {
-    title: 'Deliver More Efficiently',
+    title: 'DELIVER MORE EFFICIENTLY',
     desc: 'Reduce delivery friction and optimise in-house skills so your team can focus on strategic priorities. Lean, scalable, repeatable.',
+    icon: <Zap size={24} />,
   },
   {
-    title: 'Strengthen Security Services',
+    title: 'STRENGTHEN SECURITY SERVICES',
     desc: 'Protect your customers from ever-increasing threats — from vulnerability assessments and threat analysis through to endpoint security.',
+    icon: <Shield size={24} />,
   },
   {
-    title: 'Build Annuity Revenue',
+    title: 'BUILD ANNUITY REVENUE',
     desc: 'Deliver value-added services such as consulting, end-to-end project ownership, and premium support that foster longer-term relationships.',
+    icon: <Users size={24} />,
   },
 ];
 
 export default function PartnerValue() {
   return (
-    <section className="py-24 bg-sky-600">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
+        <div className="mb-16">
+          <p className="text-brand-600 text-xs font-bold uppercase tracking-widest mb-4">
+            Partner Value
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-[#3B4041] mb-4 uppercase">
             How We Help Our Partners Succeed
-          </div>
-          <h2 className="text-4xl font-bold text-white mb-4">Partner Value</h2>
-          <p className="text-lg text-sky-100 max-w-2xl mx-auto">
-            We don't just deliver services — we help partners build commercially viable, scalable
-            businesses.
+          </h2>
+          <p className="text-lg text-slate-500 max-w-2xl">
+            We don't just deliver services — we help partners build commercially viable, scalable businesses.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {values.map((v, i) => (
+          {values.map((v) => (
             <div
               key={v.title}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-colors duration-300"
+              className="bg-[#F3F4F6] border border-slate-200 rounded-xl p-8 hover:shadow-md transition-shadow duration-300"
             >
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white font-bold text-sm mb-5">
-                {i + 1}
+              <div className="text-brand-600 mb-6">
+                {v.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{v.title}</h3>
-              <p className="text-sky-100 text-sm leading-relaxed">{v.desc}</p>
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3 uppercase tracking-wide">
+                {v.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                {v.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -50,3 +61,4 @@ export default function PartnerValue() {
     </section>
   );
 }
+

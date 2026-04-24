@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'Practices', path: '/practices' },
-  { label: 'Intelligent Automation', path: '/intelligent-automation' },
-  { label: 'Case Studies', path: '/case-studies' },
-  { label: 'Demo', path: '/demo' },
-  { label: 'About', path: '/about' },
+  { label: "Home", path: "/" },
+  { label: "Practices", path: "/practices" },
+  { label: "Intelligent Automation", path: "/intelligent-automation" },
+  { label: "Case Studies", path: "/case-studies" },
+  { label: "Demo", path: "/demo" },
+  { label: "About", path: "/about" },
 ];
 
 export default function Navbar() {
@@ -18,8 +18,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -27,25 +27,22 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || !isHome ? 'bg-white shadow-md' : 'bg-transparent'
+        scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-sky-600 rounded flex items-center justify-center">
-            <span className="text-white font-bold text-sm">CI</span>
-          </div>
           <span
-            className={`font-bold text-lg tracking-tight transition-colors ${
-              scrolled || !isHome ? 'text-gray-900' : 'text-white'
+            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${
+              scrolled || !isHome ? "text-dark" : "text-white"
             }`}
           >
-            Collective IP
+            collective<span className="text-brand-600">ip</span>
           </span>
         </Link>
 
@@ -56,14 +53,14 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-sky-500 ${
+                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
                   scrolled || !isHome
                     ? isActive
-                      ? 'text-sky-600'
-                      : 'text-gray-700'
+                      ? "text-brand-600"
+                      : "text-gray-700"
                     : isActive
-                    ? 'text-sky-300'
-                    : 'text-white/90'
+                      ? "text-brand-300"
+                      : "text-white/90"
                 }`}
               >
                 {item.label}
@@ -72,14 +69,14 @@ export default function Navbar() {
           })}
           <Link
             to="/demo"
-            className="ml-2 px-4 py-2 bg-sky-600 text-white text-sm font-semibold rounded-md hover:bg-sky-700 transition-colors"
+            className="ml-2 px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-md hover:bg-brand-700 transition-colors"
           >
             Try Our Tools
           </Link>
         </nav>
 
         <button
-          className={`lg:hidden transition-colors ${scrolled || !isHome ? 'text-gray-700' : 'text-white'}`}
+          className={`lg:hidden transition-colors ${scrolled || !isHome ? "text-gray-700" : "text-white"}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,8 +90,10 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium hover:text-sky-600 transition-colors ${
-                  location.pathname === item.path ? 'text-sky-600' : 'text-gray-700'
+                className={`text-sm font-medium hover:text-brand-600 transition-colors ${
+                  location.pathname === item.path
+                    ? "text-brand-600"
+                    : "text-gray-700"
                 }`}
               >
                 {item.label}
@@ -102,7 +101,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/demo"
-              className="px-4 py-2 bg-sky-600 text-white text-sm font-semibold rounded-md text-center hover:bg-sky-700 transition-colors"
+              className="px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-md text-center hover:bg-brand-700 transition-colors"
             >
               Try Our Tools
             </Link>

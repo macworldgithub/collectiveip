@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
 
 const practiceLinks = [
   { label: 'Connectivity', path: '/practices' },
@@ -19,50 +18,30 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-16 pb-8">
+    <footer className="bg-[#3B4041] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand & Contact */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4 w-fit">
-              <div className="w-8 h-8 bg-sky-600 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">CI</span>
-              </div>
-              <span className="font-bold text-lg text-white">Collective IP</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand & Description */}
+          <div>
+            <Link to="/" className="flex items-center mb-6">
+              <span className="font-heading text-2xl tracking-tight text-white">
+                collective<span className="text-brand-400">ip</span>
+              </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-              A specialist IT infrastructure services business built for the channel, enhanced by
-              intelligent automation.
+            <p className="text-slate-300 text-sm leading-relaxed pr-4">
+              Your trusted IT infrastructure services partner for the channel. Helping partners expand capability, deliver efficiently, and grow.
             </p>
-            <div className="flex flex-col gap-3 text-slate-400 text-sm">
-              <div className="flex items-start gap-2">
-                <MapPin size={14} className="mt-0.5 text-sky-500 flex-shrink-0" />
-                <span>Suite 214, 1 Water Vole Way, Doncaster, South Yorkshire DN4 5JP</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-sky-500 flex-shrink-0" />
-                <a href="tel:+442045858990" className="hover:text-white transition-colors">
-                  +44 (0) 204 585 8990
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={14} className="text-sky-500 flex-shrink-0" />
-                <a href="mailto:contact@collectiveip.co.uk" className="hover:text-white transition-colors">
-                  contact@collectiveip.co.uk
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Practices */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Practices</h4>
-            <ul className="flex flex-col gap-2.5">
+            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Practices</h4>
+            <ul className="flex flex-col gap-4">
               {practiceLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-400 text-sm hover:text-white transition-colors"
+                    className="text-slate-300 text-sm hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -73,13 +52,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="flex flex-col gap-2.5">
+            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Company</h4>
+            <ul className="flex flex-col gap-4">
               {companyLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-400 text-sm hover:text-white transition-colors"
+                    className="text-slate-300 text-sm hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -87,17 +66,36 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">Contact</h4>
+            <div className="flex flex-col gap-4 text-slate-300 text-sm">
+              <p>Collective IP Limited</p>
+              <p>
+                Suite 214, 1 Water Vole Way<br />
+                Doncaster, South Yorkshire<br />
+                DN4 5JP
+              </p>
+              <a href="tel:+442045858990" className="hover:text-white transition-colors">
+                +44 (0) 204 585 8990
+              </a>
+              <a href="mailto:info@collectiveip.co.uk" className="hover:text-white transition-colors">
+                info@collectiveip.co.uk
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-400 text-xs">
             © 2026 Collective IP Limited. All rights reserved. Company No. 14460737
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-500 text-sm hover:text-white transition-colors">
+            <a href="#" className="text-slate-400 text-xs hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-slate-500 text-sm hover:text-white transition-colors">
+            <a href="#" className="text-slate-400 text-xs hover:text-white transition-colors">
               Data Policy
             </a>
           </div>
@@ -106,3 +104,4 @@ export default function Footer() {
     </footer>
   );
 }
+

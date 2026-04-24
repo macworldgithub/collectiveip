@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 export default function HomePage() {
   return (
-    <div className="font-sans text-gray-900 antialiased">
+    <div className="font-body text-dark antialiased">
       <Navbar />
       <Hero />
       <Stats />

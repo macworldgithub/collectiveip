@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Practices from '../components/Practices';
 import { Wifi, Shield, Cloud, Server, Monitor, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 
 const practiceDetails = [
@@ -104,24 +103,24 @@ const practiceDetails = [
 
 export default function PracticesPage() {
   return (
-    <div className="font-sans text-gray-900 antialiased">
+    <div className="font-body text-dark antialiased">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(14,165,233,0.15),_transparent_60%)]" />
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)',
-            backgroundSize: '32px 32px',
+            backgroundImage:
+              'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/london-hero-HWmTzZdNn2zdtwx65U2Lxz.webp)',
           }}
         />
+        <div className="absolute inset-0 bg-dark/85" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-block px-3 py-1 bg-sky-600/20 border border-sky-500/30 rounded-full text-sky-300 text-xs font-semibold tracking-wide uppercase mb-6">
+          <div className="inline-block px-3 py-1 bg-brand-600/20 border border-brand-400/30 rounded-full text-brand-300 text-xs font-semibold tracking-wide uppercase mb-6">
             Specialist Capability
           </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">Our Practices</h1>
+          <h1 className="font-heading text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">Our Practices</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Six core areas of deep technical expertise, designed to help partners build and deliver
             comprehensive, modern IT infrastructure solutions.
@@ -140,38 +139,38 @@ export default function PracticesPage() {
               }`}
             >
               <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="w-14 h-14 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center mb-5">
+                <div className="w-14 h-14 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-5">
                   {p.icon}
                 </div>
-                <div className="text-sky-600 text-xs font-semibold uppercase tracking-widest mb-2">
+                <div className="text-brand-600 text-xs font-semibold uppercase tracking-widest mb-2">
                   {p.tagline}
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{p.title}</h2>
-                <p className="text-gray-500 leading-relaxed mb-6">{p.description}</p>
+                <h2 className="font-heading text-3xl font-bold text-dark mb-4">{p.title}</h2>
+                <p className="text-dark-light leading-relaxed mb-6">{p.description}</p>
                 <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-sky-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-brand-600 font-semibold text-sm hover:gap-3 transition-all duration-200"
                 >
                   Get in touch about {p.title} <ArrowRight size={16} />
                 </a>
               </div>
 
               <div className={`${i % 2 === 1 ? 'lg:order-1' : ''} flex flex-col gap-4`}>
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                  <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                  <h4 className="text-sm font-bold text-dark uppercase tracking-wider mb-4">
                     Capabilities
                   </h4>
                   <ul className="flex flex-col gap-2.5">
                     {p.capabilities.map((c) => (
                       <li key={c} className="flex items-start gap-2.5">
-                        <CheckCircle size={16} className="text-sky-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600 text-sm">{c}</span>
+                        <CheckCircle size={16} className="text-brand-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-dark-light text-sm">{c}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-sky-600 rounded-xl p-5">
-                  <h4 className="text-xs font-bold text-sky-200 uppercase tracking-wider mb-3">
+                <div className="bg-brand-600 rounded-xl p-5">
+                  <h4 className="text-xs font-bold text-brand-200 uppercase tracking-wider mb-3">
                     Key Vendors & Technologies
                   </h4>
                   <div className="flex flex-wrap gap-2">

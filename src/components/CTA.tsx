@@ -2,29 +2,36 @@ import { ArrowRight } from 'lucide-react';
 
 export default function CTA() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-block px-3 py-1 bg-sky-50 text-sky-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-6">
-          Get Started
-        </div>
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+    <section className="relative py-32 bg-dark flex flex-col items-center justify-center min-h-[60vh]">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/education.png)',
+        }}
+      />
+      {/* Blur and Dark Overlay */}
+      <div className="absolute inset-0 bg-[#3B4041]/70 backdrop-blur-sm" />
+
+      <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 uppercase tracking-tight">
           Ready to Expand Your Capabilities?
         </h2>
-        <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
           Whether you're looking to expand your services portfolio, improve delivery efficiency, or
           explore intelligent automation — we're here to help.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="#"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-sky-600 text-white font-semibold rounded-md hover:bg-sky-700 transition-colors duration-200 text-lg"
+            href="/about"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-500 transition-colors duration-200"
           >
             Get in Touch
-            <ArrowRight size={20} />
+            <ArrowRight size={18} />
           </a>
           <a
-            href="#"
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-md hover:border-sky-500 hover:text-sky-600 transition-colors duration-200 text-lg"
+            href="/demo"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm"
           >
             Explore Our Tools
           </a>
@@ -33,3 +40,4 @@ export default function CTA() {
     </section>
   );
 }
+

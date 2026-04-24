@@ -54,27 +54,27 @@ const tools = [
 
 export default function IntelligentAutomationPage() {
   return (
-    <div className="font-sans text-gray-900 antialiased">
+    <div className="font-body text-dark antialiased">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(14,165,233,0.15),_transparent_60%)]" />
+      <section className="relative pt-32 pb-24 overflow-hidden">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)',
-            backgroundSize: '32px 32px',
+            backgroundImage:
+              'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/london-hero-HWmTzZdNn2zdtwx65U2Lxz.webp)',
           }}
         />
+        <div className="absolute inset-0 bg-dark/85" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sky-600/20 border border-sky-500/30 rounded-full text-sky-300 text-xs font-semibold tracking-wide uppercase mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-600/20 border border-brand-400/30 rounded-full text-brand-300 text-xs font-semibold tracking-wide uppercase mb-6">
               <Zap size={14} />
               Intelligent Automation
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-              Automate to <span className="text-sky-400">Scale</span>
+            <h1 className="font-heading text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 uppercase">
+              Automate to <span className="text-brand-400">Scale</span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
               Our Intelligent Automation practice helps partners reduce manual overhead, improve
@@ -82,8 +82,8 @@ export default function IntelligentAutomationPage() {
               smart workflows.
             </p>
             <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-md hover:bg-sky-500 transition-all duration-200 hover:gap-3"
+              href="/demo"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-md hover:bg-brand-500 transition-all duration-200 hover:gap-3"
             >
               See Our Tools in Action <ArrowRight size={18} />
             </a>
@@ -95,11 +95,11 @@ export default function IntelligentAutomationPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-sky-50 text-sky-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
+            <div className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
               What We Deliver
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Four Pillars of Automation</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <h2 className="font-heading text-4xl font-bold text-dark mb-4">Four Pillars of Automation</h2>
+            <p className="text-lg text-dark-light max-w-2xl mx-auto">
               Each pillar is designed to remove friction from a different part of your business —
               from customer engagement through to infrastructure delivery.
             </p>
@@ -108,13 +108,13 @@ export default function IntelligentAutomationPage() {
             {pillars.map((p) => (
               <div
                 key={p.title}
-                className="group p-8 border border-gray-100 rounded-xl hover:border-sky-200 hover:shadow-lg transition-all duration-300"
+                className="group p-8 border border-gray-100 rounded-xl hover:border-brand-200 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-sky-50 text-sky-600 rounded-lg flex items-center justify-center mb-5 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 bg-brand-50 text-brand-600 rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
                   {p.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{p.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
+                <h3 className="font-heading text-lg font-bold text-dark mb-3">{p.title}</h3>
+                <p className="text-dark-light text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -122,15 +122,15 @@ export default function IntelligentAutomationPage() {
       </section>
 
       {/* Outcomes */}
-      <section className="py-24 bg-sky-600">
+      <section className="py-24 bg-brand-600">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-6">
                 Measurable Impact
               </div>
-              <h2 className="text-4xl font-bold text-white mb-4">What Partners Achieve</h2>
-              <p className="text-sky-100 leading-relaxed text-lg">
+              <h2 className="font-heading text-4xl font-bold text-white mb-4">What Partners Achieve</h2>
+              <p className="text-brand-100 leading-relaxed text-lg">
                 Partners who embed Intelligent Automation into their delivery model see meaningful
                 improvements across efficiency, margin, and customer satisfaction.
               </p>
@@ -141,7 +141,7 @@ export default function IntelligentAutomationPage() {
                   key={o}
                   className="flex items-start gap-3 p-4 bg-white/10 border border-white/20 rounded-xl"
                 >
-                  <CheckCircle size={18} className="text-sky-200 mt-0.5 flex-shrink-0" />
+                  <CheckCircle size={18} className="text-brand-200 mt-0.5 flex-shrink-0" />
                   <span className="text-white text-sm font-medium">{o}</span>
                 </div>
               ))}
@@ -151,14 +151,14 @@ export default function IntelligentAutomationPage() {
       </section>
 
       {/* Tools */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block px-3 py-1 bg-sky-50 text-sky-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
+            <div className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
               Live & Available Now
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Digital Front Door Tools</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <h2 className="font-heading text-4xl font-bold text-dark mb-4">Our Digital Front Door Tools</h2>
+            <p className="text-lg text-dark-light max-w-2xl mx-auto">
               Practical, intelligent tools your partners and prospects can use today to start
               meaningful conversations and accelerate opportunity development.
             </p>
@@ -169,18 +169,18 @@ export default function IntelligentAutomationPage() {
                 key={t.name}
                 className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <div className="text-sky-600 text-xs font-semibold uppercase tracking-wider mb-2">
+                <div className="text-brand-600 text-xs font-semibold uppercase tracking-wider mb-2">
                   {t.label}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{t.name}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{t.desc}</p>
+                <h3 className="font-heading text-lg font-bold text-dark mb-3">{t.name}</h3>
+                <p className="text-dark-light text-sm leading-relaxed">{t.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center">
             <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-md hover:bg-sky-700 transition-colors duration-200"
+              href="/demo"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-md hover:bg-brand-700 transition-colors duration-200"
             >
               Try All Tools Live <ArrowRight size={18} />
             </a>
