@@ -1,130 +1,294 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { ChevronRight, CheckCircle } from 'lucide-react';
+import {
+  ChevronRight,
+  CheckCircle,
+  TrendingUp,
+  Target,
+  Clock,
+  Medal,
+  MessageSquare,
+  ArrowRight,
+  Wifi,
+  Shield,
+  Server,
+  Cloud,
+  Cpu
+} from 'lucide-react';
+
+const globalStats = [
+  { icon: <TrendingUp size={20} />, value: '150+', label: 'Deployments Delivered' },
+  { icon: <Target size={20} />, value: '99.9%', label: 'Average Uptime Achieved' },
+  { icon: <Clock size={20} />, value: '<60S', label: 'Avg Threat Response Time' },
+  { icon: <Medal size={20} />, value: '100%', label: 'Client Retention Rate' },
+];
 
 const caseStudies = [
   {
-    sector: 'Healthcare', title: 'NHS Hospital Trust Wireless Transformation', stat: '3,000+', statLabel: 'Concurrent devices supported',
-    outcome: 'Zero downtime during migration across multiple clinical sites', practice: 'Connectivity',
-    summary: 'A large NHS Hospital Trust needed to replace ageing wireless infrastructure across multiple clinical sites without disrupting patient care. We designed and delivered a phased migration to a high-density Wi-Fi 6 environment, supporting 3,000+ concurrent devices including medical-grade IoT equipment.',
-    results: ['Zero downtime during full migration', 'Wi-Fi 6 (802.11ax) across all clinical areas', '3,000+ concurrent devices supported', 'Full integration with existing patient monitoring systems'],
+    sector: 'Healthcare',
+    practice: 'CONNECTIVITY',
+    icon: <Wifi size={14} />,
+    title: 'HOSPITAL TRUST WIRELESS NETWORK TRANSFORMATION',
+    entity: 'NHS Hospital Trust',
+    summary: 'Complete wireless network refresh across a multi-site hospital trust, delivering seamless connectivity for clinical staff, patients, and IoT medical devices.',
+    results: [
+      '100% coverage across all clinical areas',
+      'Support for 3,000+ concurrent devices',
+      'Zero downtime during migration'
+    ],
+    stat: '3,000+',
+    statLabel: 'Concurrent devices supported',
+    image: '/images/healthcare.png',
   },
   {
-    sector: 'Aerospace', title: 'Enterprise Endpoint Security Deployment', stat: '95%', statLabel: 'Reduction in security incidents',
-    outcome: 'Unified visibility across 5,000+ endpoints with automated threat response', practice: 'Security',
-    summary: 'A major aerospace manufacturer with sites across Europe needed unified endpoint visibility and automated threat response. We deployed an XDR platform across 5,000+ endpoints, integrated with their SOC and SIEM, and established automated playbooks for common threat scenarios.',
-    results: ['95% reduction in security incidents', 'Unified visibility across 5,000+ endpoints', 'Automated threat response playbooks', 'Full SOC and SIEM integration'],
+    sector: 'Aerospace & Defence',
+    practice: 'SECURITY',
+    icon: <Shield size={14} />,
+    title: 'ENDPOINT SECURITY ENHANCEMENT FOR AEROSPACE MANUFACTURER',
+    entity: 'Major Aerospace Manufacturer',
+    summary: 'Comprehensive endpoint security deployment protecting critical manufacturing systems and intellectual property across multiple facilities.',
+    results: [
+      '85% reduction in security incidents',
+      'Unified visibility across 5,000+ endpoints',
+      'Automated threat response under 60 seconds'
+    ],
+    stat: '95%',
+    statLabel: 'Reduction in security incidents',
+    image: '/images/aerospace.png',
   },
   {
-    sector: 'Education', title: 'University HPC Environment Build', stat: '10x', statLabel: 'Increase in computational capacity',
-    outcome: '40% reduction in energy consumption supporting genomics research', practice: 'Datacentre & Compute',
-    summary: 'A leading research university needed to dramatically expand its High Performance Computing capability to support a major genomics research programme. We designed and built a new HPC cluster delivering 10x the previous computational capacity while reducing energy consumption by 40%.',
-    results: ['10x increase in computational capacity', '40% reduction in energy consumption', 'Support for 200+ concurrent research workloads', 'Delivered on time for grant deadline'],
+    sector: 'Higher Education',
+    practice: 'DATACENTRE & COMPUTE',
+    icon: <Server size={14} />,
+    title: 'HPC DATA STACK FOR UNIVERSITY RESEARCH',
+    entity: 'Russell Group University',
+    summary: 'Design, build and testing of high-performance computing data stacks supporting cutting-edge research in genomics and climate modelling.',
+    results: [
+      '10x increase in computational capacity',
+      '40% reduction in energy consumption',
+      'Support for 200+ concurrent research workloads'
+    ],
+    stat: '10X',
+    statLabel: 'Increase in computational capacity',
+    image: '/images/education.png',
   },
   {
-    sector: 'Finance', title: 'Hybrid Cloud Migration for Regional Bank', stat: '60%', statLabel: 'Reduction in infrastructure costs',
-    outcome: 'Full regulatory compliance maintained throughout migration', practice: 'Cloud',
-    summary: 'A regional bank needed to modernise its infrastructure while maintaining strict regulatory compliance. We designed a hybrid cloud architecture across Azure and on-premises environments, migrated 80% of workloads to cloud, and maintained full compliance with FCA and PCI-DSS requirements.',
-    results: ['60% reduction in infrastructure costs', 'FCA and PCI-DSS compliance maintained', '80% of workloads migrated to cloud', 'Zero customer-impacting incidents during migration'],
+    sector: 'Retail',
+    practice: 'Connectivity',
+    icon: <Wifi size={14} />,
+    title: 'Multi-Site Retail Network Rollout',
+    entity: 'National Retail Chain',
+    summary: 'Complex multi-site network deployment across 200+ retail locations, delivering WAN connectivity, switching, and wireless solutions.',
+    results: [
+      '200+ sites deployed in 6 months',
+      '99.9% network uptime achieved',
+      'Standardised configuration across estate'
+    ],
+    stat: '200+',
+    statLabel: 'Sites deployed in 6 months',
+    image: '/images/retail.png',
   },
   {
-    sector: 'Retail', title: 'Multi-Site SD-WAN Rollout', stat: '200+', statLabel: 'Sites connected in 90 days',
-    outcome: 'Single-pane-of-glass visibility across all retail locations', practice: 'Connectivity',
-    summary: 'A national retailer needed to replace MPLS connectivity across 200+ sites with a cost-effective, resilient SD-WAN solution. We delivered a full design, procurement, and deployment programme in 90 days.',
-    results: ['200+ sites connected in 90 days', '45% reduction in WAN costs', 'Single-pane-of-glass management', '99.99% uptime SLA achieved'],
+    sector: 'Channel / Technology',
+    practice: 'Intelligent Automation',
+    icon: <Cpu size={14} />,
+    title: 'Knowledge System for Channel Partner',
+    entity: 'UK Channel Partner',
+    summary: 'Custom knowledge system that transformed pre-sales efficiency by providing instant, structured answers about capabilities and delivery experience.',
+    results: [
+      '15+ hours per week reclaimed for pre-sales',
+      'Response time from days to seconds',
+      '25% improvement in conversion rates'
+    ],
+    stat: '25%',
+    statLabel: 'Improvement in conversion rates',
+    image: '/images/Hero.png',
   },
   {
-    sector: 'Manufacturing', title: 'OT/IT Security Programme', stat: '100%', statLabel: 'OT asset visibility achieved',
-    outcome: 'Segmented OT network with zero production downtime', practice: 'Security',
-    summary: 'A global manufacturer needed to secure its operational technology environments following a series of industry-wide attacks. We delivered full OT asset discovery, network segmentation, and continuous monitoring without disrupting production.',
-    results: ['100% OT asset visibility achieved', 'Full network segmentation delivered', 'Zero production downtime', 'IEC 62443 alignment achieved'],
+    sector: 'Public Sector',
+    practice: 'Cloud',
+    icon: <Cloud size={14} />,
+    title: 'Hybrid Cloud Migration for Public Sector',
+    entity: 'Local Government Authority',
+    summary: 'Strategic migration from legacy on-premises infrastructure to a hybrid cloud environment, enabling digital transformation while maintaining data sovereignty.',
+    results: [
+      '35% reduction in infrastructure costs',
+      'Full data sovereignty compliance',
+      'Automated disaster recovery'
+    ],
+    stat: '35%',
+    statLabel: 'Reduction in infrastructure cost',
+    image: '/images/healthcare.png',
   },
 ];
 
-const sectors = ['All', ...Array.from(new Set(caseStudies.map((c) => c.sector)))];
+const sectors = ['All', 'Healthcare', 'Aerospace & Defence', 'Higher Education', 'Retail', 'Channel / Technology', 'Public Sector'];
 
 export default function CaseStudiesPage() {
   const [activeSector, setActiveSector] = useState('All');
-  const [activeStudy, setActiveStudy] = useState<(typeof caseStudies)[0] | null>(null);
-  const filtered = activeSector === 'All' ? caseStudies : caseStudies.filter((c) => c.sector === activeSector);
+
+  const filtered = activeSector === 'All'
+    ? caseStudies
+    : caseStudies.filter((c) => c.sector === activeSector);
 
   return (
-    <div className="font-body text-dark antialiased">
+    <div className="font-body text-dark antialiased bg-white">
       <Navbar />
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/london-hero-HWmTzZdNn2zdtwx65U2Lxz.webp)' }} />
-        <div className="absolute inset-0 bg-dark/85" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-block px-3 py-1 bg-brand-600/20 border border-brand-400/30 rounded-full text-brand-300 text-xs font-semibold tracking-wide uppercase mb-6">Proven Results</div>
-          <h1 className="font-heading text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">Case Studies</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">Real-world outcomes across multiple sectors. Each project demonstrates our ability to deliver complex infrastructure at scale.</p>
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-32 overflow-hidden bg-[#3B4041]">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <h4 className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+            CASE STUDIES
+          </h4>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
+            PROVEN DELIVERY, REAL RESULTS
+          </h1>
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl">
+            Real examples of how we've helped partners and their customers solve
+            complex IT infrastructure challenges across multiple sectors.
+          </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Global Stats Bar */}
+      <section className="bg-[#3B4041] border-t border-white/5 py-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-2 mb-12 justify-center">
-            {sectors.map((s) => (
-              <button key={s} onClick={() => setActiveSector(s)} className={`px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-200 ${activeSector === s ? 'bg-brand-600 text-white border-brand-600' : 'bg-white text-gray-600 border-gray-200 hover:border-brand-400 hover:text-brand-600'}`}>{s}</button>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((cs) => (
-              <div key={cs.title} onClick={() => setActiveStudy(cs)} className="bg-dark rounded-xl p-8 text-white flex flex-col justify-between hover:bg-dark/90 transition-colors duration-300 group cursor-pointer">
-                <div>
-                  <span className="inline-block px-2.5 py-1 bg-brand-600/30 text-brand-300 text-xs font-semibold uppercase tracking-wider rounded mb-4">{cs.sector}</span>
-                  <h3 className="font-heading text-lg font-bold mb-6">{cs.title}</h3>
-                  <div className="border-t border-white/10 pt-6 mb-4">
-                    <div className="font-heading text-4xl font-bold text-brand-400 mb-1">{cs.stat}</div>
-                    <div className="text-sm text-slate-300 font-medium">{cs.statLabel}</div>
-                  </div>
-                  <p className="text-slate-400 text-sm leading-relaxed">{cs.outcome}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+            {globalStats.map((s, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center">
+                <div className="text-[#8B5CF6] mb-3 opacity-80">{s.icon}</div>
+                <div className="text-2xl lg:text-4xl font-extrabold text-[#8B5CF6] mb-3 tracking-tight">
+                  {s.value}
                 </div>
-                <div className="mt-6 flex items-center gap-1 text-brand-400 text-sm font-semibold group-hover:gap-2 transition-all duration-200">Read full case study <ChevronRight size={16} /></div>
+                <div className="text-[9px] lg:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-tight max-w-[120px]">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {activeStudy && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setActiveStudy(null)}>
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-dark rounded-t-2xl p-8">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <span className="inline-block px-2.5 py-1 bg-brand-600/30 text-brand-300 text-xs font-semibold uppercase tracking-wider rounded mb-3">{activeStudy.sector}</span>
-                  <h2 className="font-heading text-2xl font-bold text-white">{activeStudy.title}</h2>
+      {/* Filter & Cards Section */}
+      <section className="py-16 bg-[#F9FAFB]">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2 mb-16 justify-start">
+            {sectors.map((s) => (
+              <button
+                key={s}
+                onClick={() => setActiveSector(s)}
+                className={`px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border ${activeSector === s
+                  ? 'bg-[#5C2882] text-white border-[#5C2882]'
+                  : 'bg-white text-slate-500 border-slate-200 hover:border-[#5C2882] hover:text-[#5C2882]'
+                  }`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+
+          {/* Horizontal Case Study Cards */}
+          <div className="space-y-8">
+            {filtered.map((cs, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col lg:flex-row min-h-[320px]">
+                {/* Left: Image & Stat */}
+                <div className="lg:w-2/5 relative min-h-[240px] lg:min-h-full">
+                  <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#5C2882] text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
+                      {cs.sector}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 p-4 lg:p-5 bg-black/40 backdrop-blur-md rounded-lg border border-white/10 max-w-[280px]">
+                    <div className="text-2xl lg:text-3xl font-extrabold text-[#8B5CF6] mb-0.5">{cs.stat}</div>
+                    <div className="text-[6px] lg:text-[8px] font-bold text-slate-300 uppercase tracking-widest leading-tight">
+                      {cs.statLabel}
+                    </div>
+                  </div>
                 </div>
-                <button onClick={() => setActiveStudy(null)} className="text-slate-400 hover:text-white transition-colors mt-1 flex-shrink-0">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                </button>
-              </div>
-              <div className="flex gap-6 mt-6">
-                <div>
-                  <div className="font-heading text-3xl font-bold text-brand-400">{activeStudy.stat}</div>
-                  <div className="text-slate-300 text-sm">{activeStudy.statLabel}</div>
+
+                {/* Right: Content */}
+                <div className="lg:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="text-[#5C2882] text-[10px] font-bold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                      {cs.icon}
+                      {cs.practice}
+                    </div>
+                    <h3 className="font-heading text-lg md:text-xl font-extrabold text-[#3B4041] mb-1.5">
+                      {cs.title}
+                    </h3>
+                    <div className="text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-widest">
+                      {cs.entity}
+                    </div>
+                    <p className="text-xs text-slate-500 leading-relaxed mb-6">
+                      {cs.summary}
+                    </p>
+
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                      {cs.results.map((result, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <CheckCircle size={12} className="text-[#5C2882] flex-shrink-0" />
+                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">
+                            {result}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <a
+                      href={`/case-studies/${idx}`}
+                      className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-extrabold hover:gap-3 transition-all duration-200"
+                    >
+                      Read full case study <ChevronRight size={16} />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="p-8">
-              <div className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">{activeStudy.practice}</div>
-              <p className="text-dark-light leading-relaxed mb-6">{activeStudy.summary}</p>
-              <h4 className="font-heading font-bold text-dark mb-4">Key Results</h4>
-              <ul className="flex flex-col gap-2.5">
-                {activeStudy.results.map((r) => (
-                  <li key={r} className="flex items-start gap-2.5">
-                    <CheckCircle size={16} className="text-brand-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-dark-light text-sm">{r}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
-      )}
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-14 bg-white text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="font-heading text-2xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6 tracking-tight">
+            HAVE A SIMILAR CHALLENGE?
+          </h2>
+          <p className="text-slate-500 text-xs md:text-sm leading-relaxed mb-10 max-w-xl mx-auto">
+            Try our interactive tools to explore how we could approach your specific
+            requirements, or get in touch to discuss directly.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/demo"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300 shadow-lg shadow-[#5C2882]/20"
+            >
+              <MessageSquare size={16} /> Experience Our Tools
+            </a>
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-slate-200 text-[#3B4041] text-xs font-bold rounded hover:bg-slate-50 transition-all duration-300"
+            >
+              Contact Us <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
