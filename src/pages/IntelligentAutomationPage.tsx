@@ -117,7 +117,7 @@ export default function IntelligentAutomationPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h4 className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+            <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
               INTELLIGENT AUTOMATION
             </h4>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
@@ -136,7 +136,7 @@ export default function IntelligentAutomationPage() {
               </a>
               <a
                 href="/case-studies"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white/30 text-white text-xs font-bold rounded hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-button-gray text-black border border-white/30 text-xs font-bold rounded hover:bg-white/10 transition-all duration-300"
               >
                 View Case Studies
               </a>
@@ -151,7 +151,7 @@ export default function IntelligentAutomationPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center lg:text-left">
-                <div className="text-3xl md:text-4xl font-extrabold text-[#8B5CF6] mb-1">{s.value}</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-brand-300 mb-1">{s.value} </div>
                 <div className="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-tight">
                   {s.label}
                 </div>
@@ -165,7 +165,7 @@ export default function IntelligentAutomationPage() {
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
               WHAT WE DELIVER
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -184,7 +184,7 @@ export default function IntelligentAutomationPage() {
                 className="p-8 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-[#8B5CF6] transition-all duration-300"
               >
                 <div className="text-[#5C2882] mb-6">{s.icon}</div>
-                <h3 className="font-heading text-xs font-bold text-[#3B4041] uppercase tracking-widest mb-4">
+                <h3 className="font-heading text-base font-bold text-[#3B4041] uppercase tracking-widest mb-4">
                   {s.title}
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -201,7 +201,7 @@ export default function IntelligentAutomationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
-              <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
                 OUR APPROACH
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6">
@@ -229,7 +229,7 @@ export default function IntelligentAutomationPage() {
 
             <div className="lg:col-span-5">
               <div className="bg-[#3B4041] rounded-2xl p-10 text-white shadow-xl">
-                <h3 className="font-heading text-xs font-bold uppercase tracking-widest mb-8">
+                <h3 className="font-heading text-xl text-brand-300 font-bold uppercase tracking-widest mb-8">
                   WHY PARTNERS CHOOSE US
                 </h3>
                 <ul className="space-y-4">
@@ -275,22 +275,22 @@ export default function IntelligentAutomationPage() {
               <div key={idx} className="bg-white rounded-xl p-10 border border-slate-100 shadow-sm">
                 <div className="flex items-center gap-3 text-[#5C2882] mb-8">
                   <Network size={16} />
-                  <h3 className="font-heading text-[11px] font-bold uppercase tracking-[0.15em]">
+                  <h3 className="font-heading text-xl  font-bold uppercase tracking-[0.15em]">
                     {point.title}
                   </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
                   <div className="md:col-span-3">
-                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">CHALLENGE</h4>
+                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">CHALLENGE</h4>
                     <p className="text-xs text-slate-600 leading-relaxed">{point.challenge}</p>
                   </div>
                   <div className="md:col-span-5">
-                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">APPROACH</h4>
+                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">APPROACH</h4>
                     <p className="text-xs text-slate-600 leading-relaxed">{point.approach}</p>
                   </div>
                   <div className="md:col-span-4">
-                    <h4 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-4">OUTCOME</h4>
+                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">OUTCOME</h4>
                     <p className="text-xs font-bold text-[#3B4041] leading-relaxed italic border-l-2 border-[#8B5CF6] pl-4">
                       {point.outcome}
                     </p>

@@ -147,7 +147,7 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <h4 className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
             CASE STUDIES
           </h4>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
@@ -281,7 +281,7 @@ export default function CaseStudiesPage() {
             </a>
             <a
               href="/about"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-slate-200 text-[#3B4041] text-xs font-bold rounded hover:bg-slate-50 transition-all duration-300"
+              className="inline-flex  items-center gap-2 px-8 py-3.5 bg-button-gray border border-slate-200 text-[#3B4041] text-xs font-bold rounded hover:bg-slate-50 transition-all duration-300"
             >
               Contact Us <ArrowRight size={16} />
             </a>

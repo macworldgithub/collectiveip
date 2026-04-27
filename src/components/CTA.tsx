@@ -31,9 +31,10 @@ export default function CTA() {
           </a>
           <a
             href="/demo"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-8 py-3.5  bg-[#F4F4F5] border border-white/30 text-black
+            font-bold rounded-lg hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm"
           >
-            Explore Our Tools
+            Explore Our Tools 
           </a>
         </div>
       </div>

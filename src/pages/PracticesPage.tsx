@@ -128,8 +128,8 @@ export default function PracticesPage() {
             Six Practices, Expert Delivery
           </h1>
           <p className="text-base text-slate-300 max-w-2xl leading-relaxed">
-            Led by experts who've been customers, suppliers, and partners themselves.<br />
-            We deliver end-to-end IT infrastructure services across six core disciplines.
+            Led by experts who've been customers, suppliers, and partners themselves.
+            <span className="block mt-2">We deliver end-to-end IT infrastructure services across six core disciplines.</span>
           </p>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function PracticesPage() {
               </div>
 
               <div className={`${i % 2 === 1 ? 'lg:order-1' : ''} bg-[#F3F4F6] rounded-xl p-8 shadow-sm`}>
-                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                <h4 className="text-xl font-bold text-slate-500 uppercase tracking-widest mb-4">
                   Key Capabilities
                 </h4>
                 <ul className="flex flex-col gap-3 mb-4">
@@ -185,7 +185,7 @@ export default function PracticesPage() {
                   ))}
                 </ul>
 
-                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                <h4 className="text-xl font-bold text-slate-500 uppercase tracking-widest mb-4">
                   Sectors
                 </h4>
                 <div className="flex flex-wrap gap-2">

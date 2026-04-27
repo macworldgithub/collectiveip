@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <Link to="/" className="flex items-center mb-6">
               <span className="font-heading text-2xl tracking-tight text-white font-bold">
-                collective<span className="text-[#8B5CF6]">ip</span>
+                collective<span className="text-brand-600">ip</span>
               </span>
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed pr-4">
@@ -69,9 +69,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-slate-400 text-sm font-bold uppercase mb-6">CONTACT</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase  tracking-[0.2em] mb-6">CONTACT</h4>
             <div className="flex flex-col gap-4 text-slate-300 text-sm leading-relaxed">
-              <p>Collective IP Limited</p>
+              <p>Collective IP Limited</p> 
               <p>
                 Suite 214, 1 Water Vole Way<br />
                 Doncaster, South Yorkshire<br />

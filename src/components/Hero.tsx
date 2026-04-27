@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative w-full max-w-7xl mx-auto px-6 py-32 text-left z-10">
         <div className="max-w-3xl">
-          <p className="text-brand-400 font-bold tracking-[0.15em] uppercase text-xs mb-4">
+          <p className="text-brand-300 font-bold tracking-[0.15em] uppercase text-xs mb-4">
             Trusted IT Infrastructure Partner
           </p>
 
@@ -40,7 +40,7 @@ export default function Hero() {
               href="/practices"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-bold rounded hover:bg-[#7C3AED] transition-all duration-300 shadow-sm text-sm"
             >
-              Explore Our Practices
+              Explore Our Practices 
               <ArrowRight size={16} />
             </a>
             <a

@@ -45,8 +45,8 @@ export default function Practices() {
     <section id="practices" className="py-24 bg-[#EFEFEF]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-brand-600 text-xs font-bold uppercase tracking-widest mb-4">
-            Our Practices
+          <p className="text-brand-300 text-xs font-bold uppercase tracking-widest mb-4">
+            Our Practices 
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-[#3B4041] mb-6 leading-tight uppercase max-w-2xl">
             Specialist Capability Across Six Core Practices

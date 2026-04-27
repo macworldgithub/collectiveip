@@ -333,7 +333,7 @@ export default function DemoPage() {
         <div className="relative max-w-7xl mx-auto px-6">
 
           {/* Small Label */}
-          <h4 className="text-[11px] font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
+          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
             EXPERIENCE OUR TOOLS
           </h4>
 
@@ -418,7 +418,7 @@ export default function DemoPage() {
             </a>
             <a
               href="/case-studies"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-transparent border border-white/30 text-white text-xs font-bold rounded hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-button-gray text-black border border-white/30  text-xs font-bold rounded hover:bg-white/10 transition-all duration-300"
             >
               <FileText size={18} /> View Case Studies
             </a>

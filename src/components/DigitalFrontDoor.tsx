@@ -33,7 +33,7 @@ export default function DigitalFrontDoor() {
 
       <div className="relative max-w-5xl mx-auto px-6 text-center w-full z-10">
         <div className="mb-12">
-          <p className="text-brand-400 text-xs font-bold uppercase tracking-widest mb-4">
+          <p className="text-white text-lg font-bold uppercase tracking-widest mb-4">
             Digital Front Door
           </p>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 uppercase tracking-tight">

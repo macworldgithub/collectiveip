@@ -103,7 +103,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <h4 className="text-[11px] font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
+          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
             ABOUT COLLECTIVE IP
           </h4>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] mb-6 max-w-3xl uppercase">
@@ -122,7 +122,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left — Story */}
             <div>
-              <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
                 OUR STORY
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-8 leading-tight">
@@ -179,7 +179,7 @@ export default function AboutPage() {
       <section className="py-14 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-4">
-            <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
               OUR EXPERTISE
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -420,7 +420,7 @@ export default function AboutPage() {
             </a>
             <a
               href="/case-studies"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-slate-300 text-[#3B4041] text-xs font-bold rounded-lg hover:border-[#5C2882] hover:text-[#5C2882] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-button-gray border border-slate-300 text-black text-xs font-bold rounded-lg hover:border-[#5C2882] hover:text-[#5C2882] transition-all duration-300"
             >
               <FileText size={16} /> View Case Studies
             </a>

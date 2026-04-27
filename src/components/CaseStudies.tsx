@@ -33,7 +33,7 @@ export default function CaseStudies() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <p className="text-[#8B5CF6] text-xs font-bold uppercase tracking-widest mb-4">
+            <p className="text-brand-300 text-xs font-bold uppercase tracking-widest mb-4">
               Proven Results
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -75,7 +75,7 @@ export default function CaseStudies() {
                   {cs.title}
                 </h3>
                 <div className="mb-4 flex items-baseline gap-2">
-                  <span className="font-heading text-4xl font-extrabold text-[#8B5CF6]">{cs.stat}</span>
+                  <span className="font-heading text-4xl font-extrabold text-brand-300">{cs.stat}</span>
                   <span className="text-xs text-slate-400">{cs.statLabel}</span>
                 </div>
                 <p className="text-slate-500 text-xs leading-relaxed mb-6 flex-grow">
@@ -83,7 +83,7 @@ export default function CaseStudies() {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-1 text-[#8B5CF6] text-xs font-bold hover:gap-2 transition-all duration-200"
+                  className="inline-flex items-center gap-1 text-brand-300 text-xs font-bold hover:gap-2 transition-all duration-200"
                 >
                   Read full case study <ChevronRight size={14} />
                 </a>

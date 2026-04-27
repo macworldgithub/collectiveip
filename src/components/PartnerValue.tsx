@@ -28,7 +28,7 @@ export default function PartnerValue() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-brand-600 text-xs font-bold uppercase tracking-widest mb-4">
+          <p className="text-brand-300 text-xs font-bold uppercase tracking-widest mb-4">
             Partner Value
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-[#3B4041] mb-4 uppercase">

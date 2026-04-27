@@ -29,7 +29,7 @@ export default function Tools() {
     <section id="tools" className="py-14 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <p className="text-[#8B5CF6] text-xs font-bold uppercase tracking-widest mb-4">
+          <p className="text-brand-300 text-xs font-bold uppercase tracking-widest mb-4">
             Tools You Can Experience
           </p>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-[44px] font-extrabold text-[#3B4041] mb-6 leading-tight uppercase max-w-2xl">
@@ -78,18 +78,20 @@ export default function Tools() {
           <div className="lg:col-span-8 bg-[#3B4041] rounded-xl p-8 shadow-xl relative">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-4">
-                <div className="text-[#A78BFA]">
+                <div className="text-brand-300">
                   <MessageSquare size={24} />
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-base">Knowledge Assistant</h4>
-                  <p className="text-[#A78BFA] text-xs">Capability & Case Study Finder</p>
+                  <p className="text-brand-300 text-xs">Capability & Case Study Finder</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#A78BFA] rounded-full" />
-                <span className="text-slate-300 text-xs font-medium">Live</span>
-              </div>
+  <button
+  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] text-brand-300 text-xs font-medium"
+>
+  <span className="w-2 h-2 bg-brand-600 rounded-full" />
+  Live
+</button>
             </div>
 
             <div className="space-y-2">
@@ -102,7 +104,7 @@ export default function Tools() {
               </div>
 
               <div className="bg-[#433D4E] border border-[#4C3A6D] p-4 rounded-lg">
-                <div className="flex items-center gap-2 text-[#A78BFA] mb-3 uppercase text-[10px] font-bold tracking-[0.15em]">
+                <div className="flex items-center gap-2 text-brand-300 mb-3 uppercase text-[10px] font-bold tracking-[0.15em]">
                   <CheckCircle2 size={14} /> Capability Match
                 </div>
                 <p className="text-slate-200 text-xs leading-relaxed">
@@ -112,16 +114,16 @@ export default function Tools() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
                 <div className="flex items-center gap-2 text-slate-400 text-xs">
-                  <div className="w-1 h-1 bg-[#A78BFA] rounded-full" /> Natural language queries
+                  <div className="w-1 h-1 bg-brand-300 rounded-full" /> Natural language queries
                 </div>
                 <div className="flex items-center gap-2 text-slate-400 text-xs">
-                  <div className="w-1 h-1 bg-[#A78BFA] rounded-full" /> Structured response cards
+                  <div className="w-1 h-1 bg-brand-300 rounded-full" /> Structured response cards
                 </div>
                 <div className="flex items-center gap-2 text-slate-400 text-xs">
-                  <div className="w-1 h-1 bg-[#A78BFA] rounded-full" /> Case study references
+                  <div className="w-1 h-1 bg-brand-300 rounded-full" /> Case study references
                 </div>
                 <div className="flex items-center gap-2 text-slate-400 text-xs">
-                  <div className="w-1 h-1 bg-[#A78BFA] rounded-full" /> Follow-up suggestions
+                  <div className="w-1 h-1 bg-brand-300 rounded-full" /> Follow-up suggestions
                 </div>
               </div>
             </div>
