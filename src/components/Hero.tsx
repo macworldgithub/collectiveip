@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative w-full max-w-7xl mx-auto px-6 py-32 text-left z-10">
         <div className="max-w-3xl">
-          <p className="text-brand-300 font-bold tracking-[0.15em] uppercase text-xs mb-4">
+          <p className="text-brand-300  font-bold tracking-[0.15em] uppercase text-base mb-4">
             Trusted IT Infrastructure Partner
           </p>
 
