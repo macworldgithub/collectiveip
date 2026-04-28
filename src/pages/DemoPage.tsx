@@ -88,10 +88,16 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
               <p className="text-[10px] text-slate-400 font-medium">Ask about our capabilities, case studies, and approach</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Online</span>
-          </div>
+          </div> */}
+            <button
+  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] text-brand-300 text-xs font-medium"
+>
+  <span className="w-2 h-2 bg-brand-600 rounded-full" />
+ Online
+</button>
         </div>
 
         {/* Chat Area */}

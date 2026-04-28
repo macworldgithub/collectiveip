@@ -215,11 +215,11 @@ export default function IntelligentAutomationPage() {
               <div className="space-y-8">
                 {approachSteps.map((step) => (
                   <div key={step.number} className="flex gap-6">
-                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#5C2882] flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#5C2882] flex items-center justify-center text-base font-bold flex-shrink-0">
                       {step.number}
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-[#3B4041] mb-2">{step.title}</h3>
+                      <h3 className="text-lg font-bold text-[#3B4041] mb-2">{step.title}</h3>
                       <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
@@ -259,7 +259,7 @@ export default function IntelligentAutomationPage() {
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h4 className="text-[10px] font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
               PROOF POINTS
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">

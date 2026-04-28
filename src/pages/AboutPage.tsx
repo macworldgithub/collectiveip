@@ -165,7 +165,7 @@ export default function AboutPage() {
                     {p.icon}
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#3B4041] mb-1">{p.title}</h3>
+                    <h3 className="text-base font-bold text-[#3B4041] mb-1">{p.title}</h3>
                     <p className="text-xs text-slate-500 leading-relaxed">{p.desc}</p>
                   </div>
                 </div>
@@ -195,13 +195,14 @@ export default function AboutPage() {
             {expertise.map((e) => (
               <div
                 key={e.title}
-                className="bg-white rounded-xl border border-slate-100 p-6 flex items-start gap-5 hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
+                className="bg-white  rounded-xl border border-slate-100 p-6 flex items-start gap-5
+                 hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-10 h-10 bg-[#F3E8FF] text-[#5C2882] rounded-full flex items-center justify-center flex-shrink-0">
                   {e.icon}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-[#3B4041] mb-1">{e.title}</h3>
+                  <h3 className="text-base font-bold text-[#3B4041] mb-1">{e.title}</h3>
                   <p className="text-xs text-slate-500 leading-relaxed">{e.desc}</p>
                 </div>
               </div>
@@ -216,8 +217,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left — Info */}
             <div>
-              <h4 className="text-[10px] font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-4">
-                GET IN TOUCH
+              <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-4">
+                GET IN TOUCH 
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white uppercase mb-6 leading-tight">
                 Let's Start a Conversation
@@ -235,7 +236,7 @@ export default function AboutPage() {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1">Office</h4>
+                    <h4 className="text-base font-bold text-white mb-1">Office</h4>
                     <p className="text-xs text-slate-400 leading-relaxed">
                       Suite 214, 1 Water Vole Way<br />
                       Doncaster, South Yorkshire<br />
@@ -250,7 +251,7 @@ export default function AboutPage() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1">Phone</h4>
+                    <h4 className="text-base font-bold text-white mb-1">Phone</h4>
                     <a
                       href="tel:+442045858990"
                       className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
@@ -266,7 +267,7 @@ export default function AboutPage() {
                     <Mail size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1">Email</h4>
+                    <h4 className="text-base font-bold text-white mb-1">Email</h4>
                     <a
                       href="mailto:info@collectiveip.co.uk"
                       className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
@@ -282,7 +283,7 @@ export default function AboutPage() {
                     <Linkedin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1">LinkedIn</h4>
+                    <h4 className="text-base font-bold text-white mb-1">LinkedIn</h4>
                     <a
                       href="https://www.linkedin.com/company/collectiveip"
                       target="_blank"
