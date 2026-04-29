@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   ChevronRight,
   CheckCircle,
@@ -14,123 +14,150 @@ import {
   Shield,
   Server,
   Cloud,
-  Cpu
-} from 'lucide-react';
+  Cpu,
+} from "lucide-react";
 
 const globalStats = [
-  { icon: <TrendingUp size={20} />, value: '150+', label: 'Deployments Delivered' },
-  { icon: <Target size={20} />, value: '99.9%', label: 'Average Uptime Achieved' },
-  { icon: <Clock size={20} />, value: '<60S', label: 'Avg Threat Response Time' },
-  { icon: <Medal size={20} />, value: '100%', label: 'Client Retention Rate' },
+  {
+    icon: <TrendingUp size={20} />,
+    value: "2000+",
+    label: "Projects Completed",
+  },
+  {
+    icon: <Target size={20} />,
+    value: "4",
+    label: "Core Practices",
+  },
+  {
+    icon: <Clock size={20} />,
+    value: "250+",
+    label: "Team Members",
+  },
+  { icon: <Medal size={20} />, value: "98%", label: "Customer Retention" },
 ];
 
 const caseStudies = [
   {
-    sector: 'Healthcare',
-    practice: 'CONNECTIVITY',
+    sector: "Healthcare",
+    practice: "CONNECTIVITY",
     icon: <Wifi size={14} />,
-    title: 'HOSPITAL TRUST WIRELESS NETWORK TRANSFORMATION',
-    entity: 'NHS Hospital Trust',
-    summary: 'Complete wireless network refresh across a multi-site hospital trust, delivering seamless connectivity for clinical staff, patients, and IoT medical devices.',
+    title: "HOSPITAL TRUST WIRELESS NETWORK TRANSFORMATION",
+    entity: "NHS Hospital Trust",
+    summary:
+      "Complete wireless network refresh across a multi-site hospital trust, delivering seamless connectivity for clinical staff, patients, and IoT medical devices.",
     results: [
-      '100% coverage across all clinical areas',
-      'Support for 3,000+ concurrent devices',
-      'Zero downtime during migration'
+      "100% coverage across all clinical areas",
+      "Support for 3,000+ concurrent devices",
+      "Zero downtime during migration",
     ],
-    stat: '3,000+',
-    statLabel: 'Concurrent devices supported',
-    image: '/images/healthcare.png',
+    stat: "3,000+",
+    statLabel: "Concurrent devices supported",
+    image: "/images/healthcare.png",
   },
   {
-    sector: 'Aerospace & Defence',
-    practice: 'SECURITY',
+    sector: "Aerospace & Defence",
+    practice: "ENDPOINT INFRASTRUCTURE",
     icon: <Shield size={14} />,
-    title: 'ENDPOINT SECURITY ENHANCEMENT FOR AEROSPACE MANUFACTURER',
-    entity: 'Major Aerospace Manufacturer',
-    summary: 'Comprehensive endpoint security deployment protecting critical manufacturing systems and intellectual property across multiple facilities.',
+    title: "ENDPOINT SECURITY ENHANCEMENT FOR AEROSPACE MANUFACTURER",
+    entity: "Major Aerospace Manufacturer",
+    summary:
+      "Endpoint security deployment protecting critical manufacturing systems and intellectual property across multiple facilities.",
     results: [
-      '85% reduction in security incidents',
-      'Unified visibility across 5,000+ endpoints',
-      'Automated threat response under 60 seconds'
+      "85% reduction in security incidents",
+      "Unified visibility across 5,000+ endpoints",
+      "Automated threat response under 60 seconds",
     ],
-    stat: '95%',
-    statLabel: 'Reduction in security incidents',
-    image: '/images/aerospace.png',
+    stat: "95%",
+    statLabel: "Reduction in security incidents",
+    image: "/images/aerospace.png",
   },
   {
-    sector: 'Higher Education',
-    practice: 'DATACENTRE & COMPUTE',
+    sector: "Higher Education",
+    practice: "CLOUD, DC AND COMPUTE",
     icon: <Server size={14} />,
-    title: 'HPC DATA STACK FOR UNIVERSITY RESEARCH',
-    entity: 'Russell Group University',
-    summary: 'Design, build and testing of high-performance computing data stacks supporting cutting-edge research in genomics and climate modelling.',
+    title: "HPC DATA STACK FOR UNIVERSITY RESEARCH",
+    entity: "Russell Group University",
+    summary:
+      "HPC data stack design and build supporting cutting-edge research in genomics and climate modelling.",
     results: [
-      '10x increase in computational capacity',
-      '40% reduction in energy consumption',
-      'Support for 200+ concurrent research workloads'
+      "10x increase in computational capacity",
+      "40% reduction in energy consumption",
+      "Support for 200+ concurrent research workloads",
     ],
-    stat: '10X',
-    statLabel: 'Increase in computational capacity',
-    image: '/images/education.png',
+    stat: "10X",
+    statLabel: "Increase in computational capacity",
+    image: "/images/education.png",
   },
   {
-    sector: 'Retail',
-    practice: 'Connectivity',
+    sector: "Retail",
+    practice: "Connectivity",
     icon: <Wifi size={14} />,
-    title: 'Multi-Site Retail Network Rollout',
-    entity: 'National Retail Chain',
-    summary: 'Complex multi-site network deployment across 200+ retail locations, delivering WAN connectivity, switching, and wireless solutions.',
+    title: "Multi-Site Retail Network Rollout",
+    entity: "National Retail Chain",
+    summary:
+      "Complex multi-site network deployment across 200+ retail locations, delivering WAN connectivity, switching, and wireless solutions.",
     results: [
-      '200+ sites deployed in 6 months',
-      '99.9% network uptime achieved',
-      'Standardised configuration across estate'
+      "200+ sites deployed in 6 months",
+      "99.9% network uptime achieved",
+      "Standardised configuration across estate",
     ],
-    stat: '200+',
-    statLabel: 'Sites deployed in 6 months',
-    image: '/images/retail.png',
+    stat: "200+",
+    statLabel: "Sites deployed in 6 months",
+    image: "/images/retail.png",
   },
   {
-    sector: 'Channel / Technology',
-    practice: 'Intelligent Automation',
+    sector: "Channel / Technology",
+    practice: "AUTOMATION",
     icon: <Cpu size={14} />,
-    title: 'Knowledge System for Channel Partner',
-    entity: 'UK Channel Partner',
-    summary: 'Custom knowledge system that transformed pre-sales efficiency by providing instant, structured answers about capabilities and delivery experience.',
+    title: "Knowledge System for Channel Partner",
+    entity: "UK Channel Partner",
+    summary:
+      "Custom knowledge system transforming pre-sales efficiency with instant, structured answers about capabilities and delivery experience.",
     results: [
-      '15+ hours per week reclaimed for pre-sales',
-      'Response time from days to seconds',
-      '25% improvement in conversion rates'
+      "15+ hours per week reclaimed for pre-sales",
+      "Response time from days to seconds",
+      "25% improvement in conversion rates",
     ],
-    stat: '25%',
-    statLabel: 'Improvement in conversion rates',
-    image: '/images/Hero.png',
+    stat: "25%",
+    statLabel: "Improvement in conversion rates",
+    image: "/images/Hero.png",
   },
   {
-    sector: 'Public Sector',
-    practice: 'Cloud',
+    sector: "Public Sector",
+    practice: "CLOUD, DC AND COMPUTE",
     icon: <Cloud size={14} />,
-    title: 'Hybrid Cloud Migration for Public Sector',
-    entity: 'Local Government Authority',
-    summary: 'Strategic migration from legacy on-premises infrastructure to a hybrid cloud environment, enabling digital transformation while maintaining data sovereignty.',
+    title: "Hybrid Cloud Migration for Public Sector",
+    entity: "Local Government Authority",
+    summary:
+      "Strategic migration from legacy on-premises to hybrid cloud environment, enabling digital transformation while maintaining data sovereignty.",
     results: [
-      '35% reduction in infrastructure costs',
-      'Full data sovereignty compliance',
-      'Automated disaster recovery'
+      "35% reduction in infrastructure costs",
+      "Full data sovereignty compliance",
+      "Automated disaster recovery",
     ],
-    stat: '35%',
-    statLabel: 'Reduction in infrastructure cost',
-    image: '/images/healthcare.png',
+    stat: "35%",
+    statLabel: "Reduction in infrastructure cost",
+    image: "/images/healthcare.png",
   },
 ];
 
-const sectors = ['All', 'Healthcare', 'Aerospace & Defence', 'Higher Education', 'Retail', 'Channel / Technology', 'Public Sector'];
+const sectors = [
+  "All",
+  "Healthcare",
+  "Aerospace & Defence",
+  "Higher Education",
+  "Retail",
+  "Channel / Technology",
+  "Public Sector",
+];
 
 export default function CaseStudiesPage() {
-  const [activeSector, setActiveSector] = useState('All');
+  const [activeSector, setActiveSector] = useState("All");
 
-  const filtered = activeSector === 'All'
-    ? caseStudies
-    : caseStudies.filter((c) => c.sector === activeSector);
+  const filtered =
+    activeSector === "All"
+      ? caseStudies
+      : caseStudies.filter((c) => c.sector === activeSector);
 
   return (
     <div className="font-body text-dark antialiased bg-white">
@@ -141,7 +168,7 @@ export default function CaseStudiesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-60"
           style={{
-            backgroundImage: 'url(/images/healthcare.png)',
+            backgroundImage: "url(/images/healthcare.png)",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
@@ -154,8 +181,8 @@ export default function CaseStudiesPage() {
             PROVEN DELIVERY, REAL RESULTS
           </h1>
           <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl">
-            Real examples of how we've helped partners and their customers solve
-            complex IT infrastructure challenges across multiple sectors.
+            Real examples of solving complex IT infrastructure challenges across
+            multiple sectors.
           </p>
         </div>
       </section>
@@ -188,10 +215,11 @@ export default function CaseStudiesPage() {
               <button
                 key={s}
                 onClick={() => setActiveSector(s)}
-                className={`px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border ${activeSector === s
-                  ? 'bg-[#5C2882] text-white border-[#5C2882]'
-                  : 'bg-white text-slate-500 border-slate-200 hover:border-[#5C2882] hover:text-[#5C2882]'
-                  }`}
+                className={`px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border ${
+                  activeSector === s
+                    ? "bg-[#5C2882] text-white border-[#5C2882]"
+                    : "bg-white text-slate-500 border-slate-200 hover:border-[#5C2882] hover:text-[#5C2882]"
+                }`}
               >
                 {s}
               </button>
@@ -201,10 +229,17 @@ export default function CaseStudiesPage() {
           {/* Horizontal Case Study Cards */}
           <div className="space-y-8">
             {filtered.map((cs, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col lg:flex-row min-h-[320px]">
+              <div
+                key={idx}
+                className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col lg:flex-row min-h-[320px]"
+              >
                 {/* Left: Image & Stat */}
                 <div className="lg:w-2/5 relative min-h-[240px] lg:min-h-full">
-                  <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" />
+                  <img
+                    src={cs.image}
+                    alt={cs.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/20" />
                   <div className="absolute top-4 left-4">
                     <span className="bg-[#5C2882] text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
@@ -212,7 +247,9 @@ export default function CaseStudiesPage() {
                     </span>
                   </div>
                   <div className="absolute bottom-4 left-4 p-4 lg:p-5 bg-black/40 backdrop-blur-md rounded-lg border border-white/10 max-w-[280px]">
-                    <div className="text-2xl lg:text-3xl font-extrabold text-[#8B5CF6] mb-0.5">{cs.stat}</div>
+                    <div className="text-2xl lg:text-3xl font-extrabold text-[#8B5CF6] mb-0.5">
+                      {cs.stat}
+                    </div>
                     <div className="text-[6px] lg:text-[8px] font-bold text-slate-300 uppercase tracking-widest leading-tight">
                       {cs.statLabel}
                     </div>
@@ -239,7 +276,10 @@ export default function CaseStudiesPage() {
                     <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
                       {cs.results.map((result, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <CheckCircle size={12} className="text-[#5C2882] flex-shrink-0" />
+                          <CheckCircle
+                            size={12}
+                            className="text-[#5C2882] flex-shrink-0"
+                          />
                           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">
                             {result}
                           </span>
@@ -249,9 +289,7 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <div>
-                    <a
-                      className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-extrabold hover:gap-3 transition-all duration-200"
-                    >
+                    <a className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-extrabold hover:gap-3 transition-all duration-200">
                       Read full case study <ChevronRight size={16} />
                     </a>
                   </div>
@@ -269,7 +307,7 @@ export default function CaseStudiesPage() {
             HAVE A SIMILAR CHALLENGE?
           </h2>
           <p className="text-slate-500 text-xs md:text-sm leading-relaxed mb-10 max-w-xl mx-auto">
-            Try our interactive tools to explore how we could approach your specific
+            Try our interactive tools to explore solutions for your
             requirements, or get in touch to discuss directly.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

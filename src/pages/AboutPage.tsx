@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   ArrowRight,
   MapPin,
@@ -17,75 +17,77 @@ import {
   Server,
   Cpu,
   FolderKanban,
-  FileText
-} from 'lucide-react';
+  FileText,
+} from "lucide-react";
 
 const principles = [
   {
     icon: <Award size={20} />,
-    title: 'Pragmatic & Commercial',
-    desc: 'We focus on practical outcomes, not theoretical possibilities. Every engagement is structured to deliver measurable business value.',
+    title: "Pragmatic & Commercial",
+    desc: "We focus on practical outcomes, not theoretical possibilities. Every engagement is structured to deliver measurable business value.",
   },
   {
     icon: <Users size={20} />,
-    title: 'Expert-Led',
-    desc: 'Our team has been customers, suppliers, and partners. We understand the challenges from every angle and bring real-world experience to every project.',
+    title: "Expert-Led",
+    desc: "Our team has been customers, suppliers, and partners. We understand the challenges from every angle and bring real-world experience to every project.",
   },
   {
     icon: <Handshake size={20} />,
-    title: 'Channel-First',
+    title: "Channel-First",
     desc: "We exist to enable our partners. We enhance your brand, extend your capabilities, and help you win — we never compete with you.",
   },
   {
     icon: <Trophy size={20} />,
-    title: 'Perfectly Executed',
-    desc: 'From initial consultation through to post-deployment optimisation, we hold ourselves to the highest standards of delivery excellence.',
+    title: "Perfectly Executed",
+    desc: "From initial consultation through to post-deployment optimisation, we hold ourselves to the highest standards of delivery excellence.",
   },
 ];
 
 const expertise = [
   {
     icon: <Network size={20} />,
-    title: 'Network & Connectivity',
-    desc: 'WAN, LAN, wireless design and deployment across complex multi-site environments',
+    title: "Network & Connectivity",
+    desc: "WAN, LAN, wireless design and deployment across complex multi-site environments",
   },
   {
     icon: <ShieldCheck size={20} />,
-    title: 'Security',
-    desc: 'End-to-end security from threat analysis through to endpoint protection and compliance',
+    title: "Security",
+    desc: "End-to-end security from threat analysis through to endpoint protection and compliance",
   },
   {
     icon: <Cloud size={20} />,
-    title: 'Cloud & Hybrid',
-    desc: 'Public, private, and hybrid cloud architecture, migration, and optimisation',
+    title: "Cloud & Hybrid",
+    desc: "Public, private, and hybrid cloud architecture, migration, and optimisation",
   },
   {
     icon: <Server size={20} />,
-    title: 'Datacentre & HPC',
-    desc: 'High-performance computing, storage, virtualisation, and energy-efficient design',
+    title: "Datacentre & HPC",
+    desc: "High-performance computing, storage, virtualisation, and energy-efficient design",
   },
   {
     icon: <Cpu size={20} />,
-    title: 'Intelligent Automation',
-    desc: 'Practical automation solutions that reduce cost and accelerate service delivery',
+    title: "Intelligent Automation",
+    desc: "Practical automation solutions that reduce cost and accelerate service delivery",
   },
   {
     icon: <FolderKanban size={20} />,
-    title: 'Project Delivery',
-    desc: 'PMO, field services, and end-to-end project management for complex deployments',
+    title: "Project Delivery",
+    desc: "PMO, field services, and end-to-end project management for complex deployments",
   },
 ];
 
 export default function AboutPage() {
   const [form, setForm] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -97,7 +99,7 @@ export default function AboutPage() {
       <section className="relative pt-44 pb-20 overflow-hidden bg-[#3B4041]">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/aerospace.png)' }}
+          style={{ backgroundImage: "url(/images/aerospace.png)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#2f3435]/95 via-[#2f3435]/85 to-transparent" />
         <div className="absolute inset-0 bg-black/30" />
@@ -110,8 +112,9 @@ export default function AboutPage() {
             Your Trusted IT Infrastructure Services Partner
           </h1>
           <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl">
-            We enable our partners to captivate their customers, expand their services
-            portfolio, and drive annuity revenues — led by experts who've walked in your shoes.
+            We enable our partners to captivate their customers, expand their
+            services portfolio, and drive annuity revenues — led by experts
+            who've walked in your shoes.
           </p>
         </div>
       </section>
@@ -131,25 +134,29 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-sm text-slate-500 leading-relaxed">
                 <p>
-                  Collective IP was founded by IT infrastructure professionals who've spent their
-                  careers on every side of the table — as customers managing complex estates, as
-                  vendors building solutions, and as partners delivering to end users.
+                  Collective IP was founded by IT infrastructure professionals
+                  who've spent their careers on every side of the table — as
+                  customers managing complex estates, as vendors building
+                  solutions, and as partners delivering to end users.
                 </p>
                 <p>
-                  That experience gives us a unique perspective. We understand the pressures our
-                  partners face: the need to expand services without overextending, to deliver
-                  complex projects without the overhead of permanent specialist teams, and to stay
-                  ahead of rapidly evolving technology landscapes.
+                  That experience gives us a unique perspective. We understand
+                  the pressures our partners face: the need to expand services
+                  without overextending, to deliver complex projects without the
+                  overhead of permanent specialist teams, and to stay ahead of
+                  rapidly evolving technology landscapes.
                 </p>
                 <p>
-                  Today, we operate across six core practices — Connectivity, Security, Cloud,
-                  Datacentre &amp; Compute, Endpoint Infrastructure, and Intelligent Automation —
-                  delivering end-to-end IT infrastructure services exclusively through the channel.
+                  Today, we operate across four core practices — Connectivity,
+                  Automation, Cloud, DC and Compute, and Endpoint Infrastructure
+                  — delivering end-to-end IT infrastructure services exclusively
+                  through the channel.
                 </p>
                 <p>
-                  Our commitment is simple: we enable our partners to win. We enhance your brand,
-                  extend your capabilities, and deliver with the same care and professionalism as
-                  if we were part of your own team.
+                  Our commitment is simple: we enable our partners to win. We
+                  enhance your brand, extend your capabilities, and deliver with
+                  the same care and professionalism as if we were part of your
+                  own team.
                 </p>
               </div>
             </div>
@@ -165,8 +172,12 @@ export default function AboutPage() {
                     {p.icon}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#3B4041] mb-1">{p.title}</h3>
-                    <p className="text-xs text-slate-500 leading-relaxed">{p.desc}</p>
+                    <h3 className="text-base font-bold text-[#3B4041] mb-1">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      {p.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -186,8 +197,8 @@ export default function AboutPage() {
               Deep Technical Capability
             </h2>
             <p className="text-sm text-slate-500 max-w-xl leading-relaxed">
-              Our team brings decades of combined experience across the full spectrum of
-              IT infrastructure disciplines.
+              Our team brings decades of combined experience across the full
+              spectrum of IT infrastructure disciplines.
             </p>
           </div>
 
@@ -202,11 +213,237 @@ export default function AboutPage() {
                   {e.icon}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-[#3B4041] mb-1">{e.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{e.desc}</p>
+                  <h3 className="text-base font-bold text-[#3B4041] mb-1">
+                    {e.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {e.desc}
+                  </p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MEET THE TEAM ─── */}
+      <section className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              MEET THE TEAM
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              Leadership with Real-World Experience
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              Our leadership team brings decades of experience from across the
+              IT infrastructure ecosystem — as customers, vendors, and partners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Users className="text-[#5C2882]" size={32} />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                Leadership Team
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Executive team with extensive industry experience and commercial
+                acumen.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Award className="text-[#5C2882]" size={32} />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                Technical Experts
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Specialist architects and engineers across all infrastructure
+                disciplines.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Handshake className="text-[#5C2882]" size={32} />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                Delivery Professionals
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Project managers and field services teams with proven delivery
+                track records.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Trophy className="text-[#5C2882]" size={32} />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                250+ Team Members
+              </h3>
+              <p className="text-slate-500 text-sm">
+                Growing team of professionals dedicated to partner success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── VALUES ─── */}
+      <section className="py-14 bg-[#F9FAFB]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              OUR VALUES
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              What Guides Our Decisions
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              Our values shape how we work with partners and deliver exceptional
+              outcomes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                Honest
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Transparent communication and straightforward advice. We tell
+                partners what they need to hear, not just what they want to
+                hear.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                Collaborative
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                We work as an extension of your team, sharing risks and rewards
+                to ensure mutual success.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                Supportive
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                We're here to help partners succeed, providing guidance and
+                support throughout the engagement lifecycle.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                Simple
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                We cut through complexity to deliver clear, practical solutions
+                that solve real business problems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECTORS WE SERVE ─── */}
+      <section className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              SECTORS WE SERVE
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              Industry Expertise Across Multiple Sectors
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              We bring deep sector knowledge and technical expertise to deliver
+              solutions that address industry-specific challenges.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Automotive, Aerospace & Transport
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Healthcare & Pharmaceutical
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Banking, Finance & Insurance
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Charity & Non Profit
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Hospitality & Retail
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Defence
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Education
+              </h3>
+            </div>
+            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+              <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                Central, Local & Regional Government
+              </h3>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="bg-[#F3E8FF] p-6 rounded-xl max-w-2xl mx-auto">
+              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                Our Presence
+              </h3>
+              <p className="text-slate-500 text-sm mb-4">
+                Strong UK focus with local expertise nationwide, complemented by
+                established global relationships across Europe, UAE, and the
+                United States.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041]">
+                    United Kingdom & Ireland
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041]">
+                    United States
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041]">
+                    Europe
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041]">
+                    UAE
+                  </h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -218,15 +455,15 @@ export default function AboutPage() {
             {/* Left — Info */}
             <div>
               <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-4">
-                GET IN TOUCH 
+                GET IN TOUCH
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white uppercase mb-6 leading-tight">
                 Let's Start a Conversation
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed max-w-md mb-12">
-                Whether you're looking to expand your services portfolio, explore intelligent
-                automation solutions, or need expert IT infrastructure support — we'd love to
-                hear from you.
+                Whether you're looking to expand your services portfolio,
+                explore intelligent automation solutions, or need expert IT
+                infrastructure support — we'd love to hear from you.
               </p>
 
               <div className="space-y-8">
@@ -236,10 +473,14 @@ export default function AboutPage() {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white mb-1">Office</h4>
+                    <h4 className="text-base font-bold text-white mb-1">
+                      Office
+                    </h4>
                     <p className="text-xs text-slate-400 leading-relaxed">
-                      Suite 214, 1 Water Vole Way<br />
-                      Doncaster, South Yorkshire<br />
+                      Suite 214, 1 Water Vole Way
+                      <br />
+                      Doncaster, South Yorkshire
+                      <br />
                       DN4 5JP
                     </p>
                   </div>
@@ -251,7 +492,9 @@ export default function AboutPage() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white mb-1">Phone</h4>
+                    <h4 className="text-base font-bold text-white mb-1">
+                      Phone
+                    </h4>
                     <a
                       href="tel:+442045858990"
                       className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
@@ -267,7 +510,9 @@ export default function AboutPage() {
                     <Mail size={18} />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white mb-1">Email</h4>
+                    <h4 className="text-base font-bold text-white mb-1">
+                      Email
+                    </h4>
                     <a
                       href="mailto:info@collectiveip.co.uk"
                       className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
@@ -283,7 +528,9 @@ export default function AboutPage() {
                     <Linkedin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white mb-1">LinkedIn</h4>
+                    <h4 className="text-base font-bold text-white mb-1">
+                      LinkedIn
+                    </h4>
                     <a
                       href="https://www.linkedin.com/company/collectiveip"
                       target="_blank"
@@ -306,8 +553,14 @@ export default function AboutPage() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  alert('Enquiry submitted! We will be in touch shortly.');
-                  setForm({ name: '', company: '', email: '', phone: '', message: '' });
+                  alert("Enquiry submitted! We will be in touch shortly.");
+                  setForm({
+                    name: "",
+                    company: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                  });
                 }}
                 className="space-y-5"
               >
@@ -409,8 +662,8 @@ export default function AboutPage() {
             Ready to Explore a Partnership?
           </h2>
           <p className="text-sm text-slate-500 leading-relaxed max-w-xl mx-auto mb-10">
-            See our interactive tools in action, review our case studies, or get in touch
-            to discuss how we can support your business.
+            See our interactive tools in action, review our case studies, or get
+            in touch to discuss how we can support your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

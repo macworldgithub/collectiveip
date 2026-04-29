@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   MessageSquare,
   Activity,
@@ -9,48 +9,115 @@ import {
   Send,
   ChevronDown,
   Bot,
-  FileText
-} from 'lucide-react';
+  FileText,
+} from "lucide-react";
 
 const tools = [
   {
-    id: 'knowledge',
+    id: "knowledge",
     icon: <MessageSquare size={18} />,
-    title: 'Knowledge Assistant',
-    subtitle: 'Capability & Case Study Finder',
-    desc: 'Ask anything about our capabilities, delivery experience, or case studies.',
-    placeholder: 'Ask about our capabilities...',
+    title: "Knowledge Assistant",
+    subtitle: "Capability & Case Study Finder",
+    desc: "Ask anything about our capabilities, delivery experience, or case studies.",
+    placeholder: "Ask about our capabilities...",
     sampleQuestions: [
-      'Can you support a multi-site Cisco wireless rollout?',
-      'What intelligent automation solutions do you offer?',
-      'Can you deliver endpoint security for a large enterprise?',
-      'How do you work with channel partners?',
+      "Can you support a multi-site Cisco wireless rollout?",
+      "What intelligent automation solutions do you offer?",
+      "Can you deliver endpoint security for a large enterprise?",
+      "How do you work with channel partners?",
     ],
   },
   {
-    id: 'network',
+    id: "network",
     icon: <Activity size={18} />,
-    title: 'Network Assessment',
-    subtitle: 'Infrastructure Discovery',
-    desc: 'Answer a few questions about your network environment to receive tailored recommendations.',
+    title: "Network Assessment",
+    subtitle: "Infrastructure Discovery",
+    desc: "Answer a few questions about your network environment to receive tailored recommendations.",
     fields: [
-      { label: 'Number of sites', type: 'select', options: ['1', '2–5', '6–20', '21–50', '50+'] },
-      { label: 'Primary concern', type: 'select', options: ['Performance', 'Security', 'Reliability', 'Cost', 'Scalability'] },
-      { label: 'Current infrastructure age', type: 'select', options: ['Less than 2 years', '2–5 years', '5–10 years', '10+ years'] },
-      { label: 'Approximate device count', type: 'select', options: ['Under 100', '100–500', '500–2,000', '2,000–10,000', '10,000+'] },
+      {
+        label: "Number of sites",
+        type: "select",
+        options: ["1", "2–5", "6–20", "21–50", "50+"],
+      },
+      {
+        label: "Primary concern",
+        type: "select",
+        options: [
+          "Performance",
+          "Security",
+          "Reliability",
+          "Cost",
+          "Scalability",
+        ],
+      },
+      {
+        label: "Current infrastructure age",
+        type: "select",
+        options: ["Less than 2 years", "2–5 years", "5–10 years", "10+ years"],
+      },
+      {
+        label: "Approximate device count",
+        type: "select",
+        options: [
+          "Under 100",
+          "100–500",
+          "500–2,000",
+          "2,000–10,000",
+          "10,000+",
+        ],
+      },
     ],
   },
   {
-    id: 'security',
+    id: "security",
     icon: <ShieldCheck size={18} />,
-    title: 'Security Posture Review',
-    subtitle: 'Threat & Risk Analysis',
-    desc: 'Get a rapid assessment of your current security posture based on industry frameworks.',
+    title: "Security Posture Review",
+    subtitle: "Threat & Risk Analysis",
+    desc: "Get a rapid assessment of your current security posture based on industry frameworks.",
     fields: [
-      { label: 'Industry sector', type: 'select', options: ['Healthcare', 'Finance', 'Manufacturing', 'Education', 'Retail', 'Other'] },
-      { label: 'Endpoint management', type: 'select', options: ['Fully managed (MDM/UEM)', 'Partially managed', 'Unmanaged', 'Unknown'] },
-      { label: 'Last security assessment', type: 'select', options: ['Within 12 months', '1–2 years ago', '2–3 years ago', 'Never / Unknown'] },
-      { label: 'Primary security concern', type: 'select', options: ['Ransomware', 'Data breach', 'Insider threat', 'Compliance', 'All of the above'] },
+      {
+        label: "Industry sector",
+        type: "select",
+        options: [
+          "Healthcare",
+          "Finance",
+          "Manufacturing",
+          "Education",
+          "Retail",
+          "Other",
+        ],
+      },
+      {
+        label: "Endpoint management",
+        type: "select",
+        options: [
+          "Fully managed (MDM/UEM)",
+          "Partially managed",
+          "Unmanaged",
+          "Unknown",
+        ],
+      },
+      {
+        label: "Last security assessment",
+        type: "select",
+        options: [
+          "Within 12 months",
+          "1–2 years ago",
+          "2–3 years ago",
+          "Never / Unknown",
+        ],
+      },
+      {
+        label: "Primary security concern",
+        type: "select",
+        options: [
+          "Ransomware",
+          "Data breach",
+          "Insider threat",
+          "Compliance",
+          "All of the above",
+        ],
+      },
     ],
   },
 ];
@@ -58,20 +125,22 @@ const tools = [
 type Tool = (typeof tools)[0];
 
 function KnowledgeAssistant({ tool }: { tool: Tool }) {
-  const [messages, setMessages] = useState<{ role: 'user' | 'ai'; text: string }[]>([]);
-  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState<
+    { role: "user" | "ai"; text: string }[]
+  >([]);
+  const [input, setInput] = useState("");
 
   const send = (text: string) => {
     if (!text.trim()) return;
     setMessages((m) => [
       ...m,
-      { role: 'user', text },
+      { role: "user", text },
       {
-        role: 'ai',
+        role: "ai",
         text: "Thanks for your question. Our team has deep expertise across all six practices. Based on what you've asked, I'd recommend connecting with our specialist team who can provide tailored guidance and relevant case studies. Would you like us to reach out?",
       },
     ]);
-    setInput('');
+    setInput("");
   };
 
   return (
@@ -84,20 +153,22 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
               <MessageSquare size={20} />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#3B4041]">Collective IP Knowledge Assistant</h3>
-              <p className="text-[10px] text-slate-400 font-medium">Ask about our capabilities, case studies, and approach</p>
+              <h3 className="text-sm font-bold text-[#3B4041]">
+                Collective IP Knowledge Assistant
+              </h3>
+              <p className="text-[10px] text-slate-400 font-medium">
+                Ask about our capabilities, case studies, and approach
+              </p>
             </div>
           </div>
           {/* <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Online</span>
           </div> */}
-            <button
-  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] text-brand-300 text-xs font-medium"
->
-  <span className="w-2 h-2 bg-brand-600 rounded-full" />
- Online
-</button>
+          <button className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] text-brand-300 text-xs font-medium">
+            <span className="w-2 h-2 bg-brand-600 rounded-full" />
+            Online
+          </button>
         </div>
 
         {/* Chat Area */}
@@ -107,9 +178,12 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
               <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
                 <Bot size={32} />
               </div>
-              <h2 className="text-xl font-extrabold text-[#3B4041] mb-2 uppercase tracking-tight">How can I help you today?</h2>
+              <h2 className="text-xl font-extrabold text-[#3B4041] mb-2 uppercase tracking-tight">
+                How can I help you today?
+              </h2>
               <p className="text-xs text-slate-500 max-w-sm mb-12 leading-relaxed">
-                Ask about our capabilities, delivery approach, or how we could help with your specific requirements.
+                Ask about our capabilities, delivery approach, or how we could
+                help with your specific requirements.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-2xl">
@@ -127,16 +201,29 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
           ) : (
             <div className="space-y-6">
               {messages.map((m, i) => (
-                <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`flex gap-3 max-w-[80%] ${m.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${m.role === 'user' ? 'bg-slate-100 text-slate-500' : 'bg-[#F3E8FF] text-[#5C2882]'
-                      }`}>
-                      {m.role === 'user' ? 'U' : <Bot size={16} />}
+                <div
+                  key={i}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`flex gap-3 max-w-[80%] ${m.role === "user" ? "flex-row-reverse" : ""}`}
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                        m.role === "user"
+                          ? "bg-slate-100 text-slate-500"
+                          : "bg-[#F3E8FF] text-[#5C2882]"
+                      }`}
+                    >
+                      {m.role === "user" ? "U" : <Bot size={16} />}
                     </div>
-                    <div className={`p-4 rounded-2xl text-xs leading-relaxed font-medium ${m.role === 'user'
-                      ? 'bg-[#5C2882] text-white rounded-tr-none'
-                      : 'bg-[#F9FAFB] text-slate-600 border border-slate-50 rounded-tl-none'
-                      }`}>
+                    <div
+                      className={`p-4 rounded-2xl text-xs leading-relaxed font-medium ${
+                        m.role === "user"
+                          ? "bg-[#5C2882] text-white rounded-tr-none"
+                          : "bg-[#F9FAFB] text-slate-600 border border-slate-50 rounded-tl-none"
+                      }`}
+                    >
                       {m.text}
                     </div>
                   </div>
@@ -170,7 +257,8 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
             </button>
           </form>
           <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.1em] text-center mt-6">
-            Demonstration of the Digital Front Door concept. In production, trained on the full company knowledge base.
+            Demonstration of the Digital Front Door concept. In production,
+            trained on the full company knowledge base.
           </p>
         </div>
       </div>
@@ -196,11 +284,15 @@ function AssessmentTool({ tool }: { tool: Tool }) {
                 {tool.icon}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#3B4041]">{tool.id === 'network' ? 'Network Infrastructure Assessment' : 'Security Posture Review'}</h3>
+                <h3 className="text-sm font-bold text-[#3B4041]">
+                  {tool.id === "network"
+                    ? "Network Infrastructure Assessment"
+                    : "Security Posture Review"}
+                </h3>
                 <p className="text-[10px] text-slate-400 font-medium">
-                  {tool.id === 'network'
-                    ? 'Identify gaps, risks, and optimisation opportunities'
-                    : 'Endpoint, network, cloud, and compliance evaluation'}
+                  {tool.id === "network"
+                    ? "Identify gaps, risks, and optimisation opportunities"
+                    : "Endpoint, network, cloud, and compliance evaluation"}
                 </p>
               </div>
             </div>
@@ -212,25 +304,30 @@ function AssessmentTool({ tool }: { tool: Tool }) {
               {tool.icon}
             </div>
             <h2 className="text-xl font-extrabold text-[#3B4041] mb-4 uppercase tracking-tight">
-              {tool.id === 'network' ? 'NETWORK ASSESSMENT TOOL' : 'SECURITY POSTURE REVIEW'}
+              {tool.id === "network"
+                ? "NETWORK ASSESSMENT TOOL"
+                : "SECURITY POSTURE REVIEW"}
             </h2>
             <p className="text-xs text-slate-500 max-w-sm mb-12 leading-relaxed">
-              {tool.id === 'network'
-                ? 'This tool scans your network infrastructure to identify gaps, risks, and optimisation opportunities. Click below to run a sample assessment.'
-                : 'Evaluate your security posture across endpoints, identity, network, cloud, and data protection. Click below to run a sample review.'}
+              {tool.id === "network"
+                ? "This tool scans your network infrastructure to identify gaps, risks, and optimisation opportunities. Click below to run a sample assessment."
+                : "Evaluate your security posture across endpoints, identity, network, cloud, and data protection. Click below to run a sample review."}
             </p>
             <button
               onClick={() => setIsStarted(true)}
               className="flex items-center gap-3 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all duration-300 shadow-lg shadow-[#5C2882]/20"
             >
-              {tool.icon} {tool.id === 'network' ? 'Run Sample Assessment' : 'Run Sample Review'}
+              {tool.icon}{" "}
+              {tool.id === "network"
+                ? "Run Sample Assessment"
+                : "Run Sample Review"}
             </button>
           </div>
 
           <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.1em] text-center mb-6">
-            {tool.id === 'network'
-              ? 'Sample assessment with representative findings. Production tool connects to live infrastructure via API.'
-              : 'Sample review with representative findings. Production tool integrates with your security stack via API.'}
+            {tool.id === "network"
+              ? "Sample assessment with representative findings. Production tool connects to live infrastructure via API."
+              : "Sample review with representative findings. Production tool integrates with your security stack via API."}
           </p>
         </div>
       </div>
@@ -245,10 +342,13 @@ function AssessmentTool({ tool }: { tool: Tool }) {
             <div className="w-20 h-20 bg-[#F3E8FF] text-[#5C2882] rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
               {tool.icon}
             </div>
-            <h3 className="text-2xl font-extrabold text-[#3B4041] mb-3 uppercase">Assessment Received</h3>
+            <h3 className="text-2xl font-extrabold text-[#3B4041] mb-3 uppercase">
+              Assessment Received
+            </h3>
             <p className="text-sm text-slate-500 mb-10 max-w-md mx-auto leading-relaxed">
-              Thank you — one of our specialists will review your responses and be in touch within one
-              business day with tailored recommendations and relevant case studies.
+              Thank you — one of our specialists will review your responses and
+              be in touch within one business day with tailored recommendations
+              and relevant case studies.
             </p>
             <button
               onClick={() => {
@@ -265,7 +365,9 @@ function AssessmentTool({ tool }: { tool: Tool }) {
           <div>
             <div className="mb-8 flex items-center justify-between">
               <div>
-                <h2 className="text-xl font-extrabold text-[#3B4041] uppercase mb-2 tracking-tight">{tool.title}</h2>
+                <h2 className="text-xl font-extrabold text-[#3B4041] uppercase mb-2 tracking-tight">
+                  {tool.title}
+                </h2>
                 <p className="text-xs text-slate-500">{tool.desc}</p>
               </div>
               <button
@@ -278,16 +380,22 @@ function AssessmentTool({ tool }: { tool: Tool }) {
             <div className="space-y-6 mb-10">
               {tool.fields?.map((f) => (
                 <div key={f.label}>
-                  <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">{f.label}</label>
+                  <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+                    {f.label}
+                  </label>
                   <div className="relative">
                     <select
-                      value={values[f.label] ?? ''}
-                      onChange={(e) => setValues((v) => ({ ...v, [f.label]: e.target.value }))}
+                      value={values[f.label] ?? ""}
+                      onChange={(e) =>
+                        setValues((v) => ({ ...v, [f.label]: e.target.value }))
+                      }
                       className="w-full appearance-none px-4 py-3.5 border border-slate-200 rounded-xl text-xs font-bold text-[#3B4041] focus:outline-none focus:border-[#8B5CF6] transition-all bg-white"
                     >
                       <option value="">Select Option…</option>
                       {f.options?.map((o) => (
-                        <option key={o} value={o}>{o}</option>
+                        <option key={o} value={o}>
+                          {o}
+                        </option>
                       ))}
                     </select>
                     <ChevronDown
@@ -321,12 +429,11 @@ export default function DemoPage() {
 
       {/* Hero Section */}
       <section className="relative pt-44 pb-16 overflow-hidden bg-[#3B4041]">
-
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/retail.png)',
+            backgroundImage: "url(/images/retail.png)",
           }}
         />
 
@@ -337,7 +444,6 @@ export default function DemoPage() {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-
           {/* Small Label */}
           <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
             EXPERIENCE OUR TOOLS
@@ -350,7 +456,9 @@ export default function DemoPage() {
 
           {/* Paragraph */}
           <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl mb-20">
-            These are real tools we deploy for our partners. Try them now — ask questions, run assessments, and see the kind of value we deliver from day one.
+            These are real tools we deploy for our partners. Try them now — ask
+            questions, run assessments, and see the kind of value we deliver
+            from day one.
           </p>
 
           {/* Tabs */}
@@ -360,19 +468,23 @@ export default function DemoPage() {
                 key={t.id}
                 onClick={() => setActiveTool(t)}
                 className={`flex items-center gap-3 pb-5 relative transition-all duration-300
-          ${activeTool.id === t.id
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
-                  }`}
+          ${
+            activeTool.id === t.id
+              ? "text-white"
+              : "text-slate-400 hover:text-white"
+          }`}
               >
                 <span
-                  className={`${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
-                    }`}
+                  className={`${
+                    activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
+                  }`}
                 >
                   {t.icon}
                 </span>
 
-                <span className={`text-xs font-semibold tracking-wide ${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"}`}>
+                <span
+                  className={`text-xs font-semibold tracking-wide ${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"}`}
+                >
                   {t.title}
                 </span>
 
@@ -388,11 +500,203 @@ export default function DemoPage() {
       {/* Demo Content */}
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
-          {activeTool.id === 'knowledge' ? (
+          {activeTool.id === "knowledge" ? (
             <KnowledgeAssistant tool={activeTool} />
           ) : (
             <AssessmentTool tool={activeTool} />
           )}
+        </div>
+      </section>
+
+      {/* Unbranded Demo Sites */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              UNBRANDED DEMO SITES
+            </h4>
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
+              Ready-to-Deploy Customer Experiences
+            </h2>
+            <p className="text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              These are unbranded demo sites that can be quickly deployed for
+              your customers, showcasing modern digital experiences powered by
+              our expertise.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+              <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-600"></div>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                  Network Assessment Portal
+                </h3>
+                <p className="text-slate-500 text-sm mb-4">
+                  Interactive network infrastructure assessment tool with
+                  automated recommendations.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Live Demo Available
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Custom Branding
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                >
+                  View Demo <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+              <div className="h-32 bg-gradient-to-br from-purple-500 to-purple-600"></div>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                  Security Knowledge Base
+                </h3>
+                <p className="text-slate-500 text-sm mb-4">
+                  AI-powered security knowledge assistant with threat
+                  intelligence and compliance guidance.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Live Demo Available
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      GPT-4 Powered
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                >
+                  View Demo <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+              <div className="h-32 bg-gradient-to-br from-green-500 to-green-600"></div>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                  Cloud Cost Optimizer
+                </h3>
+                <p className="text-slate-500 text-sm mb-4">
+                  Multi-cloud cost analysis and optimization tool with ROI
+                  calculator.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Live Demo Available
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Multi-Cloud Support
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                >
+                  View Demo <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+              <div className="h-32 bg-gradient-to-br from-orange-500 to-orange-600"></div>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                  Automation Workflow Builder
+                </h3>
+                <p className="text-slate-500 text-sm mb-4">
+                  Visual workflow designer for IT automation with pre-built
+                  templates.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">Coming Soon</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span className="text-xs text-slate-600">
+                      Low-Code/No-Code
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="bg-[#F3E8FF] p-8 rounded-xl max-w-3xl mx-auto">
+              <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-4">
+                Knowledge Tool Integration
+              </h3>
+              <p className="text-slate-500 text-sm mb-6">
+                Our knowledge tool capabilities can be integrated into any of
+                these demo sites, providing intelligent assistance and
+                automation powered by your specific expertise and service
+                offerings.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                <div className="p-4 bg-white rounded-lg">
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                    Custom Training
+                  </h4>
+                  <p className="text-slate-600 text-xs">
+                    Trained on your specific knowledge base and service
+                    offerings.
+                  </p>
+                </div>
+                <div className="p-4 bg-white rounded-lg">
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                    White-Label Solution
+                  </h4>
+                  <p className="text-slate-600 text-xs">
+                    Fully branded to your identity with custom domains.
+                  </p>
+                </div>
+                <div className="p-4 bg-white rounded-lg">
+                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                    Quick Deployment
+                  </h4>
+                  <p className="text-slate-600 text-xs">
+                    Deploy in days, not months, with full technical support.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -401,7 +705,7 @@ export default function DemoPage() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
-            backgroundImage: 'url(/images/aerospace.png)',
+            backgroundImage: "url(/images/aerospace.png)",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -411,9 +715,9 @@ export default function DemoPage() {
             Want These Tools for Your Business?
           </h2>
           <p className="text-base text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            We build custom Digital Front Door solutions trained on your knowledge base,
-            branded to your identity, and deployed to your clients. Let's talk about
-            what's possible.
+            We build custom Digital Front Door solutions trained on your
+            knowledge base, branded to your identity, and deployed to your
+            clients. Let's talk about what's possible.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a

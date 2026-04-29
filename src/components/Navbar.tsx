@@ -5,10 +5,11 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Practices", path: "/practices" },
-  { label: "Intelligent Automation", path: "/intelligent-automation" },
-  { label: "Case Studies", path: "/case-studies" },
-  { label: "Demo", path: "/demo" },
-  { label: "About", path: "/about" },
+  { label: "Partner Services", path: "/partner-services" },
+  { label: "Vendors", path: "/vendors" },
+  { label: "Resources", path: "/resources" },
+  { label: "About Collective IP", path: "/about" },
+  { label: "Contact Us", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -30,10 +31,13 @@ export default function Navbar() {
   const isHome = location.pathname === "/";
   const isDarkHeroPage = [
     "/practices",
-    "/intelligent-automation",
+    "/partner-services",
+    "/vendors",
+    "/resources",
     "/case-studies",
     "/demo",
-    "/about"
+    "/about",
+    "/contact",
   ].includes(location.pathname);
 
   const shouldBeWhite = scrolled || (!isHome && !isDarkHeroPage);
@@ -41,14 +45,22 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : isDarkBg ? "bg-[#3B4041]" : isHome ? "bg-transparent" : "bg-white shadow-md"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white shadow-md"
+          : isDarkBg
+            ? "bg-[#3B4041]"
+            : isHome
+              ? "bg-transparent"
+              : "bg-white shadow-md"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
           <span
-            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${shouldBeWhite ? "text-dark" : "text-white"
-              }`}
+            className={`font-heading font-bold text-3xl tracking-tight transition-colors ${
+              shouldBeWhite ? "text-dark" : "text-white"
+            }`}
           >
             collective<span className="text-brand-600">ip</span>
           </span>
@@ -61,14 +73,15 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${shouldBeWhite
+                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
+                  shouldBeWhite
                     ? isActive
                       ? "text-brand-600"
                       : "text-gray-700"
                     : isActive
                       ? "text-brand-300"
                       : "text-white/90"
-                  }`}
+                }`}
               >
                 {item.label}
               </Link>
@@ -97,10 +110,11 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium hover:text-brand-600 transition-colors ${location.pathname === item.path
+                className={`text-sm font-medium hover:text-brand-600 transition-colors ${
+                  location.pathname === item.path
                     ? "text-brand-600"
                     : "text-gray-700"
-                  }`}
+                }`}
               >
                 {item.label}
               </Link>

@@ -1,8 +1,8 @@
 const stats = [
-  { value: "150+", label: "Deployments Delivered" },
-  { value: "6", label: "Core Practices" },
-  { value: "20+", label: "Years Combined Experience" },
-  { value: "100%", label: "Channel Focused" },
+  { value: "2000+", label: "Projects Completed" },
+  { value: "4", label: "Core Practices" },
+  { value: "250+", label: "Team Members" },
+  { value: "98%", label: "Customer Retention" },
 ];
 
 export default function Stats() {
@@ -25,4 +25,3 @@ export default function Stats() {
     </section>
   );
 }
-
