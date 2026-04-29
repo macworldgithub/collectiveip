@@ -234,7 +234,7 @@ export default function PartnerServicesPage() {
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
                 <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                  Governance
+                  Governance and Compliance
                 </h4>
                 <p className="text-slate-600 text-xs">
                   Compliance and policy frameworks
