@@ -501,40 +501,6 @@ export default function PartnerServicesPage() {
                   </div>
                 </div>
               </div>
-              <div>
-                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-4">
-                  Service Delivery Model
-                </h4>
-                <div className="space-y-3">
-                  <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                    <h5 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                      Business Process Led
-                    </h5>
-                    <p className="text-slate-600 text-xs">
-                      Consultants and business analysts translate business needs
-                      into measurable outcomes.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                    <h5 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                      Retained or On-Demand Support
-                    </h5>
-                    <p className="text-slate-600 text-xs">
-                      Flexible engagement models from retained services to
-                      on-demand specialist access.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                    <h5 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                      Assured Security and Performance
-                    </h5>
-                    <p className="text-slate-600 text-xs">
-                      All services operate under clear SLAs for response,
-                      uptime, and quality.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
