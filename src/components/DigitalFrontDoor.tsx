@@ -56,7 +56,7 @@ export default function DigitalFrontDoor() {
                 {item.icon}
               </div>
               <div className="text-white font-bold text-sm uppercase tracking-wide">{item.title}</div>
-              <div className="text-slate-400 text-xs">{item.desc}</div>
+              <div className="text-slate-300 text-xs">{item.desc}</div>
             </div>
           ))}
         </div>

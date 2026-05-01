@@ -42,7 +42,7 @@ const practices = [
 
 export default function Practices() {
   return (
-    <section id="practices" className="py-24 bg-[#EFEFEF]">
+    <section id="practices" className="py-20 bg-[#EFEFEF]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="text-brand-300 text-xs font-bold uppercase tracking-widest mb-4">

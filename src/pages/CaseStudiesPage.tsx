@@ -120,7 +120,7 @@ const caseStudies = [
     ],
     stat: "25%",
     statLabel: "Improvement in conversion rates",
-    image: "/images/Hero.png",
+    image: "/images/image.png",
   },
   {
     sector: "Public Sector",

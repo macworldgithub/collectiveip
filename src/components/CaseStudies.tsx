@@ -29,7 +29,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="py-14 bg-[#F3F4F6]">
+    <section id="case-studies" className="py-20 bg-[#F3F4F6]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>

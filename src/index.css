@@ -18,6 +18,12 @@
   }
 }
 
+@layer utilities {
+  .section-spacing {
+    @apply py-20;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

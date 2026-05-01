@@ -122,7 +122,7 @@ export default function PracticesPage() {
       </section>
 
       {/* Practice Cards */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 flex flex-col gap-24">
           {practiceDetails.map((p, i) => (
             <div
@@ -194,7 +194,7 @@ export default function PracticesPage() {
       </section>
 
       {/* Security Across Every Practice Section */}
-      <section className="py-24 bg-[#F3F4F6]">
+      <section className="py-20 bg-[#F3F4F6]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -279,7 +279,7 @@ export default function PracticesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 bg-[#F3F4F6] text-center">
+      <section className="py-20 bg-[#F3F4F6] text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
             Need help identifying the right solution?
