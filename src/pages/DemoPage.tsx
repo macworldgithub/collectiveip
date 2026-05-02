@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {
@@ -10,7 +10,134 @@ import {
   ChevronDown,
   Bot,
   FileText,
+  CheckCircle2,
+  ChevronRight,
+  Search,
 } from "lucide-react";
+
+type ChatCard = {
+  type: "capability" | "case-study" | "discovery";
+  tag: string;
+  title: string;
+  desc: string;
+  bullets?: string[];
+  stat?: string;
+  statDesc?: string;
+};
+
+type ChatMessage = {
+  role: "user" | "ai";
+  text: string;
+  cards?: ChatCard[];
+  options?: string[];
+};
+
+function getBotResponse(q: string): ChatMessage {
+  const norm = q.toLowerCase();
+
+  if (
+    norm.includes("cisco wireless rollout") ||
+    norm.includes("sectors have you deployed cisco") ||
+    norm.includes("multi-site cisco rollouts")
+  ) {
+    return {
+      role: "ai",
+      text: "Yes — Cisco deployments are a core capability across our Connectivity practice. We have extensive experience with Cisco wireless, switching, routing, and SD-WAN solutions across complex multi-site environments.",
+      cards: [
+        {
+          type: "capability",
+          tag: "CAPABILITY",
+          title: "Cisco Delivery Capability",
+          desc: "Our network engineering teams deliver Cisco solutions from design through to post-deployment optimisation. We support the full lifecycle including site surveys, HLD/LLD, deployment, configuration, and ongoing optimisation.",
+          bullets: [
+            "Cisco wireless (Wi-Fi 6/6E) design and deployment",
+            "Cisco Catalyst and Meraki switching",
+            "Cisco SD-WAN and routing architecture",
+            "Multi-site rollouts with PMO coordination",
+          ],
+        },
+        {
+          type: "case-study",
+          tag: "CASE STUDY",
+          title: "NHS Hospital Trust — Wireless Transformation",
+          desc: "We delivered a full wireless network refresh for an NHS Hospital Trust across multiple sites, including Cisco wireless infrastructure supporting 3,000+ concurrent devices with zero downtime during migration.",
+          stat: "3,000+",
+          statDesc: "Concurrent devices supported",
+        },
+      ],
+      options: [
+        "What sectors have you deployed Cisco solutions in?",
+        "Can you handle multi-site Cisco rollouts?",
+        "What's your approach to wireless design?",
+      ],
+    };
+  }
+
+  if (
+    norm.includes("approach to wireless design") ||
+    norm.includes("hospital wireless deployments") ||
+    norm.includes("retail wireless solutions")
+  ) {
+    return {
+      role: "ai",
+      text: "Wireless network design and deployment is one of our strongest capabilities. We specialise in complex wireless environments across healthcare, retail, education, and hospitality sectors.",
+      cards: [
+        {
+          type: "capability",
+          tag: "CAPABILITY",
+          title: "Wireless Expertise",
+          desc: "Our team delivers bespoke wireless network solutions from initial site surveys and predictive design through to deployment, validation, and post-deployment optimisation.",
+          bullets: [
+            "Predictive and on-site wireless surveys",
+            "High-density design for clinical and retail environments",
+            "Wi-Fi 6/6E migration and refresh programmes",
+            "IoT device integration and management",
+            "Post-deployment optimisation and tuning",
+          ],
+        },
+        {
+          type: "case-study",
+          tag: "CASE STUDY",
+          title: "Hospital Trust Wireless Refresh",
+          desc: "We delivered a complete wireless network transformation for an NHS Hospital Trust, achieving 100% coverage across all clinical areas with zero downtime during migration.",
+          stat: "100%",
+          statDesc: "Coverage across clinical areas",
+        },
+      ],
+      options: [
+        "Can you support hospital wireless deployments?",
+        "What about retail wireless solutions?",
+        "How do you handle IoT device connectivity?",
+      ],
+    };
+  }
+
+  return {
+    role: "ai",
+    text: "Thank you for your question. Collective IP delivers end-to-end IT infrastructure services across six core practices: Connectivity, Security, Cloud, Datacentre & Compute, Endpoint Infrastructure, and Intelligent Automation.",
+    cards: [
+      {
+        type: "discovery",
+        tag: "DISCOVERY",
+        title: "Let Me Help You Explore",
+        desc: "I can provide detailed information about any of our capabilities, delivery approach, or how we work with partners. Try asking about a specific area:",
+        bullets: [
+          "Network and wireless deployments (including Cisco)",
+          "Security solutions and compliance",
+          "Cloud migration and hybrid infrastructure",
+          "HPC and datacentre solutions",
+          "Intelligent automation capabilities",
+          "Partner enablement and commercial models",
+        ],
+      },
+    ],
+    options: [
+      "Can you support a Cisco wireless rollout?",
+      "What intelligent automation solutions do you offer?",
+      "How do you work with channel partners?",
+    ],
+  };
+}
 
 const tools = [
   {
@@ -125,22 +252,27 @@ const tools = [
 type Tool = (typeof tools)[0];
 
 function KnowledgeAssistant({ tool }: { tool: Tool }) {
-  const [messages, setMessages] = useState<
-    { role: "user" | "ai"; text: string }[]
-  >([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const send = (text: string) => {
     if (!text.trim()) return;
-    setMessages((m) => [
-      ...m,
-      { role: "user", text },
-      {
-        role: "ai",
-        text: "Thanks for your question. Our team has deep expertise across all six practices. Based on what you've asked, I'd recommend connecting with our specialist team who can provide tailored guidance and relevant case studies. Would you like us to reach out?",
-      },
-    ]);
+    setMessages((m) => [...m, { role: "user", text }]);
     setInput("");
+
+    // Simulate small AI delay
+    setTimeout(() => {
+      setMessages((m) => [...m, getBotResponse(text)]);
+    }, 400);
   };
 
   return (
@@ -206,7 +338,7 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
                   className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`flex gap-3 max-w-[80%] ${m.role === "user" ? "flex-row-reverse" : ""}`}
+                    className={`flex gap-3 w-full max-w-[95%] md:max-w-[85%] ${m.role === "user" ? "flex-row-reverse" : ""}`}
                   >
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
@@ -217,18 +349,69 @@ function KnowledgeAssistant({ tool }: { tool: Tool }) {
                     >
                       {m.role === "user" ? "U" : <Bot size={16} />}
                     </div>
-                    <div
-                      className={`p-4 rounded-2xl text-xs leading-relaxed font-medium ${
-                        m.role === "user"
-                          ? "bg-[#5C2882] text-white rounded-tr-none"
-                          : "bg-[#F9FAFB] text-slate-600 border border-slate-50 rounded-tl-none"
-                      }`}
-                    >
-                      {m.text}
+                    <div className={`flex flex-col gap-3 min-w-0 w-full ${m.role === "user" ? "items-end" : "items-start"}`}>
+                      {m.text && (
+                        <div
+                          className={`p-4 rounded-2xl text-[13px] leading-relaxed font-medium inline-block w-fit ${
+                            m.role === "user"
+                              ? "bg-[#5C2882] text-white rounded-tr-none"
+                              : "bg-[#F9FAFB] text-slate-600 border border-slate-100 rounded-tl-none"
+                          }`}
+                        >
+                          {m.text}
+                        </div>
+                      )}
+
+                      {m.cards?.map((card, idx) => (
+                        <div key={idx} className="w-full bg-[#fdfaff] border border-[#E9D5FF] rounded-xl p-5 shadow-sm">
+                           <div className="flex items-center gap-2 mb-3">
+                             {card.type === "capability" && <CheckCircle2 size={16} className="text-[#8B5CF6]" />}
+                             {card.type === "case-study" && <ChevronRight size={16} className="text-[#8B5CF6]" />}
+                             {card.type === "discovery" && <Search size={16} className="text-[#8B5CF6]" />}
+                             <span className="text-[11px] font-bold text-[#8B5CF6] uppercase tracking-widest">{card.tag}</span>
+                           </div>
+                           
+                           <h4 className="text-[15px] font-bold text-[#3B4041] mb-2 leading-tight">{card.title}</h4>
+                           <p className="text-[13px] text-slate-500 leading-relaxed mb-4">{card.desc}</p>
+                           
+                           {card.bullets && (
+                             <ul className="space-y-2 mt-2">
+                               {card.bullets.map((b, bIdx) => (
+                                 <li key={bIdx} className="flex items-start gap-2.5">
+                                   <div className="w-1 h-1 rounded-full bg-[#8B5CF6] mt-2 flex-shrink-0" />
+                                   <span className="text-[13px] text-slate-600 leading-relaxed">{b}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                           )}
+
+                           {card.stat && (
+                             <div className="mt-4 pt-4 border-t border-[#E9D5FF]/50 flex items-center gap-3">
+                               <span className="text-2xl font-extrabold text-[#5C2882]">{card.stat}</span>
+                               <span className="text-[13px] font-medium text-slate-500">{card.statDesc}</span>
+                             </div>
+                           )}
+                        </div>
+                      ))}
+
+                      {m.options && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {m.options.map((opt, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => send(opt)}
+                              className="px-4 py-2.5 bg-white border border-slate-200 rounded-full text-[12px] font-medium text-slate-600 hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-colors text-left shadow-sm"
+                            >
+                              {opt}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </div>
           )}
         </div>
