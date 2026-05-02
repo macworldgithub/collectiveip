@@ -88,9 +88,9 @@ export default function DemoPage() {
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           {activeTool.id === "knowledge" ? (
-            <KnowledgeAssistant tool={activeTool} />
+            <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
           ) : (
-            <AssessmentTool tool={activeTool} />
+            <AssessmentTool key={activeTool.id} tool={activeTool} />
           )}
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, CheckCircle2, Loader2, Circle } from "lucide-react";
+import { ArrowRight, CheckCircle2, Loader2, Circle, AlertTriangle, Gauge } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Tool } from "../../data/demoTools";
 
@@ -97,33 +97,75 @@ const networkResults = {
   ]
 };
 
-const securityResults = {
-  stats: [
-    { value: "128", label: "Endpoints Scanned", numberColor: "text-slate-800" },
-    { value: "0", label: "Critical Issues", numberColor: "text-red-500" },
-    { value: "3", label: "High Priority", numberColor: "text-orange-500" },
-    { value: "8", label: "Recommendations", numberColor: "text-[#5C2882]" }
-  ],
-  findings: [
+const securityFindingsData = {
+  score: 72,
+  scoreLabel: "Overall Security Score",
+  scoreDesc: "Moderate risk — improvements recommended",
+  categories: [
     {
-      level: "HIGH",
-      category: "ENDPOINT",
-      title: "15 devices missing critical OS patches (>30 days)",
-      rec: "Recommendation: Enforce automated patch management policies via MDM",
-      bg: "bg-orange-50",
-      border: "border-orange-200",
-      pillBg: "bg-orange-500",
-      text: "text-orange-500"
+       title: "Endpoint Protection",
+       score: 68,
+       icon: "warning-orange",
+       barColor: "bg-red-500", 
+       scoreColor: "text-red-500",
+       dotColor: "bg-orange-500",
+       bullets: [
+         "3 unpatched endpoints detected (CVE-2024-21412)",
+         "EDR coverage at 92% — 47 devices without agent",
+         "USB device policy not enforced on 12 workstations"
+       ]
     },
     {
-      level: "MEDIUM",
-      category: "IDENTITY",
-      title: "MFA not enforced for all administrative accounts",
-      rec: "Recommendation: Implement conditional access policies requiring MFA for all admins",
-      bg: "bg-yellow-50",
-      border: "border-yellow-200",
-      pillBg: "bg-yellow-500",
-      text: "text-yellow-600"
+       title: "Identity & Access",
+       score: 74,
+       icon: "warning-orange",
+       barColor: "bg-orange-500",
+       scoreColor: "text-orange-500",
+       dotColor: "bg-orange-500",
+       bullets: [
+         "MFA not enforced on 15% of privileged accounts",
+         "8 dormant admin accounts active >90 days",
+         "Password policy below NCSC recommendations"
+       ]
+    },
+    {
+       title: "Network Security",
+       score: 82,
+       icon: "check-purple",
+       barColor: "bg-[#5C2882]",
+       scoreColor: "text-[#5C2882]",
+       dotColor: "bg-[#5C2882]",
+       bullets: [
+         "Firewall rules last audited 6 months ago",
+         "Network segmentation in place but incomplete for IoT",
+         "IDS/IPS signatures up to date"
+       ]
+    },
+    {
+       title: "Cloud Security",
+       score: 61,
+       icon: "warning-red",
+       barColor: "bg-red-500",
+       scoreColor: "text-red-600",
+       dotColor: "bg-red-600",
+       bullets: [
+         "2 S3 buckets with public read access",
+         "Cloud storage lacks encryption-at-rest",
+         "No CSPM tool deployed for continuous monitoring"
+       ]
+    },
+    {
+       title: "Data Protection",
+       score: 77,
+       icon: "check-purple",
+       barColor: "bg-orange-500",
+       scoreColor: "text-orange-500",
+       dotColor: "bg-[#5C2882]",
+       bullets: [
+         "DLP policies active on email and endpoints",
+         "Backup encryption enabled",
+         "Data classification incomplete for 30% of assets"
+       ]
     }
   ]
 };
@@ -136,14 +178,14 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
   const [submitted, setSubmitted] = useState(false);
 
   const steps = scanSteps[tool.id as string] || scanSteps.network;
-  const results = tool.id === "network" ? networkResults : securityResults;
 
   // Simulate scanning process
   useEffect(() => {
     if (isScanning && currentStep < steps.length) {
       const timer = setTimeout(() => {
         setCurrentStep(prev => prev + 1);
-      }, 800); // 800ms per step
+      }, tool.id === "security" ? 300 : 800); 
+      // Security has fewer visible steps, so make it spin slightly differently
       return () => clearTimeout(timer);
     } else if (isScanning && currentStep >= steps.length) {
       const finishTimer = setTimeout(() => {
@@ -152,7 +194,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
       }, 500);
       return () => clearTimeout(finishTimer);
     }
-  }, [isScanning, currentStep, steps.length]);
+  }, [isScanning, currentStep, steps.length, tool.id]);
 
   const handleStartScan = () => {
     setIsStarted(true);
@@ -171,7 +213,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden min-h-[500px] flex flex-col">
         {/* Constant Header */}
-        <div className="px-6 py-5 border-b border-slate-50 flex items-center justify-between">
+        <div className="px-6 py-5 border-b border-slate-50 flex items-center justify-between bg-white z-10">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 bg-[#5C2882] rounded-lg flex items-center justify-center text-white">
               {tool.icon}
@@ -193,7 +235,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
 
         <div className="flex-1 flex flex-col">
           {!isStarted ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-center p-8">
+            <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-white">
               <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
                 {tool.icon}
               </div>
@@ -218,85 +260,155 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
               </button>
             </div>
           ) : isScanning ? (
-            <div className="flex-1 flex flex-col items-center justify-center py-16 px-8">
-              <div className="flex items-center gap-4 mb-10 w-full max-w-sm">
-                <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] shadow-sm">
-                  {tool.icon}
+            tool.id === "network" ? (
+              <div className="flex-1 flex flex-col items-center justify-center py-16 px-8 bg-white">
+                <div className="flex items-center gap-4 mb-10 w-full max-w-sm">
+                  <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] shadow-sm">
+                    {tool.icon}
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-[15px] font-bold text-[#3B4041]">Assessment in Progress</h3>
+                    <p className="text-xs text-slate-500">Scanning infrastructure...</p>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <h3 className="text-[15px] font-bold text-[#3B4041]">Assessment in Progress</h3>
-                  <p className="text-xs text-slate-500">Scanning infrastructure...</p>
-                </div>
-              </div>
-              <div className="w-full max-w-sm flex flex-col gap-3">
-                {steps.map((step, idx) => {
-                  const isComplete = idx < currentStep;
-                  const isCurrent = idx === currentStep;
-                  const isPending = idx > currentStep;
+                <div className="w-full max-w-sm flex flex-col gap-3">
+                  {steps.map((step, idx) => {
+                    const isComplete = idx < currentStep;
+                    const isCurrent = idx === currentStep;
+                    const isPending = idx > currentStep;
 
-                  return (
-                    <div key={idx} className={`flex items-center gap-3 text-sm transition-all duration-300 ${isPending ? 'opacity-20' : 'opacity-100'}`}>
-                      {isComplete && <CheckCircle2 size={16} className="text-[#5C2882]" />}
-                      {isCurrent && <Loader2 size={16} className="text-[#5C2882] animate-spin" />}
-                      {isPending && <Circle size={16} className="text-slate-300" />}
-                      <span className={`${isCurrent || isComplete ? 'text-[#3B4041] font-medium' : 'text-slate-500'}`}>
-                        {step}
-                      </span>
-                    </div>
-                  );
-                })}
+                    return (
+                      <div key={idx} className={`flex items-center gap-3 text-sm transition-all duration-300 ${isPending ? 'opacity-20' : 'opacity-100'}`}>
+                        {isComplete && <CheckCircle2 size={16} className="text-[#5C2882]" />}
+                        {isCurrent && <Loader2 size={16} className="text-[#5C2882] animate-spin" />}
+                        {isPending && <Circle size={16} className="text-slate-300" />}
+                        <span className={`${isCurrent || isComplete ? 'text-[#3B4041] font-medium' : 'text-slate-500'}`}>
+                          {step}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="flex-1 flex flex-col items-center justify-center py-20 px-8 text-center bg-white">
+                 <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
+                    <svg className="absolute inset-0 w-full h-full animate-spin-slow text-[#5C2882]" viewBox="0 0 100 100" style={{ animationDuration: '2s' }}>
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="200" strokeLinecap="round" opacity="0.15"/>
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="80 200" strokeLinecap="round"/>
+                    </svg>
+                    <Gauge size={32} className="text-[#5C2882] animate-pulse" />
+                 </div>
+                 <h3 className="text-[17px] font-bold text-[#3B4041] mb-2">Evaluating Security Posture</h3>
+                 <p className="text-xs text-slate-500">Analysing endpoints, identity, network, cloud, and data protection...</p>
+              </div>
+            )
           ) : submitted ? (
-            <div className="flex-1 flex flex-col p-8">
-              {/* Stats Row */}
-              <div className="grid grid-cols-4 gap-4 mb-8">
-                {results.stats.map((stat, idx) => (
-                  <div key={idx} className="bg-slate-50 border border-slate-100 rounded-xl p-6 text-center">
-                    <div className={`text-3xl font-extrabold mb-1 ${stat.numberColor}`}>{stat.value}</div>
-                    <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Findings & Recommendations */}
-              <h3 className="text-sm font-bold text-[#3B4041] mb-4">Findings & Recommendations</h3>
-              <div className="space-y-3 mb-8">
-                {results.findings.map((f, idx) => (
-                  <div key={idx} className={`border rounded-xl p-5 ${f.bg} ${f.border}`}>
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white ${f.pillBg}`}>
-                        {f.level}
-                      </span>
-                      <span className={`text-[10px] font-bold uppercase tracking-widest ${f.text}`}>{f.category}</span>
+            tool.id === "network" ? (
+              <div className="flex-1 flex flex-col p-8 bg-white">
+                {/* Stats Row */}
+                <div className="grid grid-cols-4 gap-4 mb-8">
+                  {networkResults.stats.map((stat, idx) => (
+                    <div key={idx} className="bg-slate-50 border border-slate-100 rounded-xl p-6 text-center">
+                      <div className={`text-3xl font-extrabold mb-1 ${stat.numberColor}`}>{stat.value}</div>
+                      <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500">{stat.label}</div>
                     </div>
-                    <h4 className="text-sm font-bold text-[#3B4041] mb-1">{f.title}</h4>
-                    <p className="text-xs text-slate-600 font-medium">{f.rec}</p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              {/* Action Buttons */}
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={reset}
-                  className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors"
-                >
-                  Run Again
-                </button>
-                <button
-                  onClick={() => navigate('/about')}
-                  className="flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#5C2882]/20"
-                >
-                  Discuss Findings <ArrowRight size={16} />
-                </button>
+                {/* Findings & Recommendations */}
+                <h3 className="text-sm font-bold text-[#3B4041] mb-4">Findings & Recommendations</h3>
+                <div className="space-y-3 mb-8">
+                  {networkResults.findings.map((f, idx) => (
+                    <div key={idx} className={`border rounded-xl p-5 ${f.bg} ${f.border}`}>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white ${f.pillBg}`}>
+                          {f.level}
+                        </span>
+                        <span className={`text-[10px] font-bold uppercase tracking-widest ${f.text}`}>{f.category}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-[#3B4041] mb-1">{f.title}</h4>
+                      <p className="text-xs text-slate-600 font-medium">{f.rec}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={reset}
+                    className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors"
+                  >
+                    Run Again
+                  </button>
+                  <button
+                    onClick={() => navigate('/about')}
+                    className="flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#5C2882]/20"
+                  >
+                    Discuss Findings <ArrowRight size={16} />
+                  </button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="flex-1 flex flex-col p-8 items-center bg-[#FAFAFA]">
+                 {/* Score Circle */}
+                 <div className="flex flex-col items-center mb-10 w-full bg-white rounded-2xl p-8 border border-slate-100 shadow-sm max-w-[800px]">
+                    <div className="relative w-36 h-36 mb-6 flex flex-col items-center justify-center">
+                       <svg className="absolute inset-0 w-full h-full transform -rotate-90 drop-shadow-sm" viewBox="0 0 100 100">
+                          <circle cx="50" cy="50" r="40" fill="none" stroke="#F1F5F9" strokeWidth="6" />
+                          <circle cx="50" cy="50" r="40" fill="none" stroke="#F97316" strokeWidth="6" strokeDasharray={`${72 * 2.51} 251`} strokeLinecap="round" className="transition-all duration-1000 ease-out" />
+                       </svg>
+                       <span className="text-4xl font-extrabold text-[#F97316]">72</span>
+                       <span className="text-[11px] font-bold text-slate-400 absolute top-20">/100</span>
+                    </div>
+                    <h3 className="text-[15px] font-bold text-[#3B4041] mb-0.5">Overall Security Score</h3>
+                    <p className="text-xs text-slate-500 font-medium">Moderate risk — improvements recommended</p>
+                 </div>
+
+                 {/* Categories */}
+                 <div className="w-full max-w-[800px] space-y-4 mb-8">
+                   {securityFindingsData.categories.map((cat, idx) => (
+                      <div key={idx} className="border border-slate-200 shadow-sm rounded-xl p-6 bg-white transition-all hover:shadow-md">
+                         <div className="flex justify-between items-center mb-4">
+                            <div className="flex items-center gap-2.5">
+                               {cat.icon === "warning-orange" && <AlertTriangle size={18} className="text-orange-500" strokeWidth={2.5} />}
+                               {cat.icon === "warning-red" && <AlertTriangle size={18} className="text-red-500" strokeWidth={2.5} />}
+                               {cat.icon === "check-purple" && <CheckCircle2 size={18} className="text-[#5C2882]" strokeWidth={2.5} />}
+                               <h4 className="text-[15px] font-bold text-[#3B4041]">{cat.title}</h4>
+                            </div>
+                            <span className={`text-[19px] font-extrabold tracking-tight ${cat.scoreColor}`}>{cat.score}</span>
+                         </div>
+                         
+                         <div className="w-full h-[3px] bg-slate-100 rounded-full mb-5 overflow-hidden">
+                            <div className={`h-full ${cat.barColor} rounded-full`} style={{ width: `${cat.score}%` }}></div>
+                         </div>
+                         
+                         <ul className="space-y-2">
+                           {cat.bullets.map((b, bIdx) => (
+                              <li key={bIdx} className="flex items-start gap-2">
+                                 <div className={`w-1 h-1 rounded-full ${cat.dotColor} mt-2 flex-shrink-0`} />
+                                 <span className="text-[13px] text-slate-500 font-medium leading-relaxed">{b}</span>
+                              </li>
+                           ))}
+                         </ul>
+                      </div>
+                   ))}
+                 </div>
+
+                 {/* Buttons aligned left */}
+                 <div className="flex items-center gap-4 self-start max-w-[800px] mx-auto w-full">
+                    <button onClick={reset} className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors">Run Again</button>
+                    <button onClick={() => navigate('/about')} className="flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#5C2882]/20">
+                       Discuss Remediation <ArrowRight size={16} />
+                    </button>
+                 </div>
+              </div>
+            )
           ) : null}
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-slate-50 bg-[#F9FAFB] mt-auto">
+        <div className="px-6 py-5 border-t border-slate-50 bg-[#F9FAFB] mt-auto">
           <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.1em] text-center">
             {tool.id === "network"
               ? "Sample assessment with representative findings. Production tool connects to live infrastructure via API."
