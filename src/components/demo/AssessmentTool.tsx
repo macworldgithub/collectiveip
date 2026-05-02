@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, CheckCircle2, Loader2, Circle, AlertTriangle, Gauge } from "lucide-react";
+import { ArrowRight, CheckCircle2, Loader2, Circle, AlertTriangle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Tool } from "../../data/demoTools";
 
@@ -184,8 +184,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
     if (isScanning && currentStep < steps.length) {
       const timer = setTimeout(() => {
         setCurrentStep(prev => prev + 1);
-      }, tool.id === "security" ? 300 : 800); 
-      // Security has fewer visible steps, so make it spin slightly differently
+      }, tool.id === "security" ? 600 : 800); 
       return () => clearTimeout(timer);
     } else if (isScanning && currentStep >= steps.length) {
       const finishTimer = setTimeout(() => {
@@ -292,15 +291,27 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
               </div>
             ) : (
               <div className="flex-1 flex flex-col items-center justify-center py-20 px-8 text-center bg-white">
-                 <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
-                    <svg className="absolute inset-0 w-full h-full animate-spin-slow text-[#5C2882]" viewBox="0 0 100 100" style={{ animationDuration: '2s' }}>
-                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="200" strokeLinecap="round" opacity="0.15"/>
-                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="6" strokeDasharray="80 200" strokeLinecap="round"/>
+                 <div className="relative w-28 h-28 mb-8 flex items-center justify-center">
+                    <svg className="absolute inset-0 w-full h-full transform -rotate-90 text-[#5C2882]" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" opacity="0.15" />
+                      <circle 
+                        cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" 
+                        strokeDasharray="283" 
+                        strokeDashoffset={283 - (283 * (Math.min(currentStep, steps.length) / steps.length))} 
+                        strokeLinecap="round" 
+                        className="transition-all duration-700 ease-in-out" 
+                      />
                     </svg>
-                    <Gauge size={32} className="text-[#5C2882] animate-pulse" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <span className="text-[18px] font-extrabold text-[#5C2882]">
+                         {Math.round((Math.min(currentStep, steps.length) / steps.length) * 100)}%
+                       </span>
+                    </div>
                  </div>
                  <h3 className="text-[17px] font-bold text-[#3B4041] mb-2">Evaluating Security Posture</h3>
-                 <p className="text-xs text-slate-500">Analysing endpoints, identity, network, cloud, and data protection...</p>
+                 <p className="text-sm text-slate-500 max-w-[280px] h-5 transition-opacity duration-300">
+                    {steps[Math.min(currentStep, steps.length - 1)]}
+                 </p>
               </div>
             )
           ) : submitted ? (
@@ -358,8 +369,8 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
                           <circle cx="50" cy="50" r="40" fill="none" stroke="#F1F5F9" strokeWidth="6" />
                           <circle cx="50" cy="50" r="40" fill="none" stroke="#F97316" strokeWidth="6" strokeDasharray={`${72 * 2.51} 251`} strokeLinecap="round" className="transition-all duration-1000 ease-out" />
                        </svg>
-                       <span className="text-4xl font-extrabold text-[#F97316]">72</span>
-                       <span className="text-[11px] font-bold text-slate-400 absolute top-20">/100</span>
+                       <span className="text-4xl font-extrabold text-[#F97316] leading-none mb-1.5 mt-2">72</span>
+                       <span className="text-[11px] font-bold text-slate-400">/100</span>
                     </div>
                     <h3 className="text-[15px] font-bold text-[#3B4041] mb-0.5">Overall Security Score</h3>
                     <p className="text-xs text-slate-500 font-medium">Moderate risk — improvements recommended</p>
