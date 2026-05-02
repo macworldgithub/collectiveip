@@ -57,7 +57,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         </div>
 
         {/* Chat Area */}
-        <div ref={chatContainerRef} className="flex-1 p-8 overflow-y-auto">
+        <div ref={chatContainerRef} className="flex-1 p-4 md:p-8 overflow-y-auto">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
@@ -91,15 +91,15 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                   className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`flex gap-3 w-full max-w-[95%] md:max-w-[85%] ${m.role === "user" ? "flex-row-reverse" : ""}`}
+                    className={`flex gap-2 md:gap-3 w-full max-w-full md:max-w-[85%] ${m.role === "user" ? "flex-row-reverse" : ""}`}
                   >
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${m.role === "user"
+                      className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs ${m.role === "user"
                         ? "bg-slate-100 text-slate-500"
                         : "bg-[#F3E8FF] text-[#5C2882]"
                         }`}
                     >
-                      {m.role === "user" ? "U" : <Bot size={16} />}
+                      {m.role === "user" ? "U" : <Bot size={14} />}
                     </div>
                     <div className={`flex flex-col gap-3 min-w-0 w-full ${m.role === "user" ? "items-end" : "items-start"}`}>
                       {m.text && (
@@ -167,12 +167,12 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                       ))}
 
                       {m.options && (
-                        <div className="flex flex-wrap gap-2 mt-2">
+                        <div className="flex flex-col md:flex-row md:flex-wrap gap-2 mt-2 w-full md:w-auto">
                           {m.options.map((opt, idx) => (
                             <button
                               key={idx}
                               onClick={() => send(opt)}
-                              className="px-4 py-2.5 bg-white border border-slate-200 rounded-full text-[12px] font-medium text-slate-600 hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-colors text-left shadow-sm"
+                              className="px-4 py-3 md:py-2.5 bg-white border border-slate-200 rounded-xl md:rounded-full text-[12px] font-medium text-slate-600 hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-colors text-left shadow-sm w-full md:w-auto"
                             >
                               {opt}
                             </button>
@@ -188,7 +188,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         </div>
 
         {/* Chat Input */}
-        <div className="p-6 border-t border-slate-50 bg-[#F9FAFB]">
+        <div className="p-4 md:p-6 border-t border-slate-50 bg-[#F9FAFB]">
           <form
             onSubmit={(e) => {
               e.preventDefault();
