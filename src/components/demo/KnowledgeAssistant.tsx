@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Bot, Send, CheckCircle2, ChevronRight, Search, MessageSquare } from "lucide-react";
+import { Bot, Send, CheckCircle2, ChevronRight, Search, MessageSquare, Lightbulb } from "lucide-react";
 import { ChatMessage, getBotResponse } from "../../config/knowledgeBase";
 import { Tool } from "../../data/demoTools";
 
@@ -114,35 +114,56 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                       )}
 
                       {m.cards?.map((card, idx) => (
-                        <div key={idx} className="w-full bg-[#fdfaff] border border-[#E9D5FF] rounded-xl p-5 shadow-sm">
-                          <div className="flex items-center gap-2 mb-3">
-                            {card.type === "capability" && <CheckCircle2 size={16} className="text-[#8B5CF6]" />}
-                            {card.type === "case-study" && <ChevronRight size={16} className="text-[#8B5CF6]" />}
-                            {card.type === "discovery" && <Search size={16} className="text-[#8B5CF6]" />}
-                            <span className="text-[11px] font-bold text-[#8B5CF6] uppercase tracking-widest">{card.tag}</span>
-                          </div>
-
-                          <h4 className="text-[15px] font-bold text-[#3B4041] mb-2 leading-tight">{card.title}</h4>
-                          <p className="text-[13px] text-slate-500 leading-relaxed mb-4">{card.desc}</p>
-
-                          {card.bullets && (
-                            <ul className="space-y-2 mt-2">
-                              {card.bullets.map((b, bIdx) => (
-                                <li key={bIdx} className="flex items-start gap-2.5">
-                                  <div className="w-1 h-1 rounded-full bg-[#8B5CF6] mt-2 flex-shrink-0" />
-                                  <span className="text-[13px] text-slate-600 leading-relaxed">{b}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-
-                          {card.stat && (
-                            <div className="mt-4 pt-4 border-t border-[#E9D5FF]/50 flex items-center gap-3">
-                              <span className="text-2xl font-extrabold text-[#5C2882]">{card.stat}</span>
-                              <span className="text-[13px] font-medium text-slate-500">{card.statDesc}</span>
+                        card.type === "approach" ? (
+                          <div key={idx} className="w-full bg-[#FFFBEB] border border-[#FDE68A] rounded-xl p-5 shadow-sm">
+                            <div className="flex items-center gap-2 mb-3">
+                              <Lightbulb size={16} className="text-[#D97706]" />
+                              <span className="text-[11px] font-bold text-[#D97706] uppercase tracking-widest">{card.tag}</span>
                             </div>
-                          )}
-                        </div>
+                            <h4 className="text-[15px] font-bold text-[#3B4041] mb-2 leading-tight">{card.title}</h4>
+                            <p className="text-[13px] text-slate-500 leading-relaxed mb-4">{card.desc}</p>
+                            {card.bullets && (
+                              <ul className="space-y-2 mt-2">
+                                {card.bullets.map((b, bIdx) => (
+                                  <li key={bIdx} className="flex items-start gap-2.5">
+                                    <div className="w-1 h-1 rounded-full bg-[#D97706] mt-2 flex-shrink-0" />
+                                    <span className="text-[13px] text-slate-600 leading-relaxed">{b}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        ) : (
+                          <div key={idx} className="w-full bg-[#fdfaff] border border-[#E9D5FF] rounded-xl p-5 shadow-sm">
+                            <div className="flex items-center gap-2 mb-3">
+                              {card.type === "capability" && <CheckCircle2 size={16} className="text-[#8B5CF6]" />}
+                              {card.type === "case-study" && <ChevronRight size={16} className="text-[#8B5CF6]" />}
+                              {card.type === "discovery" && <Search size={16} className="text-[#8B5CF6]" />}
+                              <span className="text-[11px] font-bold text-[#8B5CF6] uppercase tracking-widest">{card.tag}</span>
+                            </div>
+
+                            <h4 className="text-[15px] font-bold text-[#3B4041] mb-2 leading-tight">{card.title}</h4>
+                            <p className="text-[13px] text-slate-500 leading-relaxed mb-4">{card.desc}</p>
+
+                            {card.bullets && (
+                              <ul className="space-y-2 mt-2">
+                                {card.bullets.map((b, bIdx) => (
+                                  <li key={bIdx} className="flex items-start gap-2.5">
+                                    <div className="w-1 h-1 rounded-full bg-[#8B5CF6] mt-2 flex-shrink-0" />
+                                    <span className="text-[13px] text-slate-600 leading-relaxed">{b}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+
+                            {card.stat && (
+                              <div className="mt-4 pt-4 border-t border-[#E9D5FF]/50 flex items-center gap-3">
+                                <span className="text-2xl font-extrabold text-[#5C2882]">{card.stat}</span>
+                                <span className="text-[13px] font-medium text-slate-500">{card.statDesc}</span>
+                              </div>
+                            )}
+                          </div>
+                        )
                       ))}
 
                       {m.options && (

@@ -1,5 +1,5 @@
 export type ChatCard = {
-  type: "capability" | "case-study" | "discovery";
+  type: "capability" | "case-study" | "discovery" | "approach";
   tag: string;
   title: string;
   desc: string;
@@ -91,6 +91,79 @@ export function getBotResponse(q: string): ChatMessage {
         "Can you support hospital wireless deployments?",
         "What about retail wireless solutions?",
         "How do you handle IoT device connectivity?",
+      ],
+    };
+  }
+
+  if (
+    norm.includes("automation implementation") ||
+    norm.includes("intelligent automation solutions") ||
+    norm.includes("what outcomes can automation deliver")
+  ) {
+    return {
+      role: "ai",
+      text: "Our Intelligent Automation practice delivers practical, outcome-driven solutions that reduce cost, accelerate delivery, and transform operations. We focus on real business problems with measurable outcomes.",
+      cards: [
+        {
+          type: "capability",
+          tag: "CAPABILITY",
+          title: "Intelligent Automation Services",
+          desc: "We deliver automation solutions that integrate with your existing infrastructure and deliver value from day one.",
+          bullets: [
+            "Automated network operations and monitoring",
+            "Intelligent process automation",
+            "Predictive analytics and insights",
+            "Digital front door / knowledge systems",
+            "Custom solutions for specific use cases",
+          ],
+        },
+        {
+          type: "approach",
+          tag: "OUR APPROACH",
+          title: "Our Approach",
+          desc: "We follow a phased approach: Discovery & Assessment, Solution Design, Delivery & Integration, and Optimisation & Scale. Each phase proves value before moving to the next.",
+        },
+      ],
+      options: [
+        "What outcomes can automation deliver?",
+        "Can you build a custom knowledge system?",
+        "How do you approach automation implementation?",
+      ],
+    };
+  }
+
+  if (
+    norm.includes("channel partners") ||
+    norm.includes("commercial model") ||
+    norm.includes("white-label your services")
+  ) {
+    return {
+      role: "ai",
+      text: "We exist to enable our channel partners. Everything we do is designed to help you expand your services portfolio, win more business, and deliver with confidence — without competing with your brand.",
+      cards: [
+        {
+          type: "capability",
+          tag: "CAPABILITY",
+          title: "Partner Enablement",
+          desc: "We support partners across four key areas to drive mutual growth and success.",
+          bullets: [
+            "Expanding your services portfolio and creating new white space",
+            "Reducing fixed cost base through flexible specialist resource",
+            "Extending security services capabilities",
+            "Driving annuity revenue through value-added services",
+          ],
+        },
+        {
+          type: "approach",
+          tag: "OUR APPROACH",
+          title: "How We Work",
+          desc: "We operate as an extension of your team — white-labelled, aligned to your brand, and focused on making you look good. Our experts bring deep technical capability without the overhead of permanent headcount.",
+        },
+      ],
+      options: [
+        "How do you protect our customer relationships?",
+        "What does the commercial model look like?",
+        "Can you white-label your services?",
       ],
     };
   }

@@ -26,8 +26,8 @@ export const tools: Tool[] = [
     placeholder: "Ask about our capabilities...",
     sampleQuestions: [
       "Can you support a multi-site Cisco wireless rollout?",
-      "What intelligent automation solutions do you offer?",
-      "Can you deliver endpoint security for a large enterprise?",
+      "How do you approach automation implementation?",
+      "What's your approach to wireless design?",
       "How do you work with channel partners?",
     ],
   },
