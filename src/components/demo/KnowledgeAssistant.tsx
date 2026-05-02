@@ -6,10 +6,15 @@ import { Tool } from "../../data/demoTools";
 export function KnowledgeAssistant({ tool }: { tool: Tool }) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: "smooth"
+      });
+    }
   };
 
   useEffect(() => {
@@ -52,7 +57,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         </div>
 
         {/* Chat Area */}
-        <div className="flex-1 p-8 overflow-y-auto">
+        <div ref={chatContainerRef} className="flex-1 p-8 overflow-y-auto">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
@@ -157,7 +162,6 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                   </div>
                 </div>
               ))}
-              <div ref={messagesEndRef} />
             </div>
           )}
         </div>
