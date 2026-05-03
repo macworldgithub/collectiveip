@@ -133,6 +133,45 @@ export function getBotResponse(q: string): ChatMessage {
   }
 
   if (
+    norm.includes("endpoint security") ||
+    norm.includes("large enterprise") ||
+    norm.includes("can you deliver endpoint security")
+  ) {
+    return {
+      role: "ai",
+      text: "Our Security practice delivers end-to-end solutions across network, endpoint, cloud, IoT, and data centre environments. We help organisations protect critical assets and reduce attack surfaces.",
+      cards: [
+        {
+          type: "capability",
+          tag: "CAPABILITY",
+          title: "Security Services",
+          desc: "We advise, design, and implement security solutions tailored to your specific threat landscape and compliance requirements.",
+          bullets: [
+            "Global threat analysis and vulnerability assessments",
+            "Endpoint security deployment and management",
+            "Network security architecture",
+            "Cloud security posture management",
+            "Compliance and policy enforcement",
+          ],
+        },
+        {
+          type: "case-study",
+          tag: "CASE STUDY",
+          title: "Aerospace — Endpoint Security Deployment",
+          desc: "We deployed comprehensive endpoint security for a major aerospace manufacturer, achieving a 95% reduction in security incidents with unified visibility across 5,000+ endpoints.",
+          stat: "95%",
+          statDesc: "Reduction in security incidents",
+        },
+      ],
+      options: [
+        "What compliance standards do you support?",
+        "Can you help with endpoint security?",
+        "What about cloud security?",
+      ],
+    };
+  }
+
+  if (
     norm.includes("channel partners") ||
     norm.includes("commercial model") ||
     norm.includes("white-label your services")
