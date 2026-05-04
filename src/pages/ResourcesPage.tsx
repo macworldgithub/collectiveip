@@ -166,7 +166,7 @@ export default function ResourcesPage() {
                 </div>
                 <h2 className="font-heading text-2xl font-bold text-[#3B4041] mb-2">
                   {selectedBlog.title}
-                </h2>
+                </h2>  
                 <div className="text-slate-500 text-sm">
                   By {selectedBlog.author}
                 </div>
