@@ -45,9 +45,9 @@ export default function PartnerServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-[#5C2882]" size={24} />
+                <Users className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 End-to-End Project Ownership
@@ -58,9 +58,9 @@ export default function PartnerServicesPage() {
               </p>
             </div>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Wrench className="text-[#5C2882]" size={24} />
+                <Wrench className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 Telecom Consultancy
@@ -71,9 +71,9 @@ export default function PartnerServicesPage() {
               </p>
             </div>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-[#5C2882]" size={24} />
+                <Users className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 Managed Resourcing
@@ -84,9 +84,9 @@ export default function PartnerServicesPage() {
               </p>
             </div>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Truck className="text-[#5C2882]" size={24} />
+                <Truck className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 Field Services
@@ -97,9 +97,9 @@ export default function PartnerServicesPage() {
               </p>
             </div>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Zap className="text-[#5C2882]" size={24} />
+                <Zap className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 Mass Deployments
@@ -110,9 +110,9 @@ export default function PartnerServicesPage() {
               </p>
             </div>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#5C2882] transition-colors">
+            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
-                <Shield className="text-[#5C2882]" size={24} />
+                <Shield className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
                 Managed Services
@@ -519,7 +519,7 @@ export default function PartnerServicesPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#4A1E6B] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-colors"
             >
               Contact Us <ArrowRight size={16} />
             </a>

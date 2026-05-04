@@ -127,7 +127,7 @@ export default function ResourcesPage() {
               </p>
               <button
                 onClick={() => openBlog("wifi-education")}
-                className="text-[#5C2882] text-sm font-bold hover:underline"
+                className="text-[#70309d] text-sm font-bold hover:underline"
               >
                 Read More →
               </button>
@@ -146,7 +146,7 @@ export default function ResourcesPage() {
               </p>
               <button
                 onClick={() => openBlog("infrastructure-services")}
-                className="text-[#5C2882] text-sm font-bold hover:underline"
+                className="text-[#70309d] text-sm font-bold hover:underline"
               >
                 Read More →
               </button>

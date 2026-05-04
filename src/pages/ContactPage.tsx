@@ -66,25 +66,25 @@ export default function ContactPage() {
               <form className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#5C2882] focus:border-[#5C2882]" />
+                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                  <input type="email" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#5C2882] focus:border-[#5C2882]" />
+                  <input type="email" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Company</label>
-                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#5C2882] focus:border-[#5C2882]" />
+                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#5C2882] focus:border-[#5C2882]"></textarea>
+                  <textarea rows={4} className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"></textarea>
                 </div>
                 
-                <button type="submit" className="w-full px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#4A1E6B] transition-colors">
+                <button type="submit" className="w-full px-6 py-3 bg-[#70309d] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-colors">
                   Send Message
                 </button>
               </form>
