@@ -206,74 +206,112 @@ export default function PracticesPage() {
               across connectivity, automation, cloud, data centre, compute and
               endpoint environments.
             </p>
+            <p className="text-slate-500 max-w-3xl mx-auto text-sm leading-relaxed mt-4">
+              Our role is to help partners and clients reduce operational risk
+              without slowing delivery. We apply practical security thinking at
+              each stage of the lifecycle: from discovery and design through
+              deployment, transition and ongoing service management.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Secure Architecture and Design
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Assessing security implications early to ensure networks, cloud
-                platforms, endpoints and automation workflows are designed with
-                appropriate controls, segmentation and resilience.
-              </p>
-            </div>
+          <div className="mb-16">
+            <h3 className="font-heading text-xl font-bold text-[#3B4041] uppercase mb-8 text-center">
+              Cross-Practice Security Capabilities
+            </h3>
 
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Identity, Access and Control
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Implementing access models that are proportionate, manageable
-                and aligned to operational needs, including privileged access
-                and role-based access across distributed environments.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Secure Architecture and Design
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  We assess the security implications of infrastructure
+                  decisions early, helping ensure networks, cloud platforms,
+                  endpoints and automation workflows are designed with
+                  appropriate controls, segmentation and resilience from the
+                  outset.
+                </p>
+              </div>
 
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Infrastructure Hardening
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Reducing exposure across network, cloud, compute and endpoint
-                estates through configuration review, baseline standards,
-                patching approaches and secure build patterns.
-              </p>
-            </div>
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Identity, Access and Control
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  We support the implementation of access models that are
+                  proportionate, manageable and aligned to operational needs.
+                  This includes privileged access, role-based access, endpoint
+                  control and secure administration across distributed
+                  environments.
+                </p>
+              </div>
 
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Secure Deployment and Change
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Embedding security into deployment activity, not adding it
-                afterwards. Supporting controlled rollouts, testing, validation
-                and operational handover.
-              </p>
-            </div>
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Infrastructure Hardening
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  We help reduce exposure across network, cloud, compute and
+                  endpoint estates through configuration review, baseline
+                  standards, patching approaches, secure build patterns and
+                  technical remediation planning.
+                </p>
+              </div>
 
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Governance, Risk and Compliance
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Helping partners and clients evidence good practice through
-                practical governance, technical documentation, risk tracking and
-                compliance-aligned delivery support.
-              </p>
-            </div>
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Secure Deployment and Change
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Security is embedded into deployment activity, not added
+                  afterwards. We support controlled rollouts, testing,
+                  validation, documentation and operational handover to ensure
+                  changes are secure, repeatable and supportable.
+                </p>
+              </div>
 
-            <div className="bg-white p-6 rounded-lg border border-slate-200">
-              <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Security-Aware Automation
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Designing automation workflows with control, auditability,
-                access management and exception handling in mind to improve
-                consistency and reduce manual risk.
-              </p>
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Governance, Risk and Compliance Support
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  We help partners and clients evidence good practice through
+                  practical governance, technical documentation, risk tracking
+                  and compliance-aligned delivery support. The focus is on
+                  clarity, accountability and operational control.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg border border-slate-200">
+                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
+                  Security-Aware Automation
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Automation can improve consistency and reduce manual risk, but
+                  it needs appropriate safeguards. We design automation
+                  workflows with control, auditability, access management and
+                  exception handling in mind.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg border border-slate-200">
+            <h3 className="font-heading text-xl font-bold text-[#3B4041] uppercase mb-4">
+              Why It Matters
+            </h3>
+            <p className="text-slate-500 text-sm leading-relaxed mb-4">
+              Modern infrastructure is interconnected. A weakness in one area
+              can quickly affect performance, availability, compliance or
+              customer confidence elsewhere. By treating security as a
+              cross-practice capability, we help ensure it is considered
+              consistently across every project, service and technical decision.
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Our approach is practical, technical and delivery-focused: secure
+              enough to reduce risk, simple enough to operate, and structured
+              enough to scale.
+            </p>
           </div>
         </div>
       </section>
