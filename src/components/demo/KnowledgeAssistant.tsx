@@ -38,7 +38,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         {/* Chat Header */}
         <div className="px-6 py-5 border-b border-slate-50 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-[#5C2882] rounded-lg flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-[#70309d] rounded-lg flex items-center justify-center text-white">
               <MessageSquare size={20} />
             </div>
             <div>
@@ -60,7 +60,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         <div ref={chatContainerRef} className="flex-1 p-4 md:p-8 overflow-y-auto">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
+              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] mb-6">
                 <Bot size={32} />
               </div>
               <h2 className="text-xl font-extrabold text-[#3B4041] mb-2 uppercase tracking-tight">
@@ -96,7 +96,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                     <div
                       className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs ${m.role === "user"
                         ? "bg-slate-100 text-slate-500"
-                        : "bg-[#F3E8FF] text-[#5C2882]"
+                        : "bg-[#F3E8FF] text-[#70309d]"
                         }`}
                     >
                       {m.role === "user" ? "U" : <Bot size={14} />}
@@ -105,7 +105,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                       {m.text && (
                         <div
                           className={`p-4 rounded-2xl text-[13px] leading-relaxed font-medium inline-block w-fit ${m.role === "user"
-                            ? "bg-[#5C2882] text-white rounded-tr-none"
+                            ? "bg-[#70309d] text-white rounded-tr-none"
                             : "bg-[#F9FAFB] text-slate-600 border border-slate-100 rounded-tl-none"
                             }`}
                         >
@@ -158,7 +158,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
 
                             {card.stat && (
                               <div className="mt-4 pt-4 border-t border-[#E9D5FF]/50 flex items-center gap-3">
-                                <span className="text-2xl font-extrabold text-[#5C2882]">{card.stat}</span>
+                                <span className="text-2xl font-extrabold text-[#70309d]">{card.stat}</span>
                                 <span className="text-[13px] font-medium text-slate-500">{card.statDesc}</span>
                               </div>
                             )}
@@ -205,7 +205,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
             />
             <button
               type="submit"
-              className="absolute right-2 w-10 h-10 bg-[#8B5CF6] text-white rounded-lg flex items-center justify-center hover:bg-[#7C3AED] transition-colors shadow-lg shadow-[#8B5CF6]/20"
+              className="absolute right-2 w-10 h-10 bg-[#8B5CF6] text-white rounded-lg flex items-center justify-center hover:bg-[#5a2680] transition-colors shadow-lg shadow-[#8B5CF6]/20"
             >
               <Send size={18} />
             </button>

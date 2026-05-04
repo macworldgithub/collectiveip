@@ -130,7 +130,7 @@ export default function IntelligentAutomationPage() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="/demo"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300"
               >
                 See It In Action <ArrowRight size={14} />
               </a>
@@ -165,7 +165,7 @@ export default function IntelligentAutomationPage() {
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
               WHAT WE DELIVER
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -183,7 +183,7 @@ export default function IntelligentAutomationPage() {
                 key={idx}
                 className="p-8 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-[#8B5CF6] transition-all duration-300"
               >
-                <div className="text-[#5C2882] mb-6">{s.icon}</div>
+                <div className="text-[#70309d] mb-6">{s.icon}</div>
                 <h3 className="font-heading text-base font-bold text-[#3B4041] uppercase tracking-widest mb-4">
                   {s.title}
                 </h3>
@@ -201,7 +201,7 @@ export default function IntelligentAutomationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
-              <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+              <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
                 OUR APPROACH
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6">
@@ -215,7 +215,7 @@ export default function IntelligentAutomationPage() {
               <div className="space-y-8">
                 {approachSteps.map((step) => (
                   <div key={step.number} className="flex gap-6">
-                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#5C2882] flex items-center justify-center text-base font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
                       {step.number}
                     </div>
                     <div>
@@ -259,7 +259,7 @@ export default function IntelligentAutomationPage() {
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
               PROOF POINTS
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -273,7 +273,7 @@ export default function IntelligentAutomationPage() {
           <div className="space-y-6">
             {proofPoints.map((point, idx) => (
               <div key={idx} className="bg-white rounded-xl p-10 border border-slate-100 shadow-sm">
-                <div className="flex items-center gap-3 text-[#5C2882] mb-8">
+                <div className="flex items-center gap-3 text-[#70309d] mb-8">
                   <Network size={16} />
                   <h3 className="font-heading text-xl  font-bold uppercase tracking-[0.15em]">
                     {point.title}
@@ -314,7 +314,7 @@ export default function IntelligentAutomationPage() {
           </p>
           <a
             href="/demo"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#70309d] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300"
           >
             Try the Interactive Demo <ArrowRight size={14} />
           </a>

@@ -58,7 +58,7 @@ export default function Tools() {
                 </div>
                 <div>
                   <h3 className="font-heading text-base font-bold mb-0.5">{t.title}</h3>
-                  <p className={`text-xs ${activeTool === t.id ? 'text-[#A78BFA]' : 'text-slate-500'}`}>
+                  <p className={`text-xs ${activeTool === t.id ? 'text-brand-300' : 'text-slate-500'}`}>
                     {t.subtitle}
                   </p>
                 </div>
@@ -67,7 +67,7 @@ export default function Tools() {
 
             <a
               href="/demo"
-              className="mt-2 flex items-center justify-center gap-2 px-6 py-4 bg-[#5C2882] text-white font-bold rounded-md hover:bg-[#7C3AED] transition-all duration-300 text-sm shadow-sm"
+              className="mt-2 flex items-center justify-center gap-2 px-6 py-4 bg-[#70309d] text-white font-bold rounded-md hover:bg-[#5a2680] transition-all duration-300 text-sm shadow-sm"
             >
               Try All Tools Live
               <ArrowRight size={16} />

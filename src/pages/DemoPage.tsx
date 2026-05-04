@@ -103,7 +103,7 @@ export default function DemoPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h4 className="text-base font-bold text-[#5C2882] uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
               UNBRANDED DEMO SITES
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -117,7 +117,7 @@ export default function DemoPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
               <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-600"></div>
               <div className="p-6">
                 <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -143,14 +143,14 @@ export default function DemoPage() {
                 </div>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
                 >
                   View Demo <ArrowRight size={14} />
                 </a>
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
               <div className="h-32 bg-gradient-to-br from-purple-500 to-purple-600"></div>
               <div className="p-6">
                 <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -176,14 +176,14 @@ export default function DemoPage() {
                 </div>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
                 >
                   View Demo <ArrowRight size={14} />
                 </a>
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
               <div className="h-32 bg-gradient-to-br from-green-500 to-green-600"></div>
               <div className="p-6">
                 <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -209,14 +209,14 @@ export default function DemoPage() {
                 </div>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
                 >
                   View Demo <ArrowRight size={14} />
                 </a>
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#5C2882] transition-colors">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
               <div className="h-32 bg-gradient-to-br from-orange-500 to-orange-600"></div>
               <div className="p-6">
                 <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -240,7 +240,7 @@ export default function DemoPage() {
                 </div>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
                 >
                   Learn More <ArrowRight size={14} />
                 </a>
@@ -313,7 +313,7 @@ export default function DemoPage() {
           <div className="flex flex-wrap justify-center gap-6">
             <a
               href="/about"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
             >
               Get in Touch <ArrowRight size={18} />
             </a>

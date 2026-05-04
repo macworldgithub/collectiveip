@@ -63,7 +63,7 @@ export default function DigitalFrontDoor() {
 
         <a
           href="/demo"
-          className="inline-flex items-center gap-2 px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-500 transition-colors duration-200 shadow-lg"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors duration-200 shadow-lg"
         >
           Experience the Tools
           <ArrowRight size={18} />

@@ -136,8 +136,8 @@ export default function PracticesPage() {
                   <div
                     className={`w-12 h-12 rounded-[10px] flex items-center justify-center flex-shrink-0 ${
                       p.isDarkIcon
-                        ? "bg-[#5C2882] text-white"
-                        : "border border-[#E9D5FF] bg-[#F9F5FF] text-[#5C2882]"
+                        ? "bg-[#70309D] text-white"
+                        : "border border-[#E9D5FF] bg-[#F9F5FF] text-[#70309d]"
                     }`}
                   >
                     {p.icon}
@@ -181,7 +181,7 @@ export default function PracticesPage() {
                   {p.sectors.map((s) => (
                     <span
                       key={s}
-                      className="px-3 py-1.5 bg-white border border-slate-200 text-slate-500 text-[10px] font-medium rounded-full shadow-sm"
+                      className="px-3 py-1.5 bg-[#F3F4F6] border border-slate-200 text-slate-500 text-[10px] font-medium rounded-full shadow-sm"
                     >
                       {s}
                     </span>
@@ -328,7 +328,7 @@ export default function PracticesPage() {
           </p>
           <a
             href="/demo"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-sm font-bold rounded-md hover:bg-[#7C3AED] transition-all duration-300 shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#70309D] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-all duration-300 shadow-sm"
           >
             Try Our Tools <ArrowRight size={16} />
           </a>

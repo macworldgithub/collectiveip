@@ -31,7 +31,7 @@ const networkResults = {
     { value: "47", label: "Devices Scanned", numberColor: "text-slate-800" },
     { value: "1", label: "Critical Issues", numberColor: "text-red-500" },
     { value: "2", label: "High Priority", numberColor: "text-orange-500" },
-    { value: "6", label: "Recommendations", numberColor: "text-[#5C2882]" }
+    { value: "6", label: "Recommendations", numberColor: "text-[#70309d]" }
   ],
   findings: [
     {
@@ -132,9 +132,9 @@ const securityFindingsData = {
        title: "Network Security",
        score: 82,
        icon: "check-purple",
-       barColor: "bg-[#5C2882]",
-       scoreColor: "text-[#5C2882]",
-       dotColor: "bg-[#5C2882]",
+       barColor: "bg-[#70309d]",
+       scoreColor: "text-[#70309d]",
+       dotColor: "bg-[#70309d]",
        bullets: [
          "Firewall rules last audited 6 months ago",
          "Network segmentation in place but incomplete for IoT",
@@ -160,7 +160,7 @@ const securityFindingsData = {
        icon: "check-purple",
        barColor: "bg-orange-500",
        scoreColor: "text-orange-500",
-       dotColor: "bg-[#5C2882]",
+       dotColor: "bg-[#70309d]",
        bullets: [
          "DLP policies active on email and endpoints",
          "Backup encryption enabled",
@@ -214,7 +214,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
         {/* Constant Header */}
         <div className="px-6 py-5 border-b border-slate-50 flex items-center justify-between bg-white z-10">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-[#5C2882] rounded-lg flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-[#70309d] rounded-lg flex items-center justify-center text-white">
               {tool.icon}
             </div>
             <div>
@@ -235,7 +235,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
         <div className="flex-1 flex flex-col">
           {!isStarted ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-white">
-              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] mb-6">
+              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] mb-6">
                 {tool.icon}
               </div>
               <h2 className="text-xl font-extrabold text-[#3B4041] mb-4 uppercase tracking-tight">
@@ -250,7 +250,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
               </p>
               <button
                 onClick={handleStartScan}
-                className="flex items-center gap-3 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all duration-300 shadow-lg shadow-[#5C2882]/20"
+                className="flex items-center gap-3 px-8 py-3.5 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all duration-300 shadow-lg shadow-[#70309d]/20"
               >
                 {tool.icon}{" "}
                 {tool.id === "network"
@@ -262,7 +262,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
             tool.id === "network" ? (
               <div className="flex-1 flex flex-col items-center justify-center py-16 px-8 bg-white">
                 <div className="flex items-center gap-4 mb-10 w-full max-w-sm">
-                  <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#5C2882] shadow-sm">
+                  <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] shadow-sm">
                     {tool.icon}
                   </div>
                   <div className="text-left">
@@ -278,8 +278,8 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
 
                     return (
                       <div key={idx} className={`flex items-center gap-3 text-sm transition-all duration-300 ${isPending ? 'opacity-20' : 'opacity-100'}`}>
-                        {isComplete && <CheckCircle2 size={16} className="text-[#5C2882]" />}
-                        {isCurrent && <Loader2 size={16} className="text-[#5C2882] animate-spin" />}
+                        {isComplete && <CheckCircle2 size={16} className="text-[#70309d]" />}
+                        {isCurrent && <Loader2 size={16} className="text-[#70309d] animate-spin" />}
                         {isPending && <Circle size={16} className="text-slate-300" />}
                         <span className={`${isCurrent || isComplete ? 'text-[#3B4041] font-medium' : 'text-slate-500'}`}>
                           {step}
@@ -292,7 +292,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
             ) : (
               <div className="flex-1 flex flex-col items-center justify-center py-20 px-8 text-center bg-white">
                  <div className="relative w-28 h-28 mb-8 flex items-center justify-center">
-                    <svg className="absolute inset-0 w-full h-full transform -rotate-90 text-[#5C2882]" viewBox="0 0 100 100">
+                    <svg className="absolute inset-0 w-full h-full transform -rotate-90 text-[#70309d]" viewBox="0 0 100 100">
                       <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" opacity="0.15" />
                       <circle 
                         cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" 
@@ -303,7 +303,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
                       />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
-                       <span className="text-[18px] font-extrabold text-[#5C2882]">
+                       <span className="text-[18px] font-extrabold text-[#70309d]">
                          {Math.round((Math.min(currentStep, steps.length) / steps.length) * 100)}%
                        </span>
                     </div>
@@ -354,7 +354,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
                   </button>
                   <button
                     onClick={() => navigate('/about')}
-                    className="flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#5C2882]/20"
+                    className="flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#70309d]/20"
                   >
                     Discuss Findings <ArrowRight size={16} />
                   </button>
@@ -384,7 +384,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
                             <div className="flex items-center gap-2.5">
                                {cat.icon === "warning-orange" && <AlertTriangle size={18} className="text-orange-500" strokeWidth={2.5} />}
                                {cat.icon === "warning-red" && <AlertTriangle size={18} className="text-red-500" strokeWidth={2.5} />}
-                               {cat.icon === "check-purple" && <CheckCircle2 size={18} className="text-[#5C2882]" strokeWidth={2.5} />}
+                               {cat.icon === "check-purple" && <CheckCircle2 size={18} className="text-[#70309d]" strokeWidth={2.5} />}
                                <h4 className="text-[15px] font-bold text-[#3B4041]">{cat.title}</h4>
                             </div>
                             <span className={`text-[19px] font-extrabold tracking-tight ${cat.scoreColor}`}>{cat.score}</span>
@@ -409,7 +409,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
                  {/* Buttons aligned left */}
                  <div className="flex items-center gap-4 self-start max-w-[800px] mx-auto w-full">
                     <button onClick={reset} className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors">Run Again</button>
-                    <button onClick={() => navigate('/about')} className="flex items-center gap-2 px-6 py-3 bg-[#5C2882] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#5C2882]/20">
+                    <button onClick={() => navigate('/about')} className="flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#70309d]/20">
                        Discuss Remediation <ArrowRight size={16} />
                     </button>
                  </div>

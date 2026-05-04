@@ -217,8 +217,8 @@ export default function CaseStudiesPage() {
                 onClick={() => setActiveSector(s)}
                 className={`px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-200 border ${
                   activeSector === s
-                    ? "bg-[#5C2882] text-white border-[#5C2882]"
-                    : "bg-white text-slate-500 border-slate-200 hover:border-[#5C2882] hover:text-[#5C2882]"
+                    ? "bg-[#70309d] text-white border-[#70309d]"
+                    : "bg-white text-slate-500 border-slate-200 hover:border-[#70309d] hover:text-[#70309d]"
                 }`}
               >
                 {s}
@@ -242,7 +242,7 @@ export default function CaseStudiesPage() {
                   />
                   <div className="absolute inset-0 bg-black/20" />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#5C2882] text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
+                    <span className="bg-[#70309d] text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
                       {cs.sector}
                     </span>
                   </div>
@@ -259,7 +259,7 @@ export default function CaseStudiesPage() {
                 {/* Right: Content */}
                 <div className="lg:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
                   <div>
-                    <div className="text-[#5C2882] text-[10px] font-bold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                    <div className="text-[#70309d] text-[10px] font-bold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                       {cs.icon}
                       {cs.practice}
                     </div>
@@ -278,7 +278,7 @@ export default function CaseStudiesPage() {
                         <div key={i} className="flex items-center gap-2">
                           <CheckCircle
                             size={12}
-                            className="text-[#5C2882] flex-shrink-0"
+                            className="text-[#70309d] flex-shrink-0"
                           />
                           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wide">
                             {result}
@@ -289,7 +289,7 @@ export default function CaseStudiesPage() {
                   </div>
 
                   <div>
-                    <a className="inline-flex items-center gap-2 text-[#5C2882] text-xs font-extrabold hover:gap-3 transition-all duration-200">
+                    <a className="inline-flex items-center gap-2 text-[#70309d] text-xs font-extrabold hover:gap-3 transition-all duration-200">
                       Read full case study <ChevronRight size={16} />
                     </a>
                   </div>
@@ -313,7 +313,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/demo"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#5C2882] text-white text-xs font-bold rounded hover:bg-[#7C3AED] transition-all duration-300 shadow-lg shadow-[#5C2882]/20"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#70309d] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-lg shadow-[#70309d]/20"
             >
               <MessageSquare size={16} /> Experience Our Tools
             </a>

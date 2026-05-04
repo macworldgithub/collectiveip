@@ -24,7 +24,7 @@ export default function CTA() {
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="/about"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-500 transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors duration-200"
           >
             Get in Touch
             <ArrowRight size={18} />
