@@ -48,29 +48,33 @@ export default function DemoPage() {
             from day one.
           </p>
 
-          {/* Tabs */}
-          <div className="flex flex-wrap gap-10 border-b border-white/10">
+        </div>
+      </section>
+
+      {/* Sticky Tabs */}
+      <div className="sticky top-20 z-40 bg-[#3B4041] border-b border-white/10 shadow-md">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="flex flex-wrap gap-10 pt-4">
             {tools.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setActiveTool(t)}
-                className={`flex items-center gap-3 pb-5 relative transition-all duration-300
-          ${
-            activeTool.id === t.id
-              ? "text-white"
-              : "text-slate-400 hover:text-white"
-          }`}
+                className={`flex items-center gap-3 pb-4 relative transition-all duration-300
+          ${activeTool.id === t.id
+                    ? "text-white"
+                    : "text-slate-400 hover:text-white"
+                  }`}
               >
                 <span
-                  className={`${
-                    activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
-                  }`}
+                  className={`${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
+                    }`}
                 >
                   {t.icon}
                 </span>
 
                 <span
-                  className={`text-xs font-semibold tracking-wide ${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"}`}
+                  className={`text-xs font-semibold tracking-wide ${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
+                    }`}
                 >
                   {t.title}
                 </span>
@@ -82,7 +86,7 @@ export default function DemoPage() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Demo Content */}
       <section className="py-24 bg-[#F9FAFB]">
