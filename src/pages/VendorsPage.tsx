@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const vendors = [
-  { name: "Alcatel", src: "/images/logos/alcatel.png" },
+  { name: "Alcatel", src: "/images/alcatel.png" },
   { name: "Apple", src: "/images/logos/apple.png" },
   { name: "Arista", src: "/images/logos/arista.png" },
   { name: "Aruba", src: "/images/logos/aruba.png" },
