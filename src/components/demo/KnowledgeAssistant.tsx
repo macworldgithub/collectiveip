@@ -109,7 +109,9 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                             : "bg-[#F9FAFB] text-slate-600 border border-slate-100 rounded-tl-none"
                             }`}
                         >
-                          {m.text}
+                          {m.text.split("**").map((part, index) => 
+                            index % 2 === 1 ? <strong key={index} className={`font-bold ${m.role === "user" ? "text-white" : "text-[#3B4041]"}`}>{part}</strong> : part
+                          )}
                         </div>
                       )}
 
