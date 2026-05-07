@@ -168,7 +168,7 @@ export default function AboutPage() {
                   key={p.title}
                   className="bg-white rounded-xl border border-slate-100 p-6 flex items-start gap-5 hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-[#F3E8FF] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#937bbd] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
                     {p.icon}
                   </div>
                   <div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 className="bg-white  rounded-xl border border-slate-100 p-6 flex items-start gap-5
                  hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-[#F3E8FF] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-[#937bbd] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
                   {e.icon}
                 </div>
                 <div>
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Users className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -256,7 +256,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Award className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -268,7 +268,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Handshake className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -280,7 +280,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Trophy className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -412,7 +412,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-[#F3E8FF] p-6 rounded-xl max-w-2xl mx-auto">
+            <div className="bg-[#937bbd] p-6 rounded-xl max-w-2xl mx-auto">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
                 Our Presence
               </h3>
@@ -674,7 +674,7 @@ export default function AboutPage() {
             </a>
             <a
               href="/case-studies"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-button-gray border border-slate-300 text-black text-xs font-bold rounded-lg hover:border-[#70309d] hover:text-[#70309d] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#efefef] border border-slate-300 text-black text-xs font-bold rounded-lg hover:border-[#70309d] hover:text-[#70309d] transition-all duration-300"
             >
               <FileText size={16} /> View Case Studies
             </a>

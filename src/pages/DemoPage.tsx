@@ -197,7 +197,7 @@ export default function DemoPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <div className="bg-[#F3E8FF] p-8 rounded-xl max-w-3xl mx-auto">
+            <div className="bg-text-300 p-8 rounded-xl max-w-3xl mx-auto">
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-4">
                 Knowledge Tool Integration
               </h3>

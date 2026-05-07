@@ -60,7 +60,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         <div ref={chatContainerRef} className="flex-1 p-4 md:p-8 overflow-y-auto">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] mb-6">
+              <div className="w-16 h-16 bg-[#937bbd] rounded-full flex items-center justify-center text-[#70309d] mb-6">
                 <Bot size={32} />
               </div>
               <h2 className="text-xl font-extrabold text-[#3B4041] mb-2 uppercase tracking-tight">
@@ -76,7 +76,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                   <button
                     key={idx}
                     onClick={() => send(q)}
-                    className="p-4 bg-[#F9FAFB] border border-slate-100 rounded-xl text-left text-[11px] font-bold text-slate-500 hover:border-[#8B5CF6] hover:bg-white hover:shadow-md transition-all duration-300"
+                    className="p-4 bg-[#efefef] border border-slate-100 rounded-xl text-left text-[11px] font-bold text-slate-500 hover:border-[#8B5CF6] hover:bg-white hover:shadow-md transition-all duration-300"
                   >
                     {q}
                   </button>
@@ -95,8 +95,8 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                   >
                     <div
                       className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs ${m.role === "user"
-                        ? "bg-slate-100 text-slate-500"
-                        : "bg-[#F3E8FF] text-[#70309d]"
+                        ? "bg-[#937bbd] text-[#efefef]"
+                        : "bg-[#937bbd] text-[#efefef]"
                         }`}
                     >
                       {m.role === "user" ? "U" : <Bot size={14} />}
@@ -106,7 +106,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
                         <div
                           className={`p-4 rounded-2xl text-[13px] leading-relaxed font-medium inline-block w-fit ${m.role === "user"
                             ? "bg-[#70309d] text-white rounded-tr-none"
-                            : "bg-[#F9FAFB] text-slate-600 border border-slate-100 rounded-tl-none"
+                            : "bg-[#efefef] text-slate-600 border border-slate-100 rounded-tl-none"
                             }`}
                         >
                           {m.text.split("**").map((part, index) => 
@@ -190,7 +190,7 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
         </div>
 
         {/* Chat Input */}
-        <div className="p-4 md:p-6 border-t border-slate-50 bg-[#F9FAFB]">
+        <div className="p-4 md:p-6 border-t border-slate-50 bg-[#efefef]">
           <form
             onSubmit={(e) => {
               e.preventDefault();

@@ -235,7 +235,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
         <div className="flex-1 flex flex-col">
           {!isStarted ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-white">
-              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] mb-6">
+              <div className="w-16 h-16 bg-[#937bbd] rounded-full flex items-center justify-center text-[#70309d] mb-6">
                 {tool.icon}
               </div>
               <h2 className="text-xl font-extrabold text-[#3B4041] mb-4 uppercase tracking-tight">
@@ -262,7 +262,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
             tool.id === "network" ? (
               <div className="flex-1 flex flex-col items-center justify-center py-16 px-8 bg-white">
                 <div className="flex items-center gap-4 mb-10 w-full max-w-sm">
-                  <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] shadow-sm">
+                  <div className="w-10 h-10 bg-[#937bbd] rounded-full flex items-center justify-center text-[#70309d] shadow-sm">
                     {tool.icon}
                   </div>
                   <div className="text-left">

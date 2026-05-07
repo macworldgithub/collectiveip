@@ -116,7 +116,7 @@ export function AIKnowledgeAssistant({ tool }: { tool: Tool }) {
                       )}
 
                       {m.cards?.map((card, idx) => (
-                        <div key={idx} className="w-full bg-white border border-cyan-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div key={idx} className="w-full bg-[#937bbd] border border-cyan-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100">
                             <Search size={18} className="text-[#0E7490]" />
                             <span className="text-xs font-bold text-[#0E7490] uppercase tracking-widest">Service Details</span>
