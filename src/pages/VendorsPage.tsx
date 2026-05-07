@@ -87,10 +87,10 @@ const vendors = [
   { name: "Inertial", src: "/images/Inertial.svg" },
   { name: "Siretta", src: "/images/Siretta.webp" },
   // { name: "Proception", src: "/images/proception.svg" },
-  { name: "Full", src: "/images/full.svg" },
+  // { name: "Full", src: "/images/full.svg" },
 
   { name: "En", src: "/images/en.svg" },
-  { name: "Excel", src: "/images/excel.svg" },
+  // { name: "Excel", src: "/images/excel.svg" },
   { name: "Vtas", src: "/images/vtas.png" },
 ];
 
