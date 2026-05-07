@@ -105,7 +105,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
+          <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.25em] mb-6">
             ABOUT COLLECTIVE IP
           </h4>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] mb-6 max-w-3xl uppercase">
@@ -168,7 +168,7 @@ export default function AboutPage() {
                   key={p.title}
                   className="bg-white rounded-xl border border-slate-100 p-6 flex items-start gap-5 hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-[#F3E8FF] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#937bbd] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
                     {p.icon}
                   </div>
                   <div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── EXPERTISE ─── */}
-      <section className="py-14 bg-[#F9FAFB]">
+      <section className="py-14 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-4">
             <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 className="bg-white  rounded-xl border border-slate-100 p-6 flex items-start gap-5
                  hover:border-[#8B5CF6]/30 hover:shadow-md transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-[#F3E8FF] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-[#937bbd] text-[#70309d] rounded-full flex items-center justify-center flex-shrink-0">
                   {e.icon}
                 </div>
                 <div>
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Users className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -256,7 +256,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Award className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -268,7 +268,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Handshake className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -280,7 +280,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#F3E8FF] rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Trophy className="text-[#70309d]" size={32} />
               </div>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
@@ -295,7 +295,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── VALUES ─── */}
-      <section className="py-14 bg-[#F9FAFB]">
+      <section className="py-14 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h4 className="text-base font-bold text-[#70309D] uppercase tracking-[0.2em] mb-4">
@@ -369,42 +369,42 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Automotive, Aerospace & Transport
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Healthcare & Pharmaceutical
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Banking, Finance & Insurance
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Charity & Non Profit
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Hospitality & Retail
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Defence
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Education
               </h3>
             </div>
-            <div className="text-center p-4 bg-[#F9FAFB] rounded-lg border border-slate-200">
+            <div className="text-center p-4 bg-[#efefef] rounded-lg border border-slate-200">
               <h3 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
                 Central, Local & Regional Government
               </h3>
@@ -412,7 +412,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-[#F3E8FF] p-6 rounded-xl max-w-2xl mx-auto">
+            <div className="bg-[#937bbd] p-6 rounded-xl max-w-2xl mx-auto">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
                 Our Presence
               </h3>
@@ -454,7 +454,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left — Info */}
             <div>
-              <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-4">
+              <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.2em] mb-4">
                 GET IN TOUCH
               </h4>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white uppercase mb-6 leading-tight">
@@ -469,7 +469,7 @@ export default function AboutPage() {
               <div className="space-y-8">
                 {/* Office */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#70309d]/20 text-[#8B5CF6] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#70309d]/20 text-brand-300 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin size={18} />
                   </div>
                   <div>
@@ -488,7 +488,7 @@ export default function AboutPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#70309d]/20 text-[#8B5CF6] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#70309d]/20 text-brand-300 rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone size={18} />
                   </div>
                   <div>
@@ -497,7 +497,7 @@ export default function AboutPage() {
                     </h4>
                     <a
                       href="tel:+442045858990"
-                      className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
+                      className="text-xs text-slate-400 hover:text-brand-300 transition-colors"
                     >
                       +44 (0) 204 585 8990
                     </a>
@@ -506,7 +506,7 @@ export default function AboutPage() {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#70309d]/20 text-[#8B5CF6] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#70309d]/20 text-brand-300 rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail size={18} />
                   </div>
                   <div>
@@ -515,7 +515,7 @@ export default function AboutPage() {
                     </h4>
                     <a
                       href="mailto:info@collectiveip.co.uk"
-                      className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
+                      className="text-xs text-slate-400 hover:text-brand-300 transition-colors"
                     >
                       info@collectiveip.co.uk
                     </a>
@@ -524,7 +524,7 @@ export default function AboutPage() {
 
                 {/* LinkedIn */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#70309d]/20 text-[#8B5CF6] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#70309d]/20 text-brand-300 rounded-full flex items-center justify-center flex-shrink-0">
                     <Linkedin size={18} />
                   </div>
                   <div>
@@ -535,7 +535,7 @@ export default function AboutPage() {
                       href="https://www.linkedin.com/company/collectiveip"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-slate-400 hover:text-[#8B5CF6] transition-colors"
+                      className="text-xs text-slate-400 hover:text-brand-300 transition-colors"
                     >
                       linkedin.com/company/collectiveip
                     </a>
@@ -576,7 +576,7 @@ export default function AboutPage() {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#F9FAFB]"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#efefef]"
                     />
                   </div>
                   <div>
@@ -590,7 +590,7 @@ export default function AboutPage() {
                       onChange={handleChange}
                       placeholder="Company name"
                       required
-                      className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#F9FAFB]"
+                      className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#efefef]"
                     />
                   </div>
                 </div>
@@ -606,7 +606,7 @@ export default function AboutPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
-                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#F9FAFB]"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#efefef]"
                   />
                 </div>
 
@@ -620,7 +620,7 @@ export default function AboutPage() {
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="+44 (0) ..."
-                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#F9FAFB]"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#efefef]"
                   />
                 </div>
 
@@ -635,7 +635,7 @@ export default function AboutPage() {
                     placeholder="Tell us about your requirements..."
                     required
                     rows={4}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#F9FAFB] resize-none"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-lg text-xs text-[#3B4041] placeholder-slate-300 focus:outline-none focus:border-[#8B5CF6] transition-all bg-[#efefef] resize-none"
                   />
                 </div>
 
@@ -674,7 +674,7 @@ export default function AboutPage() {
             </a>
             <a
               href="/case-studies"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-button-gray border border-slate-300 text-black text-xs font-bold rounded-lg hover:border-[#70309d] hover:text-[#70309d] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#efefef] border border-slate-300 text-black text-xs font-bold rounded-lg hover:border-[#70309d] hover:text-[#70309d] transition-all duration-300"
             >
               <FileText size={16} /> View Case Studies
             </a>

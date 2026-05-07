@@ -8,7 +8,7 @@ export default {
           50: "#f5f0fa",
           100: "#ead8f5",
           200: "#d4b0eb",
-          300: "#8B5CF6",
+          300: "#937bbd",
           400: "#937bbd",
           500: "#8045b0",
           600: "#70309D",
@@ -17,7 +17,7 @@ export default {
           900: "#301446",
         },
         button: {
-          gray: "#F4F4F5",
+          gray: "#efefef",
         },
         dark: {
           DEFAULT: "#3b4041",

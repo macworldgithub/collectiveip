@@ -87,7 +87,7 @@ export default function ResourcesPage() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#3B4041]">
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
-          <p className="text-[#8B5CF6] text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-brand-300 text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
             Resources / Blogs
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
@@ -114,7 +114,7 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <article className="bg-white border border-slate-200 rounded-lg p-6">
-              <div className="text-[#8B5CF6] text-xs font-bold uppercase tracking-wider mb-2">
+              <div className="text-brand-300 text-xs font-bold uppercase tracking-wider mb-2">
                 2026
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
@@ -134,7 +134,7 @@ export default function ResourcesPage() {
             </article>
 
             <article className="bg-white border border-slate-200 rounded-lg p-6">
-              <div className="text-[#8B5CF6] text-xs font-bold uppercase tracking-wider mb-2">
+              <div className="text-brand-300 text-xs font-bold uppercase tracking-wider mb-2">
                 2026
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
@@ -161,7 +161,7 @@ export default function ResourcesPage() {
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-slate-200 p-6 flex justify-between items-start">
               <div>
-                <div className="text-[#8B5CF6] text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="text-brand-300 text-xs font-bold uppercase tracking-wider mb-2">
                   {selectedBlog.date}
                 </div>
                 <h2 className="font-heading text-2xl font-bold text-[#3B4041] mb-2">
