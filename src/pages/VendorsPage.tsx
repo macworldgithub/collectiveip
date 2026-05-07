@@ -69,6 +69,29 @@ const vendors = [
   { name: "Vmware", src: "/images/vmware.png" },
   // { name: "Watchduard", src: "/images/watchduard.png" },
   { name: "Zscaler", src: "/images/zscaler.png" },
+
+  { name: "Meraki", src: "/images/cisco-meraki.avif" },
+
+  { name: "Zyxel", src: "/images/zyxel.png" },
+  { name: "Ceragon", src: "/images/Ceragon.svg" },
+
+  { name: "Ekahau", src: "/images/ekahau.svg" },
+  // { name: "NetAlly", src: "/images/Netally.webp" },
+
+  { name: "Header", src: "/images/header.svg" },
+
+  // { name: "Fp", src: "/images/fp.svg" },
+  { name: "ManageEngine", src: "/images/manageengine.svg" },
+
+  // { name: "Logo", src: "/images/logo.svg" },
+  { name: "Inertial", src: "/images/Inertial.svg" },
+  { name: "Siretta", src: "/images/Siretta.webp" },
+  // { name: "Proception", src: "/images/proception.svg" },
+  { name: "Full", src: "/images/full.svg" },
+
+  { name: "En", src: "/images/en.svg" },
+  { name: "Excel", src: "/images/excel.svg" },
+  { name: "Vtas", src: "/images/vtas.png" },
 ];
 
 export default function VendorsPage() {
