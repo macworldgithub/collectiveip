@@ -1,37 +1,30 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const vendors = [
-  "Cisco",
-  "Cisco Meraki",
-  "Dell Technologies",
-  "Aruba",
-  "Hewlett Packard Enterprise",
-  "Gigamon",
-  "Microsoft Partner",
-  "Palo Alto Networks",
-  "Avaya",
-  "Ruckus",
-  "Cambium Networks",
-  "Trellix",
-  "Extreme Networks",
-  "Crowdstrike",
-  "Juniper Networks",
-  "Exabeam",
-  "Nokia",
-  "Ekahau",
-  "Ceragon",
-  "Fortinet",
-  "Teltonika",
-  "Rhombus",
-  "Siklu",
-  "Sophos",
-  "Peplink",
-  "Oncam",
-  "Barracuda",
-  "Veeam",
-  "Cradlepoint",
-  "SolarWinds"
+  { name: "Alcatel", src: "/images/alcatel.png" },
+  { name: "Apple", src: "/images/logos/apple.png" },
+  { name: "Arista", src: "/images/logos/arista.png" },
+  { name: "Aruba", src: "/images/logos/aruba.png" },
+  { name: "Aws", src: "/images/logos/aws.png" },
+  { name: "Axis", src: "/images/logos/axis.png" },
+  { name: "Azure", src: "/images/logos/azure.png" },
+
+  { name: "Barracuda", src: "/public/images/logos/barracuda.png" },
+  { name: "Bitdefender", src: "/images/logos/bitdefender.png" },
+  { name: "Bosch", src: "/images/logos/bosch.png" },
+  { name: "Broadcom", src: "/images/logos/broadcom.png" },
+  { name: "Checkpoint", src: "/images/logos/checkpoint.png" },
+  { name: "Cisco", src: "/images/logos/cisco.png" },
+  { name: "Citrix", src: "/images/logos/citrix.png" },
+
+  { name: "Commscope", src: "/images/logos/commscope.png" },
+  { name: "Crowdstrike", src: "/images/logos/crowdstrike.png" },
+  { name: "Dell", src: "/images/logos/dell.png" },
+  { name: "Draytek", src: "/images/logos/draytek.png" },
+  { name: "Education", src: "/images/logos/education.png" },
+  { name: "F5", src: "/images/logos/f5.png" },
+  { name: "Forcepoint", src: "/images/logos/forcepoint.png" },
 ];
 
 export default function VendorsPage() {
@@ -49,7 +42,8 @@ export default function VendorsPage() {
             Strategic Technology Partnerships
           </h1>
           <p className="text-base text-slate-300 max-w-2xl leading-relaxed">
-            We partner with leading technology vendors to deliver comprehensive solutions that meet the evolving needs of our customers.
+            We partner with leading technology vendors to deliver comprehensive
+            solutions that meet the evolving needs of our customers.
           </p>
         </div>
       </section>
@@ -74,19 +68,40 @@ export default function VendorsPage() {
               </h2>
               <div className="space-y-4 text-slate-600 text-[15px] leading-relaxed">
                 <p>
-                  Our partner strategy is based on flexibility, technical insight and commercial alignment. By maintaining a vendor-agnostic approach, we focus on identifying and delivering the most suitable IT solutions based on specific business requirements rather than vendor preferences.
+                  Our partner strategy is based on flexibility, technical
+                  insight and commercial alignment. By maintaining a
+                  vendor-agnostic approach, we focus on identifying and
+                  delivering the most suitable IT solutions based on specific
+                  business requirements rather than vendor preferences.
                 </p>
                 <p>
-                  This neutrality allows us to assess a broad range of technologies objectively, enabling us to recommend and implement solutions that best align with customer goals, technical environments and budget constraints. It also simplifies procurement by offering access to a diverse ecosystem of vendors through a single point of engagement.
+                  This neutrality allows us to assess a broad range of
+                  technologies objectively, enabling us to recommend and
+                  implement solutions that best align with customer goals,
+                  technical environments and budget constraints. It also
+                  simplifies procurement by offering access to a diverse
+                  ecosystem of vendors through a single point of engagement.
                 </p>
                 <p>
-                  At the same time, we maintain strong relationships with key vendors across networking, cloud, security, data centre, and endpoint infrastructure. These partnerships give us direct access to valuable resources, roadmap insights and commercial advantage, ensuring our partners and their customers benefit from both independent advice and preferential vendor support.
+                  At the same time, we maintain strong relationships with key
+                  vendors across networking, cloud, security, data centre, and
+                  endpoint infrastructure. These partnerships give us direct
+                  access to valuable resources, roadmap insights and commercial
+                  advantage, ensuring our partners and their customers benefit
+                  from both independent advice and preferential vendor support.
                 </p>
                 <p>
-                  Our experience working across multiple platforms and providers helps streamline deployment, reduce risk and ensure interoperability across systems. In doing so, we support partners in delivering reliable, scalable infrastructure and services that adapt to evolving customer needs.
+                  Our experience working across multiple platforms and providers
+                  helps streamline deployment, reduce risk and ensure
+                  interoperability across systems. In doing so, we support
+                  partners in delivering reliable, scalable infrastructure and
+                  services that adapt to evolving customer needs.
                 </p>
                 <p>
-                  This approach ensures your customers receive ongoing support from technical experts with a comprehensive view of the market, helping them make informed decisions and maximise the return on their IT investments.
+                  This approach ensures your customers receive ongoing support
+                  from technical experts with a comprehensive view of the
+                  market, helping them make informed decisions and maximise the
+                  return on their IT investments.
                 </p>
               </div>
             </div>
@@ -98,7 +113,11 @@ export default function VendorsPage() {
       <section className="py-14 relative overflow-hidden bg-white border-t border-slate-100">
         {/* Background Pattern */}
         <div className="absolute inset-0 z-0 opacity-[0.15]">
-          <img src="/images/vendor_bg.png" alt="Background Pattern" className="w-full h-full object-cover object-top" />
+          <img
+            src="/images/vendor_bg.png"
+            alt="Background Pattern"
+            className="w-full h-full object-cover object-top"
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -110,20 +129,23 @@ export default function VendorsPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-16 gap-x-12 items-center justify-items-center">
             {vendors.map((vendor, index) => {
-              const filename = vendor.toLowerCase().replace(/ /g, '-');
               return (
-                <div key={index} className="w-full max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300">
+                <div
+                  key={index}
+                  className="w-full max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
                   <img
-                    src={`/images/vendors/${filename}.png`}
-                    alt={`${vendor} Logo`}
+                    src={vendor.src}
+                    alt={`${vendor.name} Logo`}
                     className="max-w-full max-h-[60px] object-contain"
                     onError={(e) => {
-                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.style.display = "none";
                       const parent = e.currentTarget.parentElement;
                       if (parent) {
-                        const span = document.createElement('span');
-                        span.className = 'text-sm font-semibold text-slate-400 text-center';
-                        span.textContent = vendor;
+                        const span = document.createElement("span");
+                        span.className =
+                          "text-sm font-semibold text-slate-400 text-center";
+                        span.textContent = vendor.name;
                         parent.appendChild(span);
                       }
                     }}
