@@ -157,7 +157,7 @@ export default function BrandedDemoPage() {
             </p>
             <Link
               to="/demo"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white text-sm font-bold rounded hover:bg-[#5a2680] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-300 text-white text-sm font-bold rounded hover:bg-[#5a2680] transition-all"
             >
               <ArrowLeft size={16} /> Back to Demos
             </Link>
@@ -198,14 +198,14 @@ export default function BrandedDemoPage() {
         <div className="relative max-w-7xl mx-auto px-6">
           <Link
             to="/demo"
-            className="inline-flex items-center gap-2 text-[#8B5CF6] text-sm font-bold mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-brand-300 text-sm font-bold mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft size={16} /> Back to All Demos
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[#8B5CF6]">{demo.icon}</span>
-            <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em]">
+            <span className="text-brand-300">{demo.icon}</span>
+            <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.25em]">
               {demo.subtitle}
             </h4>
           </div>
@@ -226,7 +226,7 @@ export default function BrandedDemoPage() {
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#8B5CF6] rounded-full" />
+              <div className="w-2 h-2 bg-brand-300 rounded-full" />
               <a
                 href={demo.originalUrl}
                 target="_blank"
@@ -262,7 +262,7 @@ export default function BrandedDemoPage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-[#F9FAFB]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -277,7 +277,7 @@ export default function BrandedDemoPage() {
                   >
                     <CheckCircle
                       size={18}
-                      className="text-[#8B5CF6] mt-0.5 shrink-0"
+                      className="text-brand-300 mt-0.5 shrink-0"
                     />
                     <span className="text-sm text-slate-700">{feature}</span>
                   </li>
@@ -306,7 +306,7 @@ export default function BrandedDemoPage() {
                     href={demo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-300 text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all"
                   >
                     Launch Demo <ArrowRight size={14} />
                   </a>
@@ -376,7 +376,7 @@ export default function BrandedDemoPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all shadow-xl shadow-[#8B5CF6]/30"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-brand-300 text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all shadow-xl shadow-[#8B5CF6]/30"
             >
               Get in Touch <ArrowRight size={16} />
             </Link>

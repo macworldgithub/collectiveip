@@ -33,7 +33,7 @@ export default function DemoPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           {/* Small Label */}
-          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
+          <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.25em] mb-6">
             EXPERIENCE OUR TOOLS
           </h4>
 
@@ -68,7 +68,7 @@ export default function DemoPage() {
               >
                 <span
                   className={`${
-                    activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
+                    activeTool.id === t.id ? "text-brand-300" : "text-slate-400"
                   }`}
                 >
                   {t.icon}
@@ -76,14 +76,14 @@ export default function DemoPage() {
 
                 <span
                   className={`text-xs font-semibold tracking-wide ${
-                    activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
+                    activeTool.id === t.id ? "text-brand-300" : "text-slate-400"
                   }`}
                 >
                   {t.title}
                 </span>
 
                 {activeTool.id === t.id && (
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#8B5CF6]" />
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-300" />
                 )}
               </button>
             ))}
@@ -92,7 +92,7 @@ export default function DemoPage() {
       </div>
 
       {/* Demo Content */}
-      <section className="py-24 bg-[#F9FAFB]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           {activeTool.id === "knowledge" ? (
             <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
@@ -261,7 +261,7 @@ export default function DemoPage() {
           <div className="flex flex-wrap justify-center gap-6">
             <a
               href="/about"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-brand-300 text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
             >
               Get in Touch <ArrowRight size={18} />
             </a>

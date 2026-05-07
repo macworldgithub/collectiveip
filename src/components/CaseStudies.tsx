@@ -29,7 +29,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="py-20 bg-[#F3F4F6]">
+    <section id="case-studies" className="py-20 bg-[#efefef]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
@@ -45,7 +45,7 @@ export default function CaseStudies() {
           </div>
           <a
             href="/case-studies"
-            className="inline-flex items-center gap-2 text-[#8B5CF6] text-sm font-bold hover:gap-3 transition-all duration-300"
+            className="inline-flex items-center gap-2 text-brand-300 text-sm font-bold hover:gap-3 transition-all duration-300"
           >
             View All Case Studies
             <ArrowRight size={16} />
@@ -65,13 +65,13 @@ export default function CaseStudies() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-4 left-4">
-                  <span className="inline-block px-3 py-1 bg-[#8B5CF6] text-white text-[10px] font-bold uppercase tracking-wider rounded-sm">
+                  <span className="inline-block px-3 py-1 bg-brand-300 text-white text-[10px] font-bold uppercase tracking-wider rounded-sm">
                     {cs.sector}
                   </span>
                 </div>
               </div>
               <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <h3 className="font-heading text-[13px] md:text-sm font-bold text-[#3B4041] group-hover:text-[#8B5CF6] transition-colors mb-6 leading-relaxed uppercase min-h-[2.5rem]">
+                <h3 className="font-heading text-[13px] md:text-sm font-bold text-[#3B4041] group-hover:text-brand-300 transition-colors mb-6 leading-relaxed uppercase min-h-[2.5rem]">
                   {cs.title}
                 </h3>
                 <div className="mb-4 flex items-baseline gap-2">

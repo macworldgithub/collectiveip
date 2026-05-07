@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 justify-start">
             <a
               href="/practices"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-sm text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-300 text-white font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-sm text-sm"
             >
               Explore Our Practices 
               <ArrowRight size={16} />

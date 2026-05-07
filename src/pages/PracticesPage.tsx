@@ -104,7 +104,7 @@ export default function PracticesPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
-          <p className="text-[#8B5CF6] text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-brand-300 text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
             Our Practices
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
@@ -157,7 +157,7 @@ export default function PracticesPage() {
               </div>
 
               <div
-                className={`${i % 2 === 1 ? "lg:order-1" : ""} bg-[#F3F4F6] rounded-xl p-8 shadow-sm`}
+                className={`${i % 2 === 1 ? "lg:order-1" : ""} bg-[#efefef] rounded-xl p-8 shadow-sm`}
               >
                 <h4 className="text-xl font-bold text-slate-500 uppercase tracking-widest mb-4">
                   Key Capabilities
@@ -167,7 +167,7 @@ export default function PracticesPage() {
                     <li key={c} className="flex items-start gap-3">
                       <CheckCircle
                         size={16}
-                        className="text-[#8B5CF6] flex-shrink-0"
+                        className="text-brand-300 flex-shrink-0"
                       />
                       <span className="text-slate-600 text-xs">{c}</span>
                     </li>
@@ -181,7 +181,7 @@ export default function PracticesPage() {
                   {p.sectors.map((s) => (
                     <span
                       key={s}
-                      className="px-3 py-1.5 bg-[#F3F4F6] border border-slate-200 text-slate-500 text-[10px] font-medium rounded-full shadow-sm"
+                      className="px-3 py-1.5 bg-[#efefef] border border-slate-200 text-slate-500 text-[10px] font-medium rounded-full shadow-sm"
                     >
                       {s}
                     </span>
@@ -194,7 +194,7 @@ export default function PracticesPage() {
       </section>
 
       {/* Security Across Every Practice Section */}
-      <section className="py-20 bg-[#F3F4F6]">
+      <section className="py-20 bg-[#efefef]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
@@ -317,7 +317,7 @@ export default function PracticesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-[#F3F4F6] text-center">
+      <section className="py-20 bg-[#efefef] text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
             Need help identifying the right solution?

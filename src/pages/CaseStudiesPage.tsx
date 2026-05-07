@@ -174,7 +174,7 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+          <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.2em] mb-6">
             CASE STUDIES
           </h4>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
@@ -193,8 +193,8 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {globalStats.map((s, idx) => (
               <div key={idx} className="flex flex-col items-center text-center">
-                <div className="text-[#8B5CF6] mb-3 opacity-80">{s.icon}</div>
-                <div className="text-2xl lg:text-4xl font-extrabold text-[#8B5CF6] mb-3 tracking-tight">
+                <div className="text-brand-300 mb-3 opacity-80">{s.icon}</div>
+                <div className="text-2xl lg:text-4xl font-extrabold text-brand-300 mb-3 tracking-tight">
                   {s.value}
                 </div>
                 <div className="text-[9px] lg:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-tight max-w-[120px]">
@@ -207,7 +207,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Filter & Cards Section */}
-      <section className="py-16 bg-[#F9FAFB]">
+      <section className="py-16 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Filters */}
           <div className="flex flex-wrap gap-2 mb-16 justify-start">
@@ -247,7 +247,7 @@ export default function CaseStudiesPage() {
                     </span>
                   </div>
                   <div className="absolute bottom-4 left-4 p-4 lg:p-5 bg-black/40 backdrop-blur-md rounded-lg border border-white/10 max-w-[280px]">
-                    <div className="text-2xl lg:text-3xl font-extrabold text-[#8B5CF6] mb-0.5">
+                    <div className="text-2xl lg:text-3xl font-extrabold text-brand-300 mb-0.5">
                       {cs.stat}
                     </div>
                     <div className="text-[6px] lg:text-[8px] font-bold text-slate-300 uppercase tracking-widest leading-tight">

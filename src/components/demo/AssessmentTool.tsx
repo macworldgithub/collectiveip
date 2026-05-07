@@ -419,7 +419,7 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-5 border-t border-slate-50 bg-[#F9FAFB] mt-auto">
+        <div className="px-6 py-5 border-t border-slate-50 bg-[#efefef] mt-auto">
           <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.1em] text-center">
             {tool.id === "network"
               ? "Sample assessment with representative findings. Production tool connects to live infrastructure via API."
