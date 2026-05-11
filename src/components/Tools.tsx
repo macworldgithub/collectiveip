@@ -86,12 +86,12 @@ export default function Tools() {
                   <p className="text-brand-300 text-xs">Capability & Case Study Finder</p>
                 </div>
               </div>
-  <button
-  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#efefef] text-brand-300 text-xs font-medium"
->
-  <span className="w-2 h-2 bg-brand-600 rounded-full" />
-  Live
-</button>
+              <button
+                className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#efefef] text-brand-300 text-xs font-medium"
+              >
+                <span className="w-2 h-2 bg-brand-600 rounded-full" />
+                Live
+              </button>
             </div>
 
             <div className="space-y-2">
