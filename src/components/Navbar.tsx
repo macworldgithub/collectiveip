@@ -28,6 +28,7 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  
   const isHome = location.pathname === "/";
   const isDarkHeroPage = [
     "/practices",
