@@ -66,8 +66,8 @@ export default function PartnerServicesPage() {
                 Technical Consultancy
               </h3>
               <p className="text-slate-500 text-sm mb-4">
-                Expert telecom consulting for complex deployments with technical
-                depth and commercial awareness.
+                Expert technical consulting for complex deployments with
+                technical depth and commercial awareness.
               </p>
             </div>
 
@@ -188,8 +188,8 @@ export default function PartnerServicesPage() {
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Technical consulting with commercial grounding. Our consultants
               bring real-world delivery experience to help partners solve
-              complex telecom challenges while maintaining commercial viability
-              and customer satisfaction.
+              complex technical challenges while maintaining commercial
+              viability and customer satisfaction.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
