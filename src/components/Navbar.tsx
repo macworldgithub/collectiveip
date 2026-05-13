@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Practices", path: "/practices" },
   { label: "Partner Services", path: "/partner-services" },
   { label: "Vendors", path: "/vendors" },
-  { label: "Industry Demo", path: "/demo" },
+  { label: "Industry Demo", path: "/demo", hideChatbot: true },
   { label: "Resources", path: "/resources" },
   { label: "About Collective IP", path: "/about" },
   { label: "Contact Us", path: "/contact" },
@@ -17,6 +17,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // ✅ ADDED
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -30,6 +31,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const isHome = location.pathname === "/";
+
   const isDarkHeroPage =
     [
       "/practices",
@@ -68,9 +70,36 @@ export default function Navbar() {
           </span>
         </Link>
 
+        {/* DESKTOP NAV */}
         <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
+
+            // ✅ SPECIAL CASE: Industry Demo
+            if (item.hideChatbot) {
+              return (
+                <button
+                  key={item.path}
+                  onClick={() =>
+                    navigate("/demo", {
+                      state: { fromIndustryDemo: true },
+                    })
+                  }
+                  className={`text-sm font-medium transition-colors hover:text-brand-600 ${
+                    shouldBeWhite
+                      ? isActive
+                        ? "text-brand-600"
+                        : "text-gray-700"
+                      : isActive
+                        ? "text-brand-300"
+                        : "text-white/90"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            }
+
             return (
               <Link
                 key={item.path}
@@ -89,8 +118,11 @@ export default function Navbar() {
               </Link>
             );
           })}
+
+          {/* Try Our Tools → always show chatbot */}
           <Link
             to="/demo"
+            state={{ fromIndustryDemo: false }}
             className="ml-2 px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-md hover:bg-brand-700 transition-colors"
           >
             Try Our Tools
@@ -98,31 +130,54 @@ export default function Navbar() {
         </nav>
 
         <button
-          className={`lg:hidden transition-colors ${shouldBeWhite ? "text-gray-700" : "text-white"}`}
+          className={`lg:hidden transition-colors ${
+            shouldBeWhite ? "text-gray-700" : "text-white"
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
+      {/* MOBILE NAV */}
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium hover:text-brand-600 transition-colors ${
-                  location.pathname === item.path
-                    ? "text-brand-600"
-                    : "text-gray-700"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              if (item.hideChatbot) {
+                return (
+                  <button
+                    key={item.path}
+                    onClick={() =>
+                      navigate("/demo", {
+                        state: { fromIndustryDemo: true },
+                      })
+                    }
+                    className="text-sm font-medium text-gray-700 hover:text-brand-600 text-left"
+                  >
+                    {item.label}
+                  </button>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm font-medium hover:text-brand-600 transition-colors ${
+                    location.pathname === item.path
+                      ? "text-brand-600"
+                      : "text-gray-700"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
             <Link
               to="/demo"
+              state={{ fromIndustryDemo: false }}
               className="px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-md text-center hover:bg-brand-700 transition-colors"
             >
               Try Our Tools

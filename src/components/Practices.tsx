@@ -1,4 +1,5 @@
 import { Wifi, Cloud, Monitor, ChevronRight, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const practices = [
   {
@@ -70,8 +71,8 @@ export default function Practices() {
               >
                 {p.desc}
               </p>
-              <a
-                href="#"
+              <Link
+                to="/practices"
                 className={`inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 ${
                   p.isDark
                     ? "text-slate-400 hover:text-slate-300"
@@ -79,7 +80,7 @@ export default function Practices() {
                 }`}
               >
                 Learn more <ChevronRight size={16} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

@@ -35,7 +35,7 @@ export default function PartnerServicesPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl font-extrabold text-[#3B4041] uppercase mb-4">
+            <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-4">
               Six Core Service Areas
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
@@ -193,7 +193,7 @@ export default function PartnerServicesPage() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   Network
                 </h4>
                 <p className="text-slate-600 text-xs">
@@ -201,7 +201,7 @@ export default function PartnerServicesPage() {
                 </p>
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   Cloud
                 </h4>
                 <p className="text-slate-600 text-xs">
@@ -209,7 +209,7 @@ export default function PartnerServicesPage() {
                 </p>
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   Security
                 </h4>
                 <p className="text-slate-600 text-xs">
@@ -217,7 +217,7 @@ export default function PartnerServicesPage() {
                 </p>
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   DC & Compute
                 </h4>
                 <p className="text-slate-600 text-xs">
@@ -225,7 +225,7 @@ export default function PartnerServicesPage() {
                 </p>
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   Endpoint
                 </h4>
                 <p className="text-slate-600 text-xs">
@@ -233,7 +233,7 @@ export default function PartnerServicesPage() {
                 </p>
               </div>
               <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
+                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
                   Governance and Compliance
                 </h4>
                 <p className="text-slate-600 text-xs">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ArrowRight, FileText, ExternalLink } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 import { tools } from "../data/demoTools";
 import { brandedDemos } from "./BrandedDemoPage";
@@ -10,7 +11,8 @@ import { AssessmentTool } from "../components/demo/AssessmentTool";
 
 export default function DemoPage() {
   const [activeTool, setActiveTool] = useState(tools[0]);
-
+  const location = useLocation();
+  const hideChatbot = location.state?.fromIndustryDemo;
   return (
     <div className="font-body text-dark antialiased bg-white">
       <Navbar />
@@ -52,7 +54,7 @@ export default function DemoPage() {
       </section>
 
       {/* Sticky Tabs */}
-      <div className="sticky top-20 z-40 bg-[#3B4041] border-b border-white/10 shadow-md">
+      {/* <div className="sticky top-20 z-40 bg-[#3B4041] border-b border-white/10 shadow-md">
         <div className="max-w-7xl mx-auto px-10">
           <div className="flex flex-wrap gap-10 pt-4">
             {tools.map((t) => (
@@ -89,19 +91,74 @@ export default function DemoPage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+      {!hideChatbot && (
+        <div className="sticky top-20 z-40 bg-[#3B4041] border-b border-white/10 shadow-md">
+          <div className="max-w-7xl mx-auto px-10">
+            <div className="flex flex-wrap gap-10 pt-4">
+              {tools.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setActiveTool(t)}
+                  className={`flex items-center gap-3 pb-4 relative transition-all duration-300
+              ${
+                activeTool.id === t.id
+                  ? "text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+                >
+                  <span
+                    className={`${
+                      activeTool.id === t.id
+                        ? "text-brand-300"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    {t.icon}
+                  </span>
 
-      {/* Demo Content */}
-      <section className="py-24 bg-[#efefef]">
+                  <span
+                    className={`text-xs font-semibold tracking-wide ${
+                      activeTool.id === t.id
+                        ? "text-brand-300"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    {t.title}
+                  </span>
+
+                  {activeTool.id === t.id && (
+                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-300" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           {activeTool.id === "knowledge" ? (
-            <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
+            !hideChatbot ? (
+              <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
+            ) : null
           ) : (
             <AssessmentTool key={activeTool.id} tool={activeTool} />
           )}
         </div>
-      </section>
-
+      </section> */}
+      {!hideChatbot && (
+        <section className="py-24 bg-[#efefef]">
+          <div className="max-w-7xl mx-auto px-6">
+            {activeTool.id === "knowledge" ? (
+              <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
+            ) : (
+              <AssessmentTool key={activeTool.id} tool={activeTool} />
+            )}
+          </div>
+        </section>
+      )}
       {/* Collective-Branded Demo Experiences */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -239,7 +296,7 @@ export default function DemoPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}  
+      {/* Bottom CTA */}
       <section className="relative py-32 overflow-hidden bg-[#3B4041]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
