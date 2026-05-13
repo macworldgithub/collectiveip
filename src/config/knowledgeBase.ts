@@ -1,3 +1,5 @@
+import { getAIBotResponse } from "./aiMatrixKnowledge";
+
 export type ChatCard = {
   type: "capability" | "case-study" | "discovery" | "approach";
   tag: string;
@@ -17,6 +19,22 @@ export type ChatMessage = {
 
 export function getBotResponse(q: string): ChatMessage {
   const norm = q.toLowerCase();
+
+  const aiResp = getAIBotResponse(q);
+  if (!aiResp.text?.includes("couldn't find a direct match")) {
+    return {
+      role: "ai",
+      text: aiResp.text || "",
+      options: aiResp.options,
+      cards: aiResp.cards?.map(c => ({
+        type: "capability",
+        tag: "SERVICE DETAILS",
+        title: c.title,
+        desc: c.desc || "",
+        bullets: c.bullets
+      }))
+    };
+  }
 
   if (
     norm.includes("cisco wireless rollout") ||

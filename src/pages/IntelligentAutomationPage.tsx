@@ -117,7 +117,7 @@ export default function IntelligentAutomationPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.2em] mb-6">
+            <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.2em] mb-6">
               INTELLIGENT AUTOMATION
             </h4>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
@@ -162,7 +162,7 @@ export default function IntelligentAutomationPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-[#F9FAFB]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
@@ -215,7 +215,7 @@ export default function IntelligentAutomationPage() {
               <div className="space-y-8">
                 {approachSteps.map((step) => (
                   <div key={step.number} className="flex gap-6">
-                    <div className="w-8 h-8 rounded-full bg-[#F3F4F6] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#efefef] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
                       {step.number}
                     </div>
                     <div>
@@ -244,7 +244,7 @@ export default function IntelligentAutomationPage() {
                     'Transparent, collaborative approach'
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle size={14} className="text-[#8B5CF6] mt-0.5 flex-shrink-0" />
+                      <CheckCircle size={14} className="text-brand-300 mt-0.5 flex-shrink-0" />
                       <span className="text-xs text-slate-300 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -256,7 +256,7 @@ export default function IntelligentAutomationPage() {
       </section>
 
       {/* Proof Points Section */}
-      <section className="py-24 bg-[#F9FAFB]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">

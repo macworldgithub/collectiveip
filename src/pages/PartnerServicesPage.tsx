@@ -18,7 +18,7 @@ export default function PartnerServicesPage() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#3B4041]">
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
-          <p className="text-[#8B5CF6] text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-brand-300 text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
             Partner Services
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
@@ -127,7 +127,7 @@ export default function PartnerServicesPage() {
       </section>
 
       {/* Detailed Service Sections */}
-      <section className="py-24 bg-[#F3F4F6]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6 space-y-24">
           {/* End-to-End Project Ownership */}
           <div className="bg-white rounded-xl p-8 shadow-sm">
@@ -144,7 +144,7 @@ export default function PartnerServicesPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                  className="text-brand-300 flex-shrink-0 mt-1"
                 />
                 <span className="text-slate-600 text-sm">
                   Fixed-price commercial models
@@ -153,7 +153,7 @@ export default function PartnerServicesPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                  className="text-brand-300 flex-shrink-0 mt-1"
                 />
                 <span className="text-slate-600 text-sm">
                   Risk and reward sharing
@@ -162,7 +162,7 @@ export default function PartnerServicesPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                  className="text-brand-300 flex-shrink-0 mt-1"
                 />
                 <span className="text-slate-600 text-sm">
                   Full project lifecycle management
@@ -171,7 +171,7 @@ export default function PartnerServicesPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                  className="text-brand-300 flex-shrink-0 mt-1"
                 />
                 <span className="text-slate-600 text-sm">
                   Commercial outcome focus
@@ -267,7 +267,7 @@ export default function PartnerServicesPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle
                       size={14}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-0.5"
+                      className="text-brand-300 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-slate-600 text-sm">
                       Technical architects and engineers
@@ -276,7 +276,7 @@ export default function PartnerServicesPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle
                       size={14}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-0.5"
+                      className="text-brand-300 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-slate-600 text-sm">
                       Project and programme managers
@@ -296,7 +296,7 @@ export default function PartnerServicesPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle
                       size={14}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-0.5"
+                      className="text-brand-300 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-slate-600 text-sm">
                       Short-term specialist support
@@ -305,7 +305,7 @@ export default function PartnerServicesPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle
                       size={14}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-0.5"
+                      className="text-brand-300 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-slate-600 text-sm">
                       Long-term team augmentation
@@ -442,7 +442,7 @@ export default function PartnerServicesPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle
                       size={16}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                      className="text-brand-300 flex-shrink-0 mt-1"
                     />
                     <div>
                       <h5 className="font-heading text-sm font-bold text-[#3B4041]">
@@ -457,7 +457,7 @@ export default function PartnerServicesPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle
                       size={16}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                      className="text-brand-300 flex-shrink-0 mt-1"
                     />
                     <div>
                       <h5 className="font-heading text-sm font-bold text-[#3B4041]">
@@ -472,7 +472,7 @@ export default function PartnerServicesPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle
                       size={16}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                      className="text-brand-300 flex-shrink-0 mt-1"
                     />
                     <div>
                       <h5 className="font-heading text-sm font-bold text-[#3B4041]">
@@ -487,7 +487,7 @@ export default function PartnerServicesPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle
                       size={16}
-                      className="text-[#8B5CF6] flex-shrink-0 mt-1"
+                      className="text-brand-300 flex-shrink-0 mt-1"
                     />
                     <div>
                       <h5 className="font-heading text-sm font-bold text-[#3B4041]">

@@ -43,7 +43,7 @@ export default function PartnerValue() {
           {values.map((v) => (
             <div
               key={v.title}
-              className="bg-[#F3F4F6] border border-slate-200 rounded-xl p-8 hover:shadow-md transition-shadow duration-300"
+              className="bg-[#efefef] border border-slate-200 rounded-xl p-8 hover:shadow-md transition-shadow duration-300"
             >
               <div className="text-brand-600 mb-6">
                 {v.icon}

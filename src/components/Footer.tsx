@@ -41,7 +41,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-300 text-sm hover:text-[#8B5CF6] transition-colors"
+                    className="text-slate-300 text-sm hover:text-brand-300 transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-slate-300 text-sm hover:text-[#8B5CF6] transition-colors"
+                    className="text-slate-300 text-sm hover:text-brand-300 transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -77,10 +77,10 @@ export default function Footer() {
                 Doncaster, South Yorkshire<br />
                 DN4 5JP
               </p>
-              <a href="tel:+442045858990" className="hover:text-[#8B5CF6] transition-colors">
+              <a href="tel:+442045858990" className="hover:text-brand-300 transition-colors">
                 +44 (0) 204 585 8990
               </a>
-              <a href="mailto:info@collectiveip.co.uk" className="hover:text-[#8B5CF6] transition-colors">
+              <a href="mailto:info@collectiveip.co.uk" className="hover:text-brand-300 transition-colors">
                 info@collectiveip.co.uk
               </a>
             </div>
@@ -92,10 +92,10 @@ export default function Footer() {
             © 2026 Collective IP Limited. All rights reserved. Company No. 14460737
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 text-sm hover:text-[#8B5CF6] transition-colors">
+            <a href="#" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-slate-400 text-[10px] hover:text-[#8B5CF6] transition-colors">
+            <a href="#" className="text-slate-400 text-[10px] hover:text-brand-300 transition-colors">
               Data Policy
             </a>
           </div>

@@ -7,6 +7,7 @@ import ResourcesPage from "./pages/ResourcesPage";
 import IntelligentAutomationPage from "./pages/IntelligentAutomationPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
 import DemoPage from "./pages/DemoPage";
+import BrandedDemoPage from "./pages/BrandedDemoPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
@@ -25,6 +26,7 @@ function App() {
         />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/demo" element={<DemoPage />} />
+        <Route path="/demo/:slug" element={<BrandedDemoPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

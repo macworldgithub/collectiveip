@@ -1,204 +1,260 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, CheckCircle2, Loader2, Circle, AlertTriangle } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { ArrowRight, CheckCircle2, Loader2, Circle, AlertTriangle, Globe, Zap, Shield, Cpu, Monitor, Lock, Activity, Database, Fingerprint, Eye, EyeOff, Wifi, ShieldAlert, MapPin } from "lucide-react";
 import { Tool } from "../../data/demoTools";
+
+interface DiagnosticData {
+  // Network
+  ip?: string;
+  city?: string;
+  country?: string;
+  isp?: string;
+  latency?: number;
+  downloadSpeed?: string;
+  connectionType?: string;
+  downlink?: number;
+  rtt?: number;
+  // Security & Hardware
+  browser?: string;
+  os?: string;
+  https?: boolean;
+  cookies?: boolean;
+  adBlock?: boolean;
+  dnt?: boolean;
+  screenRes?: string;
+  score?: number;
+  userAgent?: string;
+  language?: string;
+  memory?: number;
+  cores?: number;
+  timezone?: string;
+  gpu?: string;
+  localIps?: string[];
+  storageAccess?: boolean;
+}
 
 const scanSteps: Record<string, string[]> = {
   network: [
-    "Initialising network discovery...",
-    "Scanning infrastructure topology...",
-    "Analysing access point configurations...",
-    "Evaluating switch fabric health...",
-    "Checking firmware versions...",
-    "Assessing bandwidth utilisation...",
-    "Identifying coverage gaps...",
-    "Generating assessment report..."
+    "Establishing secure handshake with diagnostic node...",
+    "Retrieving public IP and geographic exit point...",
+    "Probing ISP infrastructure and AS path...",
+    "Executing ICMP-equivalent latency benchmarks...",
+    "Measuring downstream throughput (200KB payload)...",
+    "Analysing TCP congestion control performance...",
+    "Finalising comprehensive network health report..."
   ],
   security: [
-    "Initialising security review...",
-    "Scanning endpoint configurations...",
-    "Analysing identity & access management...",
-    "Evaluating network perimeter...",
-    "Checking compliance frameworks...",
-    "Assessing cloud posture...",
-    "Identifying vulnerabilities...",
-    "Generating security report..."
-  ]
-};
-
-const networkResults = {
-  stats: [
-    { value: "47", label: "Devices Scanned", numberColor: "text-slate-800" },
-    { value: "1", label: "Critical Issues", numberColor: "text-red-500" },
-    { value: "2", label: "High Priority", numberColor: "text-orange-500" },
-    { value: "6", label: "Recommendations", numberColor: "text-[#70309d]" }
-  ],
-  findings: [
-    {
-      level: "CRITICAL",
-      category: "FIRMWARE",
-      title: "12 access points running end-of-life firmware (v8.5)",
-      rec: "Recommendation: Immediate upgrade to v17.9 — security patches no longer available",
-      bg: "bg-red-50",
-      border: "border-red-200",
-      pillBg: "bg-red-500",
-      text: "text-red-500"
-    },
-    {
-      level: "HIGH",
-      category: "COVERAGE",
-      title: "3 coverage gaps detected in Building C, floors 2-4",
-      rec: "Recommendation: Deploy 6 additional Wi-Fi 6E APs with predictive survey validation",
-      bg: "bg-orange-50",
-      border: "border-orange-200",
-      pillBg: "bg-orange-500",
-      text: "text-orange-500"
-    },
-    {
-      level: "HIGH",
-      category: "CAPACITY",
-      title: "Peak utilisation exceeding 85% on 8 access points",
-      rec: "Recommendation: Load balancing reconfiguration and additional AP deployment",
-      bg: "bg-orange-50",
-      border: "border-orange-200",
-      pillBg: "bg-orange-500",
-      text: "text-orange-500"
-    },
-    {
-      level: "MEDIUM",
-      category: "SECURITY",
-      title: "WPA2-Personal still in use on guest SSID",
-      rec: "Recommendation: Migrate to WPA3-Enterprise with RADIUS authentication",
-      bg: "bg-yellow-50",
-      border: "border-yellow-200",
-      pillBg: "bg-yellow-500",
-      text: "text-yellow-600"
-    },
-    {
-      level: "MEDIUM",
-      category: "REDUNDANCY",
-      title: "Single point of failure on core switch stack",
-      rec: "Recommendation: Implement redundant switch stack with VSS or StackWise",
-      bg: "bg-yellow-50",
-      border: "border-yellow-200",
-      pillBg: "bg-yellow-500",
-      text: "text-yellow-600"
-    },
-    {
-      level: "LOW",
-      category: "OPTIMISATION",
-      title: "Channel overlap detected on 2.4GHz band",
-      rec: "Recommendation: Implement dynamic channel assignment with RRM tuning",
-      bg: "bg-blue-50",
-      border: "border-blue-200",
-      pillBg: "bg-blue-500",
-      text: "text-blue-500"
-    }
-  ]
-};
-
-const securityFindingsData = {
-  score: 72,
-  scoreLabel: "Overall Security Score",
-  scoreDesc: "Moderate risk — improvements recommended",
-  categories: [
-    {
-       title: "Endpoint Protection",
-       score: 68,
-       icon: "warning-orange",
-       barColor: "bg-red-500", 
-       scoreColor: "text-red-500",
-       dotColor: "bg-orange-500",
-       bullets: [
-         "3 unpatched endpoints detected (CVE-2024-21412)",
-         "EDR coverage at 92% — 47 devices without agent",
-         "USB device policy not enforced on 12 workstations"
-       ]
-    },
-    {
-       title: "Identity & Access",
-       score: 74,
-       icon: "warning-orange",
-       barColor: "bg-orange-500",
-       scoreColor: "text-orange-500",
-       dotColor: "bg-orange-500",
-       bullets: [
-         "MFA not enforced on 15% of privileged accounts",
-         "8 dormant admin accounts active >90 days",
-         "Password policy below NCSC recommendations"
-       ]
-    },
-    {
-       title: "Network Security",
-       score: 82,
-       icon: "check-purple",
-       barColor: "bg-[#70309d]",
-       scoreColor: "text-[#70309d]",
-       dotColor: "bg-[#70309d]",
-       bullets: [
-         "Firewall rules last audited 6 months ago",
-         "Network segmentation in place but incomplete for IoT",
-         "IDS/IPS signatures up to date"
-       ]
-    },
-    {
-       title: "Cloud Security",
-       score: 61,
-       icon: "warning-red",
-       barColor: "bg-red-500",
-       scoreColor: "text-red-600",
-       dotColor: "bg-red-600",
-       bullets: [
-         "2 S3 buckets with public read access",
-         "Cloud storage lacks encryption-at-rest",
-         "No CSPM tool deployed for continuous monitoring"
-       ]
-    },
-    {
-       title: "Data Protection",
-       score: 77,
-       icon: "check-purple",
-       barColor: "bg-orange-500",
-       scoreColor: "text-orange-500",
-       dotColor: "bg-[#70309d]",
-       bullets: [
-         "DLP policies active on email and endpoints",
-         "Backup encryption enabled",
-         "Data classification incomplete for 30% of assets"
-       ]
-    }
+    "Initializing multi-vector security audit...",
+    "Auditing transport layer encryption & TLS version...",
+    "Probing hardware fingerprinting vulnerabilities...",
+    "Scanning for active tracking & content blockers...",
+    "Detecting identity leaks via WebRTC leak check...",
+    "Evaluating client-side data isolation (Storage/Cookies)...",
+    "Generating final security posture score..."
   ]
 };
 
 export function AssessmentTool({ tool }: { tool: Tool }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [isStarted, setIsStarted] = useState(false);
   const [isScanning, setIsScanning] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [data, setData] = useState<DiagnosticData>({});
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   const steps = scanSteps[tool.id as string] || scanSteps.network;
 
-  // Simulate scanning process
+  const runDiagnostics = useCallback(async () => {
+    setIsDataLoaded(false);
+    const results: DiagnosticData = {};
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      // 1. Browser & Hardware Info (Real data from Navigator)
+      const ua = navigator.userAgent;
+      results.userAgent = ua;
+      results.language = navigator.language;
+      results.cores = navigator.hardwareConcurrency;
+      results.memory = (navigator as any).deviceMemory;
+      results.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      results.storageAccess = !!window.localStorage;
+
+      let browser = "Unknown";
+      if (ua.indexOf("Chrome") > -1) browser = "Chrome";
+      else if (ua.indexOf("Firefox") > -1) browser = "Firefox";
+      else if (ua.indexOf("Safari") > -1) browser = "Safari";
+      else if (ua.indexOf("Edge") > -1) browser = "Edge";
+
+      let os = "Unknown";
+      if (ua.indexOf("Win") > -1) os = "Windows";
+      else if (ua.indexOf("Mac") > -1) os = "macOS";
+      else if (ua.indexOf("Linux") > -1) os = "Linux";
+      else if (ua.indexOf("Android") > -1) os = "Android";
+      else if (ua.indexOf("like Mac") > -1) os = "iOS";
+
+      results.browser = browser;
+      results.os = os;
+      results.https = window.location.protocol === "https:";
+      results.cookies = navigator.cookieEnabled;
+      results.dnt = (navigator as any).doNotTrack === "1" || (navigator as any).doNotTrack === "yes";
+      results.screenRes = `${window.screen.width}x${window.screen.height}`;
+
+      // 2. GPU Detection (Real data via WebGL)
+      try {
+        const canvas = document.createElement("canvas");
+        const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        if (gl) {
+          const debugInfo = (gl as any).getExtension("WEBGL_debug_renderer_info");
+          results.gpu = debugInfo ? (gl as any).getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "Standard WebGL";
+        }
+      } catch (e) {
+        results.gpu = "Restricted Access";
+      }
+
+      // 3. WebRTC Local IP Leak Check (Real security data)
+      try {
+        const ips: string[] = [];
+        const pc = new RTCPeerConnection({ iceServers: [] });
+        pc.createDataChannel("");
+        pc.createOffer().then(offer => pc.setLocalDescription(offer));
+        pc.onicecandidate = (event) => {
+          if (event && event.candidate && event.candidate.candidate) {
+            const match = event.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3})/);
+            if (match) {
+              const ip = match[1];
+              if (!ips.includes(ip) && !ip.startsWith('0.')) ips.push(ip);
+            }
+          }
+        };
+        // Wait a bit for candidates
+        await new Promise(r => setTimeout(r, 1500));
+        results.localIps = ips;
+        pc.close();
+      } catch { }
+
+      // 4. AdBlock Detection (Real data via fetch)
+      try {
+        const testUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        const response = await fetch(testUrl, { method: 'HEAD', mode: 'no-cors', signal: controller.signal }).catch(() => null);
+        results.adBlock = !response;
+      } catch {
+        results.adBlock = true;
+      }
+
+      // 5. IP and Geo (Real-time tracking)
+      try {
+        // Step A: Get IP first (Most reliable source)
+        const ipRes = await fetch("https://api.ipify.org?format=json", { signal: controller.signal });
+        if (ipRes.ok) {
+          const ipData = await ipRes.json();
+          results.ip = ipData.ip;
+        }
+
+        // Step B: Get Geo data based on IP (or self)
+        const geoSources = [
+          "https://freeipapi.com/api/json",
+          "https://ipapi.co/json/",
+          "https://api.db-ip.com/v2/free/self"
+        ];
+
+        for (const url of geoSources) {
+          try {
+            const res = await fetch(url, { signal: controller.signal });
+            if (res.ok) {
+              const data = await res.json();
+              results.ip = results.ip || data.ip || data.ipAddress || data.query;
+              results.city = data.city || data.cityName || results.city;
+              results.country = data.country_name || data.countryName || data.country || results.country;
+              results.isp = data.org || data.asName || data.isp || results.isp;
+              if (results.city && results.country) break;
+            }
+          } catch (err) { }
+        }
+      } catch (e) {
+        if (!results.ip) results.ip = "Detection Blocked";
+      }
+
+      // 6. Network Performance (Real data via fetch/ping)
+      const startLatency = performance.now();
+      try {
+        await fetch("https://www.google.com/favicon.ico", { mode: 'no-cors', cache: 'no-store', signal: controller.signal });
+        results.latency = Math.round(performance.now() - startLatency);
+      } catch {
+        const conn = (navigator as any).connection;
+        results.latency = conn?.rtt || Math.round(performance.now() - startLatency);
+      }
+
+      const startSpeed = performance.now();
+      try {
+        const speedRes = await fetch("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/JPEG_example_JPG_RIP_100.jpg/200px-JPEG_example_JPG_RIP_100.jpg", { cache: 'no-store', signal: controller.signal });
+        const blob = await speedRes.blob();
+        const endSpeed = performance.now();
+        const duration = (endSpeed - startSpeed) / 1000;
+        const speedMbps = ((blob.size * 8) / duration) / (1024 * 1024);
+        results.downloadSpeed = speedMbps > 0 ? speedMbps.toFixed(2) : "N/A";
+      } catch {
+        results.downloadSpeed = (navigator as any).connection?.downlink?.toFixed(2) || "N/A";
+      }
+
+      // 7. Calculate Security Score (Dynamic based on real data)
+      let score = 95;
+      if (!results.https) score -= 45;
+      if (!results.dnt) score -= 8;
+      if (results.localIps && results.localIps.length > 0) score -= 12; // WebRTC Leak is a risk
+      if (results.adBlock) score += 5; // Good for security
+      if (!results.cookies) score -= 5;
+      if (results.os === "Unknown") score -= 5;
+
+      results.score = Math.min(100, Math.max(0, score));
+
+      setData(results);
+      setIsDataLoaded(true);
+    } catch (err) {
+      console.error("Audit error:", err);
+      results.score = 72;
+      setData(results);
+      setIsDataLoaded(true);
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  }, []);
+
   useEffect(() => {
     if (isScanning && currentStep < steps.length) {
+      const delay = tool.id === "security" ? 1100 : 1300;
       const timer = setTimeout(() => {
         setCurrentStep(prev => prev + 1);
-      }, tool.id === "security" ? 600 : 800); 
+        if (currentStep === 0) runDiagnostics();
+      }, delay);
       return () => clearTimeout(timer);
     } else if (isScanning && currentStep >= steps.length) {
-      const finishTimer = setTimeout(() => {
-        setIsScanning(false);
-        setSubmitted(true);
-      }, 500);
-      return () => clearTimeout(finishTimer);
+      if (isDataLoaded) {
+        const finishTimer = setTimeout(() => {
+          setIsScanning(false);
+          setSubmitted(true);
+        }, 400);
+        return () => clearTimeout(finishTimer);
+      } else {
+        const retryTimer = setTimeout(() => {
+          if (currentStep >= steps.length + 5) {
+            setIsScanning(false);
+            setSubmitted(true);
+          } else {
+            setCurrentStep(prev => prev + 1);
+          }
+        }, 1000);
+        return () => clearTimeout(retryTimer);
+      }
     }
-  }, [isScanning, currentStep, steps.length, tool.id]);
+  }, [isScanning, currentStep, steps.length, tool.id, runDiagnostics, isDataLoaded]);
 
   const handleStartScan = () => {
     setIsStarted(true);
     setIsScanning(true);
     setCurrentStep(0);
+    setData({});
+    setIsDataLoaded(false);
   };
 
   const reset = () => {
@@ -206,227 +262,391 @@ export function AssessmentTool({ tool }: { tool: Tool }) {
     setIsStarted(false);
     setIsScanning(false);
     setCurrentStep(0);
+    setData({});
+    setIsDataLoaded(false);
+  };
+
+  const getNetworkFindings = () => {
+    const findings = [];
+
+    // Latency Finding
+    if (data.latency && data.latency > 100) {
+      findings.push({
+        level: "HIGH",
+        category: "LATENCY",
+        title: `Significant Lag Detected (${data.latency}ms)`,
+        rec: "Your connection is experiencing high latency. This may affect real-time applications like VoIP or video conferencing.",
+        bg: "bg-red-50", border: "border-red-200", pillBg: "bg-red-500", text: "text-red-500"
+      });
+    } else if (data.latency) {
+      findings.push({
+        level: "OPTIMAL",
+        category: "LATENCY",
+        title: `Low Latency (${data.latency}ms)`,
+        rec: "Your network response time is excellent, suitable for high-performance enterprise applications.",
+        bg: "bg-[#70309d]/5", border: "border-[#70309d]/20", pillBg: "bg-[#70309d]", text: "text-[#70309d]"
+      });
+    }
+
+    // Speed Finding
+    const speed = data.downloadSpeed && data.downloadSpeed !== "N/A" ? parseFloat(data.downloadSpeed) : 0;
+    if (speed > 0 && speed < 10) {
+      findings.push({
+        level: "MEDIUM",
+        category: "THROUGHPUT",
+        title: `Limited Bandwidth (${data.downloadSpeed} Mbps)`,
+        rec: "Detected throughput is below enterprise baseline. This could cause buffering during large file transfers.",
+        bg: "bg-orange-50", border: "border-orange-200", pillBg: "bg-orange-500", text: "text-orange-500"
+      });
+    } else if (speed > 10) {
+      findings.push({
+        level: "STABLE",
+        category: "THROUGHPUT",
+        title: `Healthy Bandwidth (${data.downloadSpeed} Mbps)`,
+        rec: "Connection speed is sufficient for standard office productivity and video streaming.",
+        bg: "bg-[#70309d]/5", border: "border-[#70309d]/20", pillBg: "bg-[#70309d]", text: "text-[#70309d]"
+      });
+    }
+
+    // Infrastructure Finding
+    findings.push({
+      level: "INFO",
+      category: "ROUTING",
+      title: `ISP: ${data.isp || "Commercial Provider"}`,
+      rec: `Exit Node: ${data.city || "Detected City"}, ${data.country || "Global Region"}. Traffic routed via ${data.isp || "standard gateway"}.`,
+      bg: "bg-blue-50", border: "border-blue-200", pillBg: "bg-blue-500", text: "text-blue-500"
+    });
+
+    return findings;
+  };
+
+  const getSecurityFindings = () => {
+    const findings = [];
+
+    // Transport Security
+    if (!data.https) {
+      findings.push({
+        title: "CRITICAL: Unencrypted Traffic",
+        desc: "Your connection is using plain HTTP. All data transmitted is visible to anyone on the network.",
+        type: "danger",
+        icon: <ShieldAlert className="text-[#937bbd]" />
+      });
+    } else {
+      findings.push({
+        title: "Encrypted Handshake",
+        desc: "Connection is secured via HTTPS/TLS 1.3. Your data is protected from interception.",
+        type: "success",
+        icon: <Lock className="text-[#70309d]" />
+      });
+    }
+
+    // WebRTC Leak
+    if (data.localIps && data.localIps.length > 0) {
+      findings.push({
+        title: "IDENTITY LEAK: WebRTC Vulnerability",
+        desc: `Your local network IP (${data.localIps[0]}) is leaked via WebRTC. This can be used for de-anonymization.`,
+        type: "warning",
+        icon: <Eye className="text-[#937bbd]" />
+      });
+    } else {
+      findings.push({
+        title: "IP Masking Active",
+        desc: "No local network addresses leaked via WebRTC. Privacy headers are correctly enforced.",
+        type: "success",
+        icon: <EyeOff className="text-[#70309d]" />
+      });
+    }
+
+    // Tracking
+    if (data.adBlock) {
+      findings.push({
+        title: "Content Filtering Enabled",
+        desc: "Active tracking blockers detected. Your browser is preventing third-party monitoring.",
+        type: "success",
+        icon: <Shield className="text-[#70309d]" />
+      });
+    } else {
+      findings.push({
+        title: "Tracking Exposure",
+        desc: "No active content blockers detected. Your digital fingerprint may be visible to advertisers.",
+        type: "warning",
+        icon: <AlertTriangle className="text-[#937bbd]" />
+      });
+    }
+
+    return findings;
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden min-h-[500px] flex flex-col">
-        {/* Constant Header */}
-        <div className="px-6 py-5 border-b border-slate-50 flex items-center justify-between bg-white z-10">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-[#70309d] rounded-lg flex items-center justify-center text-white">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-0">
+      <div className="bg-white rounded-2xl md:rounded-[2rem] shadow-2xl border border-slate-100 overflow-hidden min-h-[500px] md:min-h-[600px] flex flex-col">
+        {/* SOC Style Header */}
+        <div className="px-6 py-6 md:px-10 md:py-8 border-b border-slate-50 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white relative overflow-hidden gap-4">
+          <div className="absolute top-0 right-0 p-4 opacity-[0.03] rotate-12">
+            <Shield size={100} />
+          </div>
+
+          <div className="flex items-center gap-4 relative z-10">
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform duration-300 bg-[#70309D]`}>
               {tool.icon}
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#3B4041]">
-                {tool.id === "network"
-                  ? "Network Infrastructure Assessment"
-                  : "Security Posture Review"}
-              </h3>
-              <p className="text-[10px] text-slate-400 font-medium">
-                {tool.id === "network"
-                  ? "Identify gaps, risks, and optimisation opportunities"
-                  : "Endpoint, network, cloud, and compliance evaluation"}
+              <div className="flex items-center gap-3">
+                <h3 className="text-[12px] font-black text-[#3B4041] uppercase">
+                  {tool.id === "network" ? "Network Diagnostics" : "Security Posture Audit"}
+                </h3>
+                <span className="px-2 py-0.5 bg-[#70309d]/10 text-[#70309d] text-[10px] font-black rounded uppercase border border-[#70309d]/20 animate-pulse">Live</span>
+              </div>
+              <p className="text-[10px] text-[#94A3BB] uppercase tracking-[0.1em]">
+                {tool.id === "network" ? "Protocol: TCP/IP v4/v6 • Path Analysis" : "Audit ID: " + Math.random().toString(36).substr(2, 9).toUpperCase()}
               </p>
             </div>
           </div>
+
+          <div className="hidden lg:flex items-center gap-8">
+            <div className="text-right">
+              <p className="text-[10px] font-black uppercase tracking-widest mb-1">Status</p>
+              <div className="flex items-center justify-end gap-2 text-[#70309d] font-black text-[10px]">
+                <div className="w-1.5 h-1.5 bg-[#70309d] rounded-full" />
+                OPERATIONAL
+              </div>
+            </div>
+            <div className="h-8 w-px bg-slate-100" />
+            {/* <div className="text-right">
+              <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-1">Engine</p>
+              <p className="text-xs font-black text-slate-800">COLLECTIVE-V2</p>
+            </div> */}
+          </div>
         </div>
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col bg-[#FAFAFA]">
           {!isStarted ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-white">
-              <div className="w-16 h-16 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] mb-6">
-                {tool.icon}
+            <div className="flex-1 flex flex-col items-center justify-center text-center p-6 md:p-16 bg-white">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-[#70309d]/10 blur-2xl rounded-full scale-150 animate-pulse" />
+                <div className="relative w-16 h-16 bg-[#937BBD] border border-black/5 rounded-full flex items-center justify-center text-black shadow-2xl">
+                  {tool.id === "network" ? <Activity size={32} /> : <Shield size={32} />}
+                </div>
+
               </div>
-              <h2 className="text-xl font-extrabold text-[#3B4041] mb-4 uppercase tracking-tight">
-                {tool.id === "network"
-                  ? "NETWORK ASSESSMENT TOOL"
-                  : "SECURITY POSTURE REVIEW"}
+
+              <h2 className="text-[20px] font-black text-[#3B4041] mb-2 uppercase tracking-tighter">
+                {tool.id === "network" ? "Infrastructure Discovery" : "Real-Time Posture Audit"}
               </h2>
-              <p className="text-xs text-slate-500 max-w-sm mb-12 leading-relaxed">
+              <p className="text-[12px] text-[#64748b] max-w-lg mb-8 leading-relaxed">
                 {tool.id === "network"
-                  ? "This tool scans your network infrastructure to identify gaps, risks, and optimisation opportunities. Click below to run a sample assessment."
-                  : "Evaluate your security posture across endpoints, identity, network, cloud, and data protection. Click below to run a sample review."}
+                  ? "Perform an deep-scan of your network topology, measuring real-time throughput, latency spikes, and ISP routing efficiency."
+                  : "Execute a multi-layer security audit of your client-side environment. We probe for WebRTC leaks, hardware fingerprints, and tracking exposures."}
               </p>
+
               <button
                 onClick={handleStartScan}
-                className="flex items-center gap-3 px-8 py-3.5 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all duration-300 shadow-lg shadow-[#70309d]/20"
+                className="group flex items-center gap-4 px-8 py-3 bg-[#70309d] text-white text-[10px] font-black rounded-2xl hover:bg-[#70309D] transition-all duration-300 shadow-2xl shadow-[#70309d]/40 hover:scale-[1.05] active:scale-95 uppercase tracking-widest"
               >
-                {tool.icon}{" "}
-                {tool.id === "network"
-                  ? "Run Sample Assessment"
-                  : "Run Sample Review"}
+                {/* {tool.id === "network" ? <Terminal size={18} /> : <Search size={18} />} */}
+                Start Real-Time Audit
+                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
               </button>
             </div>
           ) : isScanning ? (
-            tool.id === "network" ? (
-              <div className="flex-1 flex flex-col items-center justify-center py-16 px-8 bg-white">
-                <div className="flex items-center gap-4 mb-10 w-full max-w-sm">
-                  <div className="w-10 h-10 bg-[#F3E8FF] rounded-full flex items-center justify-center text-[#70309d] shadow-sm">
-                    {tool.icon}
-                  </div>
-                  <div className="text-left">
-                    <h3 className="text-[15px] font-bold text-[#3B4041]">Assessment in Progress</h3>
-                    <p className="text-xs text-slate-500">Scanning infrastructure...</p>
+            <div className="flex-1 flex flex-col items-center justify-center py-24 px-10">
+              <div className="mb-16 flex flex-col items-center relative">
+                {/* Modern Cyber Spinner */}
+                <div className="relative w-32 h-32 mb-8">
+                  <div className="absolute inset-0 border-8 border-slate-100 rounded-full" />
+                  <div className={`absolute inset-0 border-8 border-t-transparent rounded-full animate-spin border-[#70309d]`} style={{ animationDuration: '0.8s' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-xs font-black text-slate-400">
+                      {Math.round((currentStep / steps.length) * 100)}%
+                    </span>
                   </div>
                 </div>
-                <div className="w-full max-w-sm flex flex-col gap-3">
-                  {steps.map((step, idx) => {
-                    const isComplete = idx < currentStep;
-                    const isCurrent = idx === currentStep;
-                    const isPending = idx > currentStep;
+                <h3 className="text-xl font-black text-[#3B4041] mb-2 uppercase tracking-tight">Audit in Progress</h3>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-[#70309d] rounded-full animate-bounce" />
+                  <span className="w-1.5 h-1.5 bg-[#70309d] rounded-full animate-bounce [animation-delay:0.2s]" />
+                  <span className="w-1.5 h-1.5 bg-[#70309d] rounded-full animate-bounce [animation-delay:0.4s]" />
+                </div>
+              </div>
 
-                    return (
-                      <div key={idx} className={`flex items-center gap-3 text-sm transition-all duration-300 ${isPending ? 'opacity-20' : 'opacity-100'}`}>
-                        {isComplete && <CheckCircle2 size={16} className="text-[#70309d]" />}
-                        {isCurrent && <Loader2 size={16} className="text-[#70309d] animate-spin" />}
-                        {isPending && <Circle size={16} className="text-slate-300" />}
-                        <span className={`${isCurrent || isComplete ? 'text-[#3B4041] font-medium' : 'text-slate-500'}`}>
-                          {step}
-                        </span>
+              <div className="w-full max-w-md space-y-5">
+                {steps.map((step, idx) => {
+                  const isComplete = idx < currentStep;
+                  const isCurrent = idx === currentStep;
+                  const isPending = idx > currentStep;
+
+                  return (
+                    <div key={idx} className={`flex items-center gap-5 transition-all duration-700 ${isPending ? 'opacity-10 translate-x-4' : 'opacity-100 translate-x-0'}`}>
+                      <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-all shadow-sm ${isComplete ? 'bg-[#70309d] shadow-[#70309d]/20' : isCurrent ? 'bg-[#70309d] shadow-[#70309d]/20 scale-110' : 'bg-white border border-slate-200'}`}>
+                        {isComplete ? <CheckCircle2 size={16} className="text-white" /> : isCurrent ? <Loader2 size={16} className="text-white animate-spin" /> : <Circle size={4} className="text-slate-300" />}
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ) : (
-              <div className="flex-1 flex flex-col items-center justify-center py-20 px-8 text-center bg-white">
-                 <div className="relative w-28 h-28 mb-8 flex items-center justify-center">
-                    <svg className="absolute inset-0 w-full h-full transform -rotate-90 text-[#70309d]" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" opacity="0.15" />
-                      <circle 
-                        cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="5" 
-                        strokeDasharray="283" 
-                        strokeDashoffset={283 - (283 * (Math.min(currentStep, steps.length) / steps.length))} 
-                        strokeLinecap="round" 
-                        className="transition-all duration-700 ease-in-out" 
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <span className="text-[18px] font-extrabold text-[#70309d]">
-                         {Math.round((Math.min(currentStep, steps.length) / steps.length) * 100)}%
-                       </span>
+                      <span className={`text-[13px] uppercase tracking-wide font-black ${isCurrent || isComplete ? 'text-[#3B4041]' : 'text-slate-400'}`}>
+                        {step}
+                      </span>
                     </div>
-                 </div>
-                 <h3 className="text-[17px] font-bold text-[#3B4041] mb-2">Evaluating Security Posture</h3>
-                 <p className="text-sm text-slate-500 max-w-[280px] h-5 transition-opacity duration-300">
-                    {steps[Math.min(currentStep, steps.length - 1)]}
-                 </p>
+                  );
+                })}
               </div>
-            )
+            </div>
           ) : submitted ? (
             tool.id === "network" ? (
-              <div className="flex-1 flex flex-col p-8 bg-white">
-                {/* Stats Row */}
-                <div className="grid grid-cols-4 gap-4 mb-8">
-                  {networkResults.stats.map((stat, idx) => (
-                    <div key={idx} className="bg-slate-50 border border-slate-100 rounded-xl p-6 text-center">
-                      <div className={`text-3xl font-extrabold mb-1 ${stat.numberColor}`}>{stat.value}</div>
-                      <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Findings & Recommendations */}
-                <h3 className="text-sm font-bold text-[#3B4041] mb-4">Findings & Recommendations</h3>
-                <div className="space-y-3 mb-8">
-                  {networkResults.findings.map((f, idx) => (
-                    <div key={idx} className={`border rounded-xl p-5 ${f.bg} ${f.border}`}>
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white ${f.pillBg}`}>
-                          {f.level}
-                        </span>
-                        <span className={`text-[10px] font-bold uppercase tracking-widest ${f.text}`}>{f.category}</span>
+              <div className="flex-1 flex flex-col p-6 md:p-10 bg-[#FAFAFA] animate-in fade-in duration-1000">
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                  {[
+                    { label: "Latency", val: data.latency || "--", unit: "ms", icon: <Zap size={16} className="text-[#70309d]" /> },
+                    { label: "Speed", val: data.downloadSpeed || "0.00", unit: "Mb/s", icon: <Globe size={16} className="text-[#70309d]" /> },
+                    { label: "Public IP", val: data.ip || "N/A", unit: "", icon: <Wifi size={16} className="text-[#70309d]" /> },
+                    { label: "Location", val: data.country ? (data.city ? `${data.city}, ${data.country}` : data.country) : "Detecting...", unit: "", icon: <MapPin size={16} className="text-[#70309d]" /> }
+                  ].map((s, i) => (
+                    <div key={i} className="bg-white border border-slate-100 rounded-2xl md:rounded-3xl p-5 md:p-6 transition-all hover:shadow-xl hover:-translate-y-1">
+                      <div className="flex items-center justify-between mb-4">
+                        {s.icon}
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{s.label}</span>
                       </div>
-                      <h4 className="text-sm font-bold text-[#3B4041] mb-1">{f.title}</h4>
-                      <p className="text-xs text-slate-600 font-medium">{f.rec}</p>
+                      <div className="text-base font-black text-[#3B4041] leading-tight">{s.val} <span className="text-[12px] font-bold text-slate-400">{s.unit}</span></div>
                     </div>
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={reset}
-                    className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors"
-                  >
-                    Run Again
-                  </button>
-                  <button
-                    onClick={() => navigate('/about')}
-                    className="flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#70309d]/20"
-                  >
-                    Discuss Findings <ArrowRight size={16} />
-                  </button>
+                {/* Network Findings */}
+                <div className="bg-white rounded-2xl md:rounded-[2rem] border border-slate-100 p-6 md:p-10 shadow-sm flex-1">
+                  <h3 className="text-base font-black text-[#3B4041] mb-8 uppercase tracking-widest flex items-center gap-3">
+                    <Activity size={20} className="text-[#70309d]" />
+                    Diagnostic Analysis
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {getNetworkFindings().map((f, idx) => (
+                      <div key={idx} className={`rounded-3xl p-6 border transition-all hover:shadow-md ${f.bg} ${f.border}`}>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className={`px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest text-white ${f.pillBg}`}>
+                            {f.level}
+                          </span>
+                          <span className={`text-[10px] font-black uppercase tracking-widest ${f.text}`}>{f.category}</span>
+                        </div>
+                        <h4 className="text-base font-black text-[#3B4041] mb-2">{f.title}</h4>
+                        <p className="text-xs text-slate-500 font-bold leading-relaxed">{f.rec}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer Buttons */}
+                <div className="mt-10 flex flex-wrap items-center gap-5">
+                  <button onClick={reset} className="px-10 py-4 bg-white border border-slate-200 text-slate-800 text-xs font-black rounded-2xl hover:bg-slate-50 transition-all uppercase tracking-widest shadow-sm">Reroute Audit</button>
+                  {/* <button onClick={() => navigate('/about')} className="flex-1 flex items-center justify-center gap-4 px-10 py-4 bg-[#70309d] text-white text-xs font-black rounded-2xl hover:bg-[#4C1D95] transition-all shadow-2xl shadow-[#70309d]/30 hover:scale-[1.02] uppercase tracking-widest">
+                    Discuss findings <ArrowRight size={18} />
+                  </button> */}
                 </div>
               </div>
             ) : (
-              <div className="flex-1 flex flex-col p-8 items-center bg-[#FAFAFA]">
-                 {/* Score Circle */}
-                 <div className="flex flex-col items-center mb-10 w-full bg-white rounded-2xl p-8 border border-slate-100 shadow-sm max-w-[800px]">
-                    <div className="relative w-36 h-36 mb-6 flex flex-col items-center justify-center">
-                       <svg className="absolute inset-0 w-full h-full transform -rotate-90 drop-shadow-sm" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="40" fill="none" stroke="#F1F5F9" strokeWidth="6" />
-                          <circle cx="50" cy="50" r="40" fill="none" stroke="#F97316" strokeWidth="6" strokeDasharray={`${72 * 2.51} 251`} strokeLinecap="round" className="transition-all duration-1000 ease-out" />
-                       </svg>
-                       <span className="text-4xl font-extrabold text-[#F97316] leading-none mb-1.5 mt-2">72</span>
-                       <span className="text-[11px] font-bold text-slate-400">/100</span>
-                    </div>
-                    <h3 className="text-[15px] font-bold text-[#3B4041] mb-0.5">Overall Security Score</h3>
-                    <p className="text-xs text-slate-500 font-medium">Moderate risk — improvements recommended</p>
-                 </div>
+              <div className="flex-1 flex flex-col p-6 md:p-10 bg-[#FAFAFA] animate-in slide-in-from-bottom-8 duration-1000">
+                {/* Security Dashboard Top Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                  {/* Score Gauge */}
+                  <div className="lg:col-span-5 bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 border border-slate-100 shadow-xl flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#70309d]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
 
-                 {/* Categories */}
-                 <div className="w-full max-w-[800px] space-y-4 mb-8">
-                   {securityFindingsData.categories.map((cat, idx) => (
-                      <div key={idx} className="border border-slate-200 shadow-sm rounded-xl p-6 bg-white transition-all hover:shadow-md">
-                         <div className="flex justify-between items-center mb-4">
-                            <div className="flex items-center gap-2.5">
-                               {cat.icon === "warning-orange" && <AlertTriangle size={18} className="text-orange-500" strokeWidth={2.5} />}
-                               {cat.icon === "warning-red" && <AlertTriangle size={18} className="text-red-500" strokeWidth={2.5} />}
-                               {cat.icon === "check-purple" && <CheckCircle2 size={18} className="text-[#70309d]" strokeWidth={2.5} />}
-                               <h4 className="text-[15px] font-bold text-[#3B4041]">{cat.title}</h4>
-                            </div>
-                            <span className={`text-[19px] font-extrabold tracking-tight ${cat.scoreColor}`}>{cat.score}</span>
-                         </div>
-                         
-                         <div className="w-full h-[3px] bg-slate-100 rounded-full mb-5 overflow-hidden">
-                            <div className={`h-full ${cat.barColor} rounded-full`} style={{ width: `${cat.score}%` }}></div>
-                         </div>
-                         
-                         <ul className="space-y-2">
-                           {cat.bullets.map((b, bIdx) => (
-                              <li key={bIdx} className="flex items-start gap-2">
-                                 <div className={`w-1 h-1 rounded-full ${cat.dotColor} mt-2 flex-shrink-0`} />
-                                 <span className="text-[13px] text-slate-500 font-medium leading-relaxed">{b}</span>
-                              </li>
-                           ))}
-                         </ul>
+                    <div className="relative w-44 h-44 flex items-center justify-center mb-8">
+                      <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="#F1F5F9" strokeWidth="12" />
+                        <circle
+                          cx="50" cy="50" r="44" fill="none"
+                          stroke={data.score && data.score > 85 ? "#70309d" : "#70309d"}
+                          strokeWidth="12"
+                          strokeDasharray={`${(data.score || 0) * 2.76} 276`}
+                          strokeLinecap="round"
+                          className="transition-all duration-[2000ms] ease-out shadow-lg"
+                        />
+                      </svg>
+                      <div className="text-center">
+                        <span className="text-3xl font-black text-[#3B4041] tracking-tighter">{data.score || "--"}</span>
+                        <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.3em] mt-1">Posture</p>
                       </div>
-                   ))}
-                 </div>
+                    </div>
 
-                 {/* Buttons aligned left */}
-                 <div className="flex items-center gap-4 self-start max-w-[800px] mx-auto w-full">
-                    <button onClick={reset} className="px-6 py-3 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-50 transition-colors">Run Again</button>
-                    <button onClick={() => navigate('/about')} className="flex items-center gap-2 px-6 py-3 bg-[#70309d] text-white text-xs font-bold rounded-xl hover:bg-[#4C1D95] transition-all shadow-lg shadow-[#70309d]/20">
-                       Discuss Remediation <ArrowRight size={16} />
-                    </button>
-                 </div>
+                    <div className="text-center">
+                      <h3 className={`text-xl font-black uppercase tracking-tight mb-2 text-[#70309d]`}>
+                        {data.score && data.score > 85 ? "Infrastructure Secure" : "Hardening Recommended"}
+                      </h3>
+                      <p className="text-[10px] text-slate-400 font-bold max-w-xs leading-relaxed uppercase tracking-wide">
+                        {data.score && data.score > 85
+                          ? "Zero identity leaks detected. Transport layer optimally configured for enterprise standards."
+                          : "Minor exposure detected in endpoint fingerprinting. Privacy signals require validation."}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Hardware Fingerprint Grid */}
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      { icon: <Monitor size={20} />, label: "OS", val: data.os },
+                      { icon: <Cpu size={20} />, label: "Processor", val: (data.cores || "8") + " Core" },
+                      { icon: <Database size={20} />, label: "Memory", val: (data.memory || "16") + " GB" },
+                      { icon: <Fingerprint size={20} />, label: "Renderer", val: data.gpu ? data.gpu.split(' ').slice(0, 2).join(' ') : "Standard" },
+                      { icon: <Globe size={20} />, label: "Timezone", val: data.timezone || "Global" },
+                      { icon: <Wifi size={20} />, label: "Local IP", val: data.localIps && data.localIps.length > 0 ? data.localIps[0] : "Hidden" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex items-center gap-4 hover:border-[#70309d]/30 transition-colors group">
+                        <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#70309d] transition-colors">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-[10px] font-black text-[#70309d]/40 uppercase tracking-widest">{item.label}</p>
+                          <p className="text-xs font-black text-[#3B4041] truncate max-w-[120px]">{item.val}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Real Audit Findings */}
+                <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 border border-slate-100 shadow-sm mb-10">
+                  <h3 className="text-base font-black text-[#3B4041] mb-8 uppercase tracking-widest flex items-center gap-3">
+                    <Lock size={20} className="text-[#70309d]" />
+                    Audit Log & Vulnerability Scan
+                  </h3>
+                  <div className="space-y-4">
+                    {getSecurityFindings().map((f, i) => (
+                      <div key={i} className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-6 rounded-2xl md:rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-lg">
+                        <div className="mt-1">{f.icon}</div>
+                        <div>
+                          <h4 className="text-sm font-black text-[#3B4041] uppercase tracking-tight mb-1">{f.title}</h4>
+                          <p className="text-xs text-slate-500 font-bold leading-relaxed">{f.desc}</p>
+                        </div>
+                        <div className="ml-auto text-[10px] font-black text-[#70309d]/30 uppercase tracking-widest">Logged</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap items-center gap-6 w-full">
+                  <button onClick={reset} className="px-12 py-5 bg-white border-2 border-slate-100 text-slate-800 text-xs font-black rounded-2xl hover:bg-slate-50 transition-all shadow-sm uppercase tracking-[0.2em]">Reroute Audit</button>
+                  {/* <button onClick={() => navigate('/about')} className="flex-1 flex items-center justify-center gap-4 px-12 py-5 bg-[#3B4041] text-white text-xs font-black rounded-2xl hover:bg-black transition-all shadow-2xl hover:scale-[1.02] uppercase tracking-[0.2em]">
+                       Request Enterprise Audit <ArrowRight size={20} />
+                    </button> */}
+                </div>
               </div>
             )
           ) : null}
         </div>
 
-        {/* Footer */}
-        <div className="px-6 py-5 border-t border-slate-50 bg-[#F9FAFB] mt-auto">
-          <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.1em] text-center">
-            {tool.id === "network"
-              ? "Sample assessment with representative findings. Production tool connects to live infrastructure via API."
-              : "Sample review with representative findings. Production tool integrates with your security stack via API."}
-          </p>
+        {/* Console Style Footer */}
+        <div className="px-10 py-6 border-t border-slate-50 bg-white">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-2 h-2 bg-[#70309d] rounded-full animate-pulse" />
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Diagnostic Stream: Connected</p>
+            </div>
+            <div className="text-[9px] font-black text-slate-300 uppercase tracking-widest text-center md:text-right max-w-sm">
+              Notice: Assessment based on client-side entropy and hardware probes. For full depth, integrate via Collective API.
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+

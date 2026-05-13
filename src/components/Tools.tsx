@@ -50,7 +50,7 @@ export default function Tools() {
                 onClick={() => setActiveTool(t.id)}
                 className={`flex items-start gap-4 p-5 rounded-md text-left transition-all duration-300 ${activeTool === t.id
                   ? 'bg-[#3B4041] text-white shadow-md'
-                  : 'bg-[#F4F4F5] text-[#3B4041] hover:bg-[#E4E4E7]'
+                  : 'bg-[#efefef] text-[#3B4041] hover:bg-[#E4E4E7]'
                   }`}
               >
                 <div className={`mt-0.5 ${activeTool === t.id ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -86,12 +86,12 @@ export default function Tools() {
                   <p className="text-brand-300 text-xs">Capability & Case Study Finder</p>
                 </div>
               </div>
-  <button
-  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] text-brand-300 text-xs font-medium"
->
-  <span className="w-2 h-2 bg-brand-600 rounded-full" />
-  Live
-</button>
+              <button
+                className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#efefef] text-brand-300 text-xs font-medium"
+              >
+                <span className="w-2 h-2 bg-brand-600 rounded-full" />
+                Live
+              </button>
             </div>
 
             <div className="space-y-2">

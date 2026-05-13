@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, ExternalLink } from "lucide-react";
 
 import { tools } from "../data/demoTools";
+import { brandedDemos } from "./BrandedDemoPage";
 import { KnowledgeAssistant } from "../components/demo/KnowledgeAssistant";
 import { AssessmentTool } from "../components/demo/AssessmentTool";
 
@@ -32,7 +33,7 @@ export default function DemoPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           {/* Small Label */}
-          <h4 className="text-base font-bold text-[#8B5CF6] uppercase tracking-[0.25em] mb-6">
+          <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.25em] mb-6">
             EXPERIENCE OUR TOOLS
           </h4>
 
@@ -47,7 +48,6 @@ export default function DemoPage() {
             questions, run assessments, and see the kind of value we deliver
             from day one.
           </p>
-
         </div>
       </section>
 
@@ -60,27 +60,30 @@ export default function DemoPage() {
                 key={t.id}
                 onClick={() => setActiveTool(t)}
                 className={`flex items-center gap-3 pb-4 relative transition-all duration-300
-          ${activeTool.id === t.id
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
-                  }`}
+          ${
+            activeTool.id === t.id
+              ? "text-white"
+              : "text-slate-400 hover:text-white"
+          }`}
               >
                 <span
-                  className={`${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
-                    }`}
+                  className={`${
+                    activeTool.id === t.id ? "text-brand-300" : "text-slate-400"
+                  }`}
                 >
                   {t.icon}
                 </span>
 
                 <span
-                  className={`text-xs font-semibold tracking-wide ${activeTool.id === t.id ? "text-[#8B5CF6]" : "text-slate-400"
-                    }`}
+                  className={`text-xs font-semibold tracking-wide ${
+                    activeTool.id === t.id ? "text-brand-300" : "text-slate-400"
+                  }`}
                 >
                   {t.title}
                 </span>
 
                 {activeTool.id === t.id && (
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#8B5CF6]" />
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-300" />
                 )}
               </button>
             ))}
@@ -89,7 +92,7 @@ export default function DemoPage() {
       </div>
 
       {/* Demo Content */}
-      <section className="py-24 bg-[#F9FAFB]">
+      <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
           {activeTool.id === "knowledge" ? (
             <KnowledgeAssistant key={activeTool.id} tool={activeTool} />
@@ -99,157 +102,102 @@ export default function DemoPage() {
         </div>
       </section>
 
-      {/* Unbranded Demo Sites */}
+      {/* Collective-Branded Demo Experiences */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
-              UNBRANDED DEMO SITES
+              COLLECTIVE-BRANDED DEMO EXPERIENCES
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
-              Ready-to-Deploy Customer Experiences
+              Industry-Specific Customer Experiences
             </h2>
             <p className="text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              These are unbranded demo sites that can be quickly deployed for
-              your customers, showcasing modern digital experiences powered by
-              our expertise.
+              These are rebranded demo experiences originally built for leading
+              brands, now available as Collective IP solutions that can be
+              quickly deployed under your own identity.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
-              <div className="h-32 bg-gradient-to-br from-blue-500 to-blue-600"></div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
-                  Network Assessment Portal
-                </h3>
-                <p className="text-slate-500 text-sm mb-4">
-                  Interactive network infrastructure assessment tool with
-                  automated recommendations.
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Live Demo Available
-                    </span>
+            {brandedDemos.map((demo) => {
+              const statusColor =
+                demo.status === "Live"
+                  ? "bg-green-500"
+                  : demo.status === "Widget"
+                    ? "bg-blue-500"
+                    : "bg-yellow-500";
+              const statusText =
+                demo.status === "Live"
+                  ? "Live Demo Available"
+                  : demo.status === "Widget"
+                    ? "Widget Available"
+                    : "Coming Soon";
+              return (
+                <div
+                  key={demo.slug}
+                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
+                >
+                  <div className="h-48 relative overflow-hidden group-hover:opacity-90 transition-opacity">
+                    <img
+                      src={demo.image}
+                      alt={demo.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Custom Branding
-                    </span>
+                  <div className="p-6">
+                    <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-1">
+                      {demo.title}
+                    </h3>
+                    <p className="text-[#70309d] text-xs font-bold uppercase tracking-wide mb-3">
+                      {demo.subtitle}
+                    </p>
+                    <p className="text-slate-500 text-sm mb-4 line-clamp-3">
+                      {demo.description}
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-2 h-2 ${statusColor} rounded-full`}
+                        ></div>
+                        <span className="text-xs text-slate-600">
+                          {statusText}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-[#70309d] rounded-full"></div>
+                        <a
+                          href={demo.originalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-slate-600 hover:text-[#70309d] transition-colors inline-flex items-center gap-1"
+                          onClick={(e) =>
+                            demo.originalUrl === "#" && e.preventDefault()
+                          }
+                        >
+                          Originally: {demo.original}
+                          {demo.originalUrl !== "#" && (
+                            <ExternalLink size={10} />
+                          )}
+                        </a>
+                      </div>
+                    </div>
+                    <a
+                      href={demo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
+                    >
+                      View Demo <ArrowRight size={14} />
+                    </a>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
-                >
-                  View Demo <ArrowRight size={14} />
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
-              <div className="h-32 bg-gradient-to-br from-purple-500 to-purple-600"></div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
-                  Security Knowledge Base
-                </h3>
-                <p className="text-slate-500 text-sm mb-4">
-                  AI-powered security knowledge assistant with threat
-                  intelligence and compliance guidance.
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Live Demo Available
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      GPT-4 Powered
-                    </span>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
-                >
-                  View Demo <ArrowRight size={14} />
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
-              <div className="h-32 bg-gradient-to-br from-green-500 to-green-600"></div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
-                  Cloud Cost Optimizer
-                </h3>
-                <p className="text-slate-500 text-sm mb-4">
-                  Multi-cloud cost analysis and optimization tool with ROI
-                  calculator.
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Live Demo Available
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Multi-Cloud Support
-                    </span>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
-                >
-                  View Demo <ArrowRight size={14} />
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors">
-              <div className="h-32 bg-gradient-to-br from-orange-500 to-orange-600"></div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
-                  Automation Workflow Builder
-                </h3>
-                <p className="text-slate-500 text-sm mb-4">
-                  Visual workflow designer for IT automation with pre-built
-                  templates.
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">Coming Soon</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                    <span className="text-xs text-slate-600">
-                      Low-Code/No-Code
-                    </span>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight size={14} />
-                </a>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
           <div className="mt-16 text-center">
-            <div className="bg-[#F3E8FF] p-8 rounded-xl max-w-3xl mx-auto">
+            <div className="bg-text-300 p-8 rounded-xl max-w-3xl mx-auto">
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-4">
                 Knowledge Tool Integration
               </h3>
@@ -313,7 +261,7 @@ export default function DemoPage() {
           <div className="flex flex-wrap justify-center gap-6">
             <a
               href="/about"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#8B5CF6] text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-brand-300 text-white text-xs font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-xl shadow-[#8B5CF6]/30"
             >
               Get in Touch <ArrowRight size={18} />
             </a>

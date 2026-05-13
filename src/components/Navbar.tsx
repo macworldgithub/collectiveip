@@ -30,16 +30,17 @@ export default function Navbar() {
 
   
   const isHome = location.pathname === "/";
-  const isDarkHeroPage = [
-    "/practices",
-    "/partner-services",
-    "/vendors",
-    "/resources",
-    "/case-studies",
-    "/demo",
-    "/about",
-    "/contact",
-  ].includes(location.pathname);
+  const isDarkHeroPage =
+    [
+      "/practices",
+      "/partner-services",
+      "/vendors",
+      "/resources",
+      "/case-studies",
+      "/demo",
+      "/about",
+      "/contact",
+    ].includes(location.pathname) || location.pathname.startsWith("/demo/");
 
   const shouldBeWhite = scrolled || (!isHome && !isDarkHeroPage);
   const isDarkBg = !scrolled && isDarkHeroPage;

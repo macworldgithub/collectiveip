@@ -9,7 +9,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#3B4041]">
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
-          <p className="text-[#8B5CF6] text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-brand-300 text-[11px] text-base font-bold uppercase tracking-[0.2em] mb-4">
             Contact Us
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
