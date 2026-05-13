@@ -6,25 +6,21 @@ const practices = [
     icon: <Wifi size={24} />,
     title: "CONNECTIVITY",
     desc: "Design-led network solutions from personal area to global wide area networks, with a speciality in complex wireless environments.",
-    isDark: false,
   },
   {
     icon: <Zap size={24} />,
     title: "AUTOMATION",
     desc: "Embedding automation and AI into service delivery to reduce friction, improve efficiency, and help partners scale.",
-    isDark: true,
   },
   {
     icon: <Cloud size={24} />,
     title: "CLOUD, DC AND COMPUTE",
     desc: "Designing and implementing traditional and hybrid solutions, integrating on-premises and cloud platforms. HPC, storage, and virtualisation expertise.",
-    isDark: false,
   },
   {
     icon: <Monitor size={24} />,
     title: "ENDPOINT INFRASTRUCTURE",
     desc: "Secure, policy-driven solutions for device management, access control, and endpoint protection across all user devices.",
-    isDark: false,
   },
 ];
 
@@ -50,34 +46,20 @@ export default function Practices() {
           {practices.map((p) => (
             <div
               key={p.title}
-              className={`p-6 rounded-md transition-all duration-300 flex flex-col h-full border hover:border-brand-500 ${
-                p.isDark
-                  ? "bg-[#3B4041] border-[#3B4041] text-white"
-                  : "bg-white border-transparent shadow-sm hover:shadow-md"
-              }`}
+              className="group p-6 rounded-md transition-all duration-300 flex flex-col h-full border bg-white shadow-sm hover:shadow-md hover:bg-[#3B4041] hover:border-[#3B4041]"
             >
-              <div
-                className={`mb-6 ${p.isDark ? "text-brand-400" : "text-brand-600"}`}
-              >
+              <div className="mb-6 text-brand-600 group-hover:text-brand-400">
                 {p.icon}
               </div>
-              <h3
-                className={`font-heading text-lg font-bold mb-3 tracking-wide uppercase ${p.isDark ? "text-white" : "text-[#3B4041]"}`}
-              >
+              <h3 className="font-heading text-lg font-bold mb-3 tracking-wide uppercase text-[#3B4041] group-hover:text-white">
                 {p.title}
               </h3>
-              <p
-                className={`text-sm leading-relaxed mb-8 flex-grow ${p.isDark ? "text-slate-300" : "text-slate-500"}`}
-              >
+              <p className="text-sm leading-relaxed mb-8 flex-grow text-slate-500 group-hover:text-slate-300">
                 {p.desc}
               </p>
               <Link
                 to="/practices"
-                className={`inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 ${
-                  p.isDark
-                    ? "text-slate-400 hover:text-slate-300"
-                    : "text-brand-600"
-                }`}
+                className="inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 text-brand-600 group-hover:text-slate-300"
               >
                 Learn more <ChevronRight size={16} />
               </Link>
