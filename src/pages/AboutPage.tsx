@@ -244,9 +244,15 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="text-[#70309d]" size={32} />
-              </div>
+            <a
+  href="https://www.collectiveip.co.uk/meet-the-team/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center cursor-pointer hover:scale-105 transition">
+    <Users className="text-[#70309d]" size={32} />
+  </div>
+</a>
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
                 Leadership Team
               </h3>
@@ -416,7 +422,7 @@ export default function AboutPage() {
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
                 Our Presence
               </h3>
-              <p className="text-slate-500 text-sm mb-4">
+              <p className="text-button-gray text-sm mb-4">
                 Strong UK focus with local expertise nationwide, complemented by
                 established global relationships across Europe, UAE, and the
                 United States.

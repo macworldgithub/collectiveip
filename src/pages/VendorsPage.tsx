@@ -102,7 +102,7 @@ export default function VendorsPage() {
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#3B4041]">
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
-          <p className="text-brand-300 text-[11px] font-bold uppercase tracking-[0.2em] mb-4">
+          <p className="text-brand-300 text-base text-[11px] font-bold uppercase tracking-[0.2em] mb-4">
             Vendors
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 uppercase tracking-tight">
@@ -112,7 +112,7 @@ export default function VendorsPage() {
             We partner with leading technology vendors to deliver comprehensive
             solutions that meet the evolving needs of our customers.
           </p>
-        </div>
+        </div>``
       </section>
 
       {/* Our Vendor Approach Section */}
@@ -130,7 +130,7 @@ export default function VendorsPage() {
 
             {/* Text Content */}
             <div className="w-full lg:w-1/2">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#70309D] mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#3B4041] mb-6">
                 Our Vendor Approach
               </h2>
               <div className="space-y-4 text-slate-600 text-[15px] leading-relaxed">
@@ -189,7 +189,7 @@ export default function VendorsPage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#70309D] mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#3B4041] mb-4">
               Snapshot of our vendor capabilities
             </h2>
           </div>

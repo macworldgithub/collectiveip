@@ -239,7 +239,7 @@ export default function DemoPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Bottom CTA */}  
       <section className="relative py-32 overflow-hidden bg-[#3B4041]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"

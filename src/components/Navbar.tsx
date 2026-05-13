@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Practices", path: "/practices" },
   { label: "Partner Services", path: "/partner-services" },
   { label: "Vendors", path: "/vendors" },
+  { label: "Industry Demo", path: "/demo" },
   { label: "Resources", path: "/resources" },
   { label: "About Collective IP", path: "/about" },
   { label: "Contact Us", path: "/contact" },
@@ -28,7 +29,6 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  
   const isHome = location.pathname === "/";
   const isDarkHeroPage =
     [

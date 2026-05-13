@@ -63,7 +63,7 @@ export default function PartnerServicesPage() {
                 <Wrench className="text-[#70309d]" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3B4041] mb-3">
-                Telecom Consultancy
+                Technical Consultancy
               </h3>
               <p className="text-slate-500 text-sm mb-4">
                 Expert telecom consulting for complex deployments with technical
@@ -183,7 +183,7 @@ export default function PartnerServicesPage() {
           {/* Telecom Consultancy */}
           <div className="bg-white rounded-xl p-8 shadow-sm">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
-              Telecom Consultancy
+              Technical Consultancy
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Technical consulting with commercial grounding. Our consultants
