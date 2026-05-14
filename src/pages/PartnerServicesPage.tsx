@@ -45,7 +45,7 @@ export default function PartnerServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#project-ownership" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Users className="text-[#70309d]" size={24} />
               </div>
@@ -56,9 +56,9 @@ export default function PartnerServicesPage() {
                 Complete project delivery from conception to completion with
                 full accountability and commercial alignment.
               </p>
-            </div>
+            </a>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#technical-consultancy" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Wrench className="text-[#70309d]" size={24} />
               </div>
@@ -69,9 +69,9 @@ export default function PartnerServicesPage() {
                 Expert technical consulting for complex deployments with
                 technical depth and commercial awareness.
               </p>
-            </div>
+            </a>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#managed-resourcing" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Users className="text-[#70309d]" size={24} />
               </div>
@@ -82,9 +82,9 @@ export default function PartnerServicesPage() {
                 Flexible resourcing solutions to scale your team with skilled
                 technical professionals.
               </p>
-            </div>
+            </a>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#field-services" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Truck className="text-[#70309d]" size={24} />
               </div>
@@ -95,9 +95,9 @@ export default function PartnerServicesPage() {
                 On-site technical support, installation, and maintenance across
                 multiple locations.
               </p>
-            </div>
+            </a>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#mass-deployments" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Zap className="text-[#70309d]" size={24} />
               </div>
@@ -108,9 +108,9 @@ export default function PartnerServicesPage() {
                 Large-scale deployment expertise with proven methodologies and
                 automation support.
               </p>
-            </div>
+            </a>
 
-            <div className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors">
+            <a href="#managed-services" className="p-6 border border-slate-200 rounded-lg hover:border-[#70309d] transition-colors cursor-pointer block">
               <div className="w-12 h-12 bg-[#F9F5FF] rounded-lg flex items-center justify-center mb-4">
                 <Shield className="text-[#70309d]" size={24} />
               </div>
@@ -121,7 +121,7 @@ export default function PartnerServicesPage() {
                 Ongoing management and support with clear SLAs and commercial
                 accountability.
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function PartnerServicesPage() {
       <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6 space-y-24">
           {/* End-to-End Project Ownership */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="project-ownership" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               End-to-End Project Ownership
             </h3>
@@ -181,7 +181,7 @@ export default function PartnerServicesPage() {
           </div>
 
           {/* Telecom Consultancy */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="technical-consultancy" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Technical Consultancy
             </h3>
@@ -244,7 +244,7 @@ export default function PartnerServicesPage() {
           </div>
 
           {/* Managed Resourcing */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="managed-resourcing" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Managed Resourcing
             </h3>
@@ -317,7 +317,7 @@ export default function PartnerServicesPage() {
           </div>
 
           {/* Field Services */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="field-services" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Field Services
             </h3>
@@ -368,7 +368,7 @@ export default function PartnerServicesPage() {
           </div>
 
           {/* Mass Deployments */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="mass-deployments" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Mass Deployments
             </h3>
@@ -423,7 +423,7 @@ export default function PartnerServicesPage() {
           </div>
 
           {/* Managed Services */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
+          <div id="managed-services" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Managed Services
             </h3>
