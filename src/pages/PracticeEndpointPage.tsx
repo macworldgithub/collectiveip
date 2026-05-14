@@ -8,7 +8,7 @@ export default function PracticeEndpointPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-36 pb-24 overflow-hidden">
+      <section className="relative py-52 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{
@@ -63,7 +63,7 @@ export default function PracticeEndpointPage() {
               </ul>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img src="/images/logos/connectivity.jpg" alt="Endpoint Infrastructure" className="w-full h-auto object-cover" />
+              <img src="/images/logos/endpoint.jpg" alt="Endpoint Infrastructure" className="w-full h-auto object-cover" />
             </div>
           </div>
         </div>
