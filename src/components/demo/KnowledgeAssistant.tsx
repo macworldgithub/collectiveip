@@ -21,15 +21,34 @@ export function KnowledgeAssistant({ tool }: { tool: Tool }) {
     scrollToBottom();
   }, [messages]);
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     if (!text.trim()) return;
     setMessages((m) => [...m, { role: "user", text }]);
     setInput("");
 
-    // Simulate small AI delay
-    setTimeout(() => {
-      setMessages((m) => [...m, getBotResponse(text)]);
-    }, 400);
+    const localResponse = getBotResponse(text);
+    
+    if (localResponse) {
+      // Simulate small AI delay for local responses
+      setTimeout(() => {
+        setMessages((m) => [...m, localResponse]);
+      }, 400);
+    } else {
+      // Hit external API
+      try {
+        const res = await fetch("https://collective-bot.omnisuiteai.com/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: text, sessionId: null })
+        });
+        const data = await res.json();
+        setMessages((m) => [...m, { role: "ai", text: data.reply || "Sorry, I couldn't process your request." }]);
+      } catch (err) {
+        setMessages((m) => [...m, { role: "ai", text: "Sorry, I am having trouble connecting to the server right now." }]);
+      }
+    }
   };
 
   return (

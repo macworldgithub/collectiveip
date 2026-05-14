@@ -521,7 +521,14 @@ export function getAIBotResponse(q: string): AIChatMessage {
     }
   }
 
-  if (norm === "back to main categories" || norm === "hello" || norm === "hi" || norm === "" || norm.includes("which service would you like to explore")) {
+  if (
+    norm === "back to main categories" || 
+    norm === "hello" || 
+    norm === "hi" || 
+    norm === "" || 
+    norm.includes("which service would you like to explore") ||
+    norm.includes("which services would you like to explore")
+  ) {
     return {
       role: "ai",
       text: "Hello! I am the AI Knowledge Base assistant. I can provide details on our various service matrices. Please select a category below:",

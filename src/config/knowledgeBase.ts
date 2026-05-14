@@ -17,7 +17,7 @@ export type ChatMessage = {
   options?: string[];
 };
 
-export function getBotResponse(q: string): ChatMessage {
+export function getBotResponse(q: string): ChatMessage | null {
   const norm = q.toLowerCase();
 
   const aiResp = getAIBotResponse(q);
@@ -225,29 +225,5 @@ export function getBotResponse(q: string): ChatMessage {
     };
   }
 
-  return {
-    role: "ai",
-    text: "Thank you for your question. Collective IP delivers end-to-end IT infrastructure services across six core practices: Connectivity, Security, Cloud, Datacentre & Compute, Endpoint Infrastructure, and Intelligent Automation.",
-    cards: [
-      {
-        type: "discovery",
-        tag: "DISCOVERY",
-        title: "Let Me Help You Explore",
-        desc: "I can provide detailed information about any of our capabilities, delivery approach, or how we work with partners. Try asking about a specific area:",
-        bullets: [
-          "Network and wireless deployments (including Cisco)",
-          "Security solutions and compliance",
-          "Cloud migration and hybrid infrastructure",
-          "HPC and datacentre solutions",
-          "Intelligent automation capabilities",
-          "Partner enablement and commercial models",
-        ],
-      },
-    ],
-    options: [
-      "Can you support a Cisco wireless rollout?",
-      "What intelligent automation solutions do you offer?",
-      "How do you work with channel partners?",
-    ],
-  };
+  return null;
 }

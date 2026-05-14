@@ -1,4 +1,4 @@
-import { Wifi, Cloud, Monitor, ChevronRight, Zap } from "lucide-react";
+import { Wifi, Cloud, Monitor, ChevronRight, Database } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const practices = [
@@ -6,21 +6,25 @@ const practices = [
     icon: <Wifi size={24} />,
     title: "CONNECTIVITY",
     desc: "Design-led network solutions from personal area to global wide area networks, with a speciality in complex wireless environments.",
-  },
-  {
-    icon: <Zap size={24} />,
-    title: "AUTOMATION",
-    desc: "Embedding automation and AI into service delivery to reduce friction, improve efficiency, and help partners scale.",
+    link: "/practices/connectivity"
   },
   {
     icon: <Cloud size={24} />,
-    title: "CLOUD, DC AND COMPUTE",
-    desc: "Designing and implementing traditional and hybrid solutions, integrating on-premises and cloud platforms. HPC, storage, and virtualisation expertise.",
+    title: "CLOUD SERVICES",
+    desc: "We simplify and secure cloud environments by implementing streamlined solutions that uphold data integrity, ensuring reliable and protected operations.",
+    link: "/practices/cloud-services"
+  },
+  {
+    icon: <Database size={24} />,
+    title: "DATA CENTRE AND COMPUTE",
+    desc: "Delivering secure, high-performance infrastructure for your core. Powering Possibilities with energy-efficient architectures.",
+    link: "/practices/data-centre"
   },
   {
     icon: <Monitor size={24} />,
     title: "ENDPOINT INFRASTRUCTURE",
     desc: "Secure, policy-driven solutions for device management, access control, and endpoint protection across all user devices.",
+    link: "/practices/endpoint-infrastructure"
   },
 ];
 
@@ -58,7 +62,7 @@ export default function Practices() {
                 {p.desc}
               </p>
               <Link
-                to="/practices"
+                to={p.link}
                 className="inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 text-brand-600 group-hover:text-slate-300"
               >
                 Learn more <ChevronRight size={16} />

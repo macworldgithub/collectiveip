@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 import {
   Wifi,
   Cloud,
   Monitor,
-  Zap,
+  Database,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
@@ -31,37 +32,39 @@ const practiceDetails = [
       "Local Government",
       "Automotive",
     ],
-  },
-  {
-    icon: <Zap size={20} />,
-    title: "AUTOMATION",
-    tagline: "Intelligent Process Automation",
-    description:
-      "Embedding automation and AI into service delivery to reduce friction, improve efficiency, and help partners scale. From automated network operations to knowledge systems that support pre-sales, we deliver practical tools that create real commercial value.",
-    capabilities: [
-      "Automated network operations",
-      "Intelligent process automation",
-      "Predictive analytics and insights",
-      "Automated deployment pipelines",
-      "Digital front door solutions",
-      "Custom knowledge systems",
-    ],
-    sectors: ["Channel Partners", "Enterprise", "Public Sector", "Healthcare"],
-    isDarkIcon: true,
+    link: "/practices/connectivity"
   },
   {
     icon: <Cloud size={20} />,
-    title: "CLOUD, DC AND COMPUTE",
+    title: "CLOUD SERVICES",
+    tagline: "Cloud Strategy & Implementation",
+    description:
+      "We simplify and secure cloud environments by implementing streamlined solutions that uphold data integrity, ensuring reliable and protected operations.",
+    capabilities: [
+      "Cloud Consultancy",
+      "Hybrid Cloud",
+      "UC and Collaboration",
+      "Implementation Services",
+      "Cloud Connectivity",
+      "AI and Machine Learning",
+    ],
+    sectors: ["Channel Partners", "Enterprise", "Public Sector", "Healthcare"],
+    isDarkIcon: true,
+    link: "/practices/cloud-services"
+  },
+  {
+    icon: <Database size={20} />,
+    title: "DATA CENTRE AND COMPUTE",
     tagline: "High-Performance Infrastructure",
     description:
-      "Designing and implementing traditional and hybrid solutions, integrating on-premises and cloud platforms. We specialise in HPC, storage and virtualisation to deliver energy-efficient environments that meet performance and capacity demands.",
+      "Delivering secure, high-performance infrastructure for your core. Powering Possibilities with energy-efficient architectures.",
     capabilities: [
-      "HPC data stack design and build",
-      "Storage architecture",
-      "Virtualisation solutions",
-      "Hybrid infrastructure integration",
-      "Energy-efficient design",
-      "Public, private & hybrid cloud",
+      "Data Centre Consultancy",
+      "Backup and Colocation",
+      "Virtualisation",
+      "Data and Disaster Recovery",
+      "High Performance Computing",
+      "Business Continuity",
     ],
     sectors: [
       "Universities",
@@ -70,22 +73,24 @@ const practiceDetails = [
       "Research",
       "Enterprise",
     ],
+    link: "/practices/data-centre"
   },
   {
     icon: <Monitor size={20} />,
     title: "ENDPOINT INFRASTRUCTURE",
     tagline: "Device Management & Protection",
     description:
-      "Delivering secure, policy-driven solutions for device management, access control, and endpoint protection. We drive reliable connectivity, enforce compliance, and extend security controls across all user devices and IoT endpoints.",
+      "Providing Security and control of your diverse, distributed infrastructure at scale. Optimising devices with rigorous evaluation.",
     capabilities: [
-      "Device management and MDM",
-      "Access control policies",
-      "Endpoint protection deployment",
-      "IoT endpoint security",
-      "Compliance enforcement",
-      "User device lifecycle management",
+      "Endpoint Consultancy",
+      "IoT and M2M",
+      "Personal and Mobile Devices",
+      "AV and Media Device",
+      "Wireless Devices",
+      "CCTV",
     ],
     sectors: ["Enterprise", "Healthcare", "Education", "Manufacturing"],
+    link: "/practices/endpoint-infrastructure"
   },
 ];
 
@@ -151,9 +156,17 @@ export default function PracticesPage() {
                     </div>
                   </div>
                 </div>
-                <p className="text-slate-500 text-sm leading-relaxed mt-2">
+                <p className="text-slate-500 text-sm leading-relaxed mt-2 mb-6">
                   {p.description}
                 </p>
+                <div>
+                  <Link 
+                    to={p.link}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#70309D] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-all duration-300 shadow-sm"
+                  >
+                    Explore More <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
 
               <div
