@@ -102,7 +102,7 @@ const knowledgePreviewItems = [
     bullets: [
       "Automated network operations and monitoring",
       "Digital front door / knowledge systems",
-      "Phased delivery: Discovery → Design → Delivery → Optimisation",
+      "Predictive analytics and insights",
     ],
   },
   {
@@ -118,13 +118,14 @@ const knowledgePreviewItems = [
   },
   {
     question: "How do you work with channel partners?",
-    tag: "PARTNER MODEL",
+    tag: "PARTNER ENABLEMENT",
     answer:
-      "We operate as a white-labelled extension of your team — aligned to your brand, protecting your customer relationships, and expanding your services portfolio without competing with you.",
+      "We support partners across four key areas to drive mutual growth and success.",
     bullets: [
-      "White-label delivery aligned to your brand",
-      "Flexible specialist resource, no fixed overhead",
-      "Annuity revenue through value-added services",
+      "Expanding your services portfolio and creating new white space",
+      "Reducing fixed cost base through flexible specialist resource",
+      "Extending security services capabilities",
+      "Driving annuity revenue through value-added services"
     ],
   },
 ];
@@ -198,7 +199,7 @@ function KnowledgeAssistantPreview() {
       </div>
 
       {/* Features footer */}
-      <div className="px-5 pb-4 grid grid-cols-2 gap-2">
+      {/* <div className="px-5 pb-4 grid grid-cols-2 gap-2">
         {[
           "Natural language queries",
           "Structured response cards",
@@ -210,7 +211,7 @@ function KnowledgeAssistantPreview() {
             <span className="text-slate-500 text-[10px]">{f}</span>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* CTA */}
       <div className="px-5 pb-5">

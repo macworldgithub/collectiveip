@@ -8,7 +8,7 @@ export default function PracticeEndpointPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative py-52 overflow-hidden">
+      <section className="relative py-28 md:py-40 lg:py-52 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{
@@ -62,7 +62,9 @@ export default function PracticeEndpointPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+
+            {/* Hidden on mobile/tablet, visible on lg+ */}
+            <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl">
               <img src="/images/logos/endpoint.jpg" alt="Endpoint Infrastructure" className="w-full h-auto object-cover" />
             </div>
           </div>
@@ -70,10 +72,10 @@ export default function PracticeEndpointPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-[#F8F9FA]">
+      <section className=" bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#70309D] uppercase mb-4">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#70309D] uppercase">
               Our Services
             </h2>
             <div className="w-24 h-1 bg-[#70309D] mx-auto rounded-full"></div>
