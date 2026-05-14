@@ -71,7 +71,7 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center lg:gap-[0.75rem] xl:gap-7">
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
 
@@ -85,7 +85,7 @@ export default function Navbar() {
                       state: { fromIndustryDemo: true },
                     })
                   }
-                  className={`text-sm font-medium transition-colors hover:text-brand-600 ${
+                  className={`text-sm lg:text-xs font-medium transition-colors hover:text-brand-600 ${
                     shouldBeWhite
                       ? isActive
                         ? "text-brand-600"

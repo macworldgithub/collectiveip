@@ -489,6 +489,14 @@ const topLevelCategories = Object.keys(matrices);
 export function getAIBotResponse(q: string): AIChatMessage {
   const norm = q.toLowerCase().trim();
 
+  // If it's a greeting or empty, force it to fall through to the API
+  if (["hi", "hello", "hy", "hey", ""].includes(norm)) {
+    return {
+      role: "ai",
+      text: "I couldn't find a direct match."
+    };
+  }
+
   // If user typed a category
   const matchingCategory = topLevelCategories.find(c => c.toLowerCase() === norm);
   if (matchingCategory) {
@@ -523,9 +531,6 @@ export function getAIBotResponse(q: string): AIChatMessage {
 
   if (
     norm === "back to main categories" || 
-    norm === "hello" || 
-    norm === "hi" || 
-    norm === "" || 
     norm.includes("which service would you like to explore") ||
     norm.includes("which services would you like to explore")
   ) {
