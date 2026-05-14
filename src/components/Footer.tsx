@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 
 const practiceLinks = [
-  { label: 'Connectivity', path: '/practices' },
-  { label: 'Security', path: '/practices' },
-  { label: 'Cloud', path: '/practices' },
-  { label: 'Datacentre & Compute', path: '/practices' },
-  { label: 'Endpoint', path: '/practices' },
+  { label: 'Connectivity', path: '/practices/connectivity' },
+  { label: 'Cloud Services', path: '/practices/cloud-services' },
+  { label: 'Data Centre & Compute', path: '/practices/data-centre' },
+  { label: 'Endpoint Infrastructure', path: '/practices/endpoint-infrastructure' },
   { label: 'Intelligent Automation', path: '/intelligent-automation' },
 ];
 

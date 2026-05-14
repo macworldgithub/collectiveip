@@ -48,8 +48,9 @@ export default function Practices() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {practices.map((p) => (
-            <div
+            <Link
               key={p.title}
+              to={p.link}
               className="group p-6 rounded-md transition-all duration-300 flex flex-col h-full border bg-white shadow-sm hover:shadow-md hover:bg-[#3B4041] hover:border-[#3B4041]"
             >
               <div className="mb-6 text-brand-600 group-hover:text-brand-400">
@@ -61,13 +62,10 @@ export default function Practices() {
               <p className="text-sm leading-relaxed mb-8 flex-grow text-slate-500 group-hover:text-slate-300">
                 {p.desc}
               </p>
-              <Link
-                to={p.link}
-                className="inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 text-brand-600 group-hover:text-slate-300"
-              >
+              <div className="inline-flex items-center gap-1 text-sm font-bold transition-all duration-200 hover:gap-2 text-brand-600 group-hover:text-slate-300">
                 Learn more <ChevronRight size={16} />
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
