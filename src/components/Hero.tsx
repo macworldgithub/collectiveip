@@ -31,7 +31,7 @@ export default function Hero() {
           <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl">
             We are a specialist IT infrastructure services business built for the
             channel. We help partners expand their services portfolio, deliver
-            efficiently, and create lasting commercial value — enhanced by
+            efficiently, and create lasting commercial value  enhanced by
             intelligent automation.
           </p>
 
