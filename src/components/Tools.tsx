@@ -163,9 +163,7 @@ export default function Tools() {
             Put Real Tools in Front of Your Customers
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl leading-relaxed">
-            We build practical tools that demonstrate real value — answering
-            questions, surfacing case studies, and helping qualify
-            opportunities. Try them for yourself.
+           We build practical tools that demonstrate real value, answering questions, surfacing case studies, and helping qualify opportunities. Try them for yourself.
           </p>
         </div>
 

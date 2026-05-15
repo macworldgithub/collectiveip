@@ -18,8 +18,7 @@ export default function CTA() {
           Ready to Expand Your Capabilities?
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Whether you're looking to expand your services portfolio, improve delivery efficiency, or
-          explore intelligent automation — we're here to help.
+         Whether you're looking to expand your services portfolio, improve delivery efficiency, or explore intelligent automation, we're here to help
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a

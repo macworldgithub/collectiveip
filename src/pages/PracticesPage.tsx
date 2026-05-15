@@ -63,7 +63,7 @@ const practiceDetails = [
     title: "CLOUD, DC AND COMPUTE",
     tagline: "Cloud Strategy, Data Centre & Compute",
     description:
-      "End-to-end cloud strategy, data centre infrastructure, and high-performance compute — designed, delivered, and managed with precision. From hybrid cloud and virtualisation to disaster recovery and business continuity.",
+      "End-to-end cloud strategy, data centre infrastructure, and high-performance compute, designed, delivered, and managed with precision. From hybrid cloud and virtualisation to disaster recovery and business continuity.",
     capabilities: [
       "Cloud Consultancy & Strategy",
       "Hybrid Cloud & Multi-Cloud",

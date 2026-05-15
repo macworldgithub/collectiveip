@@ -46,9 +46,7 @@ export default function DemoPage() {
 
           {/* Paragraph */}
           <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl mb-20">
-            These are real tools we deploy for our partners. Try them now — ask
-            questions, run assessments, and see the kind of value we deliver
-            from day one.
+           These are real tools we deploy for our partners. Try them now, ask questions, run assessments, and see the value we deliver from day one.
           </p>
         </div>
       </section>

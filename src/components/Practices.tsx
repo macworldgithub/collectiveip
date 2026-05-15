@@ -11,13 +11,13 @@ const practices = [
   {
     icon: <Zap size={24} />,
     title: "INTELLIGENT AUTOMATION",
-    desc: "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate — built on real delivery experience.",
+    desc: "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate, built on real delivery experience.",
     link: "/practices/automation"
-  },
+  },  
   {
     icon: <Cloud size={24} />,
     title: "CLOUD, DC AND COMPUTE",
-    desc: "End-to-end cloud strategy, data centre infrastructure, and high-performance compute — designed, delivered, and managed with precision.",
+    desc: "End-to-end cloud strategy, data centre infrastructure, and high-performance compute, designed, delivered, and managed with precision.",
     link: "/practices/cloud-dc-compute"
   },
   {
@@ -40,9 +40,7 @@ export default function Practices() {
             Specialist Capability Across Four Core Practices
           </h2>
           <p className="text-md text-gray-500 max-w-3xl leading-relaxed">
-            Led by experts who've been customers, suppliers, and partners
-            themselves — we understand your challenges and deliver with
-            precision.
+        Led by experts who’ve been customers, suppliers, and partners themselves, we understand your challenges and deliver with precision.
           </p>
         </div>
 
