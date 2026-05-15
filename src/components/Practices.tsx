@@ -10,7 +10,7 @@ const practices = [
   },
   {
     icon: <Zap size={24} />,
-    title: "AUTOMATION",
+    title: "INTELLIGENT AUTOMATION",
     desc: "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate — built on real delivery experience.",
     link: "/practices/automation"
   },

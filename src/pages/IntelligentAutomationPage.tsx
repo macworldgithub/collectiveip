@@ -117,11 +117,11 @@ export default function IntelligentAutomationPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h4 className="text-base font-bold text-brand-300 uppercase tracking-[0.2em] mb-6">
-              INTELLIGENT AUTOMATION
-            </h4>
+            <p className="text-brand-300 text-sm font-bold uppercase tracking-[0.2em] mb-4">
+              Practice Detail
+            </p>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
-              AUTOMATION THAT DELIVERS REAL OUTCOMES
+              INTELLIGENT AUTOMATION
             </h1>
             <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-10 max-w-xl">
               Not automation for the sake of it. We deliver practical, outcome-driven solutions that reduce cost,
@@ -214,7 +214,7 @@ export default function IntelligentAutomationPage() {
 
               <div className="space-y-8">
                 {approachSteps.map((step) => (
-                  
+
                   <div key={step.number} className="flex gap-6">
                     <div className="w-8 h-8 rounded-full bg-[#efefef] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
                       {step.number}

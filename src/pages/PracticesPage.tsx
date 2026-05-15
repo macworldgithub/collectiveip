@@ -36,7 +36,7 @@ const practiceDetails = [
   },
   {
     icon: <Zap size={20} />,
-    title: "AUTOMATION",
+    title: "INTELLIGENT AUTOMATION",
     tagline: "Intelligent Automation & Outcomes",
     description:
       "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate. From automated network operations to predictive analytics and custom knowledge systems — built on real delivery experience.",
