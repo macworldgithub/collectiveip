@@ -5,7 +5,7 @@ import {
   Wifi,
   Cloud,
   Monitor,
-  Database,
+  Zap,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
@@ -35,45 +35,51 @@ const practiceDetails = [
     link: "/practices/connectivity"
   },
   {
-    icon: <Cloud size={20} />,
-    title: "CLOUD SERVICES",
-    tagline: "Cloud Strategy & Implementation",
+    icon: <Zap size={20} />,
+    title: "AUTOMATION",
+    tagline: "Intelligent Automation & Outcomes",
     description:
-      "We simplify and secure cloud environments by implementing streamlined solutions that uphold data integrity, ensuring reliable and protected operations.",
+      "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate. From automated network operations to predictive analytics and custom knowledge systems — built on real delivery experience.",
     capabilities: [
-      "Cloud Consultancy",
-      "Hybrid Cloud",
-      "UC and Collaboration",
-      "Implementation Services",
-      "Cloud Connectivity",
-      "AI and Machine Learning",
-    ],
-    sectors: ["Channel Partners", "Enterprise", "Public Sector", "Healthcare"],
-    isDarkIcon: true,
-    link: "/practices/cloud-services"
-  },
-  {
-    icon: <Database size={20} />,
-    title: "DATA CENTRE AND COMPUTE",
-    tagline: "High-Performance Infrastructure",
-    description:
-      "Delivering secure, high-performance infrastructure for your core. Powering Possibilities with energy-efficient architectures.",
-    capabilities: [
-      "Data Centre Consultancy",
-      "Backup and Colocation",
-      "Virtualisation",
-      "Data and Disaster Recovery",
-      "High Performance Computing",
-      "Business Continuity",
+      "Automated Network Operations",
+      "Intelligent Process Automation",
+      "Predictive Analytics & Insights",
+      "Automated Deployment Pipelines",
+      "Digital Front Door Solutions",
+      "Custom Knowledge Systems",
     ],
     sectors: [
-      "Universities",
-      "Data Centre Providers",
-      "Pharmaceutical",
-      "Research",
+      "Channel Partners",
       "Enterprise",
+      "Retail",
+      "Healthcare",
+      "Public Sector",
     ],
-    link: "/practices/data-centre"
+    isDarkIcon: true,
+    link: "/practices/automation"
+  },
+  {
+    icon: <Cloud size={20} />,
+    title: "CLOUD, DC AND COMPUTE",
+    tagline: "Cloud Strategy, Data Centre & Compute",
+    description:
+      "End-to-end cloud strategy, data centre infrastructure, and high-performance compute — designed, delivered, and managed with precision. From hybrid cloud and virtualisation to disaster recovery and business continuity.",
+    capabilities: [
+      "Cloud Consultancy & Strategy",
+      "Hybrid Cloud & Multi-Cloud",
+      "Data Centre Consultancy",
+      "Virtualisation & Compute",
+      "Data and Disaster Recovery",
+      "High Performance Computing",
+    ],
+    sectors: [
+      "Channel Partners",
+      "Enterprise",
+      "Public Sector",
+      "Healthcare",
+      "Universities",
+    ],
+    link: "/practices/cloud-dc-compute"
   },
   {
     icon: <Monitor size={20} />,

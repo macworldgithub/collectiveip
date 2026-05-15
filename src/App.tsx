@@ -13,8 +13,7 @@ import ContactPage from "./pages/ContactPage";
 
 // Practice Detail Pages
 import PracticeConnectivityPage from "./pages/PracticeConnectivityPage";
-import PracticeCloudPage from "./pages/PracticeCloudPage";
-import PracticeDataCentrePage from "./pages/PracticeDataCentrePage";
+import PracticeCloudDCPage from "./pages/PracticeCloudDCPage";
 import PracticeEndpointPage from "./pages/PracticeEndpointPage";
 
 function App() {
@@ -24,8 +23,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/practices" element={<PracticesPage />} />
         <Route path="/practices/connectivity" element={<PracticeConnectivityPage />} />
-        <Route path="/practices/cloud-services" element={<PracticeCloudPage />} />
-        <Route path="/practices/data-centre" element={<PracticeDataCentrePage />} />
+        <Route path="/practices/automation" element={<IntelligentAutomationPage />} />
+        <Route path="/practices/cloud-dc-compute" element={<PracticeCloudDCPage />} />
+        <Route path="/practices/cloud-services" element={<PracticeCloudDCPage />} />
+        <Route path="/practices/data-centre" element={<PracticeCloudDCPage />} />
         <Route path="/practices/endpoint-infrastructure" element={<PracticeEndpointPage />} />
         <Route path="/partner-services" element={<PartnerServicesPage />} />
         <Route path="/vendors" element={<VendorsPage />} />

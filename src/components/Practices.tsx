@@ -1,4 +1,4 @@
-import { Wifi, Cloud, Monitor, ChevronRight, Database } from "lucide-react";
+import { Wifi, Cloud, Monitor, ChevronRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const practices = [
@@ -9,16 +9,16 @@ const practices = [
     link: "/practices/connectivity"
   },
   {
-    icon: <Cloud size={24} />,
-    title: "CLOUD SERVICES",
-    desc: "We simplify and secure cloud environments by implementing streamlined solutions that uphold data integrity, ensuring reliable and protected operations.",
-    link: "/practices/cloud-services"
+    icon: <Zap size={24} />,
+    title: "AUTOMATION",
+    desc: "Practical, outcome-driven automation that reduces cost, accelerates delivery, and transforms how you operate — built on real delivery experience.",
+    link: "/practices/automation"
   },
   {
-    icon: <Database size={24} />,
-    title: "DATA CENTRE AND COMPUTE",
-    desc: "Delivering secure, high-performance infrastructure for your core. Powering Possibilities with energy-efficient architectures.",
-    link: "/practices/data-centre"
+    icon: <Cloud size={24} />,
+    title: "CLOUD, DC AND COMPUTE",
+    desc: "End-to-end cloud strategy, data centre infrastructure, and high-performance compute — designed, delivered, and managed with precision.",
+    link: "/practices/cloud-dc-compute"
   },
   {
     icon: <Monitor size={24} />,

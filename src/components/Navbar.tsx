@@ -42,7 +42,7 @@ export default function Navbar() {
       "/demo",
       "/about",
       "/contact",
-    ].includes(location.pathname) || location.pathname.startsWith("/demo/");
+    ].includes(location.pathname) || location.pathname.startsWith("/demo/") || location.pathname.startsWith("/practices/");
 
   const shouldBeWhite = scrolled || (!isHome && !isDarkHeroPage);
   const isDarkBg = !scrolled && isDarkHeroPage;

@@ -214,6 +214,7 @@ export default function IntelligentAutomationPage() {
 
               <div className="space-y-8">
                 {approachSteps.map((step) => (
+                  
                   <div key={step.number} className="flex gap-6">
                     <div className="w-8 h-8 rounded-full bg-[#efefef] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
                       {step.number}
