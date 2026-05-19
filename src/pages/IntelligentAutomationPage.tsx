@@ -6,16 +6,16 @@ import {
   Network,
   BarChart2,
   ArrowRight,
-  CheckCircle,
+  CheckCircle2,
   Settings,
   Cpu,
 } from 'lucide-react';
 
 const stats = [
+  { value: '190+', label: 'Successful deployments across platforms' },
+  { value: '39', label: 'Dedicated AI & automation developers' },
   { value: '60%', label: 'Reduction in manual operational tasks' },
-  { value: '3X', label: 'Faster Incident response times' },
-  { value: '40%', label: 'Cost reduction through automation' },
-  { value: '24/7', label: 'Intelligent monitoring and response' },
+  { value: '24/7', label: 'Intelligent automation systems uptime' },
 ];
 
 const services = [
@@ -111,9 +111,9 @@ export default function IntelligentAutomationPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B4041] via-[#3B4041]/80 to-transparent" />
 
-        {/* Abstract lines pattern overlay (simplified) */}
+        {/* Abstract lines pattern overlay */}
         <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #8B5CF6 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+          style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #70309d 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
@@ -151,7 +151,7 @@ export default function IntelligentAutomationPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center lg:text-left">
-                <div className="text-3xl md:text-4xl font-extrabold text-brand-300 mb-1">{s.value} </div>
+                <div className="text-3xl md:text-4xl font-extrabold text-brand-300 mb-1">{s.value}</div>
                 <div className="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-tight">
                   {s.label}
                 </div>
@@ -164,16 +164,15 @@ export default function IntelligentAutomationPage() {
       {/* Services Grid */}
       <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
-              WHAT WE DELIVER
+          <div className="mb-16 text-center">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
+              What We Deliver
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
-              INTELLIGENT AUTOMATION SERVICES
+              Intelligent Automation Services
             </h2>
-            <p className="text-sm text-slate-500 max-w-2xl leading-relaxed">
-              Practical, proven solutions that integrate seamlessly with your existing infrastructure
-              and deliver measurable outcomes from day one.
+            <p className="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              Practical, proven solutions that integrate seamlessly with your existing infrastructure and deliver measurable outcomes from day one.
             </p>
           </div>
 
@@ -181,7 +180,7 @@ export default function IntelligentAutomationPage() {
             {services.map((s, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-[#8B5CF6] transition-all duration-300"
+                className="p-8 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-[#70309d] hover:shadow-md transition-all duration-300 group"
               >
                 <div className="text-[#70309d] mb-6">{s.icon}</div>
                 <h3 className="font-heading text-base font-bold text-[#3B4041] uppercase tracking-widest mb-4">
@@ -197,30 +196,29 @@ export default function IntelligentAutomationPage() {
       </section>
 
       {/* Approach Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
-              <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
-                OUR APPROACH
+              <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
+                Our Approach
               </h4>
-              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6">
-                PRAGMATIC, NOT HYPE
+              <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-6 leading-tight">
+                Pragmatic, Not Hype
               </h2>
-              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+              <p className="text-xs text-slate-500 leading-relaxed mb-8">
                 Every solution we deliver starts with a clear business problem and ends with measurable outcomes.
                 Our approach is grounded in real delivery experience across complex enterprise environments.
               </p>
 
               <div className="space-y-8">
                 {approachSteps.map((step) => (
-
                   <div key={step.number} className="flex gap-6">
-                    <div className="w-8 h-8 rounded-full bg-[#efefef] text-[#70309d] flex items-center justify-center text-base font-bold flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#efefef] text-[#70309d] flex items-center justify-center text-xs font-bold flex-shrink-0">
                       {step.number}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#3B4041] mb-2">{step.title}</h3>
+                      <h3 className="text-sm font-bold text-[#3B4041] uppercase tracking-wider mb-2">{step.title}</h3>
                       <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
@@ -230,8 +228,8 @@ export default function IntelligentAutomationPage() {
 
             <div className="lg:col-span-5">
               <div className="bg-[#3B4041] rounded-2xl p-10 text-white shadow-xl">
-                <h3 className="font-heading text-xl text-brand-300 font-bold uppercase tracking-widest mb-8">
-                  WHY PARTNERS CHOOSE US
+                <h3 className="font-heading text-base text-brand-300 font-bold uppercase tracking-widest mb-8">
+                  Why Partners Choose Us
                 </h3>
                 <ul className="space-y-4">
                   {[
@@ -245,7 +243,7 @@ export default function IntelligentAutomationPage() {
                     'Transparent, collaborative approach'
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle size={14} className="text-brand-300 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 size={14} className="text-brand-300 mt-0.5 flex-shrink-0" />
                       <span className="text-xs text-slate-300 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -259,40 +257,40 @@ export default function IntelligentAutomationPage() {
       {/* Proof Points Section */}
       <section className="py-24 bg-[#efefef]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <h4 className="text-base font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
-              PROOF POINTS
+          <div className="mb-16 text-center">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-4">
+              Proof Points
             </h4>
             <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-[#3B4041] uppercase mb-4">
-              REAL OUTCOMES, REAL IMPACT
+              Real Outcomes, Real Impact
             </h2>
-            <p className="text-sm text-slate-500 max-w-2xl leading-relaxed">
+            <p className="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
               See how our intelligent automation solutions deliver measurable results across different sectors and use cases.
             </p>
           </div>
 
           <div className="space-y-6">
             {proofPoints.map((point, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-10 border border-slate-100 shadow-sm">
+              <div key={idx} className="bg-white rounded-xl p-10 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex items-center gap-3 text-[#70309d] mb-8">
                   <Network size={16} />
-                  <h3 className="font-heading text-xl  font-bold uppercase tracking-[0.15em]">
+                  <h3 className="font-heading text-base font-bold uppercase tracking-widest text-[#3B4041]">
                     {point.title}
                   </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
                   <div className="md:col-span-3">
-                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">CHALLENGE</h4>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Challenge</h4>
                     <p className="text-xs text-slate-600 leading-relaxed">{point.challenge}</p>
                   </div>
                   <div className="md:col-span-5">
-                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">APPROACH</h4>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Approach</h4>
                     <p className="text-xs text-slate-600 leading-relaxed">{point.approach}</p>
                   </div>
                   <div className="md:col-span-4">
-                    <h4 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-4">OUTCOME</h4>
-                    <p className="text-xs font-bold text-[#3B4041] leading-relaxed italic border-l-2 border-[#8B5CF6] pl-4">
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Outcome</h4>
+                    <p className="text-xs font-bold text-[#3B4041] leading-relaxed italic border-l-2 border-[#70309d] pl-4">
                       {point.outcome}
                     </p>
                   </div>

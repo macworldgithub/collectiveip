@@ -131,375 +131,324 @@ export default function PartnerServicesPage() {
         <div className="max-w-7xl mx-auto px-6 space-y-24">
           {/* End-to-End Project Ownership */}
           <div id="project-ownership" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              Effortless Oversight
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               End-to-End Project Ownership
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Complete project delivery with full commercial accountability. We
-              take ownership from initial discovery through to operational
-              handover, ensuring partners can focus on customer relationships
-              while we handle delivery complexity.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Our End-to-End Project Ownership service—often described by clients as "Effortless Oversight"—provides complete, risk-shared accountability for complex technology initiatives. From initial discovery and design to final operational transition, we take full responsibility for delivery quality, timelines, and commercial outcomes, allowing our partners to focus entirely on strengthening client relationships while we absorb technical execution complexity.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-6">
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-brand-300 flex-shrink-0 mt-1"
+                  className="text-[#70309d] flex-shrink-0 mt-1"
                 />
-                <span className="text-slate-600 text-sm">
-                  Fixed-price commercial models
+                <span className="text-slate-700 text-sm font-medium">
+                  Solutions Architecture & Design
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-brand-300 flex-shrink-0 mt-1"
+                  className="text-[#70309d] flex-shrink-0 mt-1"
                 />
-                <span className="text-slate-600 text-sm">
-                  Risk and reward sharing
+                <span className="text-slate-700 text-sm font-medium">
+                  Pre-Sales Engineering Support
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-brand-300 flex-shrink-0 mt-1"
+                  className="text-[#70309d] flex-shrink-0 mt-1"
                 />
-                <span className="text-slate-600 text-sm">
-                  Full project lifecycle management
+                <span className="text-slate-700 text-sm font-medium">
+                  PMO & Strategic Service Delivery
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-brand-300 flex-shrink-0 mt-1"
+                  className="text-[#70309d] flex-shrink-0 mt-1"
                 />
-                <span className="text-slate-600 text-sm">
-                  Commercial outcome focus
+                <span className="text-slate-700 text-sm font-medium">
+                  Technical Quality Assurance
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Telecom Consultancy */}
+          {/* Technical Consultancy */}
           <div id="technical-consultancy" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              Strategic Expertise
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Technical Consultancy
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Technical consulting with commercial grounding. Our consultants
-              bring real-world delivery experience to help partners solve
-              complex technical challenges while maintaining commercial
-              viability and customer satisfaction.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Collective IP's Technical Consultancy delivers deep engineering expertise aligned with sharp commercial awareness to solve your most complex digital transformation challenges. Our veteran consultants bring extensive real-world experience across multi-vendor environments, helping you design and implement strategic, secure, and compliant infrastructures that drive tangible business value and operational efficiency.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  Network
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Infrastructure design and optimisation
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-slate-100 pt-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Enterprise Networking & SD-WAN
+                </span>
               </div>
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  Cloud
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Migration and integration services
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Cloud & Hybrid-Cloud Architecture
+                </span>
               </div>
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  Security
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Risk assessment and compliance
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  DC & Compute Modernisation
+                </span>
               </div>
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  DC & Compute
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Infrastructure modernisation
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Endpoint Infrastructure Engineering
+                </span>
               </div>
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  Endpoint
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Device management and security
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Cyber Security & Compliance
+                </span>
               </div>
-              <div className="text-center p-4 bg-[#F9F5FF] rounded-lg">
-                <h4 className="font-heading sm:text-sm lg:text-xl font-bold text-[#3B4041] mb-2">
-                  Governance and Compliance
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Compliance and policy frameworks
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Governance & Policy Frameworks
+                </span>
               </div>
             </div>
           </div>
 
           {/* Managed Resourcing */}
           <div id="managed-resourcing" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              On-Demand Capability
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Managed Resourcing
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Flexible technical resourcing that scales with your business. We
-              provide skilled professionals who integrate seamlessly with your
-              teams, bringing Collective IP expertise while maintaining your
-              operational control.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Scale your capacity instantly and maintain operational agility with our Managed Resourcing services. We go beyond traditional staffing by providing highly vetted, senior-level engineers and specialized consultants who integrate seamlessly into your existing team structures under flexible commercial models, ensuring you have the exact skills required to meet peak delivery demands without overhead.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                  Consultancy Level Resourcing
-                </h4>
-                <p className="text-slate-500 text-sm mb-3">
-                  Senior technical experts who provide strategic guidance and
-                  hands-on delivery.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle
-                      size={14}
-                      className="text-brand-300 flex-shrink-0 mt-0.5"
-                    />
-                    <span className="text-slate-600 text-sm">
-                      Technical architects and engineers
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle
-                      size={14}
-                      className="text-brand-300 flex-shrink-0 mt-0.5"
-                    />
-                    <span className="text-slate-600 text-sm">
-                      Project and programme managers
-                    </span>
-                  </li>
-                </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Flexible & Rapid Team Augmentation
+                </span>
               </div>
-              <div>
-                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                  Flexible Engagement Models
-                </h4>
-                <p className="text-slate-500 text-sm mb-3">
-                  Resourcing solutions that adapt to your business needs and
-                  commercial requirements.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle
-                      size={14}
-                      className="text-brand-300 flex-shrink-0 mt-0.5"
-                    />
-                    <span className="text-slate-600 text-sm">
-                      Short-term specialist support
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle
-                      size={14}
-                      className="text-brand-300 flex-shrink-0 mt-0.5"
-                    />
-                    <span className="text-slate-600 text-sm">
-                      Long-term team augmentation
-                    </span>
-                  </li>
-                </ul>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Virtual Specialist Team Approach (VTA)
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Embedded Technical Resourcing
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Resource-as-a-Service (RaaS) Models
+                </span>
               </div>
             </div>
           </div>
 
           {/* Field Services */}
           <div id="field-services" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              On-Site Operational Support
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Field Services
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              On-site technical expertise delivered across multiple locations.
-              Our field services teams provide hands-on support for
-              installation, maintenance, and optimisation with consistent
-              quality and commercial accountability.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Ensure smooth physical deployments and reliable localized technical support with our comprehensive Field Services. Our certified field engineers deliver consistent, high-quality on-site installation, proactive maintenance, and rapid troubleshooting across diverse geographic locations, ensuring your critical infrastructure is correctly optimized, secured, and operational with minimal downtime.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-4 border border-slate-200 rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                  On-site Technical Support
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Responsive technical assistance at customer locations with
-                  rapid deployment capability.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  On-Site Technical Support & Dispatch
+                </span>
               </div>
-              <div className="p-4 border border-slate-200 rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                  Maintenance and Upgrades
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Planned maintenance and system upgrades with minimal
-                  disruption to operations.
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Professional Installation & Configuration
+                </span>
               </div>
-              <div className="p-4 border border-slate-200 rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                  Installation and Configuration
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Professional installation services with standardised
-                  configuration and testing.
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Planned Maintenance & System Upgrades
+                </span>
               </div>
-              <div className="p-4 border border-slate-200 rounded-lg">
-                <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                  System Optimisation
-                </h4>
-                <p className="text-slate-600 text-xs">
-                  Performance tuning and optimisation to maximise infrastructure
-                  efficiency.
-                </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Infrastructure & System Optimisation
+                </span>
               </div>
             </div>
           </div>
 
           {/* Mass Deployments */}
           <div id="mass-deployments" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              Scale & Automation
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
               Mass Deployments
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Large-scale deployment expertise with proven methodologies. We
-              handle complex, multi-site deployments with automation support and
-              standardisation to ensure consistent outcomes across your entire
-              estate.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Execute large-scale, multi-site hardware and software rollouts smoothly with our specialized Mass Deployments service. Utilizing standardized, highly automated staging and validation processes, our team manages the end-to-end logistics and deployment lifecycle for thousands of endpoints or locations, delivering rapid time-to-value while ensuring total compliance and minimal disruption.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                    Assessment and Preparation
-                  </h4>
-                  <p className="text-slate-600 text-xs">
-                    Detailed site assessment and preparation planning to ensure
-                    deployment readiness.
-                  </p>
-                </div>
-                <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                    Testing and Validation
-                  </h4>
-                  <p className="text-slate-600 text-xs">
-                    Comprehensive testing protocols and validation before
-                    full-scale deployment.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Site Assessment & Readiness Preparation
+                </span>
               </div>
-              <div className="space-y-4">
-                <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                    Standardisation
-                  </h4>
-                  <p className="text-slate-600 text-xs">
-                    Standardised deployment processes and configurations for
-                    consistency.
-                  </p>
-                </div>
-                <div className="p-4 bg-[#F9F5FF] rounded-lg">
-                  <h4 className="font-heading text-sm font-bold text-[#3B4041] mb-2">
-                    Automation Support and Scalability
-                  </h4>
-                  <p className="text-slate-600 text-xs">
-                    Automation tools and scalable processes for efficient
-                    large-scale deployment.
-                  </p>
-                </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Process Standardisation & Automation
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Rigorous Staging, Testing & Validation
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Scalable Post-Deployment Support
+                </span>
               </div>
             </div>
           </div>
 
           {/* Managed Services */}
           <div id="managed-services" className="bg-white rounded-xl p-8 shadow-sm scroll-mt-24">
+            <h4 className="text-xs font-bold text-[#70309d] uppercase tracking-[0.2em] mb-3">
+              Proactive Management
+            </h4>
             <h3 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
-              Managed Services
+              Managed IT Services
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Ongoing management and support with clear SLAs and commercial
-              accountability. Our managed services provide operational stability
-              while allowing partners to focus on growth and customer
-              relationships.
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+              Protect your digital investments and ensure continuous operational excellence with our comprehensive Managed IT Services. We provide proactive 24/7 monitoring, robust security operations, and multi-tier help desk support under rigorous Service Level Agreements (SLAs), offering clear commercial accountability and predictable costs for your critical network, cloud, and application infrastructures.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-heading text-lg font-bold text-[#3B4041] mb-4">
-                  Core Managed Services
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle
-                      size={16}
-                      className="text-brand-300 flex-shrink-0 mt-1"
-                    />
-                    <div>
-                      <h5 className="font-heading text-sm font-bold text-[#3B4041]">
-                        Network and Infrastructure Management
-                      </h5>
-                      <p className="text-slate-600 text-xs">
-                        24/7 monitoring and management of network and
-                        infrastructure environments.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle
-                      size={16}
-                      className="text-brand-300 flex-shrink-0 mt-1"
-                    />
-                    <div>
-                      <h5 className="font-heading text-sm font-bold text-[#3B4041]">
-                        Intelligent Automation as a Service
-                      </h5>
-                      <p className="text-slate-600 text-xs">
-                        Automation solutions delivered as a service with ongoing
-                        optimisation.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle
-                      size={16}
-                      className="text-brand-300 flex-shrink-0 mt-1"
-                    />
-                    <div>
-                      <h5 className="font-heading text-sm font-bold text-[#3B4041]">
-                        Cloud Services Management
-                      </h5>
-                      <p className="text-slate-600 text-xs">
-                        Multi-cloud environment management with cost
-                        optimisation and governance.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle
-                      size={16}
-                      className="text-brand-300 flex-shrink-0 mt-1"
-                    />
-                    <div>
-                      <h5 className="font-heading text-sm font-bold text-[#3B4041]">
-                        Help Desk and Technical Support
-                      </h5>
-                      <p className="text-slate-600 text-xs">
-                        Multi-tier technical support with clear SLAs and
-                        escalation paths.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Network & Infrastructure Management
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Cloud Services Management & Optimization
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  Enterprise Security Services & Monitoring
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-[#70309d] flex-shrink-0 mt-1"
+                />
+                <span className="text-slate-700 text-sm font-medium">
+                  24/7 Multi-Tier Help Desk & Support
+                </span>
               </div>
             </div>
           </div>

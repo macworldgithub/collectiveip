@@ -29,10 +29,12 @@ export default function Hero() {
           </h1>
 
           <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl">
-            We are a specialist IT infrastructure services business built for the
+            {/* We are a specialist IT infrastructure services business built for the
             channel. We help partners expand their services portfolio, deliver
             efficiently, and create lasting commercial value  enhanced by
-            intelligent automation.
+            intelligent automation. */}
+            We are a specialist IT infrastructure services business built for System Integrators, MSPs, and value-added resellers.
+            We design, build, and roll out networks, cloud and DC environments, IOT and endpoint infrastructures, and help you transform your processes with Intelligent automation to improve sales, accelerate project delivery, and effectively manage your cost base
           </p>
 
           <div className="flex flex-wrap gap-4 justify-start">

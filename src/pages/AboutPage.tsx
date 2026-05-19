@@ -322,36 +322,35 @@ export default function AboutPage() {
                 Honest
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Transparent communication and straightforward advice. We tell
+                {/* Transparent communication and straightforward advice. We tell
                 partners what they need to hear, not just what they want to
-                hear.
+                hear. */}
+                Transparent communication and straightforward advice.
+                 We tell partners what they need to hear, not just what they want to hear.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Collaborative
+                Collaboration
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-                We work as an extension of your team, sharing risks and rewards
-                to ensure mutual success.
+           We work as an extension of your team, sharing risks and rewards to ensure mutual success.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Supportive
+Curiosity
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-                We're here to help partners succeed, providing guidance and
-                support throughout the engagement lifecycle.
+              fostering a culture of innovation and adaptability
               </p>
-            </div>
+            </div>          
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Simple
+                Simplicity
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-                We cut through complexity to deliver clear, practical solutions
-                that solve real business problems.
+              We cut through complexity to deliver clear, practical solutions that solve real business problems.
               </p>
             </div>
           </div>

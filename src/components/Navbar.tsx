@@ -42,7 +42,9 @@ export default function Navbar() {
       "/demo",
       "/about",
       "/contact",
-    ].includes(location.pathname) || location.pathname.startsWith("/demo/") || location.pathname.startsWith("/practices/");
+    ].includes(location.pathname) ||
+    location.pathname.startsWith("/demo/") ||
+    location.pathname.startsWith("/practices/");
 
   const shouldBeWhite = scrolled || (!isHome && !isDarkHeroPage);
   const isDarkBg = !scrolled && isDarkHeroPage;
@@ -85,7 +87,7 @@ export default function Navbar() {
                       state: { fromIndustryDemo: true },
                     })
                   }
-                  className={`text-sm lg:text-xs font-medium transition-colors hover:text-brand-600 ${
+                  className={`text-sm font-medium transition-colors hover:text-brand-600 ${
                     shouldBeWhite
                       ? isActive
                         ? "text-brand-600"
