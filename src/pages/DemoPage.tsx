@@ -238,7 +238,7 @@ export default function DemoPage() {
                       </div>
                     </div>
                     <a
-                      href={demo.url}
+                      href={demo.originalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
