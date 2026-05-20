@@ -6,6 +6,7 @@ const vendors = [
   { name: "Apple", src: "/images/apple.png" },
   { name: "Arista", src: "/images/arista.png" },
   { name: "Aruba", src: "/images/aruba.png" },
+  { name: "Avaya", src: "/images/avaya.png" },
   { name: "Aws", src: "/images/aws.png" },
   { name: "Axis", src: "/images/axis.png" },
   { name: "Azure", src: "/images/azure.png" },
@@ -22,37 +23,31 @@ const vendors = [
   { name: "Crowdstrike", src: "/images/crowdstrike.png" },
   { name: "Dell", src: "/images/dell.png" },
   { name: "Draytek", src: "/images/draytek.png" },
-  { name: "Education", src: "/images/education.png" },
+  { name: "Extreme Networks", src: "/images/extreme_networks.png" },
   { name: "F5", src: "/images/f5.png" },
-  { name: "Forcepoint", src: "/images/forcepoint.png" },
+  { name: "Forcepoint", src: "/images/forcepoint.png" }, 
 
-  { name: "Fortigate", src: "/images/fortigate.png" },
   { name: "Fortinet", src: "/images/fortinet.png" },
   { name: "Google", src: "/images/google.png" },
-  { name: "Googlecloud", src: "/images/googlecloud.png" },
-  { name: "Healthcare", src: "/images/healthcare.png" },
-  { name: "Hero", src: "/images/hero.png" },
+  { name: "Google Cloud", src: "/images/googlecloud.png" },
   { name: "Hikvision", src: "/images/hikvision.png" },
 
   { name: "Hp", src: "/images/hp.png" },
-  { name: "Hyper_v", src: "/images/hyper_v.png" },
   { name: "Ibm", src: "/images/ibm.png" },
-  { name: "Intelligent", src: "/images/intelligent.png" },
   { name: "Jabra", src: "/images/jabra.png" },
   { name: "Juniper", src: "/images/juniper.png" },
   { name: "Lenovo", src: "/images/lenovo.png" },
 
   { name: "Logitech", src: "/images/logitech.png" },
   { name: "Mcafee", src: "/images/mcafee.png" },
-  { name: "Meru", src: "/images/meru.png" },
   { name: "Microsoft", src: "/images/microsoft.png" },
   { name: "Nokia", src: "/images/nokia.png" },
   { name: "Okta", src: "/images/okta.png" },
+  { name: "Palo Alto Networks", src: "/images/palo_alto.png" },
   { name: "Qualys", src: "/images/qualys.png" },
 
   { name: "Redhat", src: "/images/redhat.png" },
   { name: "Repeatit", src: "/images/repeatit.png" },
-  { name: "Retail", src: "/images/retail.png" },
   { name: "Rubrik", src: "/images/rubrik.png" },
   { name: "Ruckus", src: "/images/ruckus.png" },
   { name: "Sentinelone", src: "/images/sentinelone.png" },
@@ -64,10 +59,10 @@ const vendors = [
   { name: "Starlink", src: "/images/starlink.png" },
   { name: "Ubiquiti", src: "/images/ubiquiti.png" },
   { name: "Unify", src: "/images/unify.png" },
-  { name: "Vendor_approach", src: "/images/vendor_approach.png" },
 
+  { name: "Veeam", src: "/images/veeam.png" },
   { name: "Vmware", src: "/images/vmware.png" },
-  // { name: "Watchduard", src: "/images/watchduard.png" },
+  { name: "WatchGuard", src: "/images/watchguard.png" },
   { name: "Zscaler", src: "/images/zscaler.png" },
 
   { name: "Meraki", src: "/images/cisco-meraki.avif" },
@@ -76,22 +71,15 @@ const vendors = [
   { name: "Ceragon", src: "/images/Ceragon.svg" },
 
   { name: "Ekahau", src: "/images/ekahau.svg" },
-  // { name: "NetAlly", src: "/images/Netally.webp" },
+  { name: "NetAlly", src: "/images/NetAlly.webp" },
 
-  { name: "Header", src: "/images/header.svg" },
-
-  // { name: "Fp", src: "/images/fp.svg" },
   { name: "ManageEngine", src: "/images/manageengine.svg" },
 
-  // { name: "Logo", src: "/images/logo.svg" },
   { name: "Inertial", src: "/images/Inertial.svg" },
   { name: "Siretta", src: "/images/Siretta.webp" },
-  // { name: "Proception", src: "/images/proception.svg" },
-  // { name: "Full", src: "/images/full.svg" },
 
-  { name: "En", src: "/images/en.svg" },
-  // { name: "Excel", src: "/images/excel.svg" },
-  { name: "Vtas", src: "/images/vtas.png" },
+  { name: "3CX", src: "/images/3cx.png" },
+  { name: "Veritas", src: "/images/vtas.png" },
 ];
 
 export default function VendorsPage() {

@@ -90,12 +90,12 @@ export default function Footer() {
             © 2026 Collective IP Limited. All rights reserved. Company No. 14460737
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
+            <Link to="/privacy-policy" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-slate-400 text-[10px] hover:text-brand-300 transition-colors">
+            </Link>
+            <Link to="/data-policy" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
               Data Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

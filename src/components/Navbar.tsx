@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -8,8 +8,13 @@ const navLinks = [
   { label: "Partner Services", path: "/partner-services" },
   { label: "Vendors", path: "/vendors" },
   { label: "Industry Demo", path: "/demo", hideChatbot: true },
-  { label: "Resources", path: "/resources" },
-  { label: "About Collective IP", path: "/about" },
+  {
+    label: "About Collective IP",
+    subItems: [
+      { label: "About Us", path: "/about" },
+      { label: "Resources", path: "/resources" },
+    ],
+  },
   { label: "Contact Us", path: "/contact" },
 ];
 
@@ -42,6 +47,8 @@ export default function Navbar() {
       "/demo",
       "/about",
       "/contact",
+      "/privacy-policy",
+      "/data-policy",
     ].includes(location.pathname) ||
     location.pathname.startsWith("/demo/") ||
     location.pathname.startsWith("/practices/");
@@ -73,9 +80,54 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center lg:gap-[0.75rem] xl:gap-7">
+        <nav className="hidden lg:flex items-center lg:gap-[0.8rem] xl:gap-7">
           {navLinks.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive = item.path 
+              ? location.pathname === item.path 
+              : item.subItems?.some(sub => location.pathname === sub.path);
+
+            if (item.subItems) {
+              return (
+                <div key={item.label} className="relative group">
+                  <button
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand-600 py-2 ${
+                      shouldBeWhite
+                        ? isActive
+                          ? "text-brand-600"
+                          : "text-gray-700"
+                        : isActive
+                          ? "text-brand-300"
+                          : "text-white/90"
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
+                  </button>
+                  <div className="absolute left-0 top-full w-48 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                    <div className="bg-white rounded-xl shadow-xl shadow-gray-200/50 border border-gray-100/80 p-1.5 flex flex-col gap-1">
+                      {item.subItems.map((sub) => (
+                        <Link
+                          key={sub.path}
+                          to={sub.path}
+                          className={`px-3.5 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 flex items-center justify-between group/item ${
+                            location.pathname === sub.path
+                              ? "bg-brand-50/60 text-brand-600"
+                              : "text-gray-600 hover:bg-gray-50 hover:text-brand-600"
+                          }`}
+                        >
+                          <span>{sub.label}</span>
+                          <span className={`opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200 ${
+                            location.pathname === sub.path ? "text-brand-600" : "text-brand-500"
+                          }`}>
+                            →
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
             // ✅ SPECIAL CASE: Industry Demo
             if (item.hideChatbot) {
@@ -105,7 +157,7 @@ export default function Navbar() {
             return (
               <Link
                 key={item.path}
-                to={item.path}
+                to={item.path!}
                 className={`text-sm font-medium transition-colors hover:text-brand-600 ${
                   shouldBeWhite
                     ? isActive
@@ -146,6 +198,29 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((item) => {
+              if (item.subItems) {
+                return (
+                  <div key={item.label} className="flex flex-col gap-2">
+                    <span className="text-sm font-semibold text-gray-900">{item.label}</span>
+                    <div className="pl-4 flex flex-col gap-3 border-l-2 border-gray-100 ml-2">
+                      {item.subItems.map((sub) => (
+                        <Link
+                          key={sub.path}
+                          to={sub.path}
+                          className={`text-sm font-medium hover:text-brand-600 transition-colors ${
+                            location.pathname === sub.path
+                              ? "text-brand-600"
+                              : "text-gray-600"
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
               if (item.hideChatbot) {
                 return (
                   <button
@@ -165,7 +240,7 @@ export default function Navbar() {
               return (
                 <Link
                   key={item.path}
-                  to={item.path}
+                  to={item.path!}
                   className={`text-sm font-medium hover:text-brand-600 transition-colors ${
                     location.pathname === item.path
                       ? "text-brand-600"
