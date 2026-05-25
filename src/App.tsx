@@ -18,6 +18,8 @@ import PracticeConnectivityPage from "./pages/PracticeConnectivityPage";
 import PracticeCloudDCPage from "./pages/PracticeCloudDCPage";
 import PracticeEndpointPage from "./pages/PracticeEndpointPage";
 import RealState from "./pages/RealState";
+import Banking from "./pages/Banking";
+import Hotel from "./pages/Hotel";
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/data-policy" element={<DataPolicyPage />} />
         <Route path="/real-estate" element={<RealState />} />
+        <Route path="/banking" element={<Banking />} />
+        <Route path="/hotel" element={<Hotel />} />
       </Routes>
     </BrowserRouter>
   );

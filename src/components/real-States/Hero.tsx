@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeft, Building2 } from "lucide-react";
 
-export default function RealEstateHero() {
+export default function Hero() {
   // Dynamic Data
   const heroData = {
     company: "COLLECTIVE REAL ESTATE GROUP",

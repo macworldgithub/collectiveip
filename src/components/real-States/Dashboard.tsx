@@ -13,7 +13,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-export default function RealEstateDashboard() {
+export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("portfolio");
 
   // Dynamic Tabs
