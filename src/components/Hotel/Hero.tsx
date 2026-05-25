@@ -35,12 +35,15 @@ export default function Hero() {
         <div className="mx-auto flex h-16 md:h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Left Side */}
           <div className="flex items-center gap-4">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:bg-white/10">
+            <button 
+              onClick={() => window.history.back()}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition hover:bg-white/10"
+            >
               <ArrowLeft size={20} />
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 text-white">
                 <Crown size={22} />
               </div>
               <h2 className="text-lg md:text-xl font-bold tracking-wider text-white">
@@ -51,7 +54,7 @@ export default function Hero() {
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />
+            <div className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
             <p className="hidden sm:block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
               {heroData.poweredBy}
             </p>
@@ -64,12 +67,12 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl pt-20 md:pt-24">
             {/* Badge */}
-            <p className="mb-4 inline-block rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-purple-400">
+            <p className="mb-4 inline-block rounded-full border border-brand-300/30 bg-brand-300/10 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.35em] text-brand-300">
               {heroData.badge}
             </p>
 
             {/* Main Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tighter text-white">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tighter text-white font-heading uppercase">
               {heroData.title}
             </h1>
 
@@ -80,10 +83,10 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition hover:bg-white/90">
+              <button className="rounded-full bg-brand-600 px-8 py-4 text-base font-semibold text-white transition hover:bg-brand-700">
                 Explore Experiences
               </button>
-              <button className="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+              <button className="rounded-full bg-[#efefef] px-8 py-4 text-base font-semibold text-black transition hover:bg-zinc-200">
                 Watch the Film
               </button>
             </div>

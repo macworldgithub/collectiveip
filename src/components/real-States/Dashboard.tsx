@@ -147,14 +147,14 @@ export default function Dashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`rounded-2xl border p-5 text-left transition-all duration-300 ${
                   active
-                    ? "border-[#d4af37]/50 bg-[#1b1710] shadow-[0_0_0_1px_rgba(212,175,55,0.25)]"
+                    ? "border-brand-500/50 bg-brand-900/10 shadow-[0_0_0_1px_rgba(112,48,157,0.25)]"
                     : "border-white/10 bg-[#0b0d14] hover:border-white/20"
                 }`}
               >
                 <Icon
                   size={22}
                   className={`mb-4 ${
-                    active ? "text-[#d4af37]" : "text-white/60"
+                    active ? "text-brand-300" : "text-white/60"
                   }`}
                 />
 
@@ -178,7 +178,7 @@ export default function Dashboard() {
             <input
               type="text"
               placeholder="Search by address, type, or area..."
-              className="h-14 w-full rounded-2xl border border-white/10 bg-[#0b0d14] pl-12 pr-4 text-sm text-white outline-none transition focus:border-[#d4af37]/40"
+              className="h-14 w-full rounded-2xl border border-white/10 bg-[#0b0d14] pl-12 pr-4 text-sm text-white outline-none transition focus:border-brand-500/40"
             />
           </div>
 
@@ -194,7 +194,7 @@ export default function Dashboard() {
           {properties.map((property) => (
             <div
               key={property.id}
-              className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0d14] transition duration-300 hover:-translate-y-1 hover:border-[#d4af37]/30"
+              className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0d14] transition duration-300 hover:-translate-y-1 hover:border-brand-500/30"
             >
               {/* Image */}
               <div className="relative h-[250px] overflow-hidden">
@@ -208,7 +208,7 @@ export default function Dashboard() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                 {/* Badge */}
-                <div className="absolute left-4 top-4 rounded-full bg-[#d4af37] px-3 py-1 text-xs font-bold text-black">
+                <div className="absolute left-4 top-4 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
                   {property.badge}
                 </div>
 
@@ -218,7 +218,7 @@ export default function Dashboard() {
                 </button>
 
                 {/* Match */}
-                <div className="absolute bottom-4 right-4 rounded-full bg-black/60 px-3 py-1 text-sm font-bold text-[#d4af37] backdrop-blur-sm">
+                <div className="absolute bottom-4 right-4 rounded-full bg-black/60 px-3 py-1 text-sm font-bold text-brand-300 backdrop-blur-sm">
                   {property.match}
                 </div>
               </div>
@@ -270,7 +270,7 @@ export default function Dashboard() {
                 </div>
 
                 {/* Bottom */}
-                <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#d4af37] px-5 py-3 text-sm font-bold text-black transition hover:bg-[#c49b24]">
+                <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-700">
                   <Sparkles size={18} />
                   View AI Insights
                 </button>

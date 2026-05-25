@@ -35,12 +35,15 @@ export default function Hero() {
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Left Side */}
           <div className="flex items-center gap-4">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10">
+            <button 
+              onClick={() => window.history.back()}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
+            >
               <ArrowLeft size={18} />
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-white font-bold text-xl">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-white font-bold text-xl">
                 C
               </div>
               <h2 className="text-lg font-bold tracking-wide text-white">
@@ -51,7 +54,7 @@ export default function Hero() {
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-purple-500" />
+            <div className="h-2 w-2 rounded-full bg-brand-500" />
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
               {heroData.poweredBy}
             </p>
@@ -64,12 +67,12 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl pt-20 sm:pt-24">
             {/* Badge */}
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-emerald-400">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-brand-300">
               {heroData.badge}
             </p>
 
             {/* Main Title */}
-            <h1 className="max-w-2xl text-5xl font-black uppercase leading-[1.05] tracking-tighter text-white sm:text-6xl md:text-7xl lg:text-[82px]">
+            <h1 className="max-w-2xl text-5xl font-black uppercase leading-[1.05] tracking-tighter text-white sm:text-6xl md:text-7xl lg:text-[82px] font-heading">
               {heroData.title}
             </h1>
 
@@ -80,11 +83,11 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-black transition hover:bg-white/90">
+              <button className="rounded-full bg-brand-600 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-brand-700">
                 Get Started
               </button>
 
-              <button className="rounded-full border border-white/30 bg-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-sm transition hover:bg-white/10">
+              <button className="rounded-full border border-white/30 bg-[#efefef] px-8 py-4 text-sm font-bold uppercase tracking-widest text-black transition hover:bg-zinc-200">
                 Watch Demo
               </button>
             </div>

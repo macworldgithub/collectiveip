@@ -11,7 +11,7 @@ export default function Dashboard() {
       icon: "🏠",
       title: "Room Configurator",
       desc: "AI-personalised stays",
-      color: "border-purple-500 bg-purple-950/30",
+      color: "border-brand-500 bg-brand-950/20",
     },
     { icon: "❤️", title: "Guest Journey", desc: "End-to-end AI experience" },
     { icon: "📈", title: "Revenue Intelligence", desc: "Dynamic pricing AI" },
@@ -94,7 +94,7 @@ export default function Dashboard() {
           {features.map((feature, i) => (
             <div
               key={i}
-              className={`p-5 rounded-2xl border border-zinc-800 hover:border-purple-500 transition-all ${i === 0 ? feature.color : "bg-zinc-900/50"}`}
+              className={`p-5 rounded-2xl border border-zinc-800 hover:border-brand-500 transition-all ${i === 0 ? feature.color : "bg-zinc-900/50"}`}
             >
               <div className="text-3xl mb-3">{feature.icon}</div>
               <h3 className="font-semibold text-lg">{feature.title}</h3>
@@ -105,15 +105,15 @@ export default function Dashboard() {
 
         {/* Room Selection Grid */}
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-6">Featured Rooms</h2>
+          <h2 className="font-heading text-2xl font-extrabold uppercase tracking-wide text-white mb-6">Featured Rooms</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {rooms.map((room, i) => (
               <div
                 key={i}
                 className={`group rounded-3xl overflow-hidden border transition-all cursor-pointer ${
                   i === 0
-                    ? "border-purple-500 ring-1 ring-purple-500"
-                    : "border-zinc-800 hover:border-zinc-700"
+                    ? "border-brand-500 ring-1 ring-brand-500"
+                    : "border-zinc-800 hover:border-brand-500/50"
                 }`}
               >
                 <div className="relative">
@@ -150,7 +150,7 @@ export default function Dashboard() {
           {/* Configure Your Stay */}
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8">
-              <h3 className="uppercase tracking-widest text-sm text-purple-400 mb-6">
+              <h3 className="uppercase tracking-widest text-sm text-brand-300 mb-6 font-heading">
                 CONFIGURE YOUR STAY
               </h3>
 
@@ -207,16 +207,16 @@ export default function Dashboard() {
 
             {/* Enhance Your Experience */}
             <div className="bg-zinc-900/70 border border-zinc-800 rounded-3xl p-8">
-              <h3 className="uppercase tracking-widest text-sm text-purple-400 mb-6">
+              <h3 className="uppercase tracking-widest text-sm text-brand-300 mb-6 font-heading">
                 ENHANCE YOUR EXPERIENCE
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {addons.map((addon, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-4 p-4 bg-zinc-950/50 border border-zinc-800 rounded-2xl hover:border-purple-500/50 transition-all cursor-pointer"
+                    className="flex items-center gap-4 p-4 bg-zinc-950/50 border border-zinc-800 rounded-2xl hover:border-brand-500/50 transition-all cursor-pointer"
                   >
-                    <div className="text-purple-400">{addon.icon}</div>
+                    <div className="text-brand-300">{addon.icon}</div>
                     <div className="flex-1">
                       <p className="font-medium">{addon.title}</p>
                       <p className="text-sm text-emerald-400">
@@ -234,8 +234,8 @@ export default function Dashboard() {
 
           {/* Booking Summary Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-gradient-to-br from-zinc-900 to-black border border-purple-500/30 rounded-3xl p-8 sticky top-6">
-              <h3 className="uppercase tracking-widest text-sm text-purple-400 mb-6">
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-brand-500/30 rounded-3xl p-8 sticky top-6">
+              <h3 className="uppercase tracking-widest text-sm text-brand-300 mb-6 font-heading">
                 BOOKING SUMMARY
               </h3>
 
@@ -254,17 +254,17 @@ export default function Dashboard() {
 
                 <div>
                   <p className="text-sm text-zinc-400">Total</p>
-                  <p className="text-4xl font-bold text-pink-500">£{total}</p>
+                  <p className="text-4xl font-bold text-brand-300">£{total}</p>
                   <p className="text-xs text-zinc-500 mt-1">
                     {nights} nights • {guests} guests
                   </p>
                 </div>
 
-                <button className="w-full bg-pink-600 hover:bg-pink-500 py-4 rounded-2xl font-bold text-lg transition-all active:scale-95">
+                <button className="w-full bg-brand-600 hover:bg-brand-700 py-4 rounded-2xl font-bold text-lg text-white transition-all active:scale-95">
                   Book Now
                 </button>
 
-                <div className="text-center text-xs text-purple-400 flex items-center justify-center gap-2">
+                <div className="text-center text-xs text-brand-300 flex items-center justify-center gap-2">
                   <Sparkles className="w-4 h-4" />
                   AI suggests: Add breakfast for 23% savings vs. à la carte
                   dining
