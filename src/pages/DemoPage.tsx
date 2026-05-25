@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ArrowRight, FileText, ExternalLink } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
 import { tools } from "../data/demoTools";
@@ -46,7 +46,9 @@ export default function DemoPage() {
 
           {/* Paragraph */}
           <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-xl mb-20">
-           These are real tools we deploy for our partners. Try them now, ask questions, run assessments, and see the value we deliver from day one.
+            These are real tools we deploy for our partners. Try them now, ask
+            questions, run assessments, and see the value we deliver from day
+            one.
           </p>
         </div>
       </section>
@@ -176,18 +178,18 @@ export default function DemoPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {brandedDemos.map((demo) => {
-              const statusColor =
-                demo.status === "Live"
-                  ? "bg-green-500"
-                  : demo.status === "Widget"
-                    ? "bg-blue-500"
-                    : "bg-yellow-500";
-              const statusText =
-                demo.status === "Live"
-                  ? "Live Demo Available"
-                  : demo.status === "Widget"
-                    ? "Widget Available"
-                    : "Coming Soon";
+              // const statusColor =
+              //   demo.status === "Live"
+              //     ? "bg-green-500"
+              //     : demo.status === "Widget"
+              //       ? "bg-blue-500"
+              //       : "bg-yellow-500";
+              // const statusText =
+              //   demo.status === "Live"
+              //     ? "Live Demo Available"
+              //     : demo.status === "Widget"
+              //       ? "Widget Available"
+              //       : "Coming Soon";
               return (
                 <div
                   key={demo.slug}
@@ -210,7 +212,7 @@ export default function DemoPage() {
                     <p className="text-slate-500 text-sm mb-4 line-clamp-3">
                       {demo.description}
                     </p>
-                    <div className="space-y-2 mb-4">
+                    {/* <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2">
                         <div
                           className={`w-2 h-2 ${statusColor} rounded-full`}
@@ -236,7 +238,7 @@ export default function DemoPage() {
                           )}
                         </a>
                       </div>
-                    </div>
+                    </div> */}
                     <a
                       href={demo.originalUrl}
                       target="_blank"
