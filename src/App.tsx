@@ -17,6 +17,7 @@ import DataPolicyPage from "./pages/DataPolicyPage";
 import PracticeConnectivityPage from "./pages/PracticeConnectivityPage";
 import PracticeCloudDCPage from "./pages/PracticeCloudDCPage";
 import PracticeEndpointPage from "./pages/PracticeEndpointPage";
+import RealState from "./pages/RealState";
 
 function App() {
   return (
@@ -24,12 +25,30 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/practices" element={<PracticesPage />} />
-        <Route path="/practices/connectivity" element={<PracticeConnectivityPage />} />
-        <Route path="/practices/automation" element={<IntelligentAutomationPage />} />
-        <Route path="/practices/cloud-dc-compute" element={<PracticeCloudDCPage />} />
-        <Route path="/practices/cloud-services" element={<PracticeCloudDCPage />} />
-        <Route path="/practices/data-centre" element={<PracticeCloudDCPage />} />
-        <Route path="/practices/endpoint-infrastructure" element={<PracticeEndpointPage />} />
+        <Route
+          path="/practices/connectivity"
+          element={<PracticeConnectivityPage />}
+        />
+        <Route
+          path="/practices/automation"
+          element={<IntelligentAutomationPage />}
+        />
+        <Route
+          path="/practices/cloud-dc-compute"
+          element={<PracticeCloudDCPage />}
+        />
+        <Route
+          path="/practices/cloud-services"
+          element={<PracticeCloudDCPage />}
+        />
+        <Route
+          path="/practices/data-centre"
+          element={<PracticeCloudDCPage />}
+        />
+        <Route
+          path="/practices/endpoint-infrastructure"
+          element={<PracticeEndpointPage />}
+        />
         <Route path="/partner-services" element={<PartnerServicesPage />} />
         <Route path="/vendors" element={<VendorsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
@@ -44,6 +63,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/data-policy" element={<DataPolicyPage />} />
+        <Route path="/real-estate" element={<RealState />} />
       </Routes>
     </BrowserRouter>
   );
