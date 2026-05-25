@@ -26,13 +26,13 @@ export function getBotResponse(q: string): ChatMessage | null {
       role: "ai",
       text: aiResp.text || "",
       options: aiResp.options,
-      cards: aiResp.cards?.map(c => ({
+      cards: aiResp.cards?.map((c) => ({
         type: "capability",
         tag: "SERVICE DETAILS",
         title: c.title,
         desc: c.desc || "",
-        bullets: c.bullets
-      }))
+        bullets: c.bullets,
+      })),
     };
   }
 

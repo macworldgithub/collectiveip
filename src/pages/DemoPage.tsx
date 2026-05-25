@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ArrowRight, FileText } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { tools } from "../data/demoTools";
 import { brandedDemos } from "./BrandedDemoPage";
@@ -239,14 +239,31 @@ export default function DemoPage() {
                         </a>
                       </div>
                     </div> */}
-                    <a
+                    {/* <a
                       href={demo.originalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
                     >
                       View Demo <ArrowRight size={14} />
-                    </a>
+                    </a> */}
+                    {demo.demoLink ? (
+  <Link
+    to={demo.demoLink}
+    className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
+  >
+    View Demo <ArrowRight size={14} />
+  </Link>
+) : (
+  <a
+    href={demo.originalUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-[#70309d] text-xs font-bold hover:gap-3 transition-all"
+  >
+    View Demo <ArrowRight size={14} />
+  </a>
+)}
                   </div>
                 </div>
               );

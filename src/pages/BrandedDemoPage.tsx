@@ -29,6 +29,7 @@ export type BrandedDemo = {
   logo: string;
   image: string;
   originalUrl: string;
+  demoLink?: string;
 };
 
 export const brandedDemos: BrandedDemo[] = [
@@ -52,6 +53,7 @@ export const brandedDemos: BrandedDemo[] = [
     logo: "/images/logos/knight-frank.png",
     image: "/images/logos/knight-frank.png",
     originalUrl: "https://www.knightfrank.com",
+    demoLink: "/real-estate",
   },
   {
     slug: "banking",
@@ -73,6 +75,7 @@ export const brandedDemos: BrandedDemo[] = [
     logo: "/images/logos/gb-bank.png",
     image: "/images/logos/banking-bg.png",
     originalUrl: "https://www.gbbank.co.uk",
+    demoLink: "/banking",
   },
   {
     slug: "it-solutions",
@@ -115,6 +118,8 @@ export const brandedDemos: BrandedDemo[] = [
     logo: "/images/logos/rosa-penna.png",
     image: "/images/logos/rosa-penna.png",
     originalUrl: "https://www.rosapenna.ie/",
+    
+demoLink: "/hotel",
   },
   {
     slug: "kiosk",
