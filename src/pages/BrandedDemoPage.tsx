@@ -77,27 +77,27 @@ export const brandedDemos: BrandedDemo[] = [
     originalUrl: "https://www.gbbank.co.uk",
     demoLink: "/banking",
   },
-  {
-    slug: "it-solutions",
-    title: "Collective IT Solutions",
-    subtitle: "Procurement & Managed Services Widget",
-    original: "Softcat",
-    description:
-      "Interactive IT procurement widget for enterprise device cataloguing, software licensing, and managed services quoting — embeddable on any partner site.",
-    features: [
-      "Device & software catalog",
-      "Quote builder",
-      "License management",
-      "Service desk integration",
-    ],
-    gradient: "from-orange-500 to-amber-600",
-    status: "Widget",
-    icon: <Monitor size={24} />,
-    url: "#",
-    logo: "/images/logos/softcat.png",
-    image: "/images/logos/softcat.png",
-    originalUrl: "https://www.softcat.com",
-  },
+  // {
+  //   slug: "it-solutions",
+  //   title: "Collective IT Solutions",
+  //   subtitle: "Procurement & Managed Services Widget",
+  //   original: "Softcat",
+  //   description:
+  //     "Interactive IT procurement widget for enterprise device cataloguing, software licensing, and managed services quoting — embeddable on any partner site.",
+  //   features: [
+  //     "Device & software catalog",
+  //     "Quote builder",
+  //     "License management",
+  //     "Service desk integration",
+  //   ],
+  //   gradient: "from-orange-500 to-amber-600",
+  //   status: "Widget",
+  //   icon: <Monitor size={24} />,
+  //   url: "#",
+  //   logo: "/images/logos/softcat.png",
+  //   image: "/images/logos/softcat.png",
+  //   originalUrl: "https://www.softcat.com",
+  // },
   {
     slug: "concierge",
     title: "Collective Concierge",
@@ -121,27 +121,27 @@ export const brandedDemos: BrandedDemo[] = [
     
 demoLink: "/hotel",
   },
-  {
-    slug: "kiosk",
-    title: "Collective Kiosk",
-    subtitle: "Interactive Self-Service Terminal",
-    original: "BYD-style Kiosk",
-    description:
-      "Touch-screen kiosk experience for showrooms, retail, and events — enabling self-guided product exploration, lead capture, and wayfinding.",
-    features: [
-      "Product explorer & 3D viewer",
-      "Self-service check-in",
-      "Lead capture forms",
-      "Wayfinding & showroom maps",
-    ],
-    gradient: "from-rose-500 to-red-600",
-    status: "Coming Soon",
-    icon: <LayoutTemplate size={24} />,
-    url: "#",
-    logo: "/images/logos/byd.png",
-    image: "/images/logos/byd.png",
-    originalUrl: "https://www.byd.com",
-  },
+  // {
+  //   slug: "kiosk",
+  //   title: "Collective Kiosk",
+  //   subtitle: "Interactive Self-Service Terminal",
+  //   original: "BYD-style Kiosk",
+  //   description:
+  //     "Touch-screen kiosk experience for showrooms, retail, and events — enabling self-guided product exploration, lead capture, and wayfinding.",
+  //   features: [
+  //     "Product explorer & 3D viewer",
+  //     "Self-service check-in",
+  //     "Lead capture forms",
+  //     "Wayfinding & showroom maps",
+  //   ],
+  //   gradient: "from-rose-500 to-red-600",
+  //   status: "Coming Soon",
+  //   icon: <LayoutTemplate size={24} />,
+  //   url: "#",
+  //   logo: "/images/logos/byd.png",
+  //   image: "/images/logos/byd.png",
+  //   originalUrl: "https://www.byd.com",
+  // },
 ];
 
 export default function BrandedDemoPage() {
