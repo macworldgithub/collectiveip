@@ -53,13 +53,13 @@ export default function Hero() {
           </div>
 
           {/* Right Side */}
-          {/* <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-brand-500" />
+           <div className="flex items-center gap-2">
+            {/* <div className="h-2 w-2 rounded-full bg-brand-500" />
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
               {heroData.poweredBy}
             </p>
-          </div>
-        </div> */}
+          </div> */}
+        </div> 
       </div>
 
       {/* Hero Content */}
