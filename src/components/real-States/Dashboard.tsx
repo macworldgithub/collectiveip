@@ -746,10 +746,10 @@ export default function Dashboard() {
                         ))}
                       </div>
 
-                      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-700">
+                      {/* <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-700">
                         <Sparkles size={18} />
                         View AI Insights
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 ))
