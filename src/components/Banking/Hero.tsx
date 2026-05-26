@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 export default function Hero() {
   const heroData = {
     company: "COLLECTIVE BANKING",
-    poweredBy: "POWERED BY COLLECTIVE IP",
+    poweredBy: "",
     badge: "INTELLIGENT FINANCIAL SERVICES",
     title: "THE FUTURE OF DIGITAL BANKING",
     description:
