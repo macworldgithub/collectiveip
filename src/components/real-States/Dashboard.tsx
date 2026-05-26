@@ -668,10 +668,10 @@ export default function Dashboard() {
                 />
               </div>
 
-              <button className="flex h-14 items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[#0b0d14] px-6 text-sm font-medium transition hover:border-white/20">
+              {/* <button className="flex h-14 items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[#0b0d14] px-6 text-sm font-medium transition hover:border-white/20">
                 <SlidersHorizontal size={18} />
                 Filters
-              </button>
+              </button> */}
             </div>
 
             {/* Property Grid */}
