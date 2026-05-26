@@ -357,7 +357,7 @@ export default function BrandedDemoPage() {
           <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-10">
             Explore Other Collective-Branded Demos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-center">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {brandedDemos
               .filter((d) => d.slug !== demo.slug)
               .map((d) => (
@@ -366,7 +366,7 @@ export default function BrandedDemoPage() {
                   href={d.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
+                  className="w-full sm:w-[350px] group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
                 >
                   <div className="h-32 relative overflow-hidden">
                     <img
