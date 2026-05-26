@@ -357,7 +357,7 @@ export default function BrandedDemoPage() {
           <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-10">
             Explore Other Collective-Branded Demos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-center">
             {brandedDemos
               .filter((d) => d.slug !== demo.slug)
               .map((d) => (
