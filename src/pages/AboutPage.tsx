@@ -244,15 +244,15 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-            <a
-  href="https://www.collectiveip.co.uk/meet-the-team/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center cursor-pointer hover:scale-105 transition">
-    <Users className="text-[#70309d]" size={32} />
-  </div>
-</a>
+              {/* <a
+                href="https://www.collectiveip.co.uk/meet-the-team/"
+                target="_blank"
+                rel="noopener noreferrer"
+              > */}
+              <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Users className="text-[#70309d]" size={32} />
+              </div>
+              {/* </a> */}
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
                 Leadership Team
               </h3>
@@ -319,14 +319,15 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-                Honest
+                Honesty
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
                 {/* Transparent communication and straightforward advice. We tell
                 partners what they need to hear, not just what they want to
                 hear. */}
-                Transparent communication and straightforward advice.
-                 We tell partners what they need to hear, not just what they want to hear.
+                Transparent communication and straightforward advice. We tell
+                partners what they need to hear, not just what they want to
+                hear.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
@@ -334,23 +335,25 @@ export default function AboutPage() {
                 Collaboration
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-           We work as an extension of your team, sharing risks and rewards to ensure mutual success.
+                We work as an extension of your team, sharing risks and rewards
+                to ensure mutual success.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
-Curiosity
+                Curiosity
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-              fostering a culture of innovation and adaptability
+                fostering a culture of innovation and adaptability
               </p>
-            </div>          
+            </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-3">
                 Simplicity
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">
-              We cut through complexity to deliver clear, practical solutions that solve real business problems.
+                We cut through complexity to deliver clear, practical solutions
+                that solve real business problems.
               </p>
             </div>
           </div>
@@ -519,10 +522,10 @@ Curiosity
                       Email
                     </h4>
                     <a
-                      href="mailto:info@collectiveip.co.uk"
+                      href="mailto:contactus@collectiveip.co.uk"
                       className="text-xs text-slate-400 hover:text-brand-300 transition-colors"
                     >
-                      info@collectiveip.co.uk
+                      contactus@collectiveip.co.uk
                     </a>
                   </div>
                 </div>

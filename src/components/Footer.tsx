@@ -1,17 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const practiceLinks = [
-  { label: 'Connectivity', path: '/practices/connectivity' },
-  { label: 'Intelligent Automation', path: '/practices/automation' },
-  { label: 'Cloud, DC and Compute', path: '/practices/cloud-dc-compute' },
-  { label: 'Endpoint Infrastructure', path: '/practices/endpoint-infrastructure' },
+  { label: "Connectivity", path: "/practices/connectivity" },
+  { label: "Intelligent Automation", path: "/practices/automation" },
+  { label: "Cloud, DC and Compute", path: "/practices/cloud-dc-compute" },
+  {
+    label: "Endpoint Infrastructure",
+    path: "/practices/endpoint-infrastructure",
+  },
 ];
 
 const companyLinks = [
-  { label: 'About Us', path: '/about' },
-  { label: 'Case Studies', path: '/case-studies' },
-  { label: 'Interactive Demo', path: '/demo' },
-  { label: 'Partner Services', path: '/practices' },
+  { label: "About Us", path: "/about" },
+  { label: "Case Studies", path: "/case-studies" },
+  { label: "Interactive Demo", path: "/demo" },
+  { label: "Partner Services", path: "/practices" },
 ];
 
 export default function Footer() {
@@ -27,13 +30,16 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed pr-4">
-              Your trusted IT infrastructure services partner for the channel. Helping partners expand capability, deliver efficiently, and grow.
+              Your trusted IT infrastructure services partner for the channel.
+              Helping partners expand capability, deliver efficiently, and grow.
             </p>
           </div>
 
           {/* Practices */}
           <div>
-            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">PRACTICES</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">
+              PRACTICES
+            </h4>
             <ul className="flex flex-col gap-4">
               {practiceLinks.map((item) => (
                 <li key={item.label}>
@@ -50,7 +56,9 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">COMPANY</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em] mb-6">
+              COMPANY
+            </h4>
             <ul className="flex flex-col gap-4">
               {companyLinks.map((item) => (
                 <li key={item.label}>
@@ -67,19 +75,29 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-slate-400 text-sm font-bold uppercase  tracking-[0.2em] mb-6">CONTACT</h4>
+            <h4 className="text-slate-400 text-sm font-bold uppercase  tracking-[0.2em] mb-6">
+              CONTACT
+            </h4>
             <div className="flex flex-col gap-4 text-slate-300 text-sm leading-relaxed">
-              <p>Collective IP Limited</p> 
+              <p>Collective IP Limited</p>
               <p>
-                Suite 214, 1 Water Vole Way<br />
-                Doncaster, South Yorkshire<br />
+                Suite 214, 1 Water Vole Way
+                <br />
+                Doncaster, South Yorkshire
+                <br />
                 DN4 5JP
               </p>
-              <a href="tel:+442045858990" className="hover:text-brand-300 transition-colors">
+              <a
+                href="tel:+442045858990"
+                className="hover:text-brand-300 transition-colors"
+              >
                 +44 (0) 204 585 8990
               </a>
-              <a href="mailto:info@collectiveip.co.uk" className="hover:text-brand-300 transition-colors">
-                info@collectiveip.co.uk
+              <a
+                href="mailto:contactus@collectiveip.co.uk"
+                className="hover:text-brand-300 transition-colors"
+              >
+                contactus@collectiveip.co.uk
               </a>
             </div>
           </div>
@@ -87,13 +105,20 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <p className="text-slate-400 text-sm">
-            © 2026 Collective IP Limited. All rights reserved. Company No. 14460737
+            © 2026 Collective IP Limited. All rights reserved. Company No.
+            14460737
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
+            <Link
+              to="/privacy-policy"
+              className="text-slate-400 text-sm hover:text-brand-300 transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link to="/data-policy" className="text-slate-400 text-sm hover:text-brand-300 transition-colors">
+            <Link
+              to="/data-policy"
+              className="text-slate-400 text-sm hover:text-brand-300 transition-colors"
+            >
               Data Policy
             </Link>
           </div>
