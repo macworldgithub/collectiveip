@@ -482,7 +482,7 @@ export default function AboutPage() {
                       Office
                     </h4>
                     <p className="text-xs text-slate-400 leading-relaxed">
-                      Suite 214, 1 Water Vole Way
+                      1 Water Vole Way
                       <br />
                       Doncaster, South Yorkshire
                       <br />
