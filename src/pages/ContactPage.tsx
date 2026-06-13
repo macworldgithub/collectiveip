@@ -59,7 +59,7 @@ export default function ContactPage() {
                     Address
                   </h3>
                   <p className="text-slate-500">
-                    Suite 214, 1 Water Vole Way Doncaster,
+                    1 Water Vole Way Doncaster,
                     <br /> South Yorkshire DN4 5JP
                   </p>
                 </div>
