@@ -81,7 +81,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4 text-slate-300 text-sm leading-relaxed">
               <p>Collective IP Limited</p>
               <p>
-                Suite 214, 1 Water Vole Way
+                1 Water Vole Way
                 <br />
                 Doncaster, South Yorkshire
                 <br />
