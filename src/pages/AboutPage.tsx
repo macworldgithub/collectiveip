@@ -245,11 +245,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <Link to="/leadership">
+              {/* <Link to="/leadership"> */}
                 <div className="w-24 h-24 bg-[#937bbd] rounded-full mx-auto mb-4 flex items-center justify-center cursor-pointer hover:scale-105 transition">
                   <Users className="text-[#70309d]" size={32} />
                 </div>
-              </Link>
+              {/* </Link> */}
               <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
                 Leadership Team
               </h3>
