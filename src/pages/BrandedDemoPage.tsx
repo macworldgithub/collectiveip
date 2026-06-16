@@ -77,71 +77,94 @@ export const brandedDemos: BrandedDemo[] = [
     originalUrl: "https://www.gbbank.co.uk",
     demoLink: "/banking",
   },
-  {
-    slug: "it-solutions",
-    title: "Collective IT Solutions",
-    subtitle: "Procurement & Managed Services Widget",
-    original: "Softcat",
-    description:
-      "Interactive IT procurement widget for enterprise device cataloguing, software licensing, and managed services quoting — embeddable on any partner site.",
-    features: [
-      "Device & software catalog",
-      "Quote builder",
-      "License management",
-      "Service desk integration",
-    ],
-    gradient: "from-orange-500 to-amber-600",
-    status: "Widget",
-    icon: <Monitor size={24} />,
-    url: "#",
-    logo: "/images/logos/softcat.png",
-    image: "/images/logos/softcat.png",
-    originalUrl: "https://www.softcat.com",
-  },
-  {
-    slug: "concierge",
-    title: "Collective Concierge",
-    subtitle: "Golf, Resort & Leisure Booking",
-    original: "Rosa Penna",
-    description:
-      "Hospitality concierge for golf, resort stays, and leisure bookings — with intelligent scheduling, personalised recommendations, and membership management.",
-    features: [
-      "Tee time & court booking",
-      "Resort stay reservations",
-      "Personalised recommendations",
-      "Membership management",
-    ],
-    gradient: "from-green-500 to-lime-600",
-    status: "Live",
-    icon: <TreePine size={24} />,
-    url: "https://www.rosapenna.ie/",
-    logo: "/images/logos/rosa-penna.png",
-    image: "/images/logos/rosa-penna.png",
-    originalUrl: "https://www.rosapenna.ie/",
+  // {
+  //   slug: "it-solutions",
+  //   title: "Collective IT Solutions",
+  //   subtitle: "Procurement & Managed Services Widget",
+  //   original: "Softcat",
+  //   description:
+  //     "Interactive IT procurement widget for enterprise device cataloguing, software licensing, and managed services quoting — embeddable on any partner site.",
+  //   features: [
+  //     "Device & software catalog",
+  //     "Quote builder",
+  //     "License management",
+  //     "Service desk integration",
+  //   ],
+  //   gradient: "from-orange-500 to-amber-600",
+  //   status: "Widget",
+  //   icon: <Monitor size={24} />,
+  //   url: "#",
+  //   logo: "/images/logos/softcat.png",
+  //   image: "/images/logos/softcat.png",
+  //   originalUrl: "https://www.softcat.com",
+  // },
+//   {
+//     slug: "concierge",
+//     title: "Collective Concierge",
+//     subtitle: "Golf, Resort & Leisure Booking",
+//     original: "Rosa Penna",
+//     description:
+//       "Hospitality concierge for golf, resort stays, and leisure bookings — with intelligent scheduling, personalised recommendations, and membership management.",
+//     features: [
+//       "Tee time & court booking",
+//       "Resort stay reservations",
+//       "Personalised recommendations",
+//       "Membership management",
+//     ],
+//     gradient: "from-green-500 to-lime-600",
+//     status: "Live",
+//     icon: <TreePine size={24} />,
+//     url: "https://www.rosapenna.ie/",
+//     logo: "/images/logos/rosa-penna.png",
+//     image: "/images/logos/rosa-penna.png",
+//     originalUrl: "https://www.rosapenna.ie/",
     
-demoLink: "/hotel",
-  },
+// demoLink: "/hotel",
+//   },
   {
-    slug: "kiosk",
-    title: "Collective Kiosk",
-    subtitle: "Interactive Self-Service Terminal",
-    original: "BYD-style Kiosk",
-    description:
-      "Touch-screen kiosk experience for showrooms, retail, and events — enabling self-guided product exploration, lead capture, and wayfinding.",
-    features: [
-      "Product explorer & 3D viewer",
-      "Self-service check-in",
-      "Lead capture forms",
-      "Wayfinding & showroom maps",
-    ],
-    gradient: "from-rose-500 to-red-600",
-    status: "Coming Soon",
-    icon: <LayoutTemplate size={24} />,
-    url: "#",
-    logo: "/images/logos/byd.png",
-    image: "/images/logos/byd.png",
-    originalUrl: "https://www.byd.com",
-  },
+  slug: "intelligent-hospitality",
+  title: "Collective Hotels",
+  subtitle: "Intelligent Hospitality",
+  original: "Collective Hotels",
+  description:
+    "AI guest concierge, dynamic pricing optimisation, predictive maintenance, and hyper-personalised experiences — elevating every guest touchpoint.",
+  features: [
+    "AI guest concierge",
+    "Dynamic pricing optimisation",
+    "Predictive maintenance",
+    "Hyper-personalised experiences",
+  ],
+  gradient: "from-emerald-500 to-green-600",
+  status: "Live",
+  icon: <TreePine size={24} />,
+  url: "https://www.collectivehotels.com/",
+  logo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/demo-hotels-hero-PDWe3QF2pJp9Lub4ZnqkJ5.webp",
+  image:
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663337333551/h9wm5ZXmZd6BG5PjnWCKUN/demo-hotels-hero-PDWe3QF2pJp9Lub4ZnqkJ5.webp",
+  originalUrl: "https://www.rosapenna.ie/",
+  demoLink: "/hotel",
+},
+  // {
+  //   slug: "kiosk",
+  //   title: "Collective Kiosk",
+  //   subtitle: "Interactive Self-Service Terminal",
+  //   original: "BYD-style Kiosk",
+  //   description:
+  //     "Touch-screen kiosk experience for showrooms, retail, and events — enabling self-guided product exploration, lead capture, and wayfinding.",
+  //   features: [
+  //     "Product explorer & 3D viewer",
+  //     "Self-service check-in",
+  //     "Lead capture forms",
+  //     "Wayfinding & showroom maps",
+  //   ],
+  //   gradient: "from-rose-500 to-red-600",
+  //   status: "Coming Soon",
+  //   icon: <LayoutTemplate size={24} />,
+  //   url: "#",
+  //   logo: "/images/logos/byd.png",
+  //   image: "/images/logos/byd.png",
+  //   originalUrl: "https://www.byd.com",
+  // },
 ];
 
 export default function BrandedDemoPage() {
@@ -334,7 +357,7 @@ export default function BrandedDemoPage() {
           <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-10">
             Explore Other Collective-Branded Demos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {brandedDemos
               .filter((d) => d.slug !== demo.slug)
               .map((d) => (
@@ -343,7 +366,7 @@ export default function BrandedDemoPage() {
                   href={d.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
+                  className="w-full sm:w-[350px] group bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
                 >
                   <div className="h-32 relative overflow-hidden">
                     <img

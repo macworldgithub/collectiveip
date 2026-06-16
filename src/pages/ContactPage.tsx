@@ -1,11 +1,11 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function ContactPage() {
   return (
     <div className="font-body text-dark antialiased">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-[#3B4041]">
         <div className="relative max-w-7xl mx-auto px-6 text-left z-10">
@@ -16,7 +16,8 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="text-base text-slate-300 max-w-2xl leading-relaxed">
-            Ready to discuss how we can help your business? Reach out to our team today.
+            Ready to discuss how we can help your business? Reach out to our
+            team today.
           </p>
         </div>
       </section>
@@ -30,61 +31,92 @@ export default function ContactPage() {
               <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
                 Contact Information
               </h2>
-              
+
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">Phone</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                    Phone
+                  </h3>
                   <p className="text-slate-500">0204 585 8990</p>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">Email</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                    Email
+                  </h3>
                   <p className="text-slate-500">contactus@collectiveip.co.uk</p>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">Website</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                    Website
+                  </h3>
                   <p className="text-slate-500">www.collectiveip.co.uk</p>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">Address</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#3B4041] mb-2">
+                    Address
+                  </h3>
                   <p className="text-slate-500">
-                    Collective IP<br />
-                    United Kingdom
+                    1 Water Vole Way Doncaster,
+                    <br /> South Yorkshire DN4 5JP
                   </p>
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div>
               <h2 className="font-heading text-2xl font-extrabold text-[#3B4041] uppercase mb-6">
                 Send Us a Message
               </h2>
-              
+
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"
+                  />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                  <input type="email" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"
+                  />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Company</label>
-                  <input type="text" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]" />
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"
+                  />
                 </div>
-                
+
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"></textarea>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-[#70309d] focus:border-[#70309d]"
+                  ></textarea>
                 </div>
-                
-                <button type="submit" className="w-full px-6 py-3 bg-[#70309d] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-colors">
+
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-[#70309d] text-white text-sm font-bold rounded-md hover:bg-[#5a2680] transition-colors"
+                >
                   Send Message
                 </button>
               </form>

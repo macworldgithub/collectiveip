@@ -11,7 +11,7 @@
 //           filter: 'brightness(0.35)',
 //         }}
 //       />
-      
+
 //       {/* Gradient Overlays for better text readability */}
 //       <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-dark/40 to-transparent" />
 //       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark/60" />
@@ -79,24 +79,23 @@ export default function Hero() {
           filter: 'brightness(0.35)',
         }}
       />
-      
+
       {/* Gradient Overlays for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-dark/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark/60" />
 
       <div className="relative w-full max-w-7xl mx-auto px-6 py-32 text-left z-10">
-        <div className="max-w-3xl">
-          <h2 className="text-brand-300  font-bold tracking-[] md:tracking-[0.1em] text-2xl  md:text-3xl mb-4">
-   We are a specialist IT infrastructure services business built for Integrators, Solution Providers, MSPs and VARS
+        <div className="max-w-5xl">
+          <h2 className="text-brand-300 font-bold tracking-tight text-3xl md:text-5xl lg:text-[54px] leading-[1.15] mb-6">
+            We are a specialist IT infrastructure services business built for Integrators, Solution Providers, MSPs and VARs
           </h2>
 
-          <p className="text-white text-xs md:text-base   mb-6">
-         We design, build and rollout Networks, Cloud and DC environments, IOT and Endpoint Infrastructures and help you transform your processes with Intelligent automation to improve sales, accelerate project delivery and effectively manage your cost base.
+          <p className="text-white text-sm md:text-lg lg:text-xl leading-relaxed mb-8 max-w-4xl">
+            We design, build and rollout Networks, Cloud and DC environments, IOT and Endpoint Infrastructures and help you transform your processes with Intelligent automation to improve sales, accelerate project delivery and effectively manage your cost base.
           </p>
 
-          <p className="text-base md:text-2xl font-bold text-button-gray leading-relaxed mb-8 max-w-2xl">
-         
-           Helping Partners Deliver, Scale and Grow
+          <p className="text-xl md:text-3xl lg:text-4xl font-extrabold text-button-gray leading-normal mb-10 max-w-3xl">
+            Helping Partners Deliver, Scale and Grow
           </p>
 
           <div className="flex flex-wrap gap-4 justify-start">
@@ -104,7 +103,7 @@ export default function Hero() {
               href="/practices"
               className="inline-flex items-center gap-2 px-6 py-3 bg-brand-300 text-white font-bold rounded hover:bg-[#5a2680] transition-all duration-300 shadow-sm text-sm"
             >
-              Explore Our Practices 
+              Explore Our Practices
               <ArrowRight size={16} />
             </a>
             <a

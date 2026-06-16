@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 export default function Hero() {
   const heroData = {
     company: "COLLECTIVE BANKING",
-    poweredBy: "POWERED BY COLLECTIVE IP",
+    poweredBy: "",
     badge: "INTELLIGENT FINANCIAL SERVICES",
     title: "THE FUTURE OF DIGITAL BANKING",
     description:
@@ -53,13 +53,13 @@ export default function Hero() {
           </div>
 
           {/* Right Side */}
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-brand-500" />
+           <div className="flex items-center gap-2">
+             <div className="h-2 w-2 rounded-full bg-brand-500" />
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
               {heroData.poweredBy}
             </p>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </div>
 
       {/* Hero Content */}
@@ -82,7 +82,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            {/* <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <button className="rounded-full bg-brand-600 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-brand-700">
                 Get Started
               </button>
@@ -90,7 +90,7 @@ export default function Hero() {
               <button className="rounded-full border border-white/30 bg-[#efefef] px-8 py-4 text-sm font-bold uppercase tracking-widest text-black transition hover:bg-zinc-200">
                 Watch Demo
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

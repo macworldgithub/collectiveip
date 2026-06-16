@@ -176,7 +176,7 @@ export default function DemoPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
             {brandedDemos.map((demo) => {
               // const statusColor =
               //   demo.status === "Live"
@@ -193,7 +193,7 @@ export default function DemoPage() {
               return (
                 <div
                   key={demo.slug}
-                  className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
+                  className="w-full sm:w-[350px] bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#70309d] transition-colors"
                 >
                   <div className="h-48 relative overflow-hidden group-hover:opacity-90 transition-opacity">
                     <img

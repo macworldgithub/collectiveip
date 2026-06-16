@@ -12,6 +12,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import DataPolicyPage from "./pages/DataPolicyPage";
+import LeadershipPage from "./pages/LeadershipPage";
 
 // Practice Detail Pages
 import PracticeConnectivityPage from "./pages/PracticeConnectivityPage";
@@ -62,6 +63,7 @@ function App() {
         <Route path="/demo" element={<DemoPage />} />
         <Route path="/demo/:slug" element={<BrandedDemoPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/data-policy" element={<DataPolicyPage />} />
